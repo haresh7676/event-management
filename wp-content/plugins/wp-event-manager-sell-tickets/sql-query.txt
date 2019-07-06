@@ -1,0 +1,12 @@
+You need to update database if you are using WP Event Manager - Sell Tickets below version 1.0.2 
+
+STEP 1: First take your database backup.
+
+STEP 2: BELOW ARE SQL QUERYS YOU CAN JUST COPY AND PASTE INSIDE YOUR DATABASE.
+
+
+UPDATE  `wp_postmeta` SET  `meta_key` =  '_event_id' WHERE  `meta_key` =  'event_id';
+UPDATE  `wp_postmeta` SET  `meta_key` =  '_ticket_type' WHERE  `meta_key` =  'ticket_type';
+UPDATE  `wp_postmeta` SET  `meta_key` =  '_order_id' WHERE  `meta_key` =  'order_id';
+UPDATE  `wp_postmeta` SET  `meta_key` =  '_ticket_id' WHERE  `meta_key` =  'ticket_id';
+UPDATE  `wp_postmeta` SET  `meta_key` =  '_total_ticket_price' WHERE  `meta_key` =  'total_ticket_price';

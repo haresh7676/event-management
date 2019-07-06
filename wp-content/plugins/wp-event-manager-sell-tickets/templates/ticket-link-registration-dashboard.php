@@ -1,0 +1,3 @@
+<style>
+div.event-registrations ul.event-registrations li.event-registration footer ul.actions li.download a::before{content:"\e840"}</style>
+<li class="download"><a href="?action=show_registrations&event_id=<?php echo $_GET['event_id'];?>&download_ticket=true&order_id=<?php echo $order_id;?>" title="<?php _e( 'Download', 'wp-event-manager-registrations' ); ?>" class="event-ticket-download"><?php _e( 'Download', 'wp-event-manager-registrations' ); ?></a></li>

@@ -1,0 +1,54 @@
+.notice {padding: 12px !important; display: flex;}
+.notice h4 {margin: 0;}
+/* .notice-box .row { margin-bottom: 5px; margin-top: 5px;} */
+
+
+.event_ticket_add_link {margin-right: 15px;}
+
+#new_tickets_fields ._paid_tickets { display: block; padding: 20px 0 !important; }
+#new_tickets_fields ._paid_tickets td { border: 1px solid #eaeaea; padding: 15px; display: block;}
+#new_tickets_fields ._paid_tickets .remove-row { margin: 0 0 20px; padding: 0; text-align: left; width: 100%; }
+#new_tickets_fields ._paid_tickets .input-text {display: list-item; margin: 10px 0; padding: 8px; width: 100%;}
+#new_tickets_fields ._paid_tickets select { display: list-item; margin: 10px 0; width: 100%;}
+
+.new_tickets_fields { width: 100%;}
+#new_tickets_fields ._free_tickets { display: block; padding: 20px 0 !important; }
+#new_tickets_fields ._free_tickets td { border: 1px solid #eaeaea; padding: 15px; display: block;}
+#new_tickets_fields ._free_tickets .remove-row { margin: 0 0 20px; padding: 0; text-align: left; width: 100%; }
+#new_tickets_fields ._free_tickets .input-text {display: list-item; margin: 10px 0; padding: 8px; width: 100%; }
+#new_tickets_fields ._free_tickets select { display: list-item; margin: 10px 0; width: 100%;}
+
+.new_tickets_fields { width: 100%;}
+#new_tickets_fields ._donation_tickets { display: block; padding: 20px 0 !important; }
+#new_tickets_fields ._donation_tickets td { border: 1px solid #eaeaea; padding: 15px; display: block;}
+#new_tickets_fields ._donation_tickets .remove-row { margin: 0 0 20px; padding: 0; text-align: left; width: 100%; }
+#new_tickets_fields ._donation_tickets .input-text {display: list-item; margin: 10px 0; padding: 8px; width: 100%; }
+#new_tickets_fields ._donation_tickets select { display: list-item; margin: 10px 0; width: 100%;}
+
+
+#tickets_view_table { margin-top: 20px;}
+#tickets_view_table .manage-column.column-columnname { width: 100%;}
+
+#tickets_view_table ._paid_tickets { display: table-row;  width: 100%;}
+#tickets_view_table ._paid_tickets td { border: 1px solid #eaeaea; display: table-cell; padding: 15px; width: 100%;}
+#tickets_view_table ._paid_tickets .remove-row { margin: 0 0 20px; padding: 0; text-align: left; width: 100%; }
+#tickets_view_table ._paid_tickets .input-text {display: list-item; margin: 10px 0; padding: 8px; width: 100%;}
+#tickets_view_table ._paid_tickets select { display: list-item; margin: 10px 0; width: 100%;}
+
+#tickets_view_table .new_tickets_fields { width: 100% !important;}
+#tickets_view_table ._free_tickets { display: table-row;  width: 100%;}
+#tickets_view_table ._free_tickets td { border: 1px solid #eaeaea; display: table-cell; padding: 15px; width: 100%;}
+#tickets_view_table ._free_tickets .remove-row { margin: 0 0 20px; padding: 0; text-align: left; width: 100%; }
+#tickets_view_table ._free_tickets .input-text {display: list-item; margin: 10px 0; padding: 8px; width: 100%; }
+#tickets_view_table ._free_tickets select { display: list-item; margin: 10px 0; width: 100%;}
+
+#tickets_view_table .new_tickets_fields { width: 100% !important;}
+#tickets_view_table ._donation_tickets { display: table-row;  width: 100%;}
+#tickets_view_table ._donation_tickets td { border: 1px solid #eaeaea; display: table-cell; padding: 15px; width: 100%;}
+#tickets_view_table ._donation_tickets .remove-row { margin: 0 0 20px; padding: 0; text-align: left; width: 100%; }
+#tickets_view_table ._donation_tickets .input-text {display: list-item; margin: 10px 0; padding: 8px; width: 100%; }
+#tickets_view_table ._donation_tickets select { display: list-item; margin: 10px 0; width: 100%;}
+
+.sell-tickets-overview{float:right; width:50%;}
+.sell-tickets-overview table { float: right;}
+.event-registration-overview{float:left;width:50%}
