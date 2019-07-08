@@ -1,0 +1,468 @@
+html {
+	font-size:62.5%;	
+}
+
+body {
+	margin:0;
+	padding: 0;
+	background: #FAFAFA;
+    font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+}
+
+/* ==== multi use css ==== */
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    height: 40px;
+    font-family: 'Avenir Next LT Pro';
+    font-size: 16px;
+	border-radius: 3px;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+	width: 18px !important;
+    height: 18px !important;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #775dff;
+    background-color: #775dff;
+}
+
+
+
+/* ==== LOGIN PAGE ==== */
+.login-bg {
+    background: #eeafc5 url(../../assets/images/login-bg.png) top right no-repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-size: 100% auto;
+}
+.lg-lft-box {
+    width: 680px;
+    max-width: 100%;
+}
+.login-bg-sdw {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    min-height: 100vh;
+    background: url(../../assets/images/leftlogo.png) top right no-repeat;
+    background-size: 100% 100%;
+}
+
+.icon-logo {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.icon-logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.login-header h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+}
+.lg-rgt-box {
+	width: 680px;
+	max-width: 100%;
+	float: left;
+	padding: 40px 20px 0;
+}
+.signin-box {
+	width: 521px;
+	height: auto;
+	max-width: 100%;
+	background: #fff;
+	border-radius: 2px 2px 0 0;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+	margin:30px auto;
+	padding: 35px;
+}
+.signin-title h5 {
+    text-align: center;
+    margin-bottom: 26px;
+    font-size: 20px;
+}
+
+.signin-box input[type="text"],
+.signin-box input[type="password"]
+  {
+    padding-left: 38px;
+    margin-bottom: 12px;
+    padding-right: 15px	
+}
+.eml-icn {
+    background: url(../../assets/images/gmail-icn.png) top left no-repeat;
+    background-position: 7px 13px;
+    width: 37px;
+    height: 39px;
+    position: absolute;
+}
+.psw-icn {
+    background: url(../../assets/images/password-icn.png) top left no-repeat;
+    background-position: 6px 7px;
+    width: 37px;
+    height: 39px;
+    position: absolute;
+}
+.custom-control-label {
+    font-size: 14px;
+    color: #929699;
+    line-height: 24px;
+    padding-left: 13px;
+}
+.login-btn-box {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    z-index: 1;
+}
+.login-btn-box .login-btn {
+	background: #775DFF;
+	border: 1px solid #775DFF;
+	box-sizing: border-box;
+	border-radius: 2px;
+	width: 172px;
+	height: 43.87px;
+	font-size: 14px;
+	line-height: 14px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.login-btn:hover {
+	color: #fff;
+}
+
+.creat-text {
+	text-align: center;
+	margin-top: 30px;
+    padding-left: 17px;
+}
+.creat-text a {
+    font-family: 'Avenir Next LT Pro';
+    color: #775DFF;
+    font-size: 15px;
+    margin: 0 30px;
+    position: relative;
+}
+.creat-text a:after {
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #C4C4C4;
+    position: absolute;
+    right: -31px;
+    top: 2px;
+}
+.creat-text a:last-child:after {
+    display: none;
+}
+.or-dvd-line {
+    width: 302px;
+    height: 1px;
+    background: #eee;
+    position: relative;
+    margin: 26px auto;
+    color: #929699;
+    text-align: center;
+}
+.or-dvd-line span {
+    font-size: 16px;
+    background: #fff;
+    padding: 12px 25px;
+    position: relative;
+    top: -13px;
+}
+.login-options {
+	text-align: center;
+}
+
+.login-options .btn {
+	padding: 0 5px;
+	cursor: pointer;
+}
+.login-options-inr {
+    margin: 0 auto;
+}
+
+/* ==== SIGNUP PAGE ==== */
+.signin-box.signup-box input[type="text"],
+.signin-box.signup-box input[type="password"]  {
+    padding: 0 15px;
+}
+
+.signup-box .login-btn-box {
+    position: relative;
+    text-align: center;
+    top: 0;
+}
+
+.signup-box .login-btn {
+    text-transform: initial;
+}
+
+.sgnup-wth {
+    text-align: center;
+    font-size: 14px;
+    color: #B8B8B8;
+    margin-bottom: 15px;
+    line-height: 17px;
+}
+
+/* ==== CREATE AN EVENTS ==== */
+.top-header {
+    background:#F7B0C0;
+    width: 100%;
+}
+.logo-box {
+    float: left;
+}
+.topnav-right.pull-right {
+    float: right;
+    display: flex;
+    align-items: center;
+    height: 69px;
+}
+.topnav-right.pull-right ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+.topnav-right.pull-right ul li {
+    margin: 0 20px;
+}
+.topnav-right.pull-right ul li a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+.topnav-right.pull-right ul li.active a {
+    background: #775DFF;
+    padding: 10px 20px;
+    border-radius: 9px;
+}
+.topnav-right.pull-right ul li.browser-event a {
+    text-decoration: underline;
+}
+
+.basic-info-form {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(119, 93, 255, 0.2);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.basic-info-form h1 {
+    font-weight: bold;
+    font-size: 32px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.container.create-event-content {
+    margin: 40px auto;
+}
+.basic-info-form .form-group label {
+    font-size: 20px;
+    color: #4A4A4A;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.basic-info-form .form-group label span {
+    color: #D0021B;
+    margin-left: 2px;
+}
+.basic-info-form .form-group p {
+    font-size: 15px;
+    color: #9B9B9B;
+    font-weight: bold;
+}
+.basic-info-form .form-group input[type="text"] {
+    padding: 10px;
+}
+button.btn.slct-btn {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    box-shadow: 0px 2px 4px rgba(119, 93, 255, 0.2);
+    border-radius: 4px;
+    width: 150px;
+    background: #fff;
+    color: #74ACF6;
+    border: 2px solid #74acf6;
+    font-weight: 500;
+}
+button.btn.slct-btn.active {
+    color: #FFFFFF;
+    background: #74ACF6;
+    font-weight: bold;
+}
+.link-add {
+    font-weight: bold;
+    font-size: 15px;
+    color: #74ACF6;
+    position: relative;
+    top: -8px;
+}
+.cal-icn {
+    background: url(../../assets/images/calender-icn.png) top left no-repeat;
+    width: 45px;
+    height: 39px;
+    float: left;
+    position: absolute;
+    border-right: 1px solid #ccc;
+    background-position: 11px 8px;
+}
+
+/* ==== MEDIA QUERY ==== */
+
+@media screen (max-width: 1380px) {
+
+	
+}
+
+@media screen and (min-width: 991px) and (max-width: 1024px)  {
+	
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px)  {
+
+	.lg-rgt-box {
+		width: 100%;
+		position: absolute;
+	}
+	.lgn-lft-img {
+		position: absolute;
+		top: 200px;
+	}
+	.icon-logo {
+	    width: 140px;
+	    height: 140px;
+	    top: 110px;
+	}
+
+}
+
+@media screen and (max-width: 768px)  {
+
+	html {
+		font-size: 45%;
+	}
+	.lg-rgt-box {
+		width: 100%;
+		position: absolute;
+        padding-bottom: 0;
+	}
+    .lgn-lft-img {
+        position: absolute;
+        top: 52px;
+    }
+	.icon-logo {
+	    width: 140px;
+	    height: 140px;
+	    top: 110px;
+	}
+	.signin-box {
+		padding: 15px;
+        margin-bottom: 0;
+	}
+	.icon-logo {
+        width: 80px;
+        height: 80px;
+        top: 60px;
+    }
+    .login-btn {
+    	width: 130px;
+    }
+    .login-options-inr .btn img {
+        width: 100px;
+    }
+
+    .creat-text a {
+        margin: 0 15px;
+        line-height: 15px;
+    }
+    .creat-text a:after {
+        right: -16px;
+    }
+
+    .login-options-inr .btn img {
+        width: 100px;
+    }
+    .or-dvd-line {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 380px)  {
+
+    .login-header h1 {
+        font-size: 2.4rem;
+    }
+    .login-btn {
+        width: 100px;
+        height: 36px;
+    }
+    .creat-text {
+        padding-left: 0;
+    }
+    .creat-text {
+        display: inline-flex;
+    }
+    .creat-text a:after {
+        height: 100%;
+    }
+    .login-options-inr .btn img {
+        width: 110px;
+    }
+    .icon-logo {
+        width: 50px;
+        height: 50px;
+        top: 40px;
+    }
+    .lg-rgt-box {
+        padding: 25px 20px;
+    }
+    .login-bg-sdw {
+        position: fixed;
+    }
+    .login-options-inr .btn img {
+        width: 80px;
+    }
+    .login-options .btn {
+        padding: 0;
+    }
+    .creat-text a {
+        font-size: 12px;
+    }
+    input[type="text"], input[type="password"] {
+        font-size: 14px;
+    }
+
+}
