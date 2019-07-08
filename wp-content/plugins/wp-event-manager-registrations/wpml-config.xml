@@ -1,0 +1,8 @@
+<wpml-config>
+	<admin-texts>
+		<key name="event_registration_email_content" />
+		<key name="event_registration_email_subject" />
+		<key name="event_registration_attendee_email_content" />
+		<key name="event_registration_attendee_email_subject" />
+	</admin-texts>
+</wpml-config>
