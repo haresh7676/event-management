@@ -61,8 +61,9 @@
                 <h4><?php the_title(); ?></h4>
             <!--</div>-->
             <ul>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.png" alt="">Fri, May 3rd - May 5th, 12:00pm</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/map-icon.png" alt=""><?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else:  display_event_location(false); endif; ?></li>
+                <?php $newformate = 'D, M jS'; ?>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.png" alt=""><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?></li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/map-icon.png" alt=""><?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else:  display_event_venue_name(false); endif; ?></li>
                 <li>Starts at $35.00</li>
             </ul>
             <!--<div class="event-location">

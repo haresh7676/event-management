@@ -8,9 +8,11 @@
             <div class="landing-banner-content">
                 <h2>Nerdy, Geeky Events Near You </h2>
                 <div class="landing-serach">
-                    <input type="text" class="event-search" placeholder="Search for events">
-                    <input type="text" class="city-search" placeholder="Los Angeles">
-                    <button type="submit" class="landing-submit-btn">Search</button>
+                    <form method="GET" action="http://localhost/event-management/events">
+                        <input type="text" class="event-search"  id="search_keywords" name="search_keywords" placeholder="Search for events">
+                        <input type="text" class="city-search" id="search_location"name="search_location" placeholder="Los Angeles">
+                        <button type="submit" class="landing-submit-btn">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
