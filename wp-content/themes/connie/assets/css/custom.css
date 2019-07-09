@@ -1,0 +1,14 @@
+.box-layout .event-img{
+    max-height: initial;
+}
+div.event_listings ul.event_listings.container{margin: 0 auto;}
+
+div.event_listings ul.event_listings .box-layout{border: 0px; margin: 0px; padding: 15px;width: 33.3%;}
+
+@media only screen and (min-width: 1px) and (max-width: 959px) {
+    div.event_listings ul.event_listings .box-layout{width: 50%;}
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+    div.event_listings ul.event_listings .box-layout{width: 100%;}
+}
+
