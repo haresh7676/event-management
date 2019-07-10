@@ -27,17 +27,21 @@
     function wpmpValidateAndProcessLoginForm() {
         $('#wpmpLoginForm').formValidation({
             message: 'This value is not valid',
-            icon: {
+            /*icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
-            },
+            },*/
             fields: {
                 wpmp_username: {
                     message: 'The username is not valid',
                     validators: {
                         notEmpty: {
-                            message: 'The username is required.'
+                            message: 'The email is required.'
+                        },
+                        regexp: {
+                            regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
+                            message: 'The value is not a valid email address'
                         }
                     }
                 },
@@ -102,12 +106,12 @@
     function wpmpValidateAndProcessProfileForm() {
         $('#wpmpProfileForm').formValidation({
             message: 'This value is not valid',
-            icon: {
+            /*icon: {
                 required: 'glyphicon glyphicon-asterisk',
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
-            },
+            },*/
             fields: {
                 wpmp_fname: {
                     validators: {
@@ -185,12 +189,12 @@
     function wpmpValidateAndProcessRegisterForm() {
         $('#wpmpRegisterForm').formValidation({
             message: 'This value is not valid',
-            icon: {
+            /*icon: {
                 required: 'glyphicon glyphicon-asterisk',
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
-            },
+            },*/
             fields: {
                 wpmp_fname: {
                     validators: {
@@ -207,7 +211,7 @@
                         }
                     }
                 },
-                wpmp_username: {
+                /*wpmp_username: {
                     message: 'The username is not valid',
                     validators: {
                         notEmpty: {
@@ -223,7 +227,7 @@
                             message: 'The username can only consist of alphabetical, number, dot and underscore'
                         }
                     }
-                },
+                },*/
                 wpmp_email: {
                     validators: {
                         notEmpty: {
@@ -358,12 +362,12 @@
 
         $('#wpmpResetPasswordForm').formValidation({
             message: 'This value is not valid',
-            icon: {
+            /*icon: {
                 required: 'glyphicon glyphicon-asterisk',
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
-            },
+            },*/
             fields: {
                 wpmp_rp_email: {
                     validators: {

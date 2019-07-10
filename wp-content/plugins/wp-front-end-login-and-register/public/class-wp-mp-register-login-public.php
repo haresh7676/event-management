@@ -106,8 +106,18 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
             }
             // preparing credentials array
             $credentials = array();
+            $username = trim($_POST['wpmp_username']);
             $credentials['user_login'] = trim($_POST['wpmp_username']);
             $credentials['user_password'] = trim($_POST['wpmp_password']);
+
+            if (filter_var($username, FILTER_VALIDATE_EMAIL)) { //Invalid Email
+                $user = get_user_by('email', $username);
+            } else {
+                $user = get_user_by('login', $username);
+            }
+            if($user){
+             $credentials['user_login'] = $user->data->user_login;
+            }
 
             // if email confirmation enabled
             if (isset($wpmp_email_settings['wpmp_user_email_confirmation']) && $wpmp_email_settings['wpmp_user_email_confirmation'] == '1') {
@@ -150,7 +160,7 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
         $user = get_user_by('login', $credentials['user_login']);
 
         if (!$user->ID) {
-            $response['error'] = __('The username you have entered does not exist.', $this->plugin_name);
+            $response['error'] = __('The email you have entered does not exist.', $this->plugin_name);
         } else {
             $stored_token = get_user_meta($user->ID, 'wpmp_email_verification_token', true);
             if (!$stored_token) {
@@ -271,7 +281,7 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
             }
             // preparing user array and added required filters
             $userdata = array(
-                'user_login' => apply_filters('pre_user_login', trim($_POST['wpmp_username'])),
+                'user_login' => apply_filters('pre_user_login', trim($_POST['wpmp_email'])),
                 'user_pass' => apply_filters('pre_user_pass', trim($_POST['wpmp_password'])),
                 'user_email' => apply_filters('pre_user_email', trim($_POST['wpmp_email'])),
                 'first_name' => apply_filters('pre_user_first_name', trim($_POST['wpmp_fname'])),
@@ -293,6 +303,10 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
 
                 // Adding hook so that anyone can add action on user registration
                 do_action('user_register', $user_id);
+
+                if(isser($_POST['wpmp_organization']) && !empty($_POST['wpmp_organization'])){
+                    add_user_meta($user_id, 'organization', $_POST['wpmp_organization']);
+                }
 
                 $response['reg_status'] = true;
                 //$response['success'] = __('Thanks for signing up. Please check your email for confirmation!', $this->plugin_name);

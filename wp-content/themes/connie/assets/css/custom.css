@@ -4,6 +4,54 @@
 div.event_listings ul.event_listings.container{margin: 0 auto;border: 0px;}
 
 div.event_listings ul.event_listings .box-layout{font-family: 'Open Sans', sans-serif !important;border: 0px; margin: 0px; padding: 15px;width: 33.3%;}
+.signin-box input[type="email"], .signin-box input[type="text"], .signin-box input[type="password"] {
+    border-color:#CCCCCC !important;
+}
+.signin-box input[type="email"]:focus, .signin-box input[type="text"]:focus, .signin-box input[type="password"]:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+.signin-box input[type="email"] {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    height: 40px;
+    font-family: 'Avenir Next LT Pro';
+    font-size: 16px;
+    border-radius: 3px;
+    padding-left: 38px;
+    margin-bottom: 12px;
+    padding-right: 15px;
+}
+
+.defulat-custom-btn {
+    background: #775DFF;
+    border: 1px solid #775DFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 172px;
+    height: 43.87px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.defulat-custom-btn:hover {
+    color: #fff;
+}
+.buttonwpr{
+	margin:0 auto;
+	text-align: center;
+	display: flex;
+    justify-content: space-evenly;
+}
+
+.has-error .help-block{
+	margin-top: 0px;
+	font-size: 12px;
+	margin-top: -12px;
+    margin-bottom: 12px;
+}
 
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
