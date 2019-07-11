@@ -1,5 +1,5 @@
 <?php /* Template Name: Login Register Page */ ?>
-<?php get_header(); ?>
+<?php get_header('blank'); ?>
 <div class="container-fluid login-main">
     <div class="row">
         <!-- left side -->        
@@ -32,4 +32,4 @@
     </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer('blank'); ?>

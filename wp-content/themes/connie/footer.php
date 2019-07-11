@@ -1,4 +1,4 @@
-
+</div>
 <!-- End Contact -->
 <!--</div>-->
 <!-- Start Footer -->

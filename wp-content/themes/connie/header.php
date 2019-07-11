@@ -8,7 +8,24 @@
 
 	<?php wp_head(); ?>
 </head>
-<body style="height: initial; position: relative; overflow: visible;" class="fullpage-wrapper fp-viewing-3">
+<body class="fullpage-wrapper fp-viewing-3">
+<div class="container-fluid">
+    <div class="row">
+        <div class="top-header">
+            <div class="logo-box"><img src="assets/images/logo.png" alt=""></div>
+            <div class="topnav-right pull-right">
+                <ul>
+                    <li class="browser-event"><a href="#">Browser events</a></li>
+                    <li class="active"><a href="#">Create Event</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="landing-page-banner">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/creat-event-banner.png" class="img-fluid" alt="">
+        </div>
+    </div>
 <?php
 //$headeroption = get_fields('header-settings');
 $headeroption = array();
