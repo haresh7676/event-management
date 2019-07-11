@@ -21,10 +21,15 @@
                 </ul>
             </div>
         </div>
-
+        <?php
+        $banner = get_field('banner_enable'); 
+        $bannerimg = get_field('banner_image');
+        if($banner == 1 && !empty($bannerimg)){
+        ?>
         <div class="landing-page-banner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/creat-event-banner.png" class="img-fluid" alt="">
+            <img src="<?php echo $bannerimg; ?>" class="img-fluid" alt="">
         </div>
+        <?php } ?>
     </div>
 <?php
 //$headeroption = get_fields('header-settings');

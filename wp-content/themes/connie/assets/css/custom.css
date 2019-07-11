@@ -56,7 +56,7 @@ div.event_listings ul.event_listings .box-layout{font-family: 'Open Sans', sans-
 .tab-content>.fade:not(.show){
 opacity: 1;
 }
-
+.browe-event-content .browe-event-filter{position: relative;}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
