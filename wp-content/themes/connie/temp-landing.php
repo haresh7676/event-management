@@ -1,5 +1,5 @@
 <?php /* Template Name: Landing Page */ ?>
-<?php get_header(); ?>
+<?php get_header('blank'); ?>
 
 <div class="container-fluid">
     <div class="row">
@@ -8,7 +8,7 @@
             <div class="landing-banner-content">
                 <h2>Nerdy, Geeky Events Near You </h2>
                 <div class="landing-serach">
-                    <form method="GET" action="http://localhost/event-management/events">
+                    <form method="GET" action="<?php echo site_url(); ?>/events">
                         <input type="text" class="event-search"  id="search_keywords" name="search_keywords" placeholder="Search for events">
                         <input type="text" class="city-search" id="search_location"name="search_location" placeholder="Los Angeles">
                         <button type="submit" class="landing-submit-btn">Search</button>
@@ -26,4 +26,4 @@
     </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer('blank'); ?>
