@@ -84,7 +84,6 @@ var SellTicket= function () {
 	        /// <returns type="generate name and id " />     
 	        /// <since>1.0.0</since>  			
 			addLink :function(event) {
-				console.log('asdasd');
 			    
 			    Common.logInfo("SellTicket.addLink...");
 			    
@@ -98,8 +97,7 @@ var SellTicket= function () {
 				});
 		
 				var html = jQuery(this).data('row').replace( /%%repeated-row-index%%/g, max_index + 1 );
-				//jQuery(this).before( html );
-				jQuery(this).parent().parent().parent().find('.ticketwprs').append(html);
+				jQuery(this).before( html );
 				
 				//initial hide settings details			
 			    jQuery( '.settings-details' ).hide();

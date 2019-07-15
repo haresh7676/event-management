@@ -4,11 +4,130 @@
 div.event_listings ul.event_listings.container{margin: 0 auto;border: 0px;}
 
 div.event_listings ul.event_listings .box-layout{font-family: 'Open Sans', sans-serif !important;border: 0px; margin: 0px; padding: 15px;width: 33.3%;}
-.signin-box input[type="email"], .signin-box input[type="text"], .signin-box input[type="password"] {
+input[type="email"], input[type="text"], input[type="password"] {
     border-color:#CCCCCC !important;
 }
-.signin-box input[type="email"]:focus, .signin-box input[type="text"]:focus, .signin-box input[type="password"]:focus {
+input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus {
     outline: -webkit-focus-ring-color auto 1px;
+}
+.basic-info-form .form-group .fieldlabelinfo{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column;
+}
+.basic-info-form .form-group span.introtext{
+    font-size: 15px;
+    color: #9B9B9B;
+    font-weight: bold;margin-top: 5px;}
+
+.basic-info-form .form-group.fieldset-event_category{
+    width: 48%;
+}
+.basic-info-form .form-group.fieldset-event_publish__status{
+    width: 48%;
+}
+.basic-info-form .form-group.fieldset-event_publish__status .field label{
+    display: flex;
+    overflow: hidden;
+    padding: 0px;
+}
+.basic-info-form{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.basic-info-form .form-group{
+    width: 100%;
+    border-bottom: 0px !important;
+}
+.basic-info-form .form-group.field_mideam{
+    width: 33%;
+    
+}
+.basic-info-form .form-group.field_small{
+    width: 13%;    
+}
+.basic-info-form .form-group .input-text.hasDatepicker{
+
+}
+.basic-info-form .form-group .input-text.hasDatepicker{
+    background: url(../../assets/images/calender-icn.png) center left no-repeat;
+    padding-left: 45px;    
+    position: absolute;
+    /*border-right: 1px solid #ccc;*/
+    background-position: 11px 8px;
+}
+
+
+.basic-info-form .form-group.fieldset-event_publish__status .field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.basic-info-form .form-group.fieldset-event_publish__status .field span {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    box-shadow: 0px 2px 4px rgba(119, 93, 255, 0.2);
+    border-radius: 4px;
+    width: 150px;
+    background: #fff;
+    color: #74ACF6;
+    border: 2px solid #74acf6;
+    font-weight: 500;
+    padding: .375rem .75rem;
+    text-align: center;
+
+    /*background-color: #e4e4e4;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    padding: 8px 16px;
+    margin-right: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.1s ease-in-out;*/
+}
+
+.basic-info-form .form-group.fieldset-event_publish__status .field span:hover {
+    cursor: pointer;
+}
+
+.basic-info-form .form-group.fieldset-event_publish__status .field input:checked + span {
+    background-color: #74acf6;
+    box-shadow: none;
+    color: #fff;
+}
+
+.ticket-fields-form .ticketinner .ticketbuttonwpr{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;    
+}
+.ticket-fields-form .ticketinner .ticketbuttonwpr .field-tickets{
+    padding: 0px 10px;
+}
+.ticket-fields-form .ticketinner .ticketbuttonwpr .field-tickets .event_ticket_add_link{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    box-shadow: 0px 2px 4px rgba(119, 93, 255, 0.2);
+    border-radius: 4px;
+    background: #fff;
+    color: #74ACF6;
+    border: 2px solid #74acf6;
+    font-weight: 500;
+    padding: 1.5rem 4.75rem;
+    text-align: center;
+}
+.basic-info-form .form-group label span.rediolabel{
+    color:#4A4A4A;
 }
 .signin-box input[type="email"] {
     border: 1px solid #CCCCCC;

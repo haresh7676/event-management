@@ -1,7 +1,6 @@
 /* Manage Events Contact Font Family*/
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700&display=swap');
-/* font-family: 'Karla', sans-serif; */
-/* Manage Events Contact Font Family*/
+/* font-family: 'Karla', sans-serif; */ /*== Manage Events Font Family ==*/
 
 /* Events Profile Font Family*/
 @font-face {
@@ -120,8 +119,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 100px;
-    padding-top: 100px;
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 .landing-page-content .landing-page-title img {
     height: 77px;
@@ -162,6 +161,8 @@
 }
 .u-events-box .u-event-details {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
     border-radius: 0px 0px 8px 8px;
     padding: 15px;
     display: flex;
@@ -226,12 +227,14 @@
     color: #000000;
     line-height: 61px;
     font-weight: 600;
-    padding: 61px 0 61px 0;
+    padding: 60px 0;
 }
 .browe-event-content .browe-event-filter {
     padding: 17px 0 13px 0;
     background: #FAFAFA;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
 }
 .browe-event-filter .landing-serach input {
     background-color: rgba(255, 255, 255, 0.35);
@@ -244,6 +247,8 @@
     float: right;
     background: #775DFF;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
     border-radius: 5px;
     border: none;
     padding: 5px 20px 5px 6px;
@@ -265,6 +270,8 @@
     position: absolute;
     left: 0px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
     background: #FAFAFA;
     width: 100%;
     top: 82px;
@@ -416,7 +423,7 @@
 }
 .ticket-address .ticket-contact ul li.facebook a { background: #3b5998;}
 .ticket-address .ticket-contact ul li.twitter a  { background: #55acee;}
-.ticket-address .ticket-contact ul li.g-plus a   { background: #ffffff; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+.ticket-address .ticket-contact ul li.g-plus a   { background: #ffffff; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
 .ticket-address .ticket-contact ul li.email a    { background: #0971bd;}
 .ticket-address .ticket-contact ul li.linkedin a { background: #0077b5;}
 
@@ -427,6 +434,8 @@
     width: 100%;
     border-radius: 10px;
     box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    -webkit-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    -moz-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
     background: #FDFDFD;
     padding: 20px 30px 40px 30px;
 }
@@ -478,6 +487,8 @@
     width: 100%;
     background: #FDFDFD;
     box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    -webkit-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    -moz-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 50px;
@@ -521,6 +532,8 @@
 .e-profile-calendar .e-p-date-picker {
     background: #FFFFFF;
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    -webkit-box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
 }
 .e-profile-calendar .e-p-date-picker img {
@@ -548,6 +561,8 @@
 .event-profile-content .e-profile-gallery {
     background: #FAFAFA;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     margin-bottom: 40px;
     padding: 30px;
@@ -788,6 +803,8 @@
 .payment-settings .add-new-card {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     width: 450px;
     padding: 20px 20px 40px 20px;
@@ -902,6 +919,8 @@
     display: flex;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(119, 93, 255, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 0px 10px rgba(119, 93, 255, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 10px rgba(119, 93, 255, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     padding: 15px 30px 15px 15px;
     margin-bottom: 20px;
@@ -915,6 +934,8 @@
     height: 160px;
     border-radius: 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .my-tickets .my-ticket-card-row .my-ticket-pic img {
     width: 100%;
@@ -957,6 +978,8 @@
     height: 50px;
     background: #775DFF;
     box-shadow: 0px 2px 4px rgba(119, 93, 255, 0.2);
+    -webkit-box-shadow: 0px 2px 4px rgba(119, 93, 255, 0.2);
+    -moz-box-shadow: 0px 2px 4px rgba(119, 93, 255, 0.2);
     border-radius: 4px;
     margin-bottom: 20px;
     border: none;
@@ -1182,13 +1205,309 @@
 .m-e-contact-details ul li.disabled .m-e-contact-profile-desc h3 {
     color: #7d7d7d;
 }
-
 /* AR479-All tabbing page css end */
 
+/* AR479-Event Detail css start */
+.event-detail-page {
+    margin-top: 60px;
+}
+.event-detail-page .u-event-details {
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+}
+.event-detail-page .u-events-box .u-event-pic {
+    border-radius: 4px 4px 0 0;
+}
+.event-detail-page .u-event-details .event-disc {
+    margin-left: 0;
+    padding: 0px;
+}
+.event-detail-page .event-disc .get-link {
+    font-size: 14px;
+    color: #74ACF6;
+    text-decoration: none;
+}
+.event-detail-page .event-disc ul li {
+    margin-top: 5px;
+    display: inline-block;
+}
+.event-detail-page .event-disc ul li:last-child {
+    margin-top: 0px;
+}
+.event-detail-page .grab-tickets {
+    width: 100%;
+    background: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.grab-tickets .grab-tickets-title {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+.grab-tickets .grab-tickets-title span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+    margin-right: 25px;
+}
+.grab-tickets .grab-tickets-title a {
+    font-size: 16px;
+    color: #74ACF6;
+    text-decoration: none;
+}
+.grab-tickets .grab-tickets-step {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #C4C4C4;
+}
+.grab-tickets .grab-tickets-box {
+    text-align: center;
+    flex: 1;
+    border-right: 1px solid #C4C4C4;
+    min-height: 172px;
+    padding: 20px 10px;
+}
+.grab-tickets .grab-tickets-box:last-child {
+    border-right: 0px;
+}
+.grab-tickets .grab-tickets-box span {
+    font-size: 18px;
+    color: #000000;
+    display: block;
+}
+.grab-tickets-box .grab-tickets-icon {
+    width: 60px;
+    height: 60px;
+    background: #FFD3ED;
+    border-radius: 50%;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 60px;
+}
+.grab-tickets-box .grab-tickets-icon i {
+    line-height: 60px;
+    color: #fff;
+    font-size: 30px;
+}
+.grab-ticket-card .grab-tickets-title {
+    min-height: 70px;
+}
+.grab-ticket-card .grab-tickets-title span {
+    font-size: 30px;
+    font-weight: bold;
+    flex: 1;
+}
+.grab-ticket-card .grab-tickets-title a {
+    color: #74ACF6;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.grab-ticket-card .grab-tickets-card-detail {
+    width: 100%;
+}
+.grab-tickets-card-detail ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.grab-tickets-card-detail ul li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #C4C4C4;
+}
+.grab-tickets-card-detail ul li span {
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    flex: 1;
+    padding-right: 10px;
+}
+.grab-tickets-card-detail ul li label {
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+    margin: 0px;
+}
+.event-detail-page .ticket-insurance {
+    padding: 20px;
+}
+.ticket-insurance .insurance-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+}
+.ticket-insurance .insurance-detail p {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+    line-height: 23px;
+}
+/* AR479-Event Detail css end */
 
+/* AR479-Volnuteer Form css start */
+.volnuteer-form-btn {
+    background: #775DFF;
+    color: #ffffff;
+    margin-top: 30px;
+    padding: 6px 18px;
+    font-size: 20px;
+    outline: none;
+}
+.volnuteer-form-btn:hover, .volnuteer-form-btn:focus {
+    color: #ffffff;
+    outline: none;
+    box-shadow: none;
+}
+.volnuteer-form .modal-content {
+    border-radius: 2px;
+    border: none;
+}
+.volnuteer-form .modal-header {
+    display: block;
+    padding: 20px 24px 0 20px;
+    border-bottom: 0px;
+}
+.volnuteer-form .modal-header .close {
+    width: auto;
+    text-align: right;
+    margin: 0px;
+    opacity: 1;
+    padding: 0px;
+}
+.volnuteer-form .modal-header .close:hover, .volnuteer-form .modal-header .close:focus {
+    opacity: 1;
+    outline: none;
+}
+.volnuteer-form .modal-body {
+    padding: 0px;
+}
+.volnuteer-form .modal-body .modal-title {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    color: #212121;
+    font-family: 'Open Sans', sans-serif;
+}
+.volnuteer-form .volunteer-body {
+    width: 100%;
+    float: left;
+    text-align: left;
+    padding: 20px 50px;
+}
+.volnuteer-form .volunteer-filed-row {
+    margin-bottom: 20px;
+}
+.volnuteer-form .volunteer-filed-row span {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.volnuteer-form .volunteer-filed-row input {
+    height: 50px;
+    border: 1px solid #DADADA;
+    border-radius: 2px;
+    padding: 0 15px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+.volnuteer-form .volunteer-filed-row textarea {
+    min-height: 80px;
+    border: 1px solid #DADADA;
+    border-radius: 3px;
+    padding: 10px 15px;
+    outline: none;
+    width: 100%;
+    -webkit-resize: none;
+    resize: none;
+    font-size: 16px;
+    line-height: normal;
+}
+.volnuteer-form .volunteer-submit-btn {
+    text-align: right;
+}
+.volnuteer-form .volunteer-submit-btn button {
+    background: transparent;
+    border: 1px solid #775DFF !important;
+    border-radius: 40px;
+    font-size: 18px;
+    text-align: center;
+    color: #775DFF;
+    border: none;
+    box-shadow: none;
+    padding: 8px 50px;
+    outline: none;
+}
+/* AR479-Volnuteer Form css end */
 
+/* AR479-Report Problem css start */
+.report-problem .contact-us-title {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #212121;
+    margin-bottom: 20px;
+}
+.report-problem .contact-filed-row {
+    margin-bottom: 20px;
+}
+.report-problem .contact-filed-row span {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.report-problem .contact-filed-row input {
+    height: 50px;
+    background: #F0F0F0;
+    border: 1px solid #DADADA;
+    border-radius: 2px;
+    padding: 0 15px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+.report-problem .contact-filed-row textarea {
+    min-height: 200px;
+    background: #F0F0F0;
+    border: 1px solid #DADADA;
+    border-radius: 2px;
+    padding: 10px 15px;
+    outline: none;
+    width: 100%;
+    -webkit-resize: none;
+    resize: none;
+    font-size: 16px;
+    line-height: normal;
+}
 
-
+.report-problem .contact-submit-btn {
+    text-align: right;
+}
+.report-problem .contact-submit-btn button {
+    background: transparent;
+    border: 1px solid #775DFF !important;
+    border-radius: 40px;
+    font-size: 18px;
+    text-align: center;
+    color: #775DFF;
+    border: none;
+    box-shadow: none;
+    padding: 8px 50px;
+    outline: none;
+}
+/* AR479-Report Problem css end */
 
 
 
@@ -1309,6 +1628,9 @@
     .common-table-design .table tbody tr td {
         white-space: nowrap;
     }
+    .grab-tickets .grab-tickets-box span {
+        font-size: 16px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1023px) {
     .landing-page-banner .landing-banner-content h2 {
@@ -1405,6 +1727,9 @@
     }
     .common-table-design .table tbody tr td {
         white-space: nowrap;
+    }
+    .grab-tickets .grab-tickets-box span {
+        font-size: 16px;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1572,6 +1897,39 @@
     }
     .common-table-design .table tbody tr td {
         white-space: nowrap;
+    }
+    .event-detail-page {
+        margin-top: 40px;
+    }
+    .event-detail-page .u-events-box .u-event-pic {
+        height: auto;
+    }
+    .grab-tickets .grab-tickets-box {
+        padding: 10px 5px;
+        min-height: inherit;
+    }
+    .grab-tickets .grab-tickets-box span {
+        font-size: 13px;
+    }
+    .grab-tickets-box .grab-tickets-icon {
+        margin-top: 10px;
+    }
+    .grab-tickets-box .grab-tickets-icon i {
+        font-size: 25px;
+    }
+    .grab-tickets-box .grab-tickets-icon img {
+        width: 30px;
+    }
+    .grab-ticket-card .grab-tickets-title span {
+        font-size: 18px;
+    }
+    .ticket-insurance .insurance-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .ticket-insurance .insurance-detail p {
+        font-size: 16px;
+        line-height: normal;
     }
 }
 @media (min-width: 768px) {
@@ -1769,6 +2127,8 @@
         z-index: 9;
         border: none;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+        -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+        -moz-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
         transition: ease-in-out 0.5s;
         -webkit-transition: ease-in-out 0.5s;
     }
@@ -1944,6 +2304,74 @@
     }
     .common-table-design .table tbody tr td {
         white-space: nowrap;
+    }
+    .event-detail-page {
+        margin-top: 40px;
+    }
+    .event-detail-page .event-disc ul li {
+        font-size: 14px;
+    }
+    .event-detail-page .u-events-box {
+        margin-bottom: 20px;
+    }
+    .grab-tickets .grab-tickets-step {
+        display: block;
+    }
+    .grab-tickets .grab-tickets-box {
+        border-right: none;
+        border-bottom: 1px solid #C4C4C4;
+        padding: 10px 0 0 0;
+        min-height: inherit;
+    }
+    .grab-tickets .grab-tickets-box:last-child {
+        border-bottom: none;
+    }
+    .grab-tickets-box .grab-tickets-icon {
+        margin: 10px 0;
+    }
+    .grab-ticket-card .grab-tickets-title span {
+        font-size: 18px;
+        line-height: normal;
+    }
+    .grab-tickets-card-detail ul li span {
+        font-size: 16px;
+        line-height: normal;
+    }
+    .grab-ticket-card .grab-tickets-title {
+        min-height: 60px;
+    }
+    .ticket-insurance .insurance-title {
+        font-size: 18px;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+    .ticket-insurance .insurance-detail p {
+        font-size: 14px;
+    }
+    .volnuteer-form {
+        padding-right: 0px !important;
+    }
+    .volnuteer-form .modal-header {
+        padding-right: 20px;
+    }
+    .volnuteer-form .volunteer-filed-row {
+        margin-bottom: 10px;
+    }
+    .volnuteer-form .volunteer-filed-row span {
+        text-align: left !important;
+        font-size: 13px;
+    }
+    .volnuteer-form .volunteer-body {
+        padding: 20px;
+    }
+    .report-problem .contact-us-title {
+        margin-bottom: 10px;
+    }
+    .report-problem .contact-filed-row {
+        margin-bottom: 10px;
+    }
+    .report-problem .contact-filed-row span {
+        font-size: 13px;
     }
 }
 @media (max-width: 567px) {

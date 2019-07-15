@@ -41,6 +41,8 @@ function projectname_scripts() {
 
     wp_enqueue_style( 'custom-css', get_theme_file_uri( '/assets/css/custom.css' ), array(), rand(0,999) );
 
+    //wp_enqueue_script( 'sell-tickets-wp', get_theme_file_uri( '/assets/js/sell-ticket.js' ), array( 'jquery' ), '1.0', true );
+
     
 
     /*    wp_enqueue_style( 'magnific-popup-css', get_theme_file_uri( '/assets/css/magnific-popup.css' ), array(), '1.0' );
@@ -69,7 +71,7 @@ function projectname_scripts() {
 
 
 
-	wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/custom.js' ), array( 'jquery' ), '1.0', true );
+	//wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/custom.js' ), array( 'jquery' ), '1.0', true );
 
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

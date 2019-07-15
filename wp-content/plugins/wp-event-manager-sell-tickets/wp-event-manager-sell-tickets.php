@@ -207,7 +207,7 @@ class WP_Event_Manager_Sell_Tickets extends GAM_Updater {
 	{	
 		global $woocommerce;
 		$ajax_url         = WP_Event_Manager_Ajax::get_endpoint();
-		wp_register_script( 'wp-event-manager-sell-tickets-sell-ticket', EVENT_MANAGER_SELL_TICKETS_PLUGIN_URL . '/assets/js/sell-ticket.min.js', array('jquery','wp-event-manager-common'), EVENT_MANAGER_SELL_TICKETS_VERSION, true );		
+		wp_register_script( 'wp-event-manager-sell-tickets-sell-ticket', EVENT_MANAGER_SELL_TICKETS_PLUGIN_URL . '/assets/js/sell-ticket.js', array('jquery','wp-event-manager-common'), EVENT_MANAGER_SELL_TICKETS_VERSION, true );		
 		
 		//localize javascript file
 		wp_localize_script( 'wp-event-manager-sell-tickets-sell-ticket', 'event_manager_sell_tickets_sell_ticket', array( 
