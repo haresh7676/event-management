@@ -76,21 +76,52 @@
                 <div class="col-lg-5">
                     <div class="ticket-address">
                         <span>
-                             <?php $newformate = 'D, M j, Y'; ?>
+                            <?php $newformate = 'D, M j, Y'; ?>
                             <?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>
                         </span>
                         <h3><?php echo esc_attr( $post->post_title ); ?></h3>
-                        <p>Hosted By <?php echo esc_attr( $post->post_title ); ?></p>
+                        <p>Hosted By  <?php echo display_organizer_name(); ?></p>
                         <label><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png"> <?php echo get_event_location() ?></label>
                         <div class="ticket-contact">
                             <h4>Contact</h4>
+                            <?php
+                            $websiteurl= get_organizer_website();
+                            $facebook= get_organizer_facebook();
+                            $twitter= get_organizer_twitter();
+                            $linkedin=get_organizer_linkedin();
+                            $xing=get_organizer_xing();
+                            $pinterest=get_organizer_pinterest();
+                            $instagram=get_organizer_instagram();
+                            $youtube=get_organizer_youtube();
+                            $googleplus=get_organizer_google_plus();
+                            if(   $websiteurl||
+                                  $facebook  ||
+                                  $twitter   ||
+                                  $linkedin  ||
+                                  $xing      ||
+                                  $pinterest ||
+                                  $instagram ||
+                                  $youtube   ||
+                                  $googleplus )
+                           {  ?>
                             <ul>
-                                <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li class="g-plus"><a href="#"><img src="assets/images/g-plus.png" alt=""></i></a></li>
-                                <li class="email"><a href="#"><i class="fas fa-envelope"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <?php if($facebook) { ?>
+                                    <li class="facebook"><a href=" <?php echo $facebook; ?>"  class="facebook" target="_blank" itemprop="facebook" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>
+                                <?php } ?>
+                                <?php if($twitter) { ?>
+                                    <li class="twitter"><a href=" <?php echo $twitter; ?>"  class="twitter"  target="_blank" itemprop="twitter" rel="nofollow"><i class="fab fa-twitter"></i></a></li>
+                                <?php } ?>
+                                <?php if($googleplus) { ?>
+                                    <li class="g-plus"><a href=" <?php echo $googleplus; ?>"  class="g-plus"  target="_blank" itemprop="twitter" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/g-plus.png" alt=""></a></li>
+                                <?php } ?>
+                                <?php if($youtube) { ?>
+                                    <li class="youtube"><a href=" <?php echo $youtube; ?>"  class="youtube-link" target="_blank" itemprop="youtube" rel="nofollow"><i class="fab fa-youtube"></i></a></a></li>
+                                <?php } ?>
+                                <?php if($linkedin) { ?>
+                                    <li class="linkedin"><a href=" <?php echo $linkedin; ?>" class="linkedin-link" target="_blank" itemprop="linkedin" rel="nofollow"><i class="fab fa-linkedin-in"></i></li>
+                                <?php } ?>
                             </ul>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -163,13 +194,14 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="e-p-date-picker">
-                        <img src="assets/images/calendar.png" class="img-fluid" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.png" class="img-fluid" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="date-and-time">
                         <h3 class="e-p-cart-title">Date And Time</h3>
-                        <span>Fri, May 31, 2019, 5:00 PM – Sun,<br> June 2, 2019, 6:00 PM EDT</span>
+                        <?php $newformate = 'D, M j, Y'; ?>
+                        <span><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_end_time();?></span>
                         <a href="#" class="view-detail">Add to Calendar</a>
 
                         <button type="button" class="btn volnuteer-form-btn" data-toggle="modal" data-target="#exampleModal">Volunteer</button>
@@ -178,7 +210,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <img src="assets/images/close.png" class="modal-close-icon" alt="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.png" class="modal-close-icon" alt="">
                                         </button>
                                     </div>
                                     <div class="modal-body">
@@ -306,20 +338,20 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <div class="gallery-big-photo">
-                            <img src="assets/images/gallery-big-photo.png" class="img-fluid" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo.png" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8">
                         <div class="gallery-small-photos">
                             <ul>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo1.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo2.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo2.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo2.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo3.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo4.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo4.png" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/gallery-big-photo4.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo1.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo2.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo2.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo2.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo3.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo4.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo4.png" alt=""></a></li>
+                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo4.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
