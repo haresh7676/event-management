@@ -176,6 +176,61 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
 opacity: 1;
 }
 .browe-event-content .browe-event-filter{position: relative;}
+.buy-ticket .ticket-pass-buy .tickets-details, .buy-ticket .ticket-pass-buy .tickets-details table{
+    border: 0px;
+    padding: 0;
+    margin-top: 0px;
+}
+.buy-ticket .ticket-pass-buy .section-title {
+    display: none;
+}
+.buy-ticket .ticket-pass-buy table thead{
+    display: none;
+}
+.buy-ticket .ticket-pass-buy table thead tr td, .buy-ticket .ticket-pass-buy table tbody tr td {
+    display: none;
+    padding: 0px;
+    border: 0px;
+}
+.buy-ticket .ticket-pass-buy table tbody tr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 23px;
+}
+.buy-ticket .ticket-pass-buy table tbody tr td:first-child{
+    display: inline-block;
+    flex: 1;
+    font-size: 30px;
+    padding-right: 10px;
+    line-height: 1;
+}
+.buy-ticket .ticket-pass-buy table tbody tr td:nth-child(2){
+    display: inline-block;
+    flex: none;
+    font-size: 32px;
+    font-weight: 700;
+    color: #775DFF;
+    line-height: 1;
+    margin: 0px;
+}
+
+.buy-ticket .ticket-pass-buy table tfoot tr td:first-child{display: none}
+.buy-ticket .ticket-pass-buy table tfoot tr td #order_now{
+    width: 100%;
+    background: #775DFF;
+    border-radius: 10px;
+    height: 60px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin-top: -10px;
+    letter-spacing: 0.8px;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
