@@ -241,6 +241,33 @@ opacity: 1;
     overflow: hidden;
     margin-bottom: 20px;
 }
+/*My account*/
+.custom-tab-design .sidebar-tabs nav ul{
+    list-style: none;
+    padding: 0px;
+}
+.custom-tab-design .sidebar-tabs nav li {
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+}
+.custom-tab-design .sidebar-tabs nav li a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 0px;
+    padding: 0px;
+    text-decoration: none;
+    display: block;
+}
+.custom-tab-design .sidebar-tabs nav li.is-active a{
+    background: #FFD3ED;
+    color: #ffffff;
+    font-weight: bold;
+}
+.woocommerce .custom-tab-design form .form-row label{
+    line-height: initial;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
