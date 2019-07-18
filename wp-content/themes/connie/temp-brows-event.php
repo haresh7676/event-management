@@ -4,7 +4,7 @@
   <div class="browe-event-content">
     <div class="browe-event-filter">
       <div class="container">
-         <form method="GET" action="http://localhost/event-management/events">
+         <form method="GET" action="<?php echo site_url(); ?>/events">
         <div class="landing-serach">
           <!-- <input type="text" class="event-search" placeholder="Search for events">
           <input type="text" class="city-search" placeholder="Los Angeles">
