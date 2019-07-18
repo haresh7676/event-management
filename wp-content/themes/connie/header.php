@@ -16,7 +16,7 @@
             <div class="topnav-right pull-right">
                 <ul>
                     <li class="browser-event"><a href="<?php echo site_url(); ?>/events/">Browser events</a></li>
-                    <li class="active"><a href="<?php echo site_url(); ?>/post-an-event/">Create Event</a></li>
+                    <li class="active"><a href="<?php echo site_url(); ?>/create-event/">Create Event</a></li>
                     <li><a href="<?php echo site_url(); ?>/sign-in/">Sign in</a></li>
                 </ul>
             </div>

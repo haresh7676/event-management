@@ -233,6 +233,14 @@ opacity: 1;
 .ticket-address .ticket-contact ul li.youtube a{
     background:#c4302b;
 }
+.gallery-small-photos.gallery-more-photos ul li {
+    float: left;
+    padding: 0 10px;
+    width: calc(100% / 6);
+    height: 165px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }

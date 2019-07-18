@@ -316,48 +316,75 @@
                 </div>
             </div>
         </div> <!-- Location map -->
-        <div class="profie-cart-box e-profile-location-video profile-video">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <div class="map-video-box">
-                        <iframe width="100%" height="400" style="border:0" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h3 class="e-p-cart-title">Videos</h3>
-                    <span>We are Quirkcon</span>
-                </div>
-            </div>
-        </div><!-- Profile Videp -->
-        <div class="profie-cart-box e-profile-gallery">
-            <div class="e-p-gallery-title">
-                <h4>Photos</h4>
-                <span><a href="#">View more</a></span>
-            </div>
-            <div class="e-p-gallery-photos">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="gallery-big-photo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo.png" class="img-fluid" alt="">
+        <?php $eventvideo = get_post_meta($post->ID,'_event_video',true);
+        if(isset($eventvideo) && !empty($eventvideo)){
+            $embed = getYoutubeEmbedUrl($eventvideo);
+            if(!empty($embed)) {
+                ?>
+                <div class="profie-cart-box e-profile-location-video profile-video">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="map-video-box">
+                                <iframe width="100%" height="400" style="border:0"
+                                        src="<?php echo $embed; ?>"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <h3 class="e-p-cart-title">Videos</h3>
+                            <!--<span>We are Quirkcon</span>-->
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="gallery-small-photos">
-                            <ul>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo1.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo2.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo2.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo2.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo3.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo4.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo4.png" alt=""></a></li>
-                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery-big-photo4.png" alt=""></a></li>
-                            </ul>
+                </div><!-- Profile Videp -->
+                <?php
+            }
+        } ?>
+        <?php $eventalbum = get_post_meta($post->ID,'_event_album',true);
+        if(isset($eventalbum) && !empty($eventalbum)){
+            ?>
+            <div class="profie-cart-box e-profile-gallery">
+                <div class="e-p-gallery-title">
+                    <h4>Photos</h4>
+                    <?php if(count($eventalbum) > 9) { ?>
+                        <span><a href="#" class="view-more-video">View more</a></span>
+                    <?php } ?>
+                </div>
+                <div class="e-p-gallery-photos">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="gallery-big-photo">
+                                <img src="<?php echo $eventalbum[0]; ?>" class="img-fluid" alt="">
+                            </div>
                         </div>
+                        <div class="col-lg-8 col-md-8">
+                            <div class="gallery-small-photos">
+                                <ul>
+                                    <?php if(count($eventalbum) > 1){
+                                        $lastcount = (count($eventalbum) > 9) ? 8 : $eventalbum;
+                                        for ($x =1; $x <= $lastcount; $x++) {
+                                            echo '<li><a href="#"><img src="'.$eventalbum[$x].'" alt=""></a></li>';
+                                        }
+                                    } ?>
+                                </ul>
+                            </div>
+                        </div>
+                         <?php if(count($eventalbum) > 9) { ?>
+                             <div class="col-lg-12 col-md-12 morephotowpr">
+                                 <div class="gallery-small-photos gallery-more-photos">
+                                     <ul>
+                                         <?php if(count($eventalbum) > 9){
+                                             $lastcount = count($eventalbum);
+                                             for ($x =9; $x < $lastcount; $x++) {
+                                                 echo '<li><a href="#"><img src="'.$eventalbum[$x].'" alt=""></a></li>';
+                                             }
+                                         } ?>
+                                     </ul>
+                                 </div>
+                             </div>
+                         <?php } ?>
                     </div>
                 </div>
-            </div>
-        </div><!-- Gallery -->
+            </div><!-- Gallery -->
+        <?php } ?>
     </div>
 </div>
 <?php endif; ?>

@@ -304,7 +304,7 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
                 // Adding hook so that anyone can add action on user registration
                 do_action('user_register', $user_id);
 
-                if(isser($_POST['wpmp_organization']) && !empty($_POST['wpmp_organization'])){
+                if(isset($_POST['wpmp_organization']) && !empty($_POST['wpmp_organization'])){
                     add_user_meta($user_id, 'organization', $_POST['wpmp_organization']);
                 }
 

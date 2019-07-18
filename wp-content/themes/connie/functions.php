@@ -71,7 +71,7 @@ function projectname_scripts() {
 
 
 
-	//wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/custom.js' ), array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), '1.0', true );
 
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
