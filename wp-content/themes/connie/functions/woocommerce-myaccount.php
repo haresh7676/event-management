@@ -50,7 +50,7 @@ add_action( 'init', 'connie_add_my_account_endpoint' );
  * Manage Event content
  */
 function connie_manage_events_endpoint_content() {
-    echo 'Your new content';
+    require_once(get_template_directory() .'/include/manage-events.php');
 }
 
 add_action( 'woocommerce_account_manage-events_endpoint', 'connie_manage_events_endpoint_content' );
