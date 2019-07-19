@@ -233,6 +233,7 @@ opacity: 1;
 .ticket-address .ticket-contact ul li.youtube a{
     background:#c4302b;
 }
+.morephotowpr{display: none;}
 .gallery-small-photos.gallery-more-photos ul li {
     float: left;
     padding: 0 10px;

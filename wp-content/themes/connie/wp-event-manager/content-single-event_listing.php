@@ -340,11 +340,12 @@
         } ?>
         <?php $eventalbum = get_post_meta($post->ID,'_event_album',true);
         if(isset($eventalbum) && !empty($eventalbum)){
+            $albumcount = count($eventalbum);
             ?>
             <div class="profie-cart-box e-profile-gallery">
                 <div class="e-p-gallery-title">
                     <h4>Photos</h4>
-                    <?php if(count($eventalbum) > 9) { ?>
+                    <?php if($albumcount > 9) { ?>
                         <span><a href="#" class="view-more-video">View more</a></span>
                     <?php } ?>
                 </div>
@@ -357,23 +358,23 @@
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="gallery-small-photos">
-                                <ul>
-                                    <?php if(count($eventalbum) > 1){
-                                        $lastcount = (count($eventalbum) > 9) ? 8 : $eventalbum;
-                                        for ($x =1; $x <= $lastcount; $x++) {
-                                            echo '<li><a href="#"><img src="'.$eventalbum[$x].'" alt=""></a></li>';
-                                        }
-                                    } ?>
-                                </ul>
+                                <?php if($albumcount > 1){
+                                    echo '<ul>';
+                                    $lastcount = ($albumcount > 9) ? 9 : $albumcount;
+                                    for ($x =1; $x < $lastcount; $x++) {
+                                        echo '<li><a href="#"><img src="'.$eventalbum[$x].'" alt=""></a></li>';
+                                    }
+                                    echo '</ul>';
+                                } ?>
                             </div>
                         </div>
-                         <?php if(count($eventalbum) > 9) { ?>
+                         <?php if($albumcount > 9) { ?>
                              <div class="col-lg-12 col-md-12 morephotowpr">
                                  <div class="gallery-small-photos gallery-more-photos">
                                      <ul>
-                                         <?php if(count($eventalbum) > 9){
-                                             $lastcount = count($eventalbum);
-                                             for ($x =9; $x < $lastcount; $x++) {
+                                         <?php if($albumcount > 9){
+                                             $lastcount = $albumcount;
+                                             for ($x=9; $x < $lastcount; $x++) {
                                                  echo '<li><a href="#"><img src="'.$eventalbum[$x].'" alt=""></a></li>';
                                              }
                                          } ?>
@@ -384,7 +385,7 @@
                     </div>
                 </div>
             </div><!-- Gallery -->
-        <?php } ?>
+        <?php }  ?>
     </div>
 </div>
 <?php endif; ?>
