@@ -141,7 +141,7 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     padding-right: 15px;
 }
 
-.defulat-custom-btn {
+.woocommerce button.button.defulat-custom-btn, .defulat-custom-btn {
     background: #775DFF;
     border: 1px solid #775DFF;
     box-sizing: border-box;
@@ -155,7 +155,7 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     font-weight: bold;
 }
 
-.defulat-custom-btn:hover {
+.woocommerce button.button.defulat-custom-btn, .defulat-custom-btn:hover {
     color: #fff;
 }
 .buttonwpr{
@@ -268,6 +268,34 @@ opacity: 1;
 }
 .woocommerce .custom-tab-design form .form-row label{
     line-height: initial;
+}
+.event-dashboard-actions{list-style: none; padding: 0;}
+.event-dashboard-actions li{}
+.custom-tab-design .sub-tab-design ul .nav-item.active a{
+    background: transparent;
+    border-bottom: 4px solid #F7B0C0;
+}
+.custom-tab-design .sub-tab-design ul.nav-pills>li.active>a{
+    background-color: transparent;
+}
+.report-problem .contact-filed-row span.wpcf7-form-control-wrap {
+    width: 100%;
+}
+.report-problem .contact-submit-btn input[type="submit"] {
+    background: transparent;
+    border: 1px solid #775DFF !important;
+    border-radius: 40px;
+    font-size: 18px;
+    text-align: center;
+    color: #775DFF;
+    border: none;
+    box-shadow: none;
+    padding: 8px 50px;
+    outline: none;
+}
+.wpcf7-response-output {
+    width: 100%;
+    float: left;
 }
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}

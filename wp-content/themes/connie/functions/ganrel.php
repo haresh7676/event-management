@@ -3,7 +3,6 @@ add_action( 'template_redirect', 'redirect_to_specific_page' );
 
 function redirect_to_specific_page() {
     if(is_user_logged_in()){
-
     }else {
         $pages = array('create-event');
         if (is_page($pages)) {

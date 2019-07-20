@@ -1,7 +1,7 @@
 <div class="tab-pane manage-events-tab active show" id="manageEvents">
     <div class="sub-tab-design manage-events">
         <ul class="nav nav-pills">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" data-toggle="tab" href="#editEvent">Edit Event</a>
             </li>
             <li class="nav-item">
@@ -20,12 +20,12 @@
                 <a class="nav-link" data-toggle="tab" href="#refunds">Refunds</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#contact">Contact</a>
+                <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
             </li>
         </ul>
         <div class="tab-content">
             <!-- My Ticket Tab1 -->
-            <div class="tab-pane fade" id="editEvent">
+            <div class="tab-pane fade active" id="editEvent">
                 <h2>Edit Events</h2>
                 <?php echo do_shortcode('[event_dashboard]'); ?>
             </div>
@@ -443,7 +443,7 @@
                 </div>
             </div>
             <!-- My Ticket Tab7 -->
-            <div class="tab-pane fade show active" id="contact">
+            <div class="tab-pane fade show" id="contact">
                 <div class="manage-events-contact">
                     <div class="m-e-contact-search">
                         <i class="fas fa-search"></i>

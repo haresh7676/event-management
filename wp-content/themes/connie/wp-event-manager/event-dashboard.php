@@ -1,4 +1,7 @@
 <?php do_action('event_manager_event_dashboard_before'); ?>
+<?php if(!empty($event_dashboard_columns)){
+    unset($event_dashboard_columns['registrations']);
+} ?>
 <div id="event-manager-event-dashboard" class="common-table-design">
     <div class="table-responsive">
 				<table class="table table-bordered event-manager-events table-striped" >

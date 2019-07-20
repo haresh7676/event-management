@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <div class="row">
 <div class="tabbing-page-content">
-    <div class="tabbing-page-title">Account Settings</div>
+    <div class="tabbing-page-title"><?php the_title(); ?></div>
     <div class="custom-tab-design">
         <?php do_action( 'woocommerce_account_navigation' ); ?>
         <div class="woocommerce-MyAccount-content tab-content">

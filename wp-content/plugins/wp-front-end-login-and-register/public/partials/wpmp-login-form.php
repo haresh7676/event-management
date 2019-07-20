@@ -76,14 +76,10 @@
                         ?>
                     </div>     
                     <div class="or-dvd-line"><span>or</span></div>
-
-                    <div class="sgnup-wth">sign up <br>with</div>
-
                     <div class="login-options">
                     <div class="login-options-inr">
-                      <a class="btn tw-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-icn.png" alt=""></a>
                       <a class="btn fb-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icn.png" alt=""></a>
-                      <a class="btn gp-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/google-ps-icn.png" alt=""></a>
+                        <a class="btn gp-btn" href="<?php echo site_url(); ?>/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="<?php echo site_url(); ?>/events/" data-provider="google" data-popupwidth="600" data-popupheight="600"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/google-ps-icn.png" alt=""></a>
                     </div>
                     </div>               
                 </form>

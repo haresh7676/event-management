@@ -66,7 +66,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 	<p class="textfield-save-btn">
 		<?php wp_nonce_field( 'save_account_details', 'save-account-details-nonce' ); ?>
-		<button type="submit" class="woocommerce-Button button" name="save_account_details" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>"><?php esc_html_e( 'Save changes', 'woocommerce' ); ?></button>
+		<button type="submit" class="woocommerce-Button button defulat-custom-btn" name="save_account_details" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>"><?php esc_html_e( 'Save changes', 'woocommerce' ); ?></button>
 		<input type="hidden" name="action" value="save_account_details" />
 	</p>
 
