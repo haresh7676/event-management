@@ -33,4 +33,8 @@ jQuery(document).ready(function($) {
       }
   });
 
+    $(".create-ticket-status .setting").click(function(){
+        $(".setting-description").toggleClass("open");
+    });
+
 });

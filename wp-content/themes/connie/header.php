@@ -12,12 +12,34 @@
 <div class="container-fluid">
     <div class="row">
         <div class="top-header">
-            <div class="logo-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></div>
+            <div class="logo-box"><a href="<?php echo site_url(); ?>/events/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></div>
             <div class="topnav-right pull-right">
                 <ul>
                     <li class="browser-event"><a href="<?php echo site_url(); ?>/events/">Browser events</a></li>
                     <li class="active"><a href="<?php echo site_url(); ?>/create-event/">Create Event</a></li>
-                    <li><a href="<?php echo site_url(); ?>/sign-in/">Sign in</a></li>
+                    <?php if(is_user_logged_in()){
+                        $current_user = wp_get_current_user();
+                        ?>
+                        <div class="dropdown user-top-nav">
+                            <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="usr-nm"><?php echo esc_html( $current_user->display_name ); ?></span><i class="usr-icn-bx"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/user-icn.png" alt=""></i><i class="usr-arrow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/down-arrow.png" alt=""></i>
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <?php $myaccount = site_url().'/my-account'; ?>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/edit-account/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/acc-stng-icn.png" alt=""></i>Account Settings</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/payment-methods/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/paymnt-stng-icn.png" alt=""></i>Payment Settings</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/orders/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/my-tkt-icn.png" alt=""></i>My Tickets</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/manage-events/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mng-evnt-icn.png" alt=""></i>Manage Events</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/help-center/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/help-cntr-icn.png" alt=""></i>Help Center</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/report-problem/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/rprt-prblm-icn.png" alt=""></i>Report a Problem</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/about/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/abut-icn.png" alt=""></i>About</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/terms-and-policies/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tm-plc-icn.png" alt=""></i>Terms and Policies</a>
+                                <a class="dropdown-item" href="<?php echo wp_logout_url(home_url()); ?>"><i class="drp-icn log-out-bg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logout-icn.png" alt=""></i>Logout</a>
+                            </div>
+                        </div>
+                    <?php }else{ ?>
+                        <li><a href="<?php echo site_url(); ?>/sign-in/">Sign in</a></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

@@ -10,7 +10,7 @@
                 <div class="landing-serach">
                     <form method="GET" action="<?php echo site_url(); ?>/events">
                         <input type="text" class="event-search"  id="search_keywords" name="search_keywords" placeholder="Search for events">
-                        <input type="text" class="city-search" id="search_location"name="search_location" placeholder="Los Angeles">
+                        <input type="text" class="city-search" id="search_location"name="search_location" placeholder="Los Angeles"  autocomplete="off">
                         <button type="submit" class="landing-submit-btn">Search</button>
                     </form>
                 </div>

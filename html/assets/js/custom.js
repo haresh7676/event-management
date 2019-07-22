@@ -1,15 +1,19 @@
 // Browe Event Filter toggle
-$(document).ready(function() {
-  $(".browe-event-filter-btn").click(function(){
-    $(".browe-event-filter-content").toggleClass("open");
-  });
+var removeClass = true;
+$(".browe-event-filter-btn").click(function () {
+  $(".browe-event-filter-content").toggleClass('open');
+  removeClass = false;
+});
+$(".browe-event-filter-content").click(function() {
+  removeClass = false;
+});
+$("html").click(function () {
+  if (removeClass) {
+    $(".browe-event-filter-content").removeClass('open');
+  }
+  removeClass = true;
 });
 
-$(document).on("click", function (e) {
-  if (!$(e.target).closest(".browe-event-filter-btn").length){
-    $(".browe-event-filter-content").removeClass("open");
-  }   
-});
 
 // Tab page get height
 $(document).ready(function() {
@@ -37,5 +41,11 @@ $(document).ready(function() {
 $(document).on("click", function (e) {
   if (!$(e.target).closest(".custom-tab-toggle").length){
     $(".custom-tab-toggle, .sidebar-tabs").removeClass("open");
-  }   
+  }
+});
+
+$(document).ready(function() {
+  $(".create-ticket-status .setting").click(function(){
+    $(".setting-description").toggleClass("open");
+  });
 });

@@ -1,15 +1,84 @@
 <?php wp_enqueue_script( 'wp-event-manager-ajax-filters' ); ?>
 <?php do_action( 'event_manager_event_filters_before', $atts ); ?>
+<div class="browe-event-filter">
+    <div class="container">
 <form class="event_filters" id="event_filters">
 	<?php do_action( 'event_manager_event_filters_start', $atts ); ?>
-	<div class="search_events search-form-container">
+	<div class="search_events search-form-containe">
 	<?php do_action( 'event_manager_event_filters_search_events_start', $atts ); ?>
+        <div class="landing-serach">
+        <input type="text" class="event-search" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Search for events', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
+        <input type="text" class="city-search" name="search_location" id="search_location"  placeholder="<?php esc_attr_e( 'Location', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />
+        <button type="submit" class="landing-submit-btn">Search</button>
+        </div>
+        <button class="browe-event-filter-btn">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/filter-icon.png" alt="">Filter
+        </button>
+        <div class="browe-event-filter-content">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="filter-category">
+                        <h3>Category</h3>
+                        <?php
+                        $terms = get_terms( array(
+                            'taxonomy' => 'event_listing_category',
+                            'hide_empty' => false,
+                        ) );
+                        if(!empty($terms)){ ?>
+                            <ul>
+                            <div class="row">
+                            <?php foreach ($terms as $term){
+                                echo '<div class="col-lg-6 col-sm-6">';
+                                echo '<li>';
+                                echo '<div class="fancy-radio radio-inline">';
+                                echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories" class="required">';
+                                echo '<span><i></i>'.$term->name.'</span>';
+                                echo '</div>';
+                                echo '</li>';
+                                echo '</div>';
+                            } ?>
+                            </div>
+                            </ul>
+                        <?php
+                        }
+                       // pr($terms);
+                        ?>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="filter-category">
+                        <h3>Price</h3>
+                        <ul>
+                            <li>
+                                <label class="fancy-radio radio-inline">
+                                    <input type="radio" name="is_multi_year_plan" value="1" id="is_multi_year_plan_yes" class="required">
+                                    <span><i></i>Any Price</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="fancy-radio radio-inline">
+                                    <input type="radio" name="is_multi_year_plan" value="1" id="is_multi_year_plan_yes" class="required">
+                                    <span><i></i>Free</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="filter-apply-btn">
+                        <button class="btn apply">Apply</button>
+                        <button class="btn cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php /* ?>
 		 <div class="row">
 			<!-- Search by keywords section start -->
 			<div class="col-sm-4">
 				<!-- shows default keywords text field  start-->
-				<label for="search_keywords"><?php _e( 'Keywords', 'wp-event-manager' ); ?></label>
-				<input type="text" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Keywords', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" /> 
+				<label for="search_keywords"><?php _e( 'Search for events', 'wp-event-manager' ); ?></label>
+				<input type="text" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Search for events', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
 				<!-- shows default keywords text field end -->
 			</div>
 			<!-- Search by keywords section end-->
@@ -93,12 +162,14 @@
 				</div>
 			<?php endif; ?>	  
 			<!-- Search by any ticket price section end -->  
-    </div> <!-- /row -->
+    </div> <!-- /row --> <?php */ ?>
 
-    <?php do_action( 'event_manager_event_filters_search_events_end', $atts ); ?>	
+    <?php //do_action( 'event_manager_event_filters_search_events_end', $atts ); ?>
 
   </div>
   <?php do_action( 'event_manager_event_filters_end', $atts ); ?>
 </form>
+    </div>
+</div>
 <?php do_action( 'event_manager_event_filters_after', $atts ); ?>
 <noscript><?php _e( 'Your browser does not support JavaScript, or it is disabled. JavaScript must be enabled in order to view listings.', 'wp-event-manager' ); ?></noscript>
