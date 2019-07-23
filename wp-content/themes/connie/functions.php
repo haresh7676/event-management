@@ -28,8 +28,7 @@ add_action( 'after_setup_theme', 'projectname_setup' );
 function projectname_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'Connie', get_stylesheet_uri() );
-
-    wp_enqueue_style( 'bootstrap-minis', get_theme_file_uri( '/assets/css/bootstrap.min.css' ), array(), '1.0' );
+    wp_enqueue_style('bootstrap-minis', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '1.0');
 
     wp_enqueue_style( 'fonts-css', get_theme_file_uri( '/assets/css/fonts.css' ), array(), '1.0' );
 
@@ -46,9 +45,10 @@ function projectname_scripts() {
     
 
     //wp_enqueue_script( 'boot1','https://code.jquery.com/jquery-3.3.1.slim.min.js', array( 'jquery' ),'',true );
-    wp_enqueue_script( 'boot2','https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array( 'jquery' ),'',true );
-    wp_enqueue_script( 'boot3','https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array( 'jquery' ),'',true );
-    wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/custom.js' ), array( 'jquery' ), '1.0', true );
+        wp_enqueue_script( 'boot2','https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array( 'jquery' ),'',true );
+        wp_enqueue_script('boot3', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array('jquery'), '', true);
+
+    wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), '1.0', true);
 	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), '1.0', true );
 
 	

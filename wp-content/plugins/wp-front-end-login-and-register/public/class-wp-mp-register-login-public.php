@@ -51,10 +51,13 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
      */
     public function enqueue_styles()
     {
+        if(is_user_logged_in()){
 
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/wp-mp-register-login-public.css', array(), $this->version, 'all');
-        wp_enqueue_style($this->plugin_name . '-bootstrap', plugin_dir_url(__FILE__) . 'css/bootstrap.min.css', array(), $this->version, 'all');
-        wp_enqueue_style($this->plugin_name . '-formValidation', plugin_dir_url(__FILE__) . 'css/formValidation.min.css', array(), $this->version, 'all');
+        }else {
+            wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/wp-mp-register-login-public.css', array(), $this->version, 'all');
+            wp_enqueue_style($this->plugin_name . '-bootstrap', plugin_dir_url(__FILE__) . 'css/bootstrap.min.css', array(), $this->version, 'all');
+            wp_enqueue_style($this->plugin_name . '-formValidation', plugin_dir_url(__FILE__) . 'css/formValidation.min.css', array(), $this->version, 'all');
+        }
     }
 
     /**
@@ -64,13 +67,16 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
      */
     public function enqueue_scripts()
     {
+        if(is_user_logged_in()){
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/wp-mp-register-login-public.js', array('jquery'), $this->version, false);
-        wp_enqueue_script($this->plugin_name . '-bootstrap', plugin_dir_url(__FILE__) . 'js/bootstrap.min.js', array('jquery'), $this->version, false);
-        wp_enqueue_script($this->plugin_name . '-formValidation.min', plugin_dir_url(__FILE__) . 'js/validator/formValidation.min.js', array('jquery'), $this->version, false);
-        wp_enqueue_script($this->plugin_name . '-bootstrap-validator', plugin_dir_url(__FILE__) . 'js/validator/bootstrap-validator.min.js', array('jquery'), $this->version, false);
-        // localizing gloabl js objects
-        wp_localize_script($this->plugin_name, 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+        }else{
+            wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/wp-mp-register-login-public.js', array('jquery'), $this->version, false);
+            wp_enqueue_script($this->plugin_name . '-bootstrap', plugin_dir_url(__FILE__) . 'js/bootstrap.min.js', array('jquery'), $this->version, false);
+            wp_enqueue_script($this->plugin_name . '-formValidation.min', plugin_dir_url(__FILE__) . 'js/validator/formValidation.min.js', array('jquery'), $this->version, false);
+            wp_enqueue_script($this->plugin_name . '-bootstrap-validator', plugin_dir_url(__FILE__) . 'js/validator/bootstrap-validator.min.js', array('jquery'), $this->version, false);
+            // localizing gloabl js objects
+            wp_localize_script($this->plugin_name, 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+        }
     }
 
     /**

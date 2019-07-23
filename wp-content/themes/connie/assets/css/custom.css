@@ -303,7 +303,7 @@ opacity: 1;
 .report-problem .contact-filed-row span.wpcf7-form-control-wrap {
     width: 100%;
 }
-.report-problem .contact-submit-btn input[type="submit"] {
+.contact-submit-btn input[type="submit"] {
     background: transparent;
     border: 1px solid #775DFF !important;
     border-radius: 40px;
