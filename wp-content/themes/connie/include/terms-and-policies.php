@@ -1,7 +1,7 @@
 <div class="tab-pane tab-pane-spacing active show" id="termsAndPolicies">
     <div class="terms-policies">
         <h2 class="my-account-page-title">Terms and Policies</h2>
-        <div class="row">
+        <div class="my-account-content-wpr">
             <?php
             $myaccountsettings =  get_fields('account-settings');
             if(!empty($myaccountsettings)){

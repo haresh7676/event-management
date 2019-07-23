@@ -40,7 +40,18 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
 }
 .design-your-event .custom-browse-file  .event-manager-uploaded-files{
     position: relative;
-    z-index: 9;
+    z-index: 1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.design-your-event .custom-browse-file .description {
+    line-height: 1;
+    margin: 0px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    opacity: 1;
 }
 .design-your-event .fieldset-event_banner.pullrightinner .custom-browse-file{
     width: 97%;
@@ -318,6 +329,21 @@ opacity: 1;
 .wpcf7-response-output {
     width: 100%;
     float: left;
+}
+.my-account-page-title{
+   /* color: #6850E2;*/
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.my-account-content-wpr {
+    font-size: 18px;
+    color: #000000;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-family: 'sf_compact_displaythin';
+    font-weight: 600;
 }
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}

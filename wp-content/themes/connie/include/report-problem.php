@@ -1,7 +1,7 @@
 <div class="tab-pane tab-pane-spacing active show" id="reportProblem">
     <div class="report-problem">
         <div class="contact-us-title">Contact Us</div>
-        <div class="row">
+        <div class="my-account-content-wpr">
             <?php
             $myaccountsettings =  get_fields('account-settings');
             if(!empty($myaccountsettings)){

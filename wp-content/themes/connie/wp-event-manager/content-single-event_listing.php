@@ -202,8 +202,10 @@
                         <h3 class="e-p-cart-title">Date And Time</h3>
                         <?php $newformate = 'D, M j, Y'; ?>
                         <span><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_end_time();?></span>
-                        <a href="#" class="view-detail">Add to Calendar</a>
-
+                        <!--<a href="#" class="view-detail">Add to Calendar</a>-->
+                        <?php $themesettings =  get_fields('theme-settings');
+                        if(!empty($themesettings) && (isset($themesettings['volunteer_form']) && !empty($themesettings['volunteer_form']))){
+                        ?>
                         <button type="button" class="btn volnuteer-form-btn" data-toggle="modal" data-target="#exampleModal">Volunteer</button>
                         <div class="modal fade volnuteer-form" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
@@ -216,12 +218,13 @@
                                     <div class="modal-body">
                                         <h5 class="modal-title">Volunteer Form</h5>
                                         <div class="volunteer-body">
-                                            <?php echo do_shortcode('[contact-form-7 id="117" title="Volunteer Form"]'); ?>
+                                            <?php echo apply_filters('the_content',$themesettings['volunteer_form']); ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -235,11 +238,11 @@
                     else:
                         echo '<span>' . get_event_venue_name() . '<br>'. get_event_address(). ', ' . get_event_pincode() .', '. get_event_location() . '.</span>';
                     endif;?>
-                    <a href="#" class="view-detail">View Map</a>
+                    <!--<a href="#" class="view-detail">View Map</a>-->
                 </div>
                 <div class="col-lg-7 col-md-7">
                     <div class="map-video-box">
-                        <div id='googleMap' class="google-map-loadmore" style="width:100%;height:100%;border:0";></div>
+                        <?php do_shortcode('[single_event_location_map height="100%" width="100%"]'); ?>
                     </div>
                 </div>
             </div>
