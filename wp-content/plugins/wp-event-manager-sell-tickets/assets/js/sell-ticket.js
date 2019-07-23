@@ -84,7 +84,6 @@ var SellTicket= function () {
 	        /// <returns type="generate name and id " />     
 	        /// <since>1.0.0</since>  			
 			addLink :function(event) {
-				console.log('asdasd');
 			    
 			    Common.logInfo("SellTicket.addLink...");
 			    

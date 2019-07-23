@@ -16,9 +16,16 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     flex-flow: column;
 }
 .basic-info-form .form-group span.introtext{
-    font-size: 15px;
+    font-size: 12px;
     color: #9B9B9B;
-    font-weight: bold;margin-top: 5px;}
+    font-weight: bold;
+}
+.basic-info-form.create-event-cart h3.section-title{
+    width: auto;
+}
+.basic-info-form.create-event-cart .design-your-event{
+    width: 100%;
+}
 
 .basic-info-form .form-group.fieldset-event_category{
     width: 48%;
@@ -30,6 +37,14 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     display: flex;
     overflow: hidden;
     padding: 0px;
+}
+.design-your-event .custom-browse-file  .event-manager-uploaded-files{
+    position: relative;
+    z-index: 9;
+}
+.design-your-event .fieldset-event_banner.pullrightinner .custom-browse-file{
+    width: 97%;
+    float: right;
 }
 .basic-info-form{
     display: flex;
@@ -53,9 +68,9 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
 }
 .basic-info-form .form-group .input-text.hasDatepicker{
     background: url(../../assets/images/calender-icn.png) center left no-repeat;
-    padding-left: 45px;    
-    position: absolute;
-    /*border-right: 1px solid #ccc;*/
+    padding-left: 45px;
+    /*position: absolute;
+    border-right: 1px solid #ccc;*/
     background-position: 11px 8px;
 }
 
@@ -125,7 +140,14 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     font-weight: 500;
     padding: 1.5rem 4.75rem;
     text-align: center;
+    display: block;
 }
+.ticket-fields-form .ticketinner .ticketwprs > div{
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
 .basic-info-form .form-group label span.rediolabel{
     color:#4A4A4A;
 }
@@ -172,7 +194,7 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     margin-bottom: 12px;
 }
 
-.tab-content>.fade:not(.show){
+.tab-content>.fade:not(.show).active{
 opacity: 1;
 }
 .browe-event-content .browe-event-filter{position: relative;}
