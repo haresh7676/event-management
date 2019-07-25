@@ -7,7 +7,9 @@
  * @since Twenty Sixteen 1.0
  */
 
-get_header(); ?>
+get_header();
+//echo get_query_var('event_action');
+?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
