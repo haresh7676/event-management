@@ -8,7 +8,11 @@
 
 	<?php wp_head(); ?>
 </head>
-<body class="fullpage-wrapper fp-viewing-3">
+<?php
+$banner = get_field('banner_enable');
+$bannerimg = get_field('banner_image');
+?>
+<body class="fullpage-wrapper fp-viewing-3<?php echo ($banner == 1 && !empty($bannerimg)) ? ' with-banner' : ' without-banner'; ?>">
 <div class="container-fluid">
     <div class="row">
         <div class="top-header">
@@ -44,8 +48,6 @@
             </div>
         </div>
         <?php
-        $banner = get_field('banner_enable'); 
-        $bannerimg = get_field('banner_image');
         if($banner == 1 && !empty($bannerimg)){
         ?>
         <div class="landing-page-banner">
@@ -58,42 +60,3 @@
 $headeroption = array();
 //echo '<pre>'; print_r($headeroption);
 ?>
-<!-- Start Smoky Effect in Background -->
-<!--<div id="wavybg-wrapper" class="smoky-bg">
-    <canvas class="background" width="1349" height="654"></canvas>
-</div>-->
-<!-- End Smoky Effect in Background -->
-
-<!-- Start Preloader -->
-
-<!-- End Preloader -->
-
-<!-- Start Nav -->
-<!--<nav>
-    <div class="nav-and-footer-bg"><span style="height: 654px; width: 1349px;"></span></div>
-    <div class="container">
-        <h1 class="logo">
-            <a href="<?php /*site_url(); */?>"><img src="<?php /*echo (!empty($headeroption['logo'])) ? $headeroption['logo'] : ''; */?>" alt=""></a>
-        </h1>
-        <div class="menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu-body">
-            <div class="nav-and-footer-bg"><span style="height: 654px; width: 1349px;"></span></div>
-            <?php
-/*            wp_nav_menu( array(
-                'menu' => 'Main Menu',
-                'container_class' => 'navbar-collapse collapse clearfix',
-                'menu_class' => 'navigation clearfix'
-
-            ) );
-            */?>
-            <div class="menu-bg1"></div>
-            <div class="menu-bg2"></div>
-        </div>
-    </div>
-
-</nav>-->
-<!-- End Nav -->

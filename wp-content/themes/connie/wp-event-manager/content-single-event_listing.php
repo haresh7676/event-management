@@ -127,61 +127,61 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="buy-ticket">
-                        <div class="ticket-pass-buy">
-                            <?php
-                            $event_id = $post->ID;
-                            $post_author = get_post_field( 'post_author', $event_id );
-                            $current_user_id = get_current_user_id();
-                            if( isset( $current_user_id ) && $current_user_id == $post_author){
-                                 $author_id = $current_user_id;
-                                 $post_status = 'any';
-                            }
-                            else{
-                                $current_user_id = '';
-                                $post_status = 'publish';
+                        <?php
+                        $event_id = $post->ID;
+                        $post_author = get_post_field( 'post_author', $event_id );
+                        $current_user_id = get_current_user_id();
+                        if( isset( $current_user_id ) && $current_user_id == $post_author){
+                             $author_id = $current_user_id;
+                             $post_status = 'any';
+                        }
+                        else{
+                            $current_user_id = '';
+                            $post_status = 'publish';
 
-                            }
+                        }
 
-                                $args = array(
-                                           'author'        =>  $current_user_id ,
-                                           'post_type' => 'product',
-                                           'post_status'=>$post_status,
-                                           'posts_per_page' => -1,
-                                           'meta_key'     => '_event_id',
-                                           'meta_value'   => $event_id,
-                                     );
+                            $args = array(
+                                       'author'        =>  $current_user_id ,
+                                       'post_type' => 'product',
+                                       'post_status'=>$post_status,
+                                       'posts_per_page' => -1,
+                                       'meta_key'     => '_event_id',
+                                       'meta_value'   => $event_id,
+                                 );
 
-                            $all_tickets=get_posts($args);
+                        $all_tickets=get_posts($args);
 
 
-                            if(!empty($all_tickets) && $all_tickets[0]->ID >= 1) {
-                                echo '<ul>';
-                                foreach ( $all_tickets as $post_data ) : setup_postdata( $post_data );
-                                    $price            = get_post_meta($post_data->ID,'_price',true);
-                                    $price            = $price == 0 ? __('Free', 'wp-event-manager-sell-tickets'): $price;
-                                    $ticket_type = get_post_meta($post_data->ID,'_ticket_type',true);
-                                    echo '<li>';
-                                    echo '<span>'.__( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets').'</span>';
-                                    echo '<label>';
-                                    if($ticket_type == 'donation'){
-                                        echo '<input type="number" name="donation_price-" id="donation_price" value="'.$price.'"  min="'.$price.'" />';
-                                    }
-                                    else if(is_numeric($price)){
-                                        _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');
-                                        _e( $price ,'wp-event-manager-sell-tickets');
-                                    }
-                                    else{
-                                        _e( 'Free','wp-event-manager-sell-tickets');
-                                    }
-                                    echo '</label>';
-                                    echo '</li>';
-                                endforeach;
-                                wp_reset_query();
-                                echo '</ul>';
-                            }
-                            //echo  do_shortcode('[event_sell_tickets]'); ?>
-                        </div>
-                        <button class="buy-ticket-btn">Buy Tickets</button>
+                        if(!empty($all_tickets) && $all_tickets[0]->ID >= 1) {
+                            echo '<div class="ticket-pass-buy">';
+                            echo '<ul>';
+                            foreach ( $all_tickets as $post_data ) : setup_postdata( $post_data );
+                                $price            = get_post_meta($post_data->ID,'_price',true);
+                                $price            = $price == 0 ? __('Free', 'wp-event-manager-sell-tickets'): $price;
+                                $ticket_type = get_post_meta($post_data->ID,'_ticket_type',true);
+                                echo '<li>';
+                                echo '<span>'.__( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets').'</span>';
+                                echo '<label>';
+                                if($ticket_type == 'donation'){
+                                    echo '<input type="number" name="donation_price-" id="donation_price" value="'.$price.'"  min="'.$price.'" />';
+                                }
+                                else if(is_numeric($price)){
+                                    _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');
+                                    _e( $price ,'wp-event-manager-sell-tickets');
+                                }
+                                else{
+                                    _e( 'Free','wp-event-manager-sell-tickets');
+                                }
+                                echo '</label>';
+                                echo '</li>';
+                            endforeach;
+                            wp_reset_query();
+                            echo '</ul>';
+                            echo '</div>';
+                            echo '<a href="'.get_permalink($event_id).'tickets" class="buy-ticket-btn">Buy Tickets</a>';
+                        }
+                        //echo  do_shortcode('[event_sell_tickets]'); ?>
                     </div>
                 </div>
             </div>

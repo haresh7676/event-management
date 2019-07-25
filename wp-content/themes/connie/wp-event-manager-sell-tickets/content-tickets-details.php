@@ -30,7 +30,7 @@ $event_timezone   = get_event_timezone();
                     <th><?php _e('Fee', 'wp-event-manager-sell-tickets');?></th>
                     <?php } ?>
                     <th><?php _e('Start /End Date', 'wp-event-manager-sell-tickets');?></th>
-                    <th><?php _e('Quantity', 'wp-event-manager-sell-tickets');?></th>
+                        <th><?php _e('Quantity', 'wp-event-manager-sell-tickets');?></th>
                 </tr>
                 </thead>
                  <tbody>

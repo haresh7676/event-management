@@ -1,3 +1,6 @@
+body.without-banner .main-section-container{
+    margin-top: 100px;
+}
 .box-layout .event-img{
     max-height: initial;
 }
@@ -186,6 +189,16 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.buy-ticket-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.buy-ticket-btn:hover{
+    text-decoration: none;
 }
 
 .woocommerce button.button.defulat-custom-btn, .defulat-custom-btn:hover {

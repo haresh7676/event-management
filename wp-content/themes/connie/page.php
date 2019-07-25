@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container page-container main-section-container">
 		<?php
 		// Start the loop.
 		while ( have_posts() ) :

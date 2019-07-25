@@ -217,7 +217,7 @@ var SellTicket= function () {
 								   jQuery('#sell-ticket-status-message').removeClass('alert-infomation');
 								   jQuery('#sell-ticket-status-message').addClass('alert-success');
 								   jQuery('#sell-ticket-status-message').html(event_manager_sell_tickets_sell_ticket.i18n_added_to_cart);
-								   window.location.href = event_manager_sell_tickets_sell_ticket.redirectUrl;
+								   //window.location.href = event_manager_sell_tickets_sell_ticket.redirectUrl;
 								},
 								error: function(jqXHR, textStatus, errorThrown) 
 								{ 		           
