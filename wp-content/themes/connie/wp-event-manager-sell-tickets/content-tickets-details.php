@@ -29,8 +29,8 @@ $event_timezone   = get_event_timezone();
                     <?php if( $fee_enable== 'yes' ){ ?>
                     <th><?php _e('Fee', 'wp-event-manager-sell-tickets');?></th>
                     <?php } ?>
-                    <th><?php _e('Start /End Date', 'wp-event-manager-sell-tickets');?></th>
-                        <th><?php _e('Quantity', 'wp-event-manager-sell-tickets');?></th>
+                    <!--<th><?php /*_e('Start /End Date', 'wp-event-manager-sell-tickets');*/?></th>-->
+                    <th><?php _e('Quantity', 'wp-event-manager-sell-tickets');?></th>
                 </tr>
                 </thead>
                  <tbody>
@@ -129,28 +129,28 @@ $event_timezone   = get_event_timezone();
                     <td>
                       <?php   _e('Sold Out','wp-event-manager-sell-tickets'); ?>
                     </td>
-                    <?php else : ?>  
-                                 <?php 
+                    <?php else : ?>
+                                 <?php
 
-                            if(!empty( $ticket_sales_start_date ) &&  $current_timestamp <  strtotime( $ticket_sales_start_date ) ) { ?>
+                            /*if(!empty( $ticket_sales_start_date ) &&  $current_timestamp <  strtotime( $ticket_sales_start_date ) ) { */?><!--
                         <td>
                         <?php
-                            printf(__('Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)) ); ?>
+/*                            printf(__('Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)) ); */?>
                         </td>
-                        <?php 
-                        } 
-                        elseif(!empty($ticket_sales_end_date) &&  $current_timestamp >   strtotime($ticket_sales_end_date) ){ ?>
+                        <?php
+/*                        }
+                        elseif(!empty($ticket_sales_end_date) &&  $current_timestamp >   strtotime($ticket_sales_end_date) ){ */?>
                         <td>
                         <?php
-                                  printf(__('Sales Ended %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));  
-                            ?>
+/*                                  printf(__('Sales Ended %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));
+                            */?>
                             </td>
-                    
-                            <?php       
-                        } 
-                        else{ ?>
-                         <td> <?php printf(__('End : %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));?></td>
-                        <?php } ?> 
+
+                            <?php
+/*                        }
+                        else{ */?>
+                         <td> <?php /*printf(__('End : %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));*/?></td>
+                        --><?php /*}*/ ?>
                     <td>
                      <?php
                      if(!empty($ticket_sales_start_date) &&  $current_timestamp > strtotime($ticket_sales_start_date) && $current_timestamp <   strtotime($ticket_sales_end_date) ) { ?>
@@ -190,7 +190,7 @@ $event_timezone   = get_event_timezone();
 	    </tbody>
 	    <tfoot>
             <tr>
-	       <td colspan=<?php  if( $fee_enable== 'yes' ) echo 4; else echo 3;  ?> > <label id="sell-ticket-status-message" class=""> </label></td>
+	       <td colspan=<?php  if( $fee_enable== 'yes' ) echo 3; else echo 2;  ?> > <label id="sell-ticket-status-message" class=""> </label></td>
            <td>				
 				<input type="hidden" name="" id="total_ticket" value="<?php echo $count_fields;?>">
                 <input type="submit" name="order_now" value="<?php _e('Order Now' , 'wp-event-manager-sell-tickets');?>" id="order_now"  >                

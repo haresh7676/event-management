@@ -218,6 +218,17 @@ var SellTicket= function () {
 								   jQuery('#sell-ticket-status-message').addClass('alert-success');
 								   jQuery('#sell-ticket-status-message').html(event_manager_sell_tickets_sell_ticket.i18n_added_to_cart);
 								   //window.location.href = event_manager_sell_tickets_sell_ticket.redirectUrl;
+                                    "use strict";
+                                    var data = {
+                                        'action': 'mode_theme_update_mini_cart'
+                                    };
+                                    jQuery.post(
+                                        woocommerce_params.ajax_url, // The AJAX URL
+                                        data, // Send our PHP function
+                                        function(response){
+                                            jQuery('#mode-mini-cart').html(response); // Repopulate the specific element with the new content
+                                        }
+                                    );
 								},
 								error: function(jqXHR, textStatus, errorThrown) 
 								{ 		           

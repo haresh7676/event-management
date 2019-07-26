@@ -71,4 +71,3 @@ function property_init()
     );*/
 }
 
-
