@@ -17,9 +17,9 @@ $event_timezone   = get_event_timezone();
    $view_date_format = $view_date_format . ' '.$timepicker_format; 
     
   ?>
-<div class="tickets-details">  
-        <form name="event-tickets" method="post">
-            <h3 class="section-title"><?php _e('Ticket Information','wp-event-manager-sell-tickets');?></h3>		
+<div class="tickets-details">
+    <h3 class="section-title"><?php _e('Choose your ticket','wp-event-manager-sell-tickets');?></h3>
+    <form name="event-tickets" method="post">
             <table class="table ">
             	<thead>
             	<tr>
@@ -193,7 +193,7 @@ $event_timezone   = get_event_timezone();
 	       <td colspan=<?php  if( $fee_enable== 'yes' ) echo 3; else echo 2;  ?> > <label id="sell-ticket-status-message" class=""> </label></td>
            <td>				
 				<input type="hidden" name="" id="total_ticket" value="<?php echo $count_fields;?>">
-                <input type="submit" name="order_now" value="<?php _e('Order Now' , 'wp-event-manager-sell-tickets');?>" id="order_now"  >                
+                <input type="submit" name="order_now" value="<?php _e('Buy tickets' , 'wp-event-manager-sell-tickets');?>" id="order_now"  >
               </td>
             </tr>
         </tfoot>

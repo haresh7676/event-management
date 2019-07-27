@@ -15,3 +15,17 @@ function my_woocommerce_widget_shopping_cart_proceed_to_checkout() {
 }
 add_action( 'woocommerce_widget_shopping_cart_buttons', 'my_woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
 
+/*add_action( 'wmsc_step_content_billing', 'skyverge_add_checkout_content', 9 );
+function skyverge_add_checkout_content() {
+    wc_cart_totals_shipping_html();
+}*/
+add_action( 'wmsc_step_content_billing', 'connie_add_checkout_content', 10 );
+function connie_add_checkout_content()
+{
+    echo '<div class="min-cart-main">';
+    echo '<h3 class="section-title">'.__('Your Order','wp-event-manager-sell-tickets').'</h3>';
+    echo '<div id="mode-mini-cart">';
+    woocommerce_mini_cart();
+    echo '</div>';
+    echo '</div>';
+}
