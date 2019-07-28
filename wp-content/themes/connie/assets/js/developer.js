@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
         }).toggleClass('active');
         $(this).toggleClass('active');
     });
-    showRecords(2, 1, 'get_volunteer_data');
+    showRecords(3, 1, 'get_volunteer_data');
 });
 function showRecords(perPageCount, pageNumber, action) {
     var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount};

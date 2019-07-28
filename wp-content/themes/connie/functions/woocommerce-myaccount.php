@@ -130,25 +130,25 @@ function get_cf7_form_data($formid,$pageNumber = 1,$perPageCount = 10,$author = 
     $current_user = wp_get_current_user();
     $current_user_id = $current_user->ID;
     if($author == true) {
-        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = 229 order by form_id desc", ARRAY_A);
+        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = ".$formid." order by form_id desc", ARRAY_A);
     }else {
-        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = 229 order by form_id desc", ARRAY_A);
+        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = ".$formid." order by form_id desc", ARRAY_A);
     }
     if(!empty($resultstotal)){
         $results['count'] = count($resultstotal);
     }
     if($author == true) {
-        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = 229 order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
+        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = ".$formid." order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
     }else{
-        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = 229 order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
+        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = ".$formid." order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
     }
 
     if(!empty($results['data'])){
         foreach ($results['data'] as $key => $item){
-             if($item['form_value']){
-                 $arr = unserialize(urldecode($item['form_value']));
-                 $results['data'][$key]['form_data'] = $arr;
-             }
+            if($item['form_value']){
+                $arr = unserialize(urldecode($item['form_value']));
+                $results['data'][$key]['form_data'] = $arr;
+            }
         }
     }
     return $results;
@@ -170,7 +170,12 @@ function get_volunteer_data() {
     $pageNumber = $data['pageNumber'];
     $perPageCount = $data['perPageCount'];
     $action = $data['action'];
-    $results = get_cf7_form_data(229,$pageNumber,$perPageCount,true);
+    $myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['volunteer_form_id'])?$myaccountsettings['manage_event']['volunteer_form_id']:1;
+    }
+    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
     $output = '';
     $output .='<div class="table-responsive">';
     $output .='<table class="table">';
@@ -218,7 +223,10 @@ function get_volunteer_data() {
     } // endFor
     $output.='</td>';
     $output.='<td align="right" valign="top">';
-    $output.='Page '.$pageNumber.' of '.$pagesCount;
+    //$output.='Page '.$pageNumber.' of '.$pagesCount;
+    $stating = ($pageNumber-1)*$perPageCount+1;
+    $ending = $perPageCount*$pageNumber;
+    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
 	$output.='</td>';
     $output.='</tr>';
     $output.='</table>';
