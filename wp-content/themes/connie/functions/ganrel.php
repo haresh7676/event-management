@@ -1,17 +1,14 @@
 <?php 
-add_action( 'template_redirect', 'redirect_to_specific_page' );
+add_action( 'template_redirect', function() {
 
-function redirect_to_specific_page() {
-    if(is_user_logged_in()){
-    }else {
-        $pages = array('create-event');
-        if (is_page($pages)) {
-            wp_redirect(site_url() . '/sign-in/', 301);
-            exit;
-        }
+    if ( is_user_logged_in()) return;
+
+    if ( is_page('create-event') ) {
+        wp_redirect( site_url( '/sign-in' ) );
+        exit();
     }
-}
 
+});
 function getYoutubeEmbedUrl($url)
 {
     $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_-]+)\??/i';

@@ -1,8 +1,8 @@
-<div class="tab-pane manage-events-tab active show" id="manageEvents">
-    <div class="sub-tab-design manage-events">
+<div class="tab-pane manage-events-tab active show" id="manageEvents" >
+    <div class="sub-tab-design manage-events" data-ajax="<?php echo admin_url('admin-ajax.php'); ?>">
         <ul class="nav nav-pills">
-            <li class="nav-item active">
-                <a class="nav-link" data-toggle="tab" href="#editEvent">Edit Event</a>
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#editEvent">Edit Event</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#myDashboard">My Dashboard</a>
@@ -115,95 +115,9 @@
             </div>
             <!-- My Ticket Tab4 -->
             <div class="tab-pane fade" id="volunteer">
-                <div class="common-table-design">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="thead-purple">
-                            <tr>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Area of Expertise</th>
-                                <th>Days Avaliable</th>
-                                <th>Hours Avaliable</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>Banking</td>
-                                <td>Friday</td>
-                                <td>5</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="common-table-design get_volunteer_data">
+                    <div class="tabledataajax"></div>
+                    <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
                     <div class="export-list-row">
                         <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
                     </div>

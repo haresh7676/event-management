@@ -16,11 +16,12 @@ $bannerimg = get_field('banner_image');
 <div class="container-fluid">
     <div class="row">
         <div class="top-header">
-            <div class="logo-box"><a href="<?php echo site_url(); ?>/events/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></div>
+            <div class="logo-box"><a href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></div>
             <div class="topnav-right pull-right">
                 <ul>
-                    <li class="browser-event"><a href="<?php echo site_url(); ?>/events/">Browser events</a></li>
+                    <li class="browser-event"><a href="<?php echo site_url(); ?>/events/">Browse Events</a></li>
                     <li class="active"><a href="<?php echo site_url(); ?>/create-event/">Create Event</a></li>
+                    <li><a href="<?php echo site_url().'/my-account/help-center/'; ?>">Help</a></li>
                     <?php if(is_user_logged_in()){
                         $current_user = wp_get_current_user();
                         ?>
@@ -42,7 +43,7 @@ $bannerimg = get_field('banner_image');
                             </div>
                         </div>
                     <?php }else{ ?>
-                        <li><a href="<?php echo site_url(); ?>/sign-in/">Sign in</a></li>
+                        <li><a href="<?php echo site_url(); ?>/sign-in/">Sign In</a></li>
                     <?php } ?>
                 </ul>
             </div>

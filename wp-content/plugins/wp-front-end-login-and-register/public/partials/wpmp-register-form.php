@@ -78,17 +78,19 @@
 
             ?>
             <div class="form-group position-relative">                
-                <div class="login-btn-box"><button type="submit" class="btn login-btn">
+                <div class="login-btn-box buttonwpr center"><button type="submit" class="btn login-btn">
                 <?php
                 $submit_button_text = empty($wpmp_form_settings['wpmp_signup_button_text']) ? 'Register' : $wpmp_form_settings['wpmp_signup_button_text'];
                 _e($submit_button_text, $this->plugin_name);
 
-                ?></button></div>
+                ?></button>
+                <a href="<?php echo site_url().'/sign-in'; ?>" class="btn login-btn backtologin">Sign In</a>
+                </div>
               </div>
         </form>
         <div class="or-dvd-line"><span>or</span></div>
 
-        <div class="sgnup-wth">sign up <br>with</div>
+        <div class="sgnup-wth">Sign Up <br>with</div>
 
         <div class="login-options">
         <div class="login-options-inr">

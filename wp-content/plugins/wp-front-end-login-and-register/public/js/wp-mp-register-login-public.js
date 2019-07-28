@@ -203,7 +203,22 @@
                         },
                         stringLength: {
                             max: 30,
-                            message: 'The firstname must be less than 30 characters long'
+                            message: 'The Firstname must be less than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z]*$/,
+                            message: 'Only characters are allowed.'
+                        }
+                    }
+                },
+                wpmp_lname: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The lastname must be less than 30 characters long'
                         },
                         regexp: {
                             regexp: /^[a-zA-Z]*$/,
@@ -253,11 +268,11 @@
                 wpmp_password2: {
                     validators: {
                         notEmpty: {
-                            message: 'The password is required'
+                            message: 'The confirm password is required'
                         },
                         identical: {
                             field: 'wpmp_password',
-                            message: 'The password and its confirm are not the same'
+                            message: 'Password do not match'
                         },
                         stringLength: {
                             min: 6,

@@ -191,6 +191,12 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     font-weight: bold;
 }
 
+a.btn.login-btn.backtologin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .buy-ticket-btn{
     display: flex;
     align-items: center;
@@ -326,6 +332,13 @@ opacity: 1;
 }
 .report-problem .contact-filed-row span.wpcf7-form-control-wrap {
     width: 100%;
+}
+.wpcf7 span.wpcf7-form-control-wrap .wpcf7-not-valid-tip{
+    color: #a94442;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
 }
 .contact-submit-btn input[type="submit"] {
     background: transparent;

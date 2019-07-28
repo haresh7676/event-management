@@ -12,7 +12,25 @@ jQuery(document).ready(function($) {
         }).toggleClass('active');
         $(this).toggleClass('active');
     });
+    showRecords(2, 1, 'get_volunteer_data');
 });
+function showRecords(perPageCount, pageNumber, action) {
+    var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount};
+    var loaderimage = jQuery('.'+action+' .tableloader').data('loader');
+    jQuery.ajax({
+        type: "POST",
+        url: jQuery('.sub-tab-design').data('ajax'),
+        data: loadtime,
+        cache: false,
+        beforeSend: function() {
+            jQuery('.'+action+' .tableloader').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+        },
+        success: function(html) {
+            jQuery('.'+action+' .tabledataajax').html(html);
+            jQuery('.'+action+' .tableloader').html('');
+        }
+    });
+}
 ( function ( $ ) {
     "use strict";
 // Define the PHP function to call from here

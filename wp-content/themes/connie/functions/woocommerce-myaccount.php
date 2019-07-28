@@ -124,5 +124,106 @@ add_action( 'woocommerce_account_about_endpoint', 'connie_about_endpoint_content
 add_action( 'woocommerce_account_terms-and-policies_endpoint', 'connie_terms_and_policies_endpoint_content' );
 
 
+function get_cf7_form_data($formid,$pageNumber = 1,$perPageCount = 10,$author = true){
+    global $wpdb;
+    $lowerLimit = ($pageNumber - 1) * $perPageCount;
+    $current_user = wp_get_current_user();
+    $current_user_id = $current_user->ID;
+    if($author == true) {
+        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = 229 order by form_id desc", ARRAY_A);
+    }else {
+        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = 229 order by form_id desc", ARRAY_A);
+    }
+    if(!empty($resultstotal)){
+        $results['count'] = count($resultstotal);
+    }
+    if($author == true) {
+        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = 229 order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
+    }else{
+        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = 229 order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
+    }
+
+    if(!empty($results['data'])){
+        foreach ($results['data'] as $key => $item){
+             if($item['form_value']){
+                 $arr = unserialize(urldecode($item['form_value']));
+                 $results['data'][$key]['form_data'] = $arr;
+             }
+        }
+    }
+    return $results;
+}
+function get_post_by_eventid($page_id, $output = OBJECT) {
+    global $wpdb;
+    $post = $wpdb->get_var( $wpdb->prepare( "SELECT post_title FROM $wpdb->posts WHERE ID = %s AND post_type='event_listing'", $page_id ));
+    if ( $post )
+        return $post;
+
+    return null;
+}
+
+add_action("wp_ajax_get_volunteer_data", "get_volunteer_data");
+add_action("wp_ajax_nopriv_get_volunteer_data", "get_volunteer_data");
+
+function get_volunteer_data() {
+    $data = $_POST;
+    $pageNumber = $data['pageNumber'];
+    $perPageCount = $data['perPageCount'];
+    $action = $data['action'];
+    $results = get_cf7_form_data(229,$pageNumber,$perPageCount,true);
+    $output = '';
+    $output .='<div class="table-responsive">';
+    $output .='<table class="table">';
+    $output .='<thead class="thead-purple">';
+    $output .='<tr>';
+    $output .='<th>Name</th>';
+    $output .='<th>Phone</th>';
+    $output .='<th>Email</th>';
+    $output .='<th>Area of Expertise</th>';
+    $output .='<th>Days Avaliable</th>';
+    $output .='<th>Hours Avaliable</th>';
+    $output .='<th>Event</th>';
+    $output .='</tr>';
+    $output .='</thead>';
+    $output .='<tbody>';
+    if(isset($results) && !empty($results['data'])){
+        foreach ($results['data'] as $item){
+            $output.='<tr>';
+            $output.='<td>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</td>';
+            $output.='<td>'.$item['form_data']['tel-phone'].'</td>';
+            $output.='<td>'.$item['form_data']['your-email'].'</td>';
+            $output.='<td>'.$item['form_data']['area-of-expertise'].'</td>';
+            $output.='<td>Friday</td>';
+            $output.='<td>5</td>';
+            $output.='<td>'.(isset($item['form_data']['eventid']) && !empty($item['form_data']['eventid'])?get_post_by_eventid($item['form_data']['eventid']):'-').'</td>';
+            $output.='</tr>';
+        }
+    }
+    $output.='</tbody>';
+    $output.='</table>';
+    $output.='</div>';
+    /*pagination */
+    $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
+    $pagesCount = ceil($rowCount / $perPageCount);
+    $output.='<table width="50%" align="center">';
+    $output.='<tr>';
+    $output.='<td valign="top" align="left"></td>';
+    $output.='<td valign="top" align="center">';
+	for ($i = 1; $i <= $pagesCount; $i ++) {
+        if ($i == $pageNumber) {
+            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
+        } else {
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_volunteer_data\')">'.$i.'</a>';
+        } // endIf
+    } // endFor
+    $output.='</td>';
+    $output.='<td align="right" valign="top">';
+    $output.='Page '.$pageNumber.' of '.$pagesCount;
+	$output.='</td>';
+    $output.='</tr>';
+    $output.='</table>';
+    echo $output;
+    die();
+}
 
 
