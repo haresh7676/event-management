@@ -23,7 +23,7 @@ $event_timezone   = get_event_timezone();
             <div class="cart-details-title">
               <h3><?php _e('Choose your ticket','wp-event-manager-sell-tickets');?></h3>
             </div>
-            <form name="event-tickets" method="post">
+            <form name="event-tickets" method="post" class="event-tickets-form">
               <div class="table-responsive">
                 <table class="table ">
                   <!-- <thead>
@@ -153,7 +153,7 @@ $event_timezone   = get_event_timezone();
                       <td>
                         <?php
                           if(!empty($ticket_sales_start_date) &&  $current_timestamp > strtotime($ticket_sales_start_date) && $current_timestamp <   strtotime($ticket_sales_end_date) ) { ?>
-                              <select name="ticket_quantity" id="quantity-<?php echo $count_fields;?>" >    
+                              <select name="ticket_quantity" class="ticket_quantity_select" id="quantity-<?php echo $count_fields;?>" >
                                  <option value="0">0</option>
                                  <?php
                                       //if minimum and maximum order quantity not set
@@ -187,16 +187,16 @@ $event_timezone   = get_event_timezone();
                     <?php $count_fields ++; 
                     endforeach; ?>
                  </tbody>
-                 <!-- <tfoot>
+                  <tfoot>
                   <tr>
                     <td colspan=<?php  if( $fee_enable== 'yes' ) echo 3; else echo 2;  ?> > <label id="sell-ticket-status-message" class=""> </label></td>
                     <td align="right">
                       <br>
                       <input type="hidden" name="" id="total_ticket" value="<?php echo $count_fields;?>">
-                      <input type="submit" name="order_now" value="<?php _e('Buy tickets' , 'wp-event-manager-sell-tickets');?>" id="order_now"  >
+                      <input type="submit" name="order_now" class="unvisible"  value="<?php _e('Buy tickets' , 'wp-event-manager-sell-tickets');?>" id="order_now"  >
                     </td>
                   </tr>
-                </tfoot> -->
+                </tfoot>
              </table>
            </div>
         </form>

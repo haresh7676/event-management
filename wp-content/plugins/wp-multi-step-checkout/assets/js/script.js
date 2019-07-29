@@ -71,7 +71,7 @@ jQuery(window).ready(function($){
             before_form.hide();
 
             // Show "next" button 
-            if ( theIndex < sections.length - 1 ) $('#wpmc-next').addClass('current');
+            if ( theIndex < sections.length - 1 ) $('#wpmc-next').addClass('current'); $(".currentbtn").removeClass('hidecurrent');
 
             // Show "skip login" button
             if ( theIndex === 0 && $('.wpmc-step-login').length > 0 ) {
@@ -81,6 +81,7 @@ jQuery(window).ready(function($){
             // Last section
             if ( theIndex === sections.length - 1) {
               $("#wpmc-prev").addClass('current');
+              $(".currentbtn").addClass('hidecurrent');
               $('#wpmc-submit').addClass('current');
               checkout_form.removeClass( 'processing' ).unblock();
             }

@@ -12,7 +12,7 @@ get_header();
 <div id="primary" class="content-area">
 	<div class="container">
 		<main id="main" class="site-main cart-main-area" role="main">
-			<div class="cart-page-title">Quirkcon</div>
+            <div class="cart-page-title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
 				<div class="cart-content">
 					<?php
 					// Start the loop.

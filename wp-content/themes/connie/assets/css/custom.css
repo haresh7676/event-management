@@ -176,7 +176,25 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     margin-bottom: 12px;
     padding-right: 15px;
 }
-
+.unvisible{
+    visibility: hidden;
+}
+.wpmc-nav-buttons.backtoticket{ text-align: left;}
+.cart-main-area .woocommerce .wpmc-nav-buttons.backtoticket .currentbtn.alt {
+    background: #775DFF;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #FFFFFF;
+    font-style: italic;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 28px;
+    outline: none;
+    font-weight: normal;
+}
+.cart-main-area .woocommerce .wpmc-nav-buttons.backtoticket .currentbtn.alt.hidecurrent{
+    display: none;
+}
 .woocommerce button.button.defulat-custom-btn, .defulat-custom-btn {
     background: #775DFF;
     border: 1px solid #775DFF;

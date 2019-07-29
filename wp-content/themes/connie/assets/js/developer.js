@@ -12,6 +12,13 @@ jQuery(document).ready(function($) {
         }).toggleClass('active');
         $(this).toggleClass('active');
     });
+
+    if ($('.event-tickets-form').length > 0) {
+        $('select.ticket_quantity_select').on('change', function() {
+            $( "#order_now" ).trigger("click");
+        });
+    }
+
     if ($('.get_volunteer_data').length > 0) {
         showRecords(3, 1, 'get_volunteer_data');
     }

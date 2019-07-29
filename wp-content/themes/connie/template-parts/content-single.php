@@ -34,19 +34,4 @@
 			}
 			?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php //twentysixteen_entry_meta(); ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
