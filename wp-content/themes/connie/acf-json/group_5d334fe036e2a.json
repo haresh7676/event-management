@@ -94,9 +94,51 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_5d3ef580c58df",
+                    "label": "Add Team Member Form ID",
+                    "name": "add_team_form_id",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
                     "key": "field_5d3d5106d61aa",
                     "label": "Volunteer Form ID",
                     "name": "volunteer_form_id",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5d3eff1682007",
+                    "label": "Report a Problem Form ID",
+                    "name": "report_a_problem_form_id",
                     "type": "number",
                     "instructions": "",
                     "required": 0,
@@ -134,5 +176,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564299554
+    "modified": 1564409637
 }

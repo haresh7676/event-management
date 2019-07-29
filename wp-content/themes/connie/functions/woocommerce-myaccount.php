@@ -225,7 +225,9 @@ function get_volunteer_data() {
     $output.='<td align="right" valign="top">';
     //$output.='Page '.$pageNumber.' of '.$pagesCount;
     $stating = ($pageNumber-1)*$perPageCount+1;
+    $stating = ($rowCount == 0)?0:$stating;
     $ending = $perPageCount*$pageNumber;
+    $ending = ($rowCount < $ending)?$rowCount:$ending;
     $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
 	$output.='</td>';
     $output.='</tr>';
@@ -234,4 +236,143 @@ function get_volunteer_data() {
     die();
 }
 
+add_action("wp_ajax_get_team_member_data", "get_team_member_data");
+add_action("wp_ajax_nopriv_get_team_member_data", "get_team_member_data");
+
+function get_team_member_data() {
+    $data = $_POST;
+    $pageNumber = $data['pageNumber'];
+    $perPageCount = $data['perPageCount'];
+    $action = $data['action'];
+    $myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['add_team_form_id'])?$myaccountsettings['manage_event']['add_team_form_id']:1;
+    }
+    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
+    $output = '';
+    $output .='<div class="table-responsive">';
+    $output .='<table class="table">';
+    $output .='<thead class="thead-purple">';
+    $output .='<tr>';
+    $output .='<th>Name</th>';
+    $output .='<th>Phone</th>';
+    $output .='<th>Email</th>';
+    $output .='<th>Location</th>';
+    $output .='<th>Position</th>';
+    $output .='</tr>';
+    $output .='</thead>';
+    $output .='<tbody>';
+    if(isset($results) && !empty($results['data'])){
+        foreach ($results['data'] as $item){
+            $output.='<tr>';
+            $output.='<td>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</td>';
+            $output.='<td>'.$item['form_data']['telephone'].'</td>';
+            $output.='<td>'.$item['form_data']['your-email'].'</td>';
+            $output.='<td>'.$item['form_data']['location'].'</td>';
+            $output.='<td>'.$item['form_data']['position'].'</td>';
+            $output.='</tr>';
+        }
+    }
+    $output.='</tbody>';
+    $output.='</table>';
+    $output.='</div>';
+    /*pagination */
+    $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
+    $pagesCount = ceil($rowCount / $perPageCount);
+    $output.='<table width="50%" align="center">';
+    $output.='<tr>';
+    $output.='<td valign="top" align="left"></td>';
+    $output.='<td valign="top" align="center">';
+    for ($i = 1; $i <= $pagesCount; $i ++) {
+        if ($i == $pageNumber) {
+            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
+        } else {
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_team_member_data\')">'.$i.'</a>';
+        } // endIf
+    } // endFor
+    $output.='</td>';
+    $output.='<td align="right" valign="top">';
+    //$output.='Page '.$pageNumber.' of '.$pagesCount;
+    $stating = ($pageNumber-1)*$perPageCount+1;
+    $stating = ($rowCount == 0)?0:$stating;
+    $ending = $perPageCount*$pageNumber;
+    $ending = ($rowCount < $ending)?$rowCount:$ending;
+    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
+    $output.='</td>';
+    $output.='</tr>';
+    $output.='</table>';
+    echo $output;
+    die();
+}
+
+add_action("wp_ajax_get_report_problem_contact_data", "get_report_problem_contact_data");
+add_action("wp_ajax_nopriv_get_report_problem_contact_data", "get_report_problem_contact_data");
+
+function get_report_problem_contact_data() {
+    $data = $_POST;
+    $pageNumber = $data['pageNumber'];
+    $perPageCount = $data['perPageCount'];
+    $action = $data['action'];
+    $myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
+    }
+    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
+    $output = '';
+    $output .='<div class="table-responsive">';
+    $output .='<table class="table">';
+    $output .='<thead class="thead-purple">';
+    $output .='<tr>';
+    $output .='<th>Name</th>';
+    $output .='<th>Phone</th>';
+    $output .='<th>Email</th>';
+    $output .='<th>Location</th>';
+    $output .='<th>Position</th>';
+    $output .='</tr>';
+    $output .='</thead>';
+    $output .='<tbody>';
+    if(isset($results) && !empty($results['data'])){
+        foreach ($results['data'] as $item){
+            $output.='<tr>';
+            $output.='<td>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</td>';
+            $output.='<td>'.$item['form_data']['telephone'].'</td>';
+            $output.='<td>'.$item['form_data']['your-email'].'</td>';
+            $output.='<td>'.$item['form_data']['location'].'</td>';
+            $output.='<td>'.$item['form_data']['position'].'</td>';
+            $output.='</tr>';
+        }
+    }
+    $output.='</tbody>';
+    $output.='</table>';
+    $output.='</div>';
+    /*pagination */
+    $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
+    $pagesCount = ceil($rowCount / $perPageCount);
+    $output.='<table width="50%" align="center">';
+    $output.='<tr>';
+    $output.='<td valign="top" align="left"></td>';
+    $output.='<td valign="top" align="center">';
+    for ($i = 1; $i <= $pagesCount; $i ++) {
+        if ($i == $pageNumber) {
+            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
+        } else {
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_team_member_data\')">'.$i.'</a>';
+        } // endIf
+    } // endFor
+    $output.='</td>';
+    $output.='<td align="right" valign="top">';
+    //$output.='Page '.$pageNumber.' of '.$pagesCount;
+    $stating = ($pageNumber-1)*$perPageCount+1;
+    $stating = ($rowCount == 0)?0:$stating;
+    $ending = $perPageCount*$pageNumber;
+    $ending = ($rowCount < $ending)?$rowCount:$ending;
+    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
+    $output.='</td>';
+    $output.='</tr>';
+    $output.='</table>';
+    echo $output;
+    die();
+}
 

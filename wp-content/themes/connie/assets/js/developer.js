@@ -12,7 +12,12 @@ jQuery(document).ready(function($) {
         }).toggleClass('active');
         $(this).toggleClass('active');
     });
-    showRecords(3, 1, 'get_volunteer_data');
+    if ($('.get_volunteer_data').length > 0) {
+        showRecords(3, 1, 'get_volunteer_data');
+    }
+    if ($('.get_team_member_data').length > 0) {
+        showRecords(3, 1, 'get_team_member_data');
+    }
 });
 function showRecords(perPageCount, pageNumber, action) {
     var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount};
