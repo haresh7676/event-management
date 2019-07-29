@@ -17,6 +17,14 @@ function my_woocommerce_widget_shopping_cart_proceed_to_checkout() {
 }
 add_action( 'woocommerce_widget_shopping_cart_buttons', 'my_woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
 
+add_action( 'woocommerce_checkout_before_order_review', 'woocommerce_checkout_before_order_review_add_wpar');
+add_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_after_order_review_close_wpar');
+function woocommerce_checkout_before_order_review_add_wpar(){
+    echo '<div class="payment_main_section">';
+}
+function woocommerce_checkout_after_order_review_close_wpar(){
+    echo '</div>';
+}
 /*add_action( 'wmsc_step_content_billing', 'skyverge_add_checkout_content', 9 );
 function skyverge_add_checkout_content() {
     wc_cart_totals_shipping_html();

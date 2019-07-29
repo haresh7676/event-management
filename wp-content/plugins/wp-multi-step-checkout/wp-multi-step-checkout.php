@@ -162,7 +162,8 @@ final class WPMultiStepCheckout {
         $p = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
         // Load scripts
-        wp_register_script( 'wpmc', $u . 'js/script'.$p.'.js', $d, $v, $w );
+        //wp_register_script( 'wpmc', $u . 'js/script'.$p.'.js', $d, $v, $w );
+        wp_register_script( 'wpmc', $u . 'js/script.js', $d, $v, $w );
         wp_localize_script( 'wpmc', 'WPMC', array('keyboard_nav' => $keyboard_nav ));
         wp_register_style ( 'wpmc', $u.'css/style-progress'.$p.'.css',  array(), $v );
         if ( is_checkout() ) {

@@ -310,9 +310,11 @@ if ( !function_exists('wmsc_step_content_shipping') ) {
  * The content of the Order Payment step
  */
 if ( !function_exists('wmsc_step_content_payment') ) {
-    function wmsc_step_content_payment() { 
+    function wmsc_step_content_payment() {
+        echo '<div class="woo_payment_section payment_section">';
         echo '<h3 id="payment_heading">' . __( 'Payment', 'woocommerce' ) . '</h3>';
         do_action( 'wpmc-woocommerce_checkout_payment' );
+        echo '</div>';
         do_action( 'woocommerce_checkout_after_order_review' );
     }
 }
@@ -324,10 +326,12 @@ if ( !function_exists('wmsc_step_content_payment') ) {
 if ( !function_exists('wmsc_step_content_review') ) {
     function wmsc_step_content_review() { 
         do_action( 'woocommerce_checkout_before_order_review' );
+        echo '<div class="order_review_section payment_section">';
         echo '<h3 id="order_review_heading">' .__('Your order', 'woocommerce' ) . '</h3>';
         echo '<div id="order_review">';
         do_action( 'woocommerce_checkout_order_review' ); 
         do_action( 'wpmc-woocommerce_order_review' );
+        echo '</div>';
         echo '</div>';
     }
 }
