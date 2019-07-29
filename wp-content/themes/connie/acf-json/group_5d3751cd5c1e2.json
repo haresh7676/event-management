@@ -1,6 +1,46 @@
 {
     "key": "group_5d3751cd5c1e2",
-    "title": "Volunteer Form",
+    "title": "Event settings",
+    "fields": [
+        {
+            "key": "field_5d3751da7d3f8",
+            "label": "Volunteer Form",
+            "name": "volunteer_form",
+            "type": "text",
+            "instructions": "Please enter shortcode of the contact form 7",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d3ef111a9987",
+            "label": "Contact Form",
+            "name": "contact_form",
+            "type": "text",
+            "instructions": "Please enter shortcode of the contact form 7",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
     "location": [
         [
             {
@@ -18,26 +58,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "fields": [
-        {
-            "key": "field_5d3751da7d3f8",
-            "label": "Volunteer form",
-            "name": "volunteer_form",
-            "type": "text",
-            "instructions": "Please enter shortcode of the contact form 7",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        }
-    ],
-    "modified": 1563907251
+    "modified": 1564406147
 }

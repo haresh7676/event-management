@@ -1,3 +1,4 @@
+<?php $myaccountsettings =  get_fields('account-settings'); ?>
 <div class="tab-pane manage-events-tab active show" id="manageEvents" >
     <div class="sub-tab-design manage-events" data-ajax="<?php echo admin_url('admin-ajax.php'); ?>">
         <ul class="nav nav-pills">
@@ -35,81 +36,33 @@
             </div>
             <!-- My Ticket Tab3 -->
             <div class="tab-pane fade" id="team">
-                <div class="common-table-design">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="thead-purple">
-                            <tr>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Location</th>
-                                <th>Position</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Social Media Director</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Social Media Director</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Social Media Director</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Social Media Director</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Social Media Director</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Events & Accounting Manager</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>adamdenisov@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Executive Editor/ Head Producer</td>
-                            </tr>
-                            <tr>
-                                <td>Adam Denisov</td>
-                                <td>298-323-2133</td>
-                                <td>itslitty@gmail.com</td>
-                                <td>NYC, NY</td>
-                                <td>Assistant Operations Manager</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="common-table-design get_team_member_data">
+                    <div class="tabledataajax"></div>
+                    <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
                     <div class="export-list-row">
                         <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
-                        <button>Add New Team Member</button>
+                        <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_team_form_id']) && !empty($myaccountsettings['manage_event']['add_team_form_id']))){
+                            $add_team_formid = $myaccountsettings['manage_event']['add_team_form_id'];
+                            ?>
+                        <button data-toggle="modal" data-target="#AddteamModal">Add New Team Member</button>
+                        <div class="modal fade volnuteer-form" id="AddteamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.png" class="modal-close-icon" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5 class="modal-title">Add Team Member</h5>
+                                        <div class="volunteer-body">
+                                            <?php echo do_shortcode('[contact-form-7 id="'.$add_team_formid.'" title="Add Team Member"]'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

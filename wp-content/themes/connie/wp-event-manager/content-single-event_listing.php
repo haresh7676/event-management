@@ -1,4 +1,6 @@
-<?php global $post; ?>
+<?php global $post;
+$themesettings =  get_fields('theme-settings');
+?>
 <div class="row">
 <?php if ( get_option( 'event_manager_hide_expired_content', 1 ) && 'expired' === $post->post_status ) : ?>
     <div class="event-manager-info"><?php _e( 'This listing has been expired.', 'wp-event-manager' ); ?></div>
@@ -83,7 +85,26 @@
                         <p>Hosted By  <?php echo display_organizer_name(); ?></p>
                         <label><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png"> <?php echo get_event_location() ?></label>
                         <div class="ticket-contact">
-                            <h4>Contact</h4>
+                            <?php if(!empty($themesettings) && (isset($themesettings['contact_form']) && !empty($themesettings['contact_form']))){ ?>
+                                <h4><a href="javascript:void(0)" data-toggle="modal" data-target="#contactmodule">Contact</a></h4>
+                                <div class="modal fade volnuteer-form" id="contactmodule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.png" class="modal-close-icon" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h5 class="modal-title">Contact Us</h5>
+                                                <div class="volunteer-body">
+                                                    <?php echo apply_filters('the_content',$themesettings['contact_form']); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                             <?php
                             $websiteurl= get_organizer_website();
                             $facebook= get_organizer_facebook();
@@ -203,7 +224,7 @@
                         <?php $newformate = 'D, M j, Y'; ?>
                         <span><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_end_time();?></span>
                         <!--<a href="#" class="view-detail">Add to Calendar</a>-->
-                        <?php $themesettings =  get_fields('theme-settings');
+                        <?php
                         if(!empty($themesettings) && (isset($themesettings['volunteer_form']) && !empty($themesettings['volunteer_form']))){
                         ?>
                         <button type="button" class="btn volnuteer-form-btn" data-toggle="modal" data-target="#exampleModal">Volunteer</button>
