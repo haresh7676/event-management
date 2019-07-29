@@ -11,7 +11,9 @@ remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_s
 
 
 function my_woocommerce_widget_shopping_cart_proceed_to_checkout() {
-    echo '<a href="' . esc_url( wc_get_checkout_url() ) . '" class="btn btn-default">' . esc_html__( 'Next Step', 'woocommerce' ) . '</a>';
+    echo '<a href="' . esc_url( wc_get_checkout_url() ) . '" class="btn btn-default">' . esc_html__( 'Next Step', 'woocommerce' );
+    echo '<i class="fas fa-long-arrow-alt-right"></i>';
+    echo '</a>';
 }
 add_action( 'woocommerce_widget_shopping_cart_buttons', 'my_woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
 
@@ -23,7 +25,9 @@ add_action( 'wmsc_step_content_billing', 'connie_add_checkout_content', 10 );
 function connie_add_checkout_content()
 {
     echo '<div class="min-cart-main">';
-    echo '<h3 class="section-title">'.__('Your Order','wp-event-manager-sell-tickets').'</h3>';
+    echo '<div class="cart-details-title">';
+    echo '<h3>'.__('Your Order','wp-event-manager-sell-tickets').'</h3>';
+    echo '</div>';
     echo '<div id="mode-mini-cart">';
     woocommerce_mini_cart();
     echo '</div>';
