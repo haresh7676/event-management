@@ -45,7 +45,6 @@
                     <div class="tabledataajax"></div>
                     <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
                     <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
                         <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_team_form_id']) && !empty($myaccountsettings['manage_event']['add_team_form_id']))){
                             $add_team_formid = $myaccountsettings['manage_event']['add_team_form_id'];
                             ?>
@@ -177,9 +176,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
-                    </div>
                 </div>
             </div>
             <!-- My Ticket Tab6 -->
@@ -305,9 +301,6 @@
                             </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
                     </div>
                 </div>
             </div>

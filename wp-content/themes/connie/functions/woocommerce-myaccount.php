@@ -24,7 +24,8 @@ function connie_woo_my_account_order() {
     $myorder = array(
         'edit-account'       => __( 'Account Settings', 'woocommerce' ),
         'payment-methods'    => __( 'Payment Settings', 'woocommerce' ),
-        'orders'             => __( 'My Tickets', 'woocommerce' ),
+        'my-tickets'             => __( 'My Tickets', 'woocommerce' ),
+        //'orders'             => __( 'My Tickets', 'woocommerce' ),
         'manage-events' => __( 'Manage Events', 'woocommerce' ),
         'help-center' => __( 'Help Center', 'woocommerce' ),
         'report-problem' => __( 'Report a Problem', 'woocommerce' ),
@@ -44,6 +45,7 @@ add_filter ( 'woocommerce_account_menu_items', 'connie_woo_my_account_order' );
  */
 function connie_add_my_account_endpoint() {
 
+    add_rewrite_endpoint( 'my-tickets', EP_PAGES );
     add_rewrite_endpoint( 'manage-events', EP_PAGES );
     add_rewrite_endpoint( 'help-center', EP_PAGES );
     add_rewrite_endpoint( 'report-problem', EP_PAGES );
@@ -54,7 +56,7 @@ function connie_add_my_account_endpoint() {
 add_action( 'init', 'connie_add_my_account_endpoint' );
 add_filter("woocommerce_get_query_vars", function ($vars) {
 
-    foreach (["manage-events", "help-center", "report-problem", "about", "terms-and-policies"] as $e) {
+    foreach (["my-tickets", "manage-events", "help-center", "report-problem", "about", "terms-and-policies"] as $e) {
         $vars[$e] = $e;
     }
 
@@ -66,7 +68,7 @@ function wpb_woo_endpoint_title( $title, $id ) {
     if ( is_wc_endpoint_url( 'downloads' ) && in_the_loop() ) { // add your endpoint urls
         $title = "Download MP3s"; // change your entry-title
     }
-    elseif ( is_wc_endpoint_url( 'orders' ) && in_the_loop() ) {
+    elseif ( is_wc_endpoint_url( 'my-tickets' ) && in_the_loop() ) {
         $title = "My Tickets";
     }
     elseif ( is_wc_endpoint_url( 'edit-account' ) && in_the_loop() ) {
@@ -97,6 +99,10 @@ add_filter( 'the_title', 'wpb_woo_endpoint_title', 10, 2 );
 /**
  * Manage Event content
  */
+function connie_my_tickets_endpoint_content() {
+    require_once(get_template_directory() .'/include/my-tickets.php');
+}
+
 function connie_manage_events_endpoint_content() {
     require_once(get_template_directory() .'/include/manage-events.php');
 }
@@ -116,7 +122,7 @@ function connie_about_endpoint_content() {
 function connie_terms_and_policies_endpoint_content() {
     require_once(get_template_directory() .'/include/terms-and-policies.php');
 }
-
+add_action( 'woocommerce_account_my-tickets_endpoint', 'connie_my_tickets_endpoint_content' );
 add_action( 'woocommerce_account_manage-events_endpoint', 'connie_manage_events_endpoint_content' );
 add_action( 'woocommerce_account_help-center_endpoint', 'connie_help_center_endpoint_content' );
 add_action( 'woocommerce_account_report-problem_endpoint', 'connie_report_problem_endpoint_content' );

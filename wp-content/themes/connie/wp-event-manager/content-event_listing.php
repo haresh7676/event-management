@@ -46,7 +46,7 @@
 <!-- Box Layout -->
 <a <?php event_listing_class(); ?> href="<?php display_event_permalink(); ?>">
  <div class="box-layout u-events-box">
-    <div class="event-img u-event-pic"><?php display_event_banner(); ?> <i class="fas fa-heart"></i></div>
+    <div class="event-img u-event-pic"><?php display_event_banner(); ?> <?php echo get_favorites_button($post->ID, ''); ?><!--<i class="fas fa-heart"></i>--></div>
       <!-- <div class="boxes-view-box-registered-code">
                 <?php /*do_action('event_already_registered_title');*/?>
         </div>-->
