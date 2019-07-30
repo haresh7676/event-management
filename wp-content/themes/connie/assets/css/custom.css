@@ -195,6 +195,7 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
 .cart-main-area .woocommerce .wpmc-nav-buttons.backtoticket .currentbtn.alt.hidecurrent{
     display: none;
 }
+.event_listing .simplefavorite-button > span{display: none;}
 .woocommerce button.button.defulat-custom-btn, .defulat-custom-btn {
     background: #775DFF;
     border: 1px solid #775DFF;
