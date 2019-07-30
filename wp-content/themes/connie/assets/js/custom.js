@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
       windowHeight = $(window).innerHeight();
       headerHeight = $('.top-header').outerHeight(true);
       titleHeight = $('.tabbing-page-title').innerHeight();
-      mainHeight = windowHeight - headerHeight - titleHeight;
+      mainHeight = windowHeight - headerHeight - titleHeight - 15;
       $('.custom-tab-design').css('min-height', mainHeight);
   };
   setHeight();

@@ -72,6 +72,16 @@
             </div>
             <!-- My Ticket Tab4 -->
             <div class="tab-pane fade" id="volunteer">
+                <div class="m-e-table-dropdown">
+                    <select class="form-controls">
+                        <option>Volunteer</option>
+                        <option>Volunteer</option>
+                        <option>Volunteer</option>
+                        <option>Volunteer</option>
+                        <option>Volunteer</option>
+                        <option>Volunteer</option>
+                    </select>
+                </div>
                 <div class="common-table-design get_volunteer_data">
                     <div class="tabledataajax"></div>
                     <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
@@ -79,6 +89,16 @@
             </div>
             <!-- My Ticket Tab5 -->
             <div class="tab-pane fade" id="attendees">
+                <div class="m-e-table-dropdown">
+                    <select class="form-controls">
+                        <option>Attendees</option>
+                        <option>Attendees</option>
+                        <option>Attendees</option>
+                        <option>Attendees</option>
+                        <option>Attendees</option>
+                        <option>Attendees</option>
+                    </select>
+                </div>
                 <div class="common-table-design">
                     <div class="table-responsive">
                         <table class="table">
@@ -180,6 +200,16 @@
             </div>
             <!-- My Ticket Tab6 -->
             <div class="tab-pane fade" id="refunds">
+                <div class="m-e-table-dropdown">
+                    <select class="form-controls">
+                        <option>Refunds</option>
+                        <option>Refunds</option>
+                        <option>Refunds</option>
+                        <option>Refunds</option>
+                        <option>Refunds</option>
+                        <option>Refunds</option>
+                    </select>
+                </div>
                 <div class="common-table-design">
                     <div class="table-responsive">
                         <table class="table">
