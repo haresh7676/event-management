@@ -27,11 +27,17 @@
         <div class="tab-content">
             <!-- My Ticket Tab1 -->
             <div class="tab-pane fade active" id="editEvent">
+                <h2>Edit Events</h2>
+                <div class="editEvent-main-wpr">
                 <?php echo do_shortcode('[event_dashboard]'); ?>
+                </div>
             </div>
             <!-- My Ticket Tab2 -->
             <div class="tab-pane fade" id="myDashboard">
                 <h2>My Dashboard</h2>
+                <div class="mydashboard-main-wpr">
+                <?php do_action('event_manager_event_dashboard_before'); ?>
+                </div>
             </div>
             <!-- My Ticket Tab3 -->
             <div class="tab-pane fade" id="team">
@@ -39,7 +45,6 @@
                     <div class="tabledataajax"></div>
                     <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
                     <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
                         <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_team_form_id']) && !empty($myaccountsettings['manage_event']['add_team_form_id']))){
                             $add_team_formid = $myaccountsettings['manage_event']['add_team_form_id'];
                             ?>
@@ -80,9 +85,6 @@
                 <div class="common-table-design get_volunteer_data">
                     <div class="tabledataajax"></div>
                     <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
-                    <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
-                    </div>
                 </div>
             </div>
             <!-- My Ticket Tab5 -->
@@ -193,9 +195,6 @@
                             </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
                     </div>
                 </div>
             </div>
@@ -333,9 +332,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="export-list-row">
-                        <a href="#"><i class="fas fa-chevron-up"></i> Export List</a>
-                    </div>
                 </div>
             </div>
             <!-- My Ticket Tab7 -->
@@ -345,100 +341,9 @@
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Search...">
                     </div>
-                    <div class="m-e-contact-details">
-                        <ul>
-                            <li>
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic1.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Alexis Davis</span>
-                                    <h3>Friday Update</h3>
-                                    <p>Happy Friday Team! This week's updates</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>5 min ago</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic2.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Amanda Smith</span>
-                                    <h3>Refund</h3>
-                                    <p>Hi, I was wondering about you refund policy</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>1 hr ago</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic3.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Bryanda Law</span>
-                                    <h3>Let’s meet for dinner later</h3>
-                                    <p>Hey Jason, How do you feel about grabbing</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>5 min ago</span>
-                                </div>
-                            </li>
-                            <li class="disabled">
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic1.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Max Martinez</span>
-                                    <h3>Your insights?</h3>
-                                    <p>Hey, If I'm not mistaken, you signed up for our</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>9:03 am</span>
-                                </div>
-                            </li>
-                            <li class="disabled">
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic2.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Max Martinez</span>
-                                    <h3>Your insights?</h3>
-                                    <p>Hey, If I'm not mistaken, you signed up for our</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>9:03 am</span>
-                                </div>
-                            </li>
-                            <li class="disabled">
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic3.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Max Martinez</span>
-                                    <h3>Your insights?</h3>
-                                    <p>Hey, If I'm not mistaken, you signed up for our</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>9:03 am</span>
-                                </div>
-                            </li>
-                            <li class="disabled">
-                                <div class="m-e-contact-profile-pic">
-                                    <img src="assets/images/contact-list-pic1.png" alt="">
-                                </div>
-                                <div class="m-e-contact-profile-desc">
-                                    <span>Max Martinez</span>
-                                    <h3>Your insights?</h3>
-                                    <p>Hey, If I'm not mistaken, you signed up for our</p>
-                                </div>
-                                <div class="m-e-contact-profile-time">
-                                    <span>9:03 am</span>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="m-e-contact-details get_report_problem_contact_data">
+                        <div class="tabledataajax"></div>
+                        <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader.png'; ?>"></div>
                     </div>
                 </div>
             </div>
