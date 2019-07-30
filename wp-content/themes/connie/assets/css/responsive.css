@@ -574,6 +574,15 @@
     .logo-box img {
         max-height: 50px;
     }
+    .cart-main-area.tickets {
+        padding: 20px;
+    }
+    .cart-details .cart-detail-left .table {
+        width: 520px;
+    }
+    .cart-details-title h3 {
+        font-size: 20px;
+    }
 }
 @media (min-width: 768px) {
     .custom-tab-toggle {
@@ -1087,7 +1096,6 @@
     }
     .logo-box {
         float: none;
-        width: 66px;
         overflow: hidden;
     }
     .topnav-right.pull-right {
@@ -1228,6 +1236,79 @@
     }
     .login-bg-sdw {
         position: fixed;
+    }
+    .cart-main-area.tickets {
+        margin: 20px 0;
+        padding: 20px;
+    }
+    .cart-page-title {
+        margin-bottom: 20px;
+    }
+    .cart-main-area .checkout-step {
+        display: block;
+    }
+    .cart-main-area .cart-page {
+        width: 100%;
+        padding: 0px;
+    }
+    .min-cart-main {
+        width: 100%;
+        padding: 0px;
+    }
+    .cart-details .cart-detail-left {
+        padding-right: 0px;
+        border-right: none;
+    }
+    .cart-details .cart-detail-left .table {
+        width: 520px;
+    }
+    .cart-details-title h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .min-cart-main .woocommerce-mini-cart__buttons {
+        position: inherit;
+        float: right;
+        width: 120px;
+        margin-top: 20px;
+    }
+    .cart-main-area .wpmc-tabs-list.wpmc-2-tabs .wpmc-tab-item {
+        width: 25%;
+    }
+    body.without-banner .main-section-container {
+        margin-top: 20px !important;
+        margin-bottom: 20px;
+    }
+    .cart-main-area .wpmc-steps-wrapper .woocommerce-billing-fields {
+        width: 100%;
+        padding: 0px;
+        border-right: 0px;
+    }
+    .cart-main-area .woocommerce form .form-row {
+        width: 100%;
+        min-height: inherit;
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+    .cart-main-area .woocommerce .wpmc-nav-wrapper {
+        margin-top: 20px;
+    }
+    .cart-main-area {
+        padding-bottom: 20px;
+    }
+    .cart-main-area .payment_main_section .woo_payment_section {
+        width: 100%;
+        padding: 0px;
+        min-height: inherit;
+        border-right: 0px;
+    }
+    .cart-main-area .payment_main_section .order_review_section {
+        width: 100%;
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+    .logo-box img {
+        max-height: 30px;
     }
 }
 @media (max-width: 567px) {

@@ -38,6 +38,8 @@ function projectname_scripts() {
 
    // wp_enqueue_style( 'main-jb-css', get_theme_file_uri( '/assets/css/main-jb.css' ), array(), '1.0' );
 
+    wp_enqueue_style( 'responsive-css', get_theme_file_uri( '/assets/css/responsive.css' ), array(), rand(0,999) );
+
     wp_enqueue_style( 'custom-css', get_theme_file_uri( '/assets/css/custom.css' ), array(), rand(0,999) );
 
     //wp_enqueue_script( 'sell-tickets-wp', get_theme_file_uri( '/assets/js/sell-ticket.js' ), array( 'jquery' ), '1.0', true );

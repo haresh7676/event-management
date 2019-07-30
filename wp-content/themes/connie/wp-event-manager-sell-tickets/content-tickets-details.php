@@ -64,7 +64,7 @@ $event_timezone   = get_event_timezone();
                           $fee_settings = get_option('fee_settings_rules',get_default_fee_settings() );
                     ?>
                     <tr>            
-                      <td width="40%"><?php _e( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets'); ?>
+                      <td width="50%"><?php _e( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets'); ?>
                         <p><?php if($show_description == '1' || $show_description == 'on') : _e( the_content() , 'wp-event-manager-sell-tickets' ); endif;?></p>
                         <input type="hidden" name="product_id" id="product-id-<?php echo $count_fields;?>" value="">
                       </td>      
