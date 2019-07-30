@@ -1,4 +1,4 @@
-<?php do_action('event_manager_event_dashboard_before'); ?>
+<?php //do_action('event_manager_event_dashboard_before'); ?>
 <?php if(!empty($event_dashboard_columns)){
     unset($event_dashboard_columns['registrations']);
 } ?>

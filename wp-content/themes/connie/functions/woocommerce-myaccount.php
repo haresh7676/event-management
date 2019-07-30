@@ -321,32 +321,20 @@ function get_report_problem_contact_data() {
     }
     $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
     $output = '';
-    $output .='<div class="table-responsive">';
-    $output .='<table class="table">';
-    $output .='<thead class="thead-purple">';
-    $output .='<tr>';
-    $output .='<th>Name</th>';
-    $output .='<th>Phone</th>';
-    $output .='<th>Email</th>';
-    $output .='<th>Location</th>';
-    $output .='<th>Position</th>';
-    $output .='</tr>';
-    $output .='</thead>';
-    $output .='<tbody>';
+    $output .='<ul>';
     if(isset($results) && !empty($results['data'])){
         foreach ($results['data'] as $item){
-            $output.='<tr>';
-            $output.='<td>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</td>';
-            $output.='<td>'.$item['form_data']['telephone'].'</td>';
-            $output.='<td>'.$item['form_data']['your-email'].'</td>';
-            $output.='<td>'.$item['form_data']['location'].'</td>';
-            $output.='<td>'.$item['form_data']['position'].'</td>';
-            $output.='</tr>';
+            $readclass = ($item['form_data']['cfdb7_status'] == 'read') ? 'disabled':'';
+            $output.='<li class="'.$readclass.'"><div class="m-e-contact-profile-desc">';
+            $output.='<span>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</span>';
+            $output.='<h3>'.$item['form_data']['subject'].'</h3>';
+            $output.='<p>'.$item['form_data']['your-message'].'</p>';
+            $output.='</div>';
+            $output.='<div class="m-e-contact-profile-time">'.connic_time_elapsed_string($item['form_date']).'</div>';
+            $output.='</li>';
         }
     }
-    $output.='</tbody>';
-    $output.='</table>';
-    $output.='</div>';
+    $output.='</ul>';
     /*pagination */
     $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
     $pagesCount = ceil($rowCount / $perPageCount);
@@ -358,7 +346,7 @@ function get_report_problem_contact_data() {
         if ($i == $pageNumber) {
             $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
         } else {
-            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_team_member_data\')">'.$i.'</a>';
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_report_problem_contact_data\')">'.$i.'</a>';
         } // endIf
     } // endFor
     $output.='</td>';
@@ -376,3 +364,32 @@ function get_report_problem_contact_data() {
     die();
 }
 
+
+function connic_time_elapsed_string($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'yr',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hr',
+        'i' => 'min',
+        's' => 'sec',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
