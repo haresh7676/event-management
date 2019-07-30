@@ -264,7 +264,7 @@ input:-webkit-autofill:active  {
     padding-left: 0px;
 }
 .topnav-right.pull-right ul li {
-    margin: 0 18px;
+    margin: 0 12px;
 }
 .topnav-right.pull-right ul li a {
     font-size: 18px;
@@ -811,6 +811,9 @@ i.usr-icn-bx {
     align-items: center;
     justify-content: center;    
 }
+i.usr-icn-bx img {
+    border-radius: 50%;
+}
 .dropdown.user-top-nav {
     cursor: pointer;
 }
@@ -880,7 +883,6 @@ i.drp-icn {
 }
 .landing-serach {
     display: inline-block;
-    height: 48px;
     border-radius: 100px;
     position: relative;
 }
@@ -1070,6 +1072,7 @@ i.drp-icn {
     color: #000000;
     font-weight: 600;
     padding: 40px 0;
+    margin: 0px;
 }
 .browe-event-title {
     padding-top: 68px;
@@ -1080,7 +1083,7 @@ i.drp-icn {
     top: 60px;
     left: 0px;
     z-index: 9;
-    padding: 15px 0 10px 0;
+    padding: 12px 0 10px 0;
     background: #FAFAFA;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
     -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
