@@ -40,6 +40,18 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+input::-webkit-input-placeholder {
+  color: #ccc;
+}
+input::-moz-placeholder {
+  color: #ccc;
+}
+input:-ms-input-placeholder {
+  color: #ccc;
+}
+input:-moz-placeholder {
+  color: #ccc;
+}
 .custom-control-label::before,
 .custom-control-label::after {
 	width: 18px !important;
@@ -320,18 +332,6 @@ input:-webkit-autofill:active  {
     border: 1px solid rgba(166, 166, 166, 0.77);
     color: #000;
 }
-.creat-event-page input::-webkit-input-placeholder {
-  color: #000;
-}
-.creat-event-page input::-moz-placeholder {
-  color: #000;
-}
-.creat-event-page input:-ms-input-placeholder {
-  color: #000;
-}
-.creat-event-page input:-moz-placeholder {
-  color: #000;
-}
 button.btn.slct-btn {
     font-weight: bold;
     font-size: 15px;
@@ -408,6 +408,9 @@ button.btn.slct-btn.active {
     height: 50px;
     width: 200px;
     margin: 0 10px;
+}
+.create-event-cart .create-ticket-option-btn a {
+    text-decoration: none;
 }
 .create-ticket-option-btn button i {
     font-size: 16px;
@@ -576,6 +579,7 @@ select.custome-select {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 10px;
 }
 .custom-browse-file .browse-pluse-icon {
     margin-bottom: 15px;
@@ -893,7 +897,7 @@ i.drp-icn {
     outline: none;
     padding-left: 56px;
     float: left;
-    color: #333333;
+    color: #000;
     font-size: 16px;
     background-size: 20px !important;
     padding-right: 20px;
@@ -913,6 +917,9 @@ i.drp-icn {
     height: 42px;
     background: #7a7a7a;
     z-index: 1;
+}
+.landing-serach input:focus {
+    outline: none !important;
 }
 .landing-serach input.city-search {
     background: rgba(255, 255, 255, 0.35) url(../../assets/images/location-icon.png) no-repeat 16px center;
@@ -2765,6 +2772,35 @@ i.drp-icn {
     min-width: 200px;
     height: 40px;
     font-size: 14px;
+}
+.creat-event-page .create-event-cart .form-group {
+    margin-bottom: 0px;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+    font-size: 14px;
+}
+.modal {
+    z-index: 99999;
+}
+.custom-browse-file .event-manager-remove-uploaded-file {
+    padding: 0 10px !important;
+}
+.creat-event-page .custom-browse-file .event-manager-uploaded-files {
+    margin-top: 10px;
+    text-align: center;
+    display: block !important;
+}
+.event-manager-form fieldset .event-manager-uploaded-files .event-manager-uploaded-file {
+    display: inline-block;
+}
+/*.event-manager-form fieldset.fieldset-event_album .event-manager-uploaded-file {
+    width: 20%;
+}*/
+.event-manager-uploaded-file .event-manager-uploaded-file-preview img {
+    width: 94px;
+}
+.design-your-event .custom-browse-file .description {
+    margin-bottom: 10px !important;
 }
 
 /* AR479-Cart page css end */
