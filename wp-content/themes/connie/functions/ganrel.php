@@ -68,3 +68,29 @@ function property_init()
     );*/
 }
 
+function get_sell_start_price($event_id){
+    if(!empty($event_id)) {
+        $args = array(
+            'post_type' => 'product',
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'meta_key' => '_event_id',
+            'meta_value' => $event_id,
+        );
+        $all_tickets = get_posts($args);
+
+    }
+}
+
+function theme_name_custom_orderby_query_args( $query_args ) {
+    $query_args[ 'meta_key' ] = '_event_start_date';
+    $query_args['meta_query'][] = array(
+        'key' => '_event_publish__status',
+        'value' => 'public',
+        'type' => 'CHAR',
+        'compare' => '='
+    );
+    return $query_args;
+}
+
+add_filter( 'get_event_listings_query_args', 'theme_name_custom_orderby_query_args', 99 );
