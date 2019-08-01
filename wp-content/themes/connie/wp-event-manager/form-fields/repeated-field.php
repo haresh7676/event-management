@@ -31,7 +31,7 @@
     					   <?php if(!empty($subfield['label'])) : ?>
                              <div class="col-md-4"> <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label></div>
     					   <?php endif; ?>
-    					   <div class="col-md-8">
+    					   <div class="col-md-12">
                                 <div class="field">
                                     <?php                                
                                         $subfield['name']  = $key . '_' . $subkey . '_' . $index;
@@ -66,24 +66,28 @@
                 <?php  foreach ( $field['fields'] as $subkey => $subfield ) : 
                                 if ($subkey == 'ticket_description') : ?>           
                 </div><!------------end ticket details tab------>
-                <div id="<?php echo $key; ?>_%%repeated-row-index%%" class="tab-pane fade">
+                <div id="<?php echo $key; ?>_%%repeated-row-index%%" class="tab-pane fade setting-description">
                 <?php endif;?>
                 
                     <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?>">
-    					<?php if(!empty($subfield['label'])) : ?>
-    					<div class="col-md-4"> <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label></div>
-    					<?php endif; ?>
-    					<div class="col-md-8">
-    					<div class="field">
-    					 <div>
-    						<?php							
-    							$subfield['name']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
-    							$subfield['id']  = $key . '_' . $subkey . '_%%repeated-row-index%%';	
-    							get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
-    						?>
-    						</div>
-    					</div>
-    					</div>
+                        <div class="row">
+                        <?php if(!empty($subfield['label'])) : ?>
+                           <div class="col-md-4">
+                                <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label>
+                           </div>
+    					   <?php endif; ?>
+        					<div class="col-md-12">
+            					<div class="field">
+            					 <div>
+            						<?php							
+            							$subfield['name']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
+            							$subfield['id']  = $key . '_' . $subkey . '_%%repeated-row-index%%';	
+            							get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
+            						?>
+            						</div>
+            					</div>
+        					</div>
+                        </div>
     				</fieldset>   
     		<?php endforeach; ?>
                 </div><!------------end settings tab------>     

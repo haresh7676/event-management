@@ -104,13 +104,13 @@ input:-moz-placeholder {
     text-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
 }
 .lg-rgt-box {
-	width: 680px;
+	/*width: 680px;*/
 	max-width: 100%;
 	float: left;
 	padding: 40px 20px 0;
 }
 .signin-box {
-	width: 521px;
+	width: 580px;
 	height: auto;
 	max-width: 100%;
 	background: #fff;
@@ -119,7 +119,10 @@ input:-moz-placeholder {
     -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
 	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
 	margin:30px auto;
-	padding: 35px;
+	padding: 20px 35px;
+}
+.lg-rgt-box .sgnup-wth br {
+    display: none;
 }
 .signin-title h5 {
     text-align: center;
@@ -171,6 +174,11 @@ input:-moz-placeholder {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+.login-btn-box .login-btn:focus, .login-btn-box .login-btn:active {
+    box-shadow: none;
+    outline: none;
+    outline-offset: inherit;
 }
 .login-btn:hover {
 	color: #fff;
@@ -307,6 +315,7 @@ input:-moz-placeholder {
     color: #000;
     padding-bottom: 1px;
     border-bottom: 2px solid #000000;
+    margin-top: 0px;
 }
 .container.create-event-content {
     margin: 40px auto;
@@ -316,10 +325,14 @@ input:-moz-placeholder {
     color: #4A4A4A;
     font-weight: bold;
     margin-bottom: 5px;
+    text-align: left;
 }
 .create-event-cart .form-group label span {
     color: #D0021B;
     margin-left: 2px;
+}
+.create-event-cart .form-group label span.rediolabel {
+    margin-left: 0px;
 }
 .create-event-cart .form-group p {
     font-size: 12px;
@@ -411,6 +424,8 @@ button.btn.slct-btn.active {
 }
 .create-event-cart .create-ticket-option-btn a {
     text-decoration: none;
+    padding: 8px 30px !important;
+    font-size: 18px !important;
 }
 .create-ticket-option-btn button i {
     font-size: 16px;
@@ -448,6 +463,7 @@ button.btn.slct-btn.active {
 }
 .setting-description {
     width: 100%;
+    float: left;
     background: #FAFAFA;
     box-shadow: 0px 0px 10px rgba(119, 93, 255, 0.2);
     border-radius: 8px;
@@ -466,7 +482,7 @@ button.btn.slct-btn.active {
     content: "";
     position: absolute;
     top: -54px;
-    right: 96px;
+    right: 6px;
     background: url(../../assets/images/star-icon.svg) no-repeat;
     width: 80px;
     height: 54px;
@@ -1489,10 +1505,11 @@ i.drp-icn {
     background: #ffffff;
 }
 .tabbing-page-title {
-    width: 100%;
+    width: calc(100% - 200px);
+    float: right;
     background: #E5E5E5;
-    padding: 20px 0 20px 220px;
-    font-size: 24px;
+    padding: 20px 0 20px 40px;
+    font-size: 20px;
     color: #000000;
     font-weight: 600;
 }
@@ -1504,6 +1521,8 @@ i.drp-icn {
     width: 200px;
     flex: none;
     border-right: 1px solid #C4C4C4;
+    margin-top: -70px;
+    background: #ffffff;
 }
 .custom-tab-design .tab-content {
     width: calc(100% - 304px);
@@ -2250,6 +2269,7 @@ i.drp-icn {
     margin: 0px;
     opacity: 1;
     padding: 0px;
+    background: transparent;
 }
 .volnuteer-form .modal-header .close:hover, .volnuteer-form .modal-header .close:focus {
     opacity: 1;
@@ -2793,14 +2813,54 @@ i.drp-icn {
 .event-manager-form fieldset .event-manager-uploaded-files .event-manager-uploaded-file {
     display: inline-block;
 }
-/*.event-manager-form fieldset.fieldset-event_album .event-manager-uploaded-file {
-    width: 20%;
-}*/
 .event-manager-uploaded-file .event-manager-uploaded-file-preview img {
     width: 94px;
 }
 .design-your-event .custom-browse-file .description {
     margin-bottom: 10px !important;
 }
-
+.ticket-fields-form .ticketwprs .nav-tabs {
+    margin: 0px;
+    padding: 0 0 10px 0;
+    float: right;
+}
+.ticket-fields-form .ticketwprs .nav-tabs li {
+    border-right: 1px solid #dee2e6;
+}
+.ticket-fields-form .ticketwprs .nav-tabs li:last-child {
+    border-right: 0px;
+}
+.ticket-fields-form .ticketwprs .nav-tabs li a {
+    font-size: 18px;
+    margin: 0 10px;
+    color: #775DFF;
+}
+.ticket-fields-form .ticketwprs .nav-tabs li a.active {
+    color: #F7B0C0;
+}
+.creat-event-page .input-text {
+    font-size: 16px;
+}
+.setting-description fieldset .field {
+    text-align: left;
+}
+.setting-description fieldset .field select {
+    font-size: 16px;
+}
+.setting-description fieldset:last-child {
+    border-bottom: none !important;
+}
+.creat-event-page .basic-info-form .required-field select {
+    font-size: 14px;
+}
+.creat-event-page small.description {
+    font-size: 13px !important;
+    margin-top: 10px !important;
+}
+.box-layout:hover {
+    box-shadow: none;
+}
+.tabbing-page-content .create-event-content {
+    margin: 20px auto;
+}
 /* AR479-Cart page css end */

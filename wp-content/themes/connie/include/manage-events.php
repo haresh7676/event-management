@@ -27,7 +27,6 @@
         <div class="tab-content">
             <!-- My Ticket Tab1 -->
             <div class="tab-pane fade active" id="editEvent">
-                <h2>Edit Events</h2>
                 <div class="editEvent-main-wpr">
                 <?php echo do_shortcode('[event_dashboard]'); ?>
                 </div>

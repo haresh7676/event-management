@@ -247,10 +247,6 @@
     .manage-events-contact .m-e-contact-profile-pic {
         margin-right: 50px;
     }
-    .tabbing-page-title {
-        padding: 20px 0 20px 220px;
-        font-size: 24px;
-    }
     .custom-tab-design .tab-pane .sub-tab-design {
         padding: 15px 20px;
     }
@@ -426,10 +422,6 @@
     .custom-tab-design .sub-tab-design ul .nav-item a {
         white-space: nowrap;
     }
-    .tabbing-page-title {
-        padding: 20px 0 20px 220px;
-        font-size: 20px;
-    }
     .custom-tab-design .sub-tab-design .tab-content {
         padding-top: 20px;
     }
@@ -536,7 +528,7 @@
         margin-bottom: 10px;
     }
     .setting-description:after {
-        right: 146px;
+        right: 0;
     }
     .setting-description-row .s-ticket-status li a {
         min-width: 95px;
@@ -565,7 +557,7 @@
         margin-top: 30px;
     }
     .topnav-right.pull-right ul li {
-        margin: 0 10px;
+        margin: 0 8px;
     }
     .logo-box {
         line-height: 60px;
@@ -582,6 +574,23 @@
     }
     .cart-details-title h3 {
         font-size: 20px;
+    }
+    .creat-event-page .basic-info-form .field_mideam.calicon {
+        width: 60% !important;
+    }
+    .creat-event-page .basic-info-form .field_small {
+        width: 38% !important;
+    }
+    .creat-event-page .create-ticket-option-btn .field-tickets .event_ticket_add_link {
+        padding: 10px 20px !important;
+    }
+    .design-your-event .fieldset-event_banner.pullrightinner .custom-browse-file {
+        width: 100% !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 768px) {
+    .user-top-nav .usr-nm {
+        max-width: 98px;
     }
 }
 @media (min-width: 768px) {
@@ -643,18 +652,18 @@
     }
     .dropdown.user-top-nav {
         position: absolute;
-        top: 16px;
+        top: 4px;
         right: 12px;
     }
     .user-top-nav .dropdown-menu {
-        top: 55px !important;
+        top: 40px !important;
         width: 300px;
         left: auto !important;
         right: 0px;
         transform: inherit !important;
     }
     .landing-page-banner {
-        min-height: 300px;
+        min-height: 240px;
         background: #f7b0c0;
     }
     .landing-page-banner .landing-banner-content {
@@ -686,7 +695,7 @@
         display: inline-block;
     }
     .landing-page-content .landing-page-title {
-        padding: 40px 0;
+        padding: 20px 0 10px 0;
     }
     .landing-page-content .landing-page-title img {
         height: 40px;
@@ -805,7 +814,7 @@
         margin-bottom: 10px;
     }
     .profile-location .map-video-box {
-        height: auto;
+        height: 250px;
         border-width: 1px;
     }
     .profile-video .map-video-box {
@@ -833,10 +842,12 @@
         padding: 15px;
         text-align: center;
         font-size: 14px;
+        width: 100%;
     }
     .custom-tab-design {
         min-height: inherit !important;
-        display: block;
+        width: 100%;
+        display: inline-block;
     }
     .custom-tab-design .sidebar-tabs {
         position: absolute;
@@ -1097,6 +1108,7 @@
     .logo-box {
         float: none;
         overflow: hidden;
+        height: 44px;
     }
     .topnav-right.pull-right {
         width: 100%;
@@ -1170,7 +1182,7 @@
         text-align: right;
     }
     .setting-description:after {
-        right: 74px;
+        right: -10px;
         top: -50px;
         height: 50px;
     }
@@ -1223,7 +1235,7 @@
         font-size: 20px;
     }
     .tabbing-page-content {
-        padding-top: 61px;
+        padding-top: 0;
     }
     .creat-event-page .landing-page-banner, .event-profile-banner, .browe-event-content, .browe-event-title {
         padding-top: 0px;
@@ -1309,6 +1321,28 @@
     }
     .logo-box img {
         max-height: 30px;
+        margin: 7px 0 0 7px;
+    }
+    div.event_listings ul.event_listings .box-layout {
+        width: 100% !important;
+    }
+    .basic-info-form .form-group.fieldset-event_category, .basic-info-form .form-group.fieldset-event_publish__status {
+        width: 100% !important;
+    }
+    .basic-info-form .fieldset-event_publish__status .field label {
+        width: 125px !important;
+    }
+    .creat-event-page .basic-info-form .field_mideam.calicon, .creat-event-page .basic-info-form .field_small {
+        width: 100% !important;
+    }
+    .creat-event-page .create-ticket-option-btn .ticketbuttonwpr .field-tickets {
+        padding: 5px !important;
+    }
+    .creat-event-page .create-ticket-option-btn .field-tickets .event_ticket_add_link {
+        padding: 10px 20px !important;
+    }
+    .design-your-event .fieldset-event_banner.pullrightinner .custom-browse-file {
+        width: 100% !important;
     }
 }
 @media (max-width: 567px) {
@@ -1428,12 +1462,20 @@
         top: 10px;
     }
 }
-/*@media only screen 
+@media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 767px)
   and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-    .login-bg {
-        min-height: 580px;
+  and (orientation: portrait) {
+    .creat-event-page .create-ticket-option-btn .ticketbuttonwpr .field-tickets {
+        width: 100%;
     }
-}*/
+    .ticket-fields-form .ticketwprs .nav-tabs li a {
+        font-size: 14px;
+        margin: 0 6px;
+    }
+    .login-btn-box .login-btn {
+        width: 120px;
+        font-size: 13px;
+    }
+}
