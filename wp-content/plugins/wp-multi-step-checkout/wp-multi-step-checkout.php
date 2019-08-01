@@ -167,7 +167,7 @@ final class WPMultiStepCheckout {
         wp_register_script( 'wpmc', $u . 'js/script.js', $d, $v, $w );
         wp_localize_script( 'wpmc', 'WPMC', array('keyboard_nav' => $keyboard_nav ));
         wp_register_style ( 'wpmc', $u.'css/style-progress'.$p.'.css',  array(), $v );
-        if ( is_checkout() ) {
+        if ( is_checkout() || is_singular('event_listing')) {
             wp_enqueue_script ( 'wpmc' );
             wp_enqueue_style  ( 'wpmc' ); 
         }
@@ -178,7 +178,7 @@ final class WPMultiStepCheckout {
      * Change the main color
      */
     public function wp_head() {
-        if ( ! is_checkout() ) return; 
+        if ( ! is_checkout() ||  is_singular('event_listing') ) return;
         $options = get_option('wmsc_options');
         $color = (isset($options['main_color'])) ? $options['main_color'] : '#1e85be';
 

@@ -390,6 +390,9 @@ opacity: 1;
     font-family: 'sf_compact_displaythin';
     font-weight: 600;
 }
+.cart-main-area .wpmc-tabs-wrapper .wpmc-tab-item.current:before{
+    border-bottom-color: #775dff;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
