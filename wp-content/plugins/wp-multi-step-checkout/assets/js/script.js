@@ -1,7 +1,7 @@
 jQuery(window).ready(function($){
     "use strict";
 
-    var tabs = $('.wpmc-tab-item');
+    var tabs = $('.wpmc-tab-item').not( ".wpmc-tab-item-static" );
     var sections = $('.wpmc-step-item');
     var buttons = $('.wpmc-nav-buttons .button');
     var checkout_form = $('form.woocommerce-checkout');
