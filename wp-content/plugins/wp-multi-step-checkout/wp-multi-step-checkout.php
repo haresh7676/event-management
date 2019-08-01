@@ -156,7 +156,8 @@ final class WPMultiStepCheckout {
         $keyboard_nav = (isset($options['keyboard_nav']) && $options['keyboard_nav'] ) ? true : false;
 
         $u = plugins_url('/', __FILE__) . 'assets/'; // URL of the assets folder
-        $v = $this->version; // this plugin's version
+        //$v = $this->version; // this plugin's version
+        $v = rand(0,999);
         $d = array( 'jquery' ); // dependencies
         $w = false; // where? in footer?
         $p = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
