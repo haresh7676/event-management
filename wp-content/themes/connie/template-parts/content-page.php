@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php $contentclass= (is_checkout()?'/*cart-main-area*/':''); ?>
+    <?php $contentclass= (is_checkout()?'cart-main-area':''); ?>
 	<div class="entry-content <?php echo $contentclass; ?>">
 		<?php
 		the_content();

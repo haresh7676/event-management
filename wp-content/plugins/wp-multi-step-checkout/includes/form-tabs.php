@@ -18,7 +18,7 @@ $number_of_steps = ($show_login_step) ? count($steps) + 1 : count($steps);
             <div class="wpmc-tab-text"><?php echo $options['t_login']; ?></div>
         </li>
     <?php endif; ?>
-        <li class="wpmc-tab-item-static wpmc-tab-item">
+        <li class="wpmc-tab-item-static wpmc-tab-item previous">
             <div class="wpmc-tab-number"><?php echo 1; ?></div>
             <div class="wpmc-tab-text">Ticket</div>
         </li>
