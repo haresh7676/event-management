@@ -70,7 +70,7 @@ function property_init()
 //get_sell_start_price(12);
 function get_sell_start_price($event_id){
     if(!empty($event_id)) {
-        global $wpdb;   
+        global $wpdb;
 
         if( empty( $event_id ) )
             return;
@@ -98,3 +98,12 @@ function theme_name_custom_orderby_query_args( $query_args ) {
 }
 
 add_filter( 'get_event_listings_query_args', 'theme_name_custom_orderby_query_args', 99 );
+
+
+function connice_add_cpts_to_api( $args, $post_type ) {
+    if ( 'event_listing' === $post_type ) {
+        $args['show_in_rest'] = true;
+    }
+    return $args;
+}
+add_filter( 'register_post_type_args', 'connice_add_cpts_to_api', 10, 2 );
