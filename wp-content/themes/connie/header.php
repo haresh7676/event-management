@@ -21,7 +21,7 @@ $bannerimg = get_field('banner_image');
                 <ul>
                     <li class="browser-event"><a href="<?php echo site_url(); ?>/events/">Browse Events</a></li>
                     <li class="active"><a href="<?php echo site_url(); ?>/create-event/">Create Event</a></li>
-                    <li><a href="<?php echo site_url().'/my-account/help-center/'; ?>">Help</a></li>
+                    <li><a title="Help" data-toggle="tooltip" href="<?php echo site_url().'/my-account/help-center/'; ?>"><i class="far fa-question-circle"></i></a></li>
                     <?php if(is_user_logged_in()){
                         $current_user = wp_get_current_user();
                         ?>
