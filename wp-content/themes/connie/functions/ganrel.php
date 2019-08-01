@@ -67,18 +67,22 @@ function property_init()
         'top'
     );*/
 }
-
+//get_sell_start_price(12);
 function get_sell_start_price($event_id){
     if(!empty($event_id)) {
-        $args = array(
-            'post_type' => 'product',
-            'post_status' => 'publish',
-            'posts_per_page' => -1,
-            'meta_key' => '_event_id',
-            'meta_value' => $event_id,
-        );
-        $all_tickets = get_posts($args);
+        global $wpdb;   
 
+        if( empty( $event_id ) )
+            return;
+
+        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );
+        if(!empty($r)){
+            if($r[0] == 0 || $r[0] == ''){
+                return 'Free Ticket Available';
+            }else {
+                return 'Starts at ' . wc_price($r[0]);
+            }
+        }
     }
 }
 
