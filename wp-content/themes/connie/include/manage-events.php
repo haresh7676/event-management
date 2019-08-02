@@ -99,7 +99,10 @@
                     </select>
                 </div>
 
-                <?php /*$customer = wp_get_current_user();
+                <?php
+
+
+                /*$customer = wp_get_current_user();
 
                 // Get all customer orders
                 $customer_orders = get_posts( array(

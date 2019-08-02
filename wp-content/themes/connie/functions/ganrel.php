@@ -126,3 +126,82 @@ function iconic_remove_password_strength() {
     wp_dequeue_script( 'wc-password-strength-meter' );
 }
 add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
+
+
+
+add_action("wp_ajax_get_attendees_data", "get_attendees_data");
+add_action("wp_ajax_nopriv_get_attendees_data", "get_attendees_data");
+
+function get_attendees_data() {
+    $data = $_POST;
+    $pageNumber = $data['pageNumber'];
+    $perPageCount = $data['perPageCount'];
+    $action = $data['action'];
+    $myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
+    }
+    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
+    $output = '';
+    $output .='<ul>';
+    if(isset($results) && !empty($results['data'])){
+        foreach ($results['data'] as $item){
+            $readclass = ($item['form_data']['cfdb7_status'] == 'read') ? 'disabled':'';
+            $output.='<li class="'.$readclass.'"><div class="m-e-contact-profile-desc">';
+            $output.='<span>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</span>';
+            $output.='<h3>'.$item['form_data']['subject'].'</h3>';
+            $output.='<p>'.$item['form_data']['your-message'].'</p>';
+            $output.='</div>';
+            $output.='<div class="m-e-contact-profile-time">'.connic_time_elapsed_string($item['form_date']).'</div>';
+            $output.='</li>';
+        }
+    }
+    $output.='</ul>';
+    /*pagination */
+    $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
+    $pagesCount = ceil($rowCount / $perPageCount);
+    $output.='<table width="50%" align="center">';
+    $output.='<tr>';
+    $output.='<td valign="top" align="left"></td>';
+    $output.='<td valign="top" align="center">';
+    for ($i = 1; $i <= $pagesCount; $i ++) {
+        if ($i == $pageNumber) {
+            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
+        } else {
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_report_problem_contact_data\')">'.$i.'</a>';
+        } // endIf
+    } // endFor
+    $output.='</td>';
+    $output.='<td align="right" valign="top">';
+    //$output.='Page '.$pageNumber.' of '.$pagesCount;
+    $stating = ($pageNumber-1)*$perPageCount+1;
+    $stating = ($rowCount == 0)?0:$stating;
+    $ending = $perPageCount*$pageNumber;
+    $ending = ($rowCount < $ending)?$rowCount:$ending;
+    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
+    $output.='</td>';
+    $output.='</tr>';
+    $output.='</table>';
+    echo $output;
+    die();
+}
+/*$ids = array(170);
+$orderids = get_orders_ids_by_product_id($ids);*/
+function get_orders_ids_by_product_id( $product_id, $order_status = array( 'wc-completed','wc-processing' ) ){
+    global $wpdb;
+    $products = implode (", ", $product_id);
+    $results = $wpdb->get_col("
+        SELECT order_items.order_id
+        FROM {$wpdb->prefix}woocommerce_order_items as order_items
+        LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id
+        LEFT JOIN {$wpdb->posts} AS posts ON order_items.order_id = posts.ID
+        WHERE posts.post_type = 'shop_order'
+        AND posts.post_status IN ( '" . implode( "','", $order_status ) . "' )
+        AND order_items.order_item_type = 'line_item'
+        AND order_item_meta.meta_key = '_product_id'
+        AND order_item_meta.meta_value IN ($products)
+    ");
+
+    return $results;
+}
