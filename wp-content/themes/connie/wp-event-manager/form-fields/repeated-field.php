@@ -57,7 +57,7 @@
 		<input type="hidden" class="repeated-row" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="%%repeated-row-index%%" />
 		<ul class="nav nav-tabs">
             <li class="pull-right"><a href="#remove" class="remove-row" id="repeated-row-<?php echo esc_attr( $key.'_%%repeated-row-index%%' ); ?>" ><?php _e( 'Remove', 'wp-event-manager' ); ?></a></li>
-            <li class="active"><a data-toggle="tab" href="#sell-ticket-details_%%repeated-row-index%%"><?php _e('Ticket Details','wp-event-manager');?></a></li>
+            <li><a class="active" data-toggle="tab" href="#sell-ticket-details_%%repeated-row-index%%"><?php _e('Ticket Details','wp-event-manager');?></a></li>
             <li><a data-toggle="tab" href="#<?php echo $key ;?>_%%repeated-row-index%%"><?php _e('Settings','wp-event-manager');?></a></li>
             
           </ul>

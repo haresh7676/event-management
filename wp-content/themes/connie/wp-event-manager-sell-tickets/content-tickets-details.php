@@ -64,11 +64,11 @@ $event_timezone   = get_event_timezone();
                           $fee_settings = get_option('fee_settings_rules',get_default_fee_settings() );
                     ?>
                     <tr>            
-                      <td width="50%"><?php _e( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets'); ?>
+                      <td width="40%"><?php _e( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets'); ?>
                         <p><?php if($show_description == '1' || $show_description == 'on') : _e( the_content() , 'wp-event-manager-sell-tickets' ); endif;?></p>
                         <input type="hidden" name="product_id" id="product-id-<?php echo $count_fields;?>" value="">
                       </td>      
-                      <td class="price">
+                      <td width="10%" class="price">
                         <?php
                           if($ticket_type == 'donation'){ 
                               echo '<input type="number" name="donation_price-'.$count_fields.'" id="donation_price-'.$count_fields.'"value="'.$price.'"  min="'.$price.'" />';
@@ -150,7 +150,7 @@ $event_timezone   = get_event_timezone();
                               else{ */?>
                                <td> <?php /*printf(__('End : %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));*/?></td>
                               --><?php /*}*/ ?>
-                      <td>
+                      <td width="50%">
                         <?php
                           if(!empty($ticket_sales_start_date) &&  $current_timestamp > strtotime($ticket_sales_start_date) && $current_timestamp <   strtotime($ticket_sales_end_date) ) { ?>
                               <select name="ticket_quantity" class="ticket_quantity_select" id="quantity-<?php echo $count_fields;?>" >

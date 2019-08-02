@@ -47,7 +47,7 @@
                         <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_team_form_id']) && !empty($myaccountsettings['manage_event']['add_team_form_id']))){
                             $add_team_formid = $myaccountsettings['manage_event']['add_team_form_id'];
                             ?>
-                        <button data-toggle="modal" data-target="#AddteamModal">Add New Team Member</button>
+                        <!-- <button data-toggle="modal" data-target="#AddteamModal">Add New Team Member</button> -->
                         <div class="modal fade volnuteer-form" id="AddteamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">

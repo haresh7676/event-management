@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </li>
             </ul>
         </div>
-<div class="woocommerce-order">
+<div class="woocommerce-order thankyou-page">
 
 	<?php if ( $order ) : ?>
 
@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>-->
 
 		<?php else : ?>
-
+			<i class="far fa-check-circle success-icon"></i>
 			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
         <a href="#" class="defulat-custom-btn btn trackbtn">Track Order</a>
 
