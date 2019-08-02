@@ -107,3 +107,22 @@ function connice_add_cpts_to_api( $args, $post_type ) {
     return $args;
 }
 add_filter( 'register_post_type_args', 'connice_add_cpts_to_api', 10, 2 );
+
+function my_save_account_details_redirect($user_id){
+    wp_safe_redirect( wc_get_endpoint_url( 'edit-account') );
+    exit;
+}
+add_action( 'woocommerce_save_account_details', 'my_save_account_details_redirect', 10, 1 );
+
+function my_save_address_redirect($user_id, $load_address){
+    // $load_address is either 'billing' or 'shipping'
+    wp_safe_redirect( wc_get_endpoint_url( 'edit-address', $load_address) );
+    exit;
+}
+add_action( 'woocommerce_customer_save_address', 'my_save_address_redirect', 10, 2 );
+
+
+function iconic_remove_password_strength() {
+    wp_dequeue_script( 'wc-password-strength-meter' );
+}
+add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );

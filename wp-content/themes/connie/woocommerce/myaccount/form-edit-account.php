@@ -41,7 +41,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 	<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide textfield-row">
 		<label for="account_email"><?php esc_html_e( 'Change Email', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" />
+		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>"  readonly/>
 	</p>
 
 	<fieldset>
