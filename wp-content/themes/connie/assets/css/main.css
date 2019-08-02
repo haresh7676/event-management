@@ -422,10 +422,14 @@ button.btn.slct-btn.active {
     width: 200px;
     margin: 0 10px;
 }
-.create-event-cart .create-ticket-option-btn a {
+.create-ticket-option-btn .ticketbuttonwpr .field-tickets a {
     text-decoration: none;
     padding: 8px 30px !important;
     font-size: 18px !important;
+}
+.create-ticket-option-btn .ticketbuttonwpr .field-tickets .event_ticket_add_link.active {
+    border-color: #F7B0C0 !important;
+    color: #F7B0C0 !important;
 }
 .create-ticket-option-btn button i {
     font-size: 16px;
@@ -1798,6 +1802,7 @@ i.drp-icn {
     padding-top: 20px;
     height: calc(100% - 20px);
     position: relative;
+    display: inline-block;
 }
 .my-tickets .my-ticket-card-row {
     display: flex;
@@ -1924,19 +1929,23 @@ i.drp-icn {
     border-bottom: 1px solid #dee2e6;
     border-top: none;
 }
+.common-table-design .table tbody tr td a {
+    color: #775DFF;
+    text-decoration: none;
+}
 .common-table-design .table .thead-purple tr th:first-child {
     border-radius: 4px 0 0 0;
 }
 .common-table-design .table .thead-purple tr th:last-child {
     border-radius: 0 4px 0 0;
 }
-.common-table-design .export-list-row {
+.export-list-row {
     display: flex;
     align-items: center;
-    padding: 0 10px 30px 10px;
+    padding: 0 10px 20px 10px;
     justify-content: space-between;
 }
-.common-table-design .export-list-row a {
+.export-list-row .export-a {
     border: 1px solid #D4E5F9;
     border-radius: 1px;
     color: #4A4A4A;
@@ -1944,8 +1953,11 @@ i.drp-icn {
     font-weight: bold;
     padding: 5px 10px;
     text-decoration: none;
+    flex: none;
+    width: 120px;
+    margin-right: 10px;
 }
-.common-table-design .export-list-row a i {
+.export-list-row .export-a i {
     width: 18px;
     height: 18px;
     text-align: center;
@@ -1955,7 +1967,7 @@ i.drp-icn {
     margin-right: 8px;
     font-size: 10px;
 }
-.common-table-design .export-list-row button {
+.export-list-row button {
     background: #775DFF;
     border: none;
     box-shadow: none;
@@ -1964,6 +1976,8 @@ i.drp-icn {
     font-size: 14px;
     padding: 10px 18px;
     outline: none;
+    flex: none;
+    margin-right: 10px;
 }
 .common-table-design .table tbody tr td button {
     border: none;
@@ -2001,14 +2015,17 @@ i.drp-icn {
     position: relative;
 }
 .manage-events-contact .m-e-contact-search input {
-    border: none;
-    padding: 0 60px 0 100px;
+    border: none !important;
+    padding: 0 60px 0 60px;
     outline: none;
     font-size: 15px;
     color: #000;
     font-style: italic;
     font-weight: normal;
     font-family: 'Karla', sans-serif;
+}
+.manage-events-contact .m-e-contact-search input:focus {
+    outline: none;
 }
 .m-e-contact-search input::-webkit-input-placeholder {
   color: #000;
@@ -2025,7 +2042,7 @@ i.drp-icn {
 .manage-events-contact .m-e-contact-search i {
     position: absolute;
     top: 50%;
-    left: 56px;
+    left: 36px;
     transform: translateY(-50%);
     font-size: 18px;
     color: #bcbcbc;
@@ -2033,9 +2050,9 @@ i.drp-icn {
 .manage-events-contact .m-e-contact-details {
     width: 100%;
 }
-.manage-events-contact .m-e-contact-details ul {
+.manage-events-contact .m-e-contact-details .m-e-contact-list {
     padding: 0px;
-    margin: 0px;
+    margin: 0 0 20px 0;
     list-style: none;
 }
 .manage-events-contact .m-e-contact-details ul li {
@@ -2045,7 +2062,7 @@ i.drp-icn {
 }
 .manage-events-contact .m-e-contact-profile-pic {
     flex: none;
-    margin-right: 40px;
+    margin-right: 20px;
     width: 50px;
     height: 50px;
     overflow: hidden;
@@ -2406,7 +2423,7 @@ i.drp-icn {
     padding-top: 60px;
 }
 
-/* AR479-Cart page css start */
+/* AR479-changes after development */
 .cart-main-area {
     background: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
@@ -2547,13 +2564,12 @@ i.drp-icn {
     font-weight: 600;
 }
 .min-cart-main .woocommerce-mini-cart__buttons {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
     background: #775DFF;
     border-radius: 50px;
     font-size: 12px;
     color: #FFFFFF;
+    width: 125px;
+    float: right;
 }
 .min-cart-main .woocommerce-mini-cart__buttons a {
     font-size: 13px;
@@ -2700,6 +2716,13 @@ i.drp-icn {
     border-width: 10px;
     border-bottom-color: #F6F6F6;
 }
+.cart-main-area .wpmc-tabs-wrapper .wpmc-tab-item.previous:before {
+    border-bottom-color: #F7B0C0;   
+}
+.cart-main-area .wpmc-tabs-list .wpmc-tab-item.previous .wpmc-tab-number {
+    background: #F7B0C0;
+    color: #ffffff;
+}
 .cart-main-area .wpmc-tabs-wrapper .wpmc-tab-item.current:before {
     background: #775DFF;
 }
@@ -2834,6 +2857,7 @@ i.drp-icn {
     font-size: 18px;
     margin: 0 10px;
     color: #775DFF;
+    text-decoration: none;
 }
 .ticket-fields-form .ticketwprs .nav-tabs li a.active {
     color: #F7B0C0;
@@ -2863,4 +2887,90 @@ i.drp-icn {
 .tabbing-page-content .create-event-content {
     margin: 20px auto;
 }
-/* AR479-Cart page css end */
+.tabbing-page-content .editEvent-main-wpr .setting-description {
+    margin-top: 30px;
+}
+.editEvent-main-wpr .event_action .event-dashboard-actions {
+    margin: 0px;
+}
+.editEvent-main-wpr .event_action .event-dashboard-actions li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.editEvent-main-wpr .event_action .event-dashboard-actions li a {
+    text-decoration: none;
+    color: #775DFF;
+    font-size: 14px;
+}
+.editEvent-main-wpr .common-table-design tr th.event_action {
+    width: 150px;
+}
+.custom-pagination {
+    flex: 1;
+    text-align: right;
+}
+.custom-pagination ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.custom-pagination ul li {
+    display: inline-block !important;
+    padding: 0 10px 0 0 !important;
+    border-bottom: none !important;
+}
+.custom-pagination .pagination-list a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #a5a4a5;
+    margin: 0 5px;
+    width: 24px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 22px;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 3px;
+}
+.custom-pagination .pagination-list a.current {
+    color: #4A4A4A;
+    background: #EFF5FC;
+}
+.custom-pagination .totalofPage .pagenav {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+.cart-main-area .thankyou-page {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px 0 20px 0;
+}
+.thankyou-page .success-icon {
+    font-size: 60px;
+    color: #775DFF;
+}
+.thankyou-page .woocommerce-notice--success {
+    font-size: 24px;
+    color: #222222;
+    margin: 40px 0;
+    font-family: 'sf_compact_displaymedium';
+}
+.thankyou-page .trackbtn {
+    background: #775DFF;
+    width: 140px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0px;
+    margin-top: 40px;
+}
+
+/* AR479-changes after development */
+

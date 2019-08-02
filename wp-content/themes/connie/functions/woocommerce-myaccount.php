@@ -216,10 +216,11 @@ function get_volunteer_data() {
     /*pagination */
     $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
     $pagesCount = ceil($rowCount / $perPageCount);
-    $output.='<table width="50%" align="center">';
-    $output.='<tr>';
-    $output.='<td valign="top" align="left"></td>';
-    $output.='<td valign="top" align="center">';
+    $output.='<div class="export-list-row">';
+    $output.='<a href="#" class="export-a"><i class="fas fa-chevron-up"></i> Export List</a>';
+    $output.='<div class="custom-pagination">';
+    $output.='<ul>';
+    $output.='<li class="pagination-list">';
 	for ($i = 1; $i <= $pagesCount; $i ++) {
         if ($i == $pageNumber) {
             $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
@@ -227,17 +228,18 @@ function get_volunteer_data() {
             $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_volunteer_data\')">'.$i.'</a>';
         } // endIf
     } // endFor
-    $output.='</td>';
-    $output.='<td align="right" valign="top">';
+    $output.='</li>';
+    $output.='<li class="totalofPage">';
     //$output.='Page '.$pageNumber.' of '.$pagesCount;
     $stating = ($pageNumber-1)*$perPageCount+1;
     $stating = ($rowCount == 0)?0:$stating;
     $ending = $perPageCount*$pageNumber;
     $ending = ($rowCount < $ending)?$rowCount:$ending;
     $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
-	$output.='</td>';
-    $output.='</tr>';
-    $output.='</table>';
+	$output.='</li>';
+    $output.='</ul>';
+    $output.='</div>';
+    $output.='</div>';
     echo $output;
     die();
 }
@@ -286,10 +288,11 @@ function get_team_member_data() {
     /*pagination */
     $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
     $pagesCount = ceil($rowCount / $perPageCount);
-    $output.='<table width="50%" align="center">';
-    $output.='<tr>';
-    $output.='<td valign="top" align="left"></td>';
-    $output.='<td valign="top" align="center">';
+    $output.='<div class="export-list-row">';
+    $output.='<button data-toggle="modal" data-target="#AddteamModal">Add New Team Member</button>';
+    $output.='<div class="custom-pagination">';
+    $output.='<ul>';
+    $output.='<li class="pagination-list">';
     for ($i = 1; $i <= $pagesCount; $i ++) {
         if ($i == $pageNumber) {
             $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
@@ -297,17 +300,18 @@ function get_team_member_data() {
             $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_team_member_data\')">'.$i.'</a>';
         } // endIf
     } // endFor
-    $output.='</td>';
-    $output.='<td align="right" valign="top">';
+    $output.='</li>';
+    $output.='<li class="totalofPage">';
     //$output.='Page '.$pageNumber.' of '.$pagesCount;
     $stating = ($pageNumber-1)*$perPageCount+1;
     $stating = ($rowCount == 0)?0:$stating;
     $ending = $perPageCount*$pageNumber;
     $ending = ($rowCount < $ending)?$rowCount:$ending;
     $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
-    $output.='</td>';
-    $output.='</tr>';
-    $output.='</table>';
+    $output.='</li>';
+    $output.='</ul>';
+    $output.='</div>';
+    $output.='</div>';
     echo $output;
     die();
 }
@@ -327,7 +331,7 @@ function get_report_problem_contact_data() {
     }
     $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
     $output = '';
-    $output .='<ul>';
+    $output .='<ul class="m-e-contact-list">';
     if(isset($results) && !empty($results['data'])){
         foreach ($results['data'] as $item){
             $readclass = ($item['form_data']['cfdb7_status'] == 'read') ? 'disabled':'';
@@ -344,10 +348,10 @@ function get_report_problem_contact_data() {
     /*pagination */
     $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
     $pagesCount = ceil($rowCount / $perPageCount);
-    $output.='<table width="50%" align="center">';
-    $output.='<tr>';
-    $output.='<td valign="top" align="left"></td>';
-    $output.='<td valign="top" align="center">';
+    $output.='<div class="export-list-row">';
+    $output.='<div class="custom-pagination">';
+    $output.='<ul>';
+    $output.='<li class="pagination-list">';
     for ($i = 1; $i <= $pagesCount; $i ++) {
         if ($i == $pageNumber) {
             $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
@@ -355,17 +359,18 @@ function get_report_problem_contact_data() {
             $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_report_problem_contact_data\')">'.$i.'</a>';
         } // endIf
     } // endFor
-    $output.='</td>';
-    $output.='<td align="right" valign="top">';
+    $output.='</li>';
+    $output.='<li class="totalofPage">';
     //$output.='Page '.$pageNumber.' of '.$pagesCount;
     $stating = ($pageNumber-1)*$perPageCount+1;
     $stating = ($rowCount == 0)?0:$stating;
     $ending = $perPageCount*$pageNumber;
     $ending = ($rowCount < $ending)?$rowCount:$ending;
     $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
-    $output.='</td>';
-    $output.='</tr>';
-    $output.='</table>';
+    $output.='</li>';
+    $output.='</ul>';
+    $output.='</div>';
+    $output.='</div>';
     echo $output;
     die();
 }

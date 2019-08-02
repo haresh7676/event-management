@@ -4,7 +4,7 @@
 } ?>
 <div id="event-manager-event-dashboard" class="common-table-design">
     <div class="table-responsive">
-				<table class="table table-bordered event-manager-events table-striped" >
+				<table class="table event-manager-events" >
 					<thead class="thead-purple">
 						<tr>
 						  <?php foreach ( $event_dashboard_columns as $key => $column ) : ?>
@@ -61,7 +61,7 @@
 												if ( $value['nonce'] ) {
 													$action_url = wp_nonce_url( $action_url, 'event_manager_my_event_actions' );
 												}
-												echo '<li><a href="' . esc_url( $action_url ) . '" class="event-dashboard-action-' . esc_attr( $action ) . '">' . esc_html( $value['label'] ) . '   </a></li>';
+												echo '<li><a href="' . esc_url( $action_url ) . '" class="event-dashboard-action-' . esc_attr( $action ) . '">' . esc_html( $value['label'] ) . ' <i class="far fa-edit"></i> </a></li>';
 											}
 										?>
 									</ul>		
