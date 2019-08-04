@@ -19,6 +19,7 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar-icon.png" alt="">
             <h4>Upcoming events</h4>
         </div>
+        <?php do_action( 'event_manager_event_filters_start', $atts ); ?>
         <?php echo do_shortcode('[events per_page="9" show_filters="false" ]'); ?>
     </div>
 </div>

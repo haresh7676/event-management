@@ -71,11 +71,9 @@ function property_init()
 function get_sell_start_price($event_id){
     if(!empty($event_id)) {
         global $wpdb;
-
         if( empty( $event_id ) )
             return;
-
-        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );
+        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM  {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );
         if(!empty($r)){
             if($r[0] == 0 || $r[0] == ''){
                 return 'Free Ticket Available';
@@ -108,90 +106,91 @@ function connice_add_cpts_to_api( $args, $post_type ) {
 }
 add_filter( 'register_post_type_args', 'connice_add_cpts_to_api', 10, 2 );
 
-function my_save_account_details_redirect($user_id){
+function connice_my_save_account_details_redirect($user_id){
     wp_safe_redirect( wc_get_endpoint_url( 'edit-account') );
     exit;
 }
-add_action( 'woocommerce_save_account_details', 'my_save_account_details_redirect', 10, 1 );
+add_action( 'woocommerce_save_account_details', 'connice_my_save_account_details_redirect', 10, 1 );
 
-function my_save_address_redirect($user_id, $load_address){
+function connice_my_save_address_redirect($user_id, $load_address){
     // $load_address is either 'billing' or 'shipping'
     wp_safe_redirect( wc_get_endpoint_url( 'edit-address', $load_address) );
     exit;
 }
-add_action( 'woocommerce_customer_save_address', 'my_save_address_redirect', 10, 2 );
+add_action( 'woocommerce_customer_save_address', 'connice_my_save_address_redirect', 10, 2 );
 
 
-function iconic_remove_password_strength() {
+function connice_remove_password_strength() {
     wp_dequeue_script( 'wc-password-strength-meter' );
 }
-add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
-
-
-
-add_action("wp_ajax_get_attendees_data", "get_attendees_data");
-add_action("wp_ajax_nopriv_get_attendees_data", "get_attendees_data");
-
-function get_attendees_data() {
-    $data = $_POST;
-    $pageNumber = $data['pageNumber'];
-    $perPageCount = $data['perPageCount'];
-    $action = $data['action'];
-    $myaccountsettings =  get_fields('account-settings');
-    $formid = 1;
-    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
-        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
-    }
-    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
-    $output = '';
-    $output .='<ul>';
-    if(isset($results) && !empty($results['data'])){
-        foreach ($results['data'] as $item){
-            $readclass = ($item['form_data']['cfdb7_status'] == 'read') ? 'disabled':'';
-            $output.='<li class="'.$readclass.'"><div class="m-e-contact-profile-desc">';
-            $output.='<span>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</span>';
-            $output.='<h3>'.$item['form_data']['subject'].'</h3>';
-            $output.='<p>'.$item['form_data']['your-message'].'</p>';
-            $output.='</div>';
-            $output.='<div class="m-e-contact-profile-time">'.connic_time_elapsed_string($item['form_date']).'</div>';
-            $output.='</li>';
+add_action( 'wp_print_scripts', 'connice_remove_password_strength', 10 );
+/* get event list by current users */
+if(!function_exists('connice_event_listing_by_current_user')){
+    function connice_event_listing_by_current_user($fields = '',$all = '-1'){
+        $args     = apply_filters( 'event_manager_get_dashboard_events_args', array(
+            'post_type'           => 'event_listing',
+            'post_status'         => array( 'publish', 'expired', 'pending' ),
+            'ignore_sticky_posts' => 1,
+            'posts_per_page'      => $all,
+            'orderby'             => 'date',
+            'order'               => 'desc',
+            'author'              => get_current_user_id()
+       ) );
+        if(!empty($fields)){
+            $args['fields'] = $fields;
         }
+        $events = get_posts($args);
+        return $events;
     }
-    $output.='</ul>';
-    /*pagination */
-    $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
-    $pagesCount = ceil($rowCount / $perPageCount);
-    $output.='<table width="50%" align="center">';
-    $output.='<tr>';
-    $output.='<td valign="top" align="left"></td>';
-    $output.='<td valign="top" align="center">';
-    for ($i = 1; $i <= $pagesCount; $i ++) {
-        if ($i == $pageNumber) {
-            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
-        } else {
-            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_report_problem_contact_data\')">'.$i.'</a>';
-        } // endIf
-    } // endFor
-    $output.='</td>';
-    $output.='<td align="right" valign="top">';
-    //$output.='Page '.$pageNumber.' of '.$pagesCount;
-    $stating = ($pageNumber-1)*$perPageCount+1;
-    $stating = ($rowCount == 0)?0:$stating;
-    $ending = $perPageCount*$pageNumber;
-    $ending = ($rowCount < $ending)?$rowCount:$ending;
-    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
-    $output.='</td>';
-    $output.='</tr>';
-    $output.='</table>';
-    echo $output;
-    die();
 }
+/* get product list by current users */
+if(!function_exists('connice_product_list_by_events')){
+    function connice_product_list_by_events($events = array(),$fields = '',$all = '-1'){
+        if(!empty($events) && count($events) > 0){
+            $events = implode (", ", $events);
+        }
+        if(count($events) <= 0)
+            return;
+
+        $args     = array(
+            'post_type'           => 'product',
+            'post_status'         => array( 'publish'),
+            'ignore_sticky_posts' => 1,
+            'posts_per_page'      => $all,
+            'order'      => 'ASC',
+            'meta_query' => array(
+                array(
+                    'key'   => '_event_id',
+                    'value' => ($events),
+                    'compare' => 'IN'
+                )
+            )
+        );
+        if(!empty($fields)){
+            $args['fields'] = $fields;
+        }
+        $products = get_posts($args);
+        return $products;
+    }
+}
+
 /*$ids = array(170);
 $orderids = get_orders_ids_by_product_id($ids);*/
-function get_orders_ids_by_product_id( $product_id, $order_status = array( 'wc-completed','wc-processing' ) ){
+/*$events = connice_event_listing_by_current_user('ids');
+$productids = connice_product_list_by_events($events,'ids');
+$orders = get_orders_ids_by_product_id($productids);*/
+
+//exit;
+function get_orders_ids_by_product_id( $productids = array(),$pageNumber = 1,$perPageCount = 10, $order_status = array( 'wc-completed','wc-processing' ) ){
     global $wpdb;
-    $products = implode (", ", $product_id);
-    $results = $wpdb->get_col("
+    $lowerLimit = ($pageNumber - 1) * $perPageCount;
+    if(!empty($productids) && count($productids) > 0){
+        $productids = implode (", ", $productids);
+    }
+    if(count($productids) <= 0)
+        return;
+
+    $resultstotal = $wpdb->get_col("
         SELECT order_items.order_id
         FROM {$wpdb->prefix}woocommerce_order_items as order_items
         LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id
@@ -200,8 +199,27 @@ function get_orders_ids_by_product_id( $product_id, $order_status = array( 'wc-c
         AND posts.post_status IN ( '" . implode( "','", $order_status ) . "' )
         AND order_items.order_item_type = 'line_item'
         AND order_item_meta.meta_key = '_product_id'
-        AND order_item_meta.meta_value IN ($products)
-    ");
+        AND order_item_meta.meta_value IN ($productids)");
 
+    if(!empty($resultstotal)){
+        $resultstotal = array_unique($resultstotal);
+        $results['count'] = count($resultstotal);
+    }
+
+    $resultsget = $wpdb->get_col("
+        SELECT order_items.order_id
+        FROM {$wpdb->prefix}woocommerce_order_items as order_items
+        LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id
+        LEFT JOIN {$wpdb->posts} AS posts ON order_items.order_id = posts.ID
+        WHERE posts.post_type = 'shop_order'
+        AND posts.post_status IN ( '" . implode( "','", $order_status ) . "' )
+        AND order_items.order_item_type = 'line_item'
+        AND order_item_meta.meta_key = '_product_id'
+        AND order_item_meta.meta_value IN ($productids) limit " . ($lowerLimit) . " , " . ($perPageCount) . " ");
+
+    if(!empty($resultsget)){
+        $resultsget = array_unique($resultsget);
+    }
+    $results['data'] = $resultsget;
     return $results;
 }

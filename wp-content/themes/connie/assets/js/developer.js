@@ -21,16 +21,33 @@ jQuery(document).ready(function($) {
 
     if ($('.get_volunteer_data').length > 0) {
         showRecords(3, 1, 'get_volunteer_data');
+        $('.get_volunteer_data .event-dropdown').on("change", function(e) {
+            showRecords(3, 1, 'get_volunteer_data');
+        });
     }
     if ($('.get_team_member_data').length > 0) {
         showRecords(3, 1, 'get_team_member_data');
     }
     if ($('.get_report_problem_contact_data').length > 0) {
         showRecords(3, 1, 'get_report_problem_contact_data');
+        $('.get_report_problem_contact_data .event-dropdown').on("change", function(e) {
+            showRecords(3, 1, 'get_report_problem_contact_data');
+        });
+    }
+
+    if ($('.get_attendees_data').length > 0) {
+        showRecords(3, 1, 'get_attendees_data');
+        $('.get_attendees_data .event-dropdown').on("change", function(e) {
+            showRecords(3, 1, 'get_attendees_data');
+        });
     }
 });
 function showRecords(perPageCount, pageNumber, action) {
-    var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount};
+    var eventid = '';
+    if (jQuery('.'+action+' .event-dropdown').length > 0) {
+        eventid = jQuery('.'+action+' .event-dropdown').val();
+    }
+    var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount,eventid:eventid};
     var loaderimage = jQuery('.'+action+' .tableloader').data('loader');
     jQuery.ajax({
         type: "POST",

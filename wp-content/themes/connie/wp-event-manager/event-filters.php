@@ -8,12 +8,11 @@
 	<?php do_action( 'event_manager_event_filters_search_events_start', $atts ); ?>
         <div class="landing-serach">
         <input type="text" class="event-search" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Search for events', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
-        <input type="text" class="city-search" name="search_location" id="search_location"  placeholder="<?php esc_attr_e( 'Location', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />
-        <button type="submit" class="landing-submit-btn">Search</button>
+        <input type="text" class="city-search" name="search_location" id="search_location"  placeholder="<?php esc_attr_e( 'Location', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />        <button type="submit" class="landing-submit-btn">Search</button>
         </div>
-        <button class="browe-event-filter-btn">
+        <a class="browe-event-filter-btn">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/filter-icon.png" alt="">Filter
-        </button>
+        </a>
         <div class="browe-event-filter-content">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
@@ -27,15 +26,22 @@
                         if(!empty($terms)){ ?>
                             <ul>
                             <div class="row">
-                            <?php foreach ($terms as $term){
+                            <?php
+                            $selectedcat = $_GET['search_categories'];
+                            foreach ($terms as $term){
                                 echo '<div class="col-lg-6 col-sm-6">';
                                 echo '<li>';
                                 echo '<div class="fancy-radio radio-inline">';
-                                echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories" class="required">';
+                                if(!empty($selectedcat) && in_array($term->slug,$selectedcat)){
+                                    echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories" checked>';
+                                }else{
+                                    echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories">';
+                                }
                                 echo '<span><i></i>'.$term->name.'</span>';
                                 echo '</div>';
                                 echo '</li>';
                                 echo '</div>';
+                                continue;
                             } ?>
                             </div>
                             </ul>
@@ -51,13 +57,13 @@
                         <ul>
                             <li>
                                 <label class="fancy-radio radio-inline">
-                                    <input type="radio" name="is_multi_year_plan" value="1" id="is_multi_year_plan_yes" class="required">
+                                    <input type="radio" name="search_ticket_prices[]" id="search_ticket_prices" value="" class="required" <?php echo (!isset($_GET['search_ticket_prices']) || empty($_GET['ticket_price_free']) || $_GET['ticket_price_free'] == 'ticket_price_free')?'checked':''; ?>>
                                     <span><i></i>Any Price</span>
                                 </label>
                             </li>
                             <li>
                                 <label class="fancy-radio radio-inline">
-                                    <input type="radio" name="is_multi_year_plan" value="1" id="is_multi_year_plan_yes" class="required">
+                                    <input type="radio" name="search_ticket_prices[]" id="search_ticket_prices" value="ticket_price_free" class="required" <?php echo (isset($_GET['search_ticket_prices']) && in_array('ticket_price_free',$_GET['search_ticket_prices']))?'checked':''; ?>>
                                     <span><i></i>Free</span>
                                 </label>
                             </li>
@@ -67,108 +73,20 @@
                 <div class="col-12">
                     <div class="filter-apply-btn">
                         <button class="btn apply">Apply</button>
-                        <button class="btn cancel">Cancel</button>
+                        <a href="<?php echo site_url().'/events/';?>" class="btn cancel">Reset</a>
                     </div>
                 </div>
             </div>
         </div>
-    <?php /* ?>
-		 <div class="row">
-			<!-- Search by keywords section start -->
-			<div class="col-sm-4">
-				<!-- shows default keywords text field  start-->
-				<label for="search_keywords"><?php _e( 'Search for events', 'wp-event-manager' ); ?></label>
-				<input type="text" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Search for events', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
-				<!-- shows default keywords text field end -->
-			</div>
-			<!-- Search by keywords section end-->
-
-			<!-- Search by location section start -->
-			<div class="col-sm-4">
-				<label for="search_location"><?php _e( 'Location', 'wp-event-manager' ); ?></label>
-				<input type="text" name="search_location" id="search_location"  placeholder="<?php esc_attr_e( 'Location', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />
-			</div>
-
-			<!-- Search by location section end -->
-
-			<!-- Search by date section start -->
-			<?php if ( $datetimes) : ?>				
-				<div class="col-sm-4">
-					<label for="search_datetimes"><?php _e( 'Any dates', 'wp-event-manager' ); ?></label>
-					<select name="search_datetimes[]" id="search_datetimes" class="event-manager-category-dropdown" data-placeholder="Choose any date…" data-no_results_text="No results match" data-multiple_text="<?php _e('Select Some Options','wp-event-manager'); ?>" >
-					<?php foreach ( $datetimes as $key => $value  ) :
-						if(!strcasecmp($selected_datetime, $value) || $selected_datetime==$key) : ?>
-							<option selected=selected  value="<?php echo $key !='datetime_any' ? $key : ""; ?>" ><?php echo  $value; ?></option>
-						<?php else : ?>
-							<option value="<?php echo $key !='datetime_any' ? $key : ""; ?>" ><?php echo  $value; ?></option>
-						<?php endif;						
-					 endforeach; ?>
-					</select>
-				</div>
-			<?php endif; ?>	  			
-			<!-- Search by date section end -->
-	         </div> <!-- /row -->
-		<div class="row">
-			<!-- Search by event categories section start -->
-			<?php if ( $categories ) : ?>
-				<?php foreach ( $categories as $category ) : ?>
-					<input type="hidden" name="search_categories[]" value="<?php  echo sanitize_title( $category ); ?>" />
-				<?php endforeach; ?>
-			<?php elseif ( $show_categories && ! is_tax( 'event_listing_category' ) && get_terms( 'event_listing_category' ) ) : ?>
-				<div class="col-sm-4">
-					<label for="search_categories"><?php _e( 'Category', 'wp-event-manager' ); ?></label>
-					<?php if ( $show_category_multiselect ) : ?>
-						<?php event_manager_dropdown_selection( array( 'value'=>'slug', 'taxonomy' => 'event_listing_category', 'hierarchical' => 1, 'name' => 'search_categories', 'orderby' => 'name', 'selected' => $selected_category, 'hide_empty' => false) ); ?>
-					<?php else : ?>
-						<?php event_manager_dropdown_selection( array( 'value'=>'slug', 'taxonomy' => 'event_listing_category', 'hierarchical' => 1, 'show_option_all' => __( 'Any Category', 'wp-event-manager' ), 'name' => 'search_categories', 'orderby' => 'name', 'selected' => $selected_category, 'multiple' => false, 'hide_empty' => false) ); ?>
-					<?php endif; ?>
-				</div>
-			<?php endif; ?>	 
-			<!-- Search by event categories section end -->
-
-			<!-- Search by event type section start -->
-			<?php  if ( $event_types) :?>
-				<?php foreach ( $event_types as $event_type) : ?>
-					<input type="hidden" name="search_event_types[]" value="<?php echo sanitize_title( $event_type); ?>" />
-				<?php endforeach; ?>
-			<?php elseif ( $show_event_types && ! is_tax( 'event_listing_type' ) && get_terms( 'event_listing_type' ) ) : ?>		
-				<div class="col-sm-4">
-					<label for="search_event_types"><?php _e( 'Event Type', 'wp-event-manager' ); ?></label>
-					<?php if ( $show_event_type_multiselect) : ?>
- 					    <?php event_manager_dropdown_selection( array( 'value'=>'slug', 'taxonomy' => 'event_listing_type', 'hierarchical' => 1, 'name' => 'search_event_types', 'orderby' => 'name', 'selected' => $selected_event_type, 'hide_empty' => false) ); ?>
-					<?php else : ?>
-						<?php event_manager_dropdown_selection( array( 'value'=>'slug', 'taxonomy' => 'event_listing_type', 'hierarchical' => 1, 'show_option_all' => __( 'Any Event Type', 'wp-event-manager' ), 'name' => 'search_event_types', 'orderby' => 'name', 'selected' => $selected_event_type, 'multiple' => false,'hide_empty' => false) ); ?>
-					<?php endif; ?>
-				</div>
-			<?php endif; ?>		        
-
-
-			<!-- Search by event type section end -->
-	
-
-			<!-- Search by any ticket price section start -->			
-			<?php if ( $show_ticket_prices && $ticket_prices) : ?>				
-				<div class="col-sm-4">
-					<label for="search_ticket_prices"><?php _e( 'Ticket Prices', 'wp-event-manager' ); ?></label>
-					<select name="search_ticket_prices[]" id="search_ticket_prices" class="event-manager-category-dropdown" data-placeholder="Choose any ticket price…" data-no_results_text="<?php _e('No results match','wp-event-manager'); ?>" data-multiple_text="<?php __('Select Some Options','wp-event-manager'); ?>" >
-					<?php foreach ( $ticket_prices as $key => $value ) :
-						if(!strcasecmp($selected_ticket_price, $value) || $selected_ticket_price==$key) : ?>
-							<option selected=selected value="<?php echo $key !='ticket_price_any' ? $key : ""; ?>" ><?php echo  $value; ?></option>
-						<?php else : ?>
-							<option value="<?php echo $key !='ticket_price_any' ? $key : ""; ?>" ><?php echo  $value; ?></option>
-						<?php endif;
-					endforeach; ?>
-					</select>
-				</div>
-			<?php endif; ?>	  
-			<!-- Search by any ticket price section end -->  
-    </div> <!-- /row --> <?php */ ?>
-
     <?php //do_action( 'event_manager_event_filters_search_events_end', $atts ); ?>
-
   </div>
-  <?php do_action( 'event_manager_event_filters_end', $atts ); ?>
+  <?php //do_action( 'event_manager_event_filters_end', $atts ); ?>
 </form>
+    </div>
+</div>
+<div class="container">
+    <div class="browe-event-title">
+        <h4>Explore geeky events</h4>
     </div>
 </div>
 <?php do_action( 'event_manager_event_filters_after', $atts ); ?>
