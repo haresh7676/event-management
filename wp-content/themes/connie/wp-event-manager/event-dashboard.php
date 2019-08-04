@@ -34,17 +34,17 @@
 											$actions = array();
 											switch ( $event->post_status ) {
 												case 'publish' :
-													$actions['edit'] = array( 'label' => __( 'Edit', 'wp-event-manager' ), 'nonce' => false );
+													$actions['edit'] = array( 'label' => '<i class="far fa-edit"></i>', 'nonce' => false );
 													if ( is_event_cancelled( $event ) ) {
-														$actions['mark_not_cancelled'] = array( 'label' => __( 'Mark not cancelled', 'wp-event-manager' ), 'nonce' => true );
+														$actions['mark_not_cancelled'] = array( 'label' => '<i class="fas fa-external-link-square-alt"></i>', 'nonce' => true );
 													} else {
-														$actions['mark_cancelled'] = array( 'label' => __( 'Mark cancelled', 'wp-event-manager' ), 'nonce' => true );
+														$actions['mark_cancelled'] = array( 'label' => '<i class="far fa-ban"></i>', 'nonce' => true );
 													}
-													$actions['duplicate'] = array( 'label' => __( 'Duplicate', 'wp-event-manager' ), 'nonce' => true );
+													$actions['duplicate'] = array( 'label' => '<i class="far fa-copy"></i>', 'nonce' => true );
 													break;
 												case 'expired' :
 													if ( event_manager_get_permalink( 'submit_event_form' ) ) {
-														$actions['relist'] = array( 'label' => __( 'Relist', 'wp-event-manager' ), 'nonce' => true );
+														$actions['relist'] = array( 'label' => __( '<i class="fas fa-external-link-square-alt"></i>', 'wp-event-manager' ), 'nonce' => true );
 													}
 													break;
 												case 'pending_payment' :
@@ -54,14 +54,14 @@
 												}
 												break;
 											}
-											$actions['delete'] = array( 'label' => __( 'Delete', 'wp-event-manager' ), 'nonce' => true );
+											$actions['delete'] = array( 'label' => '<i class="far fa-trash-alt"></i>', 'nonce' => true );
 											$actions           = apply_filters( 'event_manager_my_event_actions', $actions, $event );
 											foreach ( $actions as $action => $value ) {
 												$action_url = add_query_arg( array( 'action' => $action, 'event_id' => $event->ID ) );
 												if ( $value['nonce'] ) {
 													$action_url = wp_nonce_url( $action_url, 'event_manager_my_event_actions' );
 												}
-												echo '<li><a href="' . esc_url( $action_url ) . '" class="event-dashboard-action-' . esc_attr( $action ) . '">' . esc_html( $value['label'] ) . ' <i class="far fa-edit"></i> </a></li>';
+												echo '<li><a href="' . esc_url( $action_url ) . '" class="event-dashboard-action-' . esc_attr( $action ) . '">' .  $value['label']. ' </a></li>';
 											}
 										?>
 									</ul>		

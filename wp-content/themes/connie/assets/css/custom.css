@@ -246,7 +246,7 @@ a.btn.login-btn.backtologin {
 .tab-content>.fade:not(.show).active{
 opacity: 1;
 }
-.browe-event-content .browe-event-filter{position: relative;}
+/*.browe-event-content .browe-event-filter{position: relative;}*/
 .buy-ticket .ticket-pass-buy .tickets-details, .buy-ticket .ticket-pass-buy .tickets-details table{
     border: 0px;
     padding: 0;
@@ -393,6 +393,31 @@ opacity: 1;
 .cart-main-area .wpmc-tabs-wrapper .wpmc-tab-item.current:before{
     border-bottom-color: #775dff;
 }
+.event_filters .search_events div label.fancy-radio{display: block;}
+.ui-timepicker-wrapper {
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.ui-timepicker-list {
+    box-sizing: content-box;
+    display: block;
+    height: 205px;
+    list-style: none outside none;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.ui-timepicker-list li{
+    border: 1px solid transparent;
+    color: #222;
+    display: block;
+    padding: .2em .4em;
+    text-decoration: none;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }

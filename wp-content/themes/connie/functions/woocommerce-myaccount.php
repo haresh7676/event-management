@@ -130,23 +130,23 @@ add_action( 'woocommerce_account_about_endpoint', 'connie_about_endpoint_content
 add_action( 'woocommerce_account_terms-and-policies_endpoint', 'connie_terms_and_policies_endpoint_content' );
 
 
-function get_cf7_form_data($formid,$pageNumber = 1,$perPageCount = 10,$author = true){
+function get_cf7_form_data($formid,$pageNumber = 1,$perPageCount = 10,$author = true,$eventid = ''){
     global $wpdb;
     $lowerLimit = ($pageNumber - 1) * $perPageCount;
     $current_user = wp_get_current_user();
     $current_user_id = $current_user->ID;
     if($author == true) {
-        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = ".$formid." order by form_id desc", ARRAY_A);
+        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*'".(!empty($eventid)?' AND form_value REGEXP \'.*"eventid";s:[0-9]+:"'.$eventid.'".*\'':'')." AND form_post_id = ".$formid." order by form_id desc", ARRAY_A);
     }else {
-        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = ".$formid." order by form_id desc", ARRAY_A);
+        $resultstotal = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = ".$formid.(!empty($eventid)?' AND form_value REGEXP \'.*"eventid";s:[0-9]+:"'.$eventid.'".*\'':'')." order by form_id desc", ARRAY_A);
     }
     if(!empty($resultstotal)){
         $results['count'] = count($resultstotal);
     }
     if($author == true) {
-        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*' AND form_post_id = ".$formid." order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
+        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_value REGEXP '.*\"eventauthor\";s:[0-9]+:\"$current_user_id\".*'".(!empty($eventid)?' AND form_value REGEXP \'.*"eventid";s:[0-9]+:"'.$eventid.'".*\'':'')." AND form_post_id = ".$formid." order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
     }else{
-        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = ".$formid." order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
+        $results['data'] = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}db7_forms WHERE form_post_id = ".$formid.(!empty($eventid)?' AND form_value REGEXP \'.*"eventid";s:[0-9]+:"'.$eventid.'".*\'':'')." order by form_id desc limit " . ($lowerLimit) . " , " . ($perPageCount) . " ", ARRAY_A);
     }
 
     if(!empty($results['data'])){
@@ -175,13 +175,17 @@ function get_volunteer_data() {
     $data = $_POST;
     $pageNumber = $data['pageNumber'];
     $perPageCount = $data['perPageCount'];
+    $selectedeventid = $data['eventid'];
     $action = $data['action'];
     $myaccountsettings =  get_fields('account-settings');
     $formid = 1;
     if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
         $formid = isset($myaccountsettings['manage_event']['volunteer_form_id'])?$myaccountsettings['manage_event']['volunteer_form_id']:1;
     }
-    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
+    if(empty($selectedeventid)){
+        $selectedeventid = '';
+    }
+    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true,$selectedeventid);
     $output = '';
     $output .='<div class="table-responsive">';
     $output .='<table class="table">';
@@ -209,6 +213,10 @@ function get_volunteer_data() {
             $output.='<td>'.(isset($item['form_data']['eventid']) && !empty($item['form_data']['eventid'])?get_post_by_eventid($item['form_data']['eventid']):'-').'</td>';
             $output.='</tr>';
         }
+    }else{
+        $output.='<tr>';
+        $output.='<td colspan="7">No record found.</td>';
+        $output.='</tr>';
     }
     $output.='</tbody>';
     $output.='</table>';
@@ -375,7 +383,6 @@ function get_report_problem_contact_data() {
     die();
 }
 
-
 function connic_time_elapsed_string($datetime, $full = false) {
     $now = new DateTime;
     $ago = new DateTime($datetime);
@@ -404,3 +411,139 @@ function connic_time_elapsed_string($datetime, $full = false) {
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+
+
+add_action("wp_ajax_get_attendees_data", "get_attendees_data");
+add_action("wp_ajax_nopriv_get_attendees_data", "get_attendees_data");
+
+function get_attendees_data() {
+    $data = $_POST;
+    $pageNumber = $data['pageNumber'];
+    $perPageCount = $data['perPageCount'];
+    $selectedeventid = $data['eventid'];
+    $action = $data['action'];
+
+$my_orders_columns = apply_filters( 'woocommerce_my_account_my_orders_columns', array(
+    'order-number'  => __( 'Comfirmation #', 'woocommerce' ),
+    'order-date'    => __( 'Date', 'woocommerce' ),
+    'order-buyer'    => __( 'Ticket Buyer', 'woocommerce' ),
+    'order-email'  => __( 'Emails', 'woocommerce' ),
+    'order-status'  => __( 'Status', 'woocommerce' ),
+    'order-total'   => __( 'Price', 'woocommerce' ),
+    'order-quantity'   => __( 'Quantity', 'woocommerce' ),
+    'order-product'   => __( 'Event', 'woocommerce' ),
+    'order-actions' => '&nbsp;',
+) );
+    if(!empty($my_orders_columns)){
+        unset($my_orders_columns['order-actions']);
+        unset($my_orders_columns['download-ticket']);
+    }
+    if(!empty($selectedeventid)){
+        $events = array($selectedeventid);
+    }else {
+        $events = connice_event_listing_by_current_user('ids');
+    }
+$productids = connice_product_list_by_events($events,'ids');
+$orders = get_orders_ids_by_product_id($productids,$pageNumber,$perPageCount);
+    $output = '<div class="table-responsive">';
+    $output .= '<table class="table">';
+    $output .= '<thead class="thead-purple"><tr>';
+    foreach ($my_orders_columns as $column_id => $column_name) :
+        $output .= '<th class="' . esc_attr($column_id) . '"><span class="nobr">' . esc_html($column_name) . '</span></th>';
+    endforeach;
+    $output .= '</tr></thead>';
+    $output .= '<tbody>';
+if(!empty($orders['data'])) {
+    $customer_orders = get_posts(apply_filters('woocommerce_my_account_my_orders_query', array(
+        'numberposts' => $perPageCount,
+        'post__in' => $orders['data'],
+        'post_type' => wc_get_order_types('view-orders'),
+        'post_status' => array_keys(wc_get_order_statuses()),
+    )));
+    if ($customer_orders) :
+        foreach ($customer_orders as $customer_order) :
+            $order = wc_get_order($customer_order);
+            $item_count = $order->get_item_count();
+            $order_items= $order->get_items();
+            foreach ( $order_items as $item_id => $item ) {
+                $order_productid = $item->get_product_id();
+            }
+            $eventid = '';
+            if(!empty($order_productid)){
+                $eventid = get_post_meta($order_productid,'_event_id',true);
+            }
+            $output .= '<tr class="order">';
+            foreach ($my_orders_columns as $column_id => $column_name) :
+                $output .= '<td class="' . esc_attr($column_id) . '" data-title="' . esc_attr($column_name) . '">';
+                if (has_action('woocommerce_my_account_my_orders_column_' . $column_id)) :
+                    do_action('woocommerce_my_account_my_orders_column_' . $column_id, $order);
+                elseif ('order-number' === $column_id) :
+                    $output .= '<a href="' . esc_url($order->get_view_order_url()) . '">';
+                    $output .= '#' . $order->get_order_number();
+                    $output .= '</a>';
+                elseif ('order-date' === $column_id) :
+                    $output .= '<time datetime="' . esc_attr($order->get_date_created()->date('c')) . '">' . esc_html(wc_format_datetime($order->get_date_created())) . '</time>';
+                elseif ('order-buyer' === $column_id) :
+                    $output .= esc_html($order->get_billing_first_name()) . ' ' . esc_html($order->get_billing_last_name());
+                elseif ('order-email' === $column_id) :
+                    $output .= esc_html($order->get_billing_email());
+                elseif ('order-status' === $column_id) :
+                    $output .= esc_html(wc_get_order_status_name($order->get_status()));
+                elseif ('order-total' === $column_id) :
+                    $output .= $order->get_formatted_order_total();
+                elseif ('order-quantity' === $column_id) :
+                    $output .= 'x' . $item_count;
+                elseif ('order-product' === $column_id) :
+                    $output .= (!empty($eventid))?get_the_title($eventid):'';
+                elseif ('order-actions' === $column_id) :
+                    $actions = wc_get_account_orders_actions($order);
+                    if (!empty($actions)) {
+                        foreach ($actions as $key => $action) {
+                            $output .= '<a href="' . esc_url($action['url']) . '" class="button ' . sanitize_html_class($key) . '">' . esc_html($action['name']) . '</a>';
+                        }
+                    }
+                endif;
+                $output .= '</td>';
+            endforeach;
+            $output .= '</tr>';
+        endforeach;
+    endif;
+}else{
+    $output .= '<tr>';
+    $output .= '<td colspan="8">';
+    $output .= '<p class="norecordtable">No record found.</p>';
+    $output .= '</td>';
+    $output .= '</tr>';
+}
+    $output .= '</tbody>';
+    $output .= '</table>';
+    $output .= '</div>';
+    $rowCount = (isset($orders) && !empty($orders['count']))?$orders['count']:0;
+    $pagesCount = ceil($rowCount / $perPageCount);
+    $output.='<div class="export-list-row">';
+    $output.='<div class="custom-pagination">';
+    $output.='<ul>';
+    $output.='<li class="pagination-list">';
+    for ($i = 1; $i <= $pagesCount; $i ++) {
+        if ($i == $pageNumber) {
+            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
+        } else {
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_attendees_data\')">'.$i.'</a>';
+        } // endIf
+    } // endFor
+    $output.='</li>';
+    $output.='<li class="totalofPage">';
+    //$output.='Page '.$pageNumber.' of '.$pagesCount;
+    $stating = ($pageNumber-1)*$perPageCount+1;
+    $stating = ($rowCount == 0)?0:$stating;
+    $ending = $perPageCount*$pageNumber;
+    $ending = ($rowCount < $ending)?$rowCount:$ending;
+    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
+    $output.='</li>';
+    $output.='</ul>';
+    $output.='</div>';
+    $output.='</div>';
+    echo $output;
+    die();
+}
+
