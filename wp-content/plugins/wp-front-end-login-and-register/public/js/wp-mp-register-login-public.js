@@ -188,6 +188,8 @@
     // Validate registration form
     function wpmpValidateAndProcessRegisterForm() {
         $('#wpmpRegisterForm').formValidation({
+            onkeyup: false,
+            onsubmit: false,
             message: 'This value is not valid',
             /*icon: {
                 required: 'glyphicon glyphicon-asterisk',

@@ -216,6 +216,32 @@ $themesettings =  get_fields('theme-settings');
                 <div class="col-lg-6 col-md-6">
                     <div class="e-p-date-picker">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.png" class="img-fluid" alt="">
+                        <!--<div id="event-cal-container" class="calendar-container"></div>
+                        <?php
+/*                        $startdate = date_i18n( 'Y-m-d,', strtotime(get_event_start_date()) );
+                        $enddate = date_i18n( 'Y-m-d', strtotime(get_event_end_date()) );
+                        if(!empty($startdate) && !empty($enddate)) {
+                            $date_from = strtotime($startdate);
+                            $date_to = strtotime($enddate);
+                            $eventdata = array();
+                            $eventsInfo = array();
+                            $day = 1;
+                            for ($i = $date_from; $i <= $date_to; $i += 86400) {
+                                $eventdata[] = date("Y-m-d", $i);
+                                $eventsInfo[] = esc_attr( $post->post_title ).' Day '.$day;
+                                $day++;
+                            }
+                        }
+                        */?>
+                        <script type="text/javascript">
+                            jQuery("#event-cal-container").simpleCalendar({
+                                events: <?php /*echo json_encode($eventdata) */?>,
+                                eventsInfo: <?php /*echo json_encode($eventsInfo) */?>,
+                                selectCallback: function (date) {
+                                    console.log('date selected ' + date);
+                                }
+                            });
+                        </script>-->
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

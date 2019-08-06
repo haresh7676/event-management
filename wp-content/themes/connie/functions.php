@@ -42,6 +42,8 @@ function projectname_scripts() {
 
     wp_enqueue_style( 'custom-css', get_theme_file_uri( '/assets/css/custom.css' ), array(), rand(0,999) );
 
+    wp_enqueue_style( 'simple-calendar-css', get_theme_file_uri( '/assets/css/simple-calendar.css' ), array(), '1.0');
+
     //wp_enqueue_script( 'sell-tickets-wp', get_theme_file_uri( '/assets/js/sell-ticket.js' ), array( 'jquery' ), '1.0', true );
 
     
@@ -52,6 +54,7 @@ function projectname_scripts() {
 
     wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), rand(0,999), true);
 	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'simple-calendar-js', get_theme_file_uri( '/assets/js/jquery.simple-calendar.js' ), array( 'jquery' ), '1.0', false );
 
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

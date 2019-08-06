@@ -5,6 +5,12 @@
  * This is field is used in submit event form.
  **/
 ?>
+
+<?php 
+    $datedfields = array();
+    $datedfields['datefields'] = array('ticket_sales_start_date','ticket_sales_end_date');
+    $datedfields['timefields'] = array('ticket_sales_start_time','ticket_sales_end_time');
+?>
 <?php if ( ! empty( $field['value'] ) && is_array( $field['value'] ) ) : ?>
 
 	<?php foreach ( $field['value'] as $index => $value ) : ?>
@@ -27,7 +33,16 @@
                 <div id="<?php echo $key . '_' . $index; ?>" class="tab-pane fade">
                             <?php endif;?>        
                  <div class="row">
-                        <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?>">
+                    <?php 
+                    $customclass = ''; /*Add custom Class */
+                    if(in_array($subkey, $datedfields['datefields'])){ 
+                        $customclass =' form-group field_mideam calicon'; 
+                    }
+                    if(in_array($subkey, $datedfields['timefields'])){
+                        $customclass =' form-group field_small';
+                    }
+                    ?>
+                        <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php //esc_attr_e( $customclass ); ?>">
     					   <?php if(!empty($subfield['label'])) : ?>
                              <div class="col-md-4"> <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label></div>
     					   <?php endif; ?>
@@ -68,11 +83,20 @@
                 </div><!------------end ticket details tab------>
                 <div id="<?php echo $key; ?>_%%repeated-row-index%%" class="tab-pane fade setting-description">
                 <?php endif;?>
+                <?php 
+                    $customclass = ''; /*Add custom Class */
+                    if(in_array($subkey, $datedfields['datefields'])){ 
+                        $customclass =' form-group field_mideam calicon'; 
+                    }
+                    if(in_array($subkey, $datedfields['timefields'])){
+                        $customclass =' form-group field_small';
+                    }
+                    ?>
                 
-                    <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?>">
+                    <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php //esc_attr_e( $customclass ); ?>">
                         <div class="row">
                         <?php if(!empty($subfield['label'])) : ?>
-                           <div class="col-md-4">
+                           <div class="col-md-12">
                                 <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label>
                            </div>
     					   <?php endif; ?>
