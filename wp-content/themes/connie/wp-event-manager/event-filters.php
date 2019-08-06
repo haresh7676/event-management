@@ -10,7 +10,7 @@
         <input type="text" class="event-search" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Search for events', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
         <input type="text" class="city-search" name="search_location" id="search_location"  placeholder="<?php esc_attr_e( 'Location', 'wp-event-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />        <button type="submit" class="landing-submit-btn">Search</button>
         </div>
-        <a class="browe-event-filter-btn">
+        <a href="javascript:void(0)" class="browe-event-filter-btn">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/filter-icon.png" alt="">Filter
         </a>
         <div class="browe-event-filter-content">
@@ -31,14 +31,14 @@
                             foreach ($terms as $term){
                                 echo '<div class="col-lg-6 col-sm-6">';
                                 echo '<li>';
-                                echo '<div class="fancy-radio radio-inline">';
+                                echo '<label class="fancy-radio radio-inline">';
                                 if(!empty($selectedcat) && in_array($term->slug,$selectedcat)){
                                     echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories" checked>';
                                 }else{
                                     echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories">';
                                 }
                                 echo '<span><i></i>'.$term->name.'</span>';
-                                echo '</div>';
+                                echo '</label>';
                                 echo '</li>';
                                 echo '</div>';
                                 continue;
