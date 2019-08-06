@@ -38,7 +38,7 @@
 													if ( is_event_cancelled( $event ) ) {
 														$actions['mark_not_cancelled'] = array( 'label' => '<i class="fas fa-external-link-square-alt"></i>', 'nonce' => true );
 													} else {
-														$actions['mark_cancelled'] = array( 'label' => '<i class="far fa-ban"></i>', 'nonce' => true );
+														$actions['mark_cancelled'] = array( 'label' => '<i class="fas fa-ban"></i>', 'nonce' => true );
 													}
 													$actions['duplicate'] = array( 'label' => '<i class="far fa-copy"></i>', 'nonce' => true );
 													break;
