@@ -417,7 +417,31 @@ opacity: 1;
     padding: .2em .4em;
     text-decoration: none;
 }
-
+.ticket-inner-wpr{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.ticket-inner-wpr > fieldset{
+    border-bottom: 0px !important;
+    width: 100%;
+}
+h4.pull-right.ticket-heading {
+    float: left;
+    margin: 0px;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    color: #000;
+    padding-bottom: 1px;
+    border-bottom: 2px solid #000000;
+    margin-top: 0px;
+    text-transform: capitalize;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
