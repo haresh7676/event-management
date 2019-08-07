@@ -15,24 +15,24 @@
 
 	<?php foreach ( $field['value'] as $index => $value ) : ?>
  
-		<div class="repeated-row-<?php echo esc_attr( $key ); ?>">
+		<div class="repeated-row-<?php echo esc_attr( $key ); ?> ticketwprs">
 		<input type="hidden" class="repeated-row" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="<?php echo absint( $index ); ?>" />
-		
+            <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
          <ul class="nav nav-tabs">
-         
+             <li class="pull-right"><a class="ticket-notice-info" data-toggle="popover" data-trigger="hover"   data-placement="top" data-content="<?php _e('You can\'t delete ticket once it is added.You can make it private from settings tab.','wp-event-manager');?>" > <span class="glyphicon glyphicon-info-sign"></span></a></li>
             <li class="active"><a data-toggle="tab" href="#sell-ticket-details-<?php echo $key . '-' . $index; ?>"><?php _e('Ticket Details','wp-event-manager');?></a></li>
             <li><a data-toggle="tab" href="#<?php echo $key . '_' . $index; ?>"><?php _e('Settings','wp-event-manager');?></a></li>
-            <a class="pull-right ticket-notice-info" data-toggle="popover" data-trigger="hover"   data-placement="top" data-content="<?php _e('You can\'t delete ticket once it is added.You can make it private from settings tab.','wp-event-manager');?>" > <span class="glyphicon glyphicon-info-sign"></span></a>
-
           </ul>
             <div class="tab-content">
                 <div id="sell-ticket-details-<?php echo $key . '-' . $index; ?>" class="tab-pane fade in active">
+                    <div class="ticket-inner-wpr">
                   <?php foreach ( $field['fields'] as $subkey => $subfield ) : 
                             if ($subkey == 'ticket_description') : ?>
                 </div><!------------end ticket details tab------>
-                <div id="<?php echo $key . '_' . $index; ?>" class="tab-pane fade">
+                </div><!------ end wpr div ------>
+                <div id="<?php echo $key . '_' . $index; ?>" class="tab-pane fade setting-description">
                             <?php endif;?>        
-                 <div class="row">
+                 <!--<div class="row">-->
                     <?php 
                     $customclass = ''; /*Add custom Class */
                     if(in_array($subkey, $datedfields['datefields'])){ 
@@ -42,9 +42,10 @@
                         $customclass =' form-group field_small';
                     }
                     ?>
-                        <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php //esc_attr_e( $customclass ); ?>">
+                        <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
+                            <div class="row">
     					   <?php if(!empty($subfield['label'])) : ?>
-                             <div class="col-md-4"> <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label></div>
+                             <div class="col-md-12"> <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label></div>
     					   <?php endif; ?>
     					   <div class="col-md-12">
                                 <div class="field">
@@ -56,8 +57,9 @@
                                     ?>
                                 </div>
                             </div>
+                            </div>
                         </fieldset>
-                    </div>
+                    <!--</div>-->
                 <?php endforeach; ?>
                 </div><!------------end settings tab------>
 		    </div>
@@ -70,6 +72,7 @@
 		<div class="repeated-row-<?php echo esc_attr( $key.'_%%repeated-row-index%%' ); ?>">
 		
 		<input type="hidden" class="repeated-row" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="%%repeated-row-index%%" />
+            <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
 		<ul class="nav nav-tabs">
             <li class="pull-right"><a href="#remove" class="remove-row" id="repeated-row-<?php echo esc_attr( $key.'_%%repeated-row-index%%' ); ?>" ><?php _e( 'Remove', 'wp-event-manager' ); ?></a></li>
             <li><a class="active" data-toggle="tab" href="#sell-ticket-details_%%repeated-row-index%%"><?php _e('Ticket Details','wp-event-manager');?></a></li>
@@ -78,9 +81,11 @@
           </ul>
             <div class="tab-content">
                 <div id="sell-ticket-details_%%repeated-row-index%%" class="tab-pane fade in active">
+                    <div class="ticket-inner-wpr">
                 <?php  foreach ( $field['fields'] as $subkey => $subfield ) : 
                                 if ($subkey == 'ticket_description') : ?>           
                 </div><!------------end ticket details tab------>
+                </div><!------ end wpr div ------>
                 <div id="<?php echo $key; ?>_%%repeated-row-index%%" class="tab-pane fade setting-description">
                 <?php endif;?>
                 <?php 
@@ -93,7 +98,7 @@
                     }
                     ?>
                 
-                    <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php //esc_attr_e( $customclass ); ?>">
+                    <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
                         <div class="row">
                         <?php if(!empty($subfield['label'])) : ?>
                            <div class="col-md-12">
