@@ -86,16 +86,17 @@ var SellTicket= function () {
 			addLink :function(event) {
 			    
 			    Common.logInfo("SellTicket.addLink...");
-			    
-				var $wrap     = jQuery(this).closest('.field');
-				var max_index = 0;
+			    var tickettype = jQuery(this).data('type');
+				//var $wrap     = jQuery(this).closest('.field');
+				var $wrap     = jQuery(this).parent().parent().parent().find('.ticketwprs');			
 
-					$wrap.find('input.repeated-row').each(function(){
+				var max_index = 0;
+					//$wrap.find('input.repeated-row').each(function(){												
+					$wrap.find('input[data-tickettype="'+tickettype+'"]').each(function(){						
 					if ( parseInt( jQuery(this).val() ) > max_index ) {
-						max_index = parseInt( jQuery(this).val() );
+						max_index = parseInt( jQuery(this).val() );						
 					}
-				});
-		
+				});				
 				var html = jQuery(this).data('row').replace( /%%repeated-row-index%%/g, max_index + 1 );
 				//jQuery(this).before( html );
 				jQuery(this).parent().parent().parent().find('.ticketwprs').append(html);

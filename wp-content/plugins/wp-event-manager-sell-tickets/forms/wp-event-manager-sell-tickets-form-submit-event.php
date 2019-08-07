@@ -55,7 +55,7 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 							'priority'    => 2
 						),
 						'ticket_price' => array(
-							'label'       => __( 'Ticket Price', 'wp-event-manager-sell-tickets' ),
+							'label'       => __( 'Ticket Price ('.get_woocommerce_currency_symbol().')', 'wp-event-manager-sell-tickets' ),
 							'type'        => 'number',
 							'required'    => true,
 							'placeholder' => __('Ticket price','wp-event-manager-sell-tickets' ),
