@@ -41,7 +41,16 @@ jQuery(document).ready(function($) {
             showRecords(3, 1, 'get_attendees_data');
         });
     }
-});
+
+/*    $(".wpcf7 input.wpcf7-submit").click(function(e) {
+        var form = $(this).parents('form');
+         if(form.hasClass('invalid')){
+            $('html, body').animate({
+                scrollTop: $(".wpcf7-not-valid").first().offset().top - 30
+            }, 2000);
+        }
+    });
+*/});
 function showRecords(perPageCount, pageNumber, action) {
     var eventid = '';
     if (jQuery('.'+action+' .event-dropdown').length > 0) {
