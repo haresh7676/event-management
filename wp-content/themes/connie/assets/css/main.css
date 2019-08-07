@@ -885,6 +885,7 @@ i.drp-icn {
     position: relative;
     max-height: 600px;
     overflow: hidden;
+    padding-top: 60px;
 }
 .landing-page-banner img {
     width: 100%;
@@ -1277,6 +1278,9 @@ i.drp-icn {
     font-size: 30px;
     margin: 0px;
 }
+.ticket-address .ticket-contact h4 a {
+    text-decoration: none;
+}
 .ticket-address .ticket-contact ul {
     list-style: none;
     padding: 0px;
@@ -1477,11 +1481,12 @@ i.drp-icn {
     font-family: 'Open Sans', sans-serif;
 }
 .e-profile-gallery .e-p-gallery-title span {
-    flex: 0;
+    flex: none;
     margin: 0px;
     font-size: 20px;
     line-height: normal;
     padding-right: 20px;
+    width: auto;
 }
 .e-profile-gallery .e-p-gallery-title span a {
     text-decoration: none;
@@ -1505,7 +1510,7 @@ i.drp-icn {
 .gallery-small-photos ul li {
     float: left;
     padding: 0 10px;
-    width: 25%;
+    width: 25% !important;
     height: 165px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -2352,6 +2357,9 @@ i.drp-icn {
     font-size: 16px;
     line-height: normal;
 }
+.volunteer-body .wpcf7-response-output {
+    font-size: 13px;
+}
 .volnuteer-form .volunteer-submit-btn {
     text-align: right;
 }
@@ -2988,6 +2996,28 @@ i.drp-icn {
     line-height: 30px;
     padding: 0px;
     margin-top: 40px;
+}
+.entry-content .event_listing_preview_title {
+    background: transparent;
+    padding: 2em 0em 2em 0em;
+    display: inline-block;
+    width: 100%;
+}
+.entry-content .event_listing_preview_title h2 {
+    color: #775DFF !important;
+    font-size: 18px !important;
+    display: inline-block;
+    margin-top: 8px;
+}
+.entry-content .event_listing_preview_title .button {
+    background: transparent;
+    border: 1px solid #775DFF;
+    color: #775DFF;
+    font-size: 16px;
+    padding: 6px 12px;
+    outline: none;
+    box-shadow: none;
+    margin-left: 20px;
 }
 
 /* AR479-changes after development */

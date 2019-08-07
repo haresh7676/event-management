@@ -345,9 +345,7 @@ $themesettings =  get_fields('theme-settings');
                                     echo '</ul>';
                                 } ?>
                             </div>
-                        </div>
-                         <?php if($albumcount > 9) { ?>
-                             <div class="col-lg-12 col-md-12 morephotowpr">
+                            <div class="morephotowpr">
                                  <div class="gallery-small-photos gallery-more-photos">
                                      <ul>
                                          <?php if($albumcount > 9){
@@ -359,6 +357,9 @@ $themesettings =  get_fields('theme-settings');
                                      </ul>
                                  </div>
                              </div>
+                        </div>
+                         <?php if($albumcount > 9) { ?>
+                             
                          <?php } ?>
                     </div>
                 </div>
