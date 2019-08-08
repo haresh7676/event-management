@@ -901,10 +901,10 @@ i.drp-icn {
 }
 .landing-page-banner .landing-banner-content h2 {
     font-size: 50px;
-    line-height: 102px;
+    line-height: normal;
     color: #4A4A4A;
     font-weight: bold;
-    margin: 0 0 176px 0;
+    margin: 0 0 130px 0;
 }
 .landing-serach {
     display: inline-block;
@@ -1226,6 +1226,9 @@ i.drp-icn {
 /* AR479-Event Profile css start */
 .event-profile-banner {
     width: 100%;
+    position: relative;
+    max-height: 600px;
+    overflow: hidden;
 }
 .event-profile-banner img {
     width: 100%;
@@ -1275,7 +1278,7 @@ i.drp-icn {
 }
 .ticket-address .ticket-contact h4 {
     color: #775DFF;
-    font-size: 30px;
+    font-size: 24px;
     margin: 0px;
 }
 .ticket-address .ticket-contact h4 a {
@@ -1397,7 +1400,7 @@ i.drp-icn {
     display: inline-block;
     width: 100%;
 }
-.profie-cart-box span {
+.profie-cart-box .c-p-span {
     color: #775DFF;
     font-size: 20px;
     line-height: normal;
@@ -2135,6 +2138,7 @@ i.drp-icn {
     -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px;
+    min-height: inherit;
 }
 .event-detail-page .u-events-box .u-event-pic {
     border-radius: 4px 4px 0 0;
@@ -2331,10 +2335,19 @@ i.drp-icn {
 .volnuteer-form .volunteer-filed-row {
     margin-bottom: 20px;
 }
+.volnuteer-form .volunteer-filed-row .wpcf7-form-control-wrap {
+    width: 100%;
+}
 .volnuteer-form .volunteer-filed-row span {
     font-size: 16px;
     color: #000000;
     margin-bottom: 5px;
+}
+.ticket-contact .volnuteer-form .volunteer-filed-row span {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+    display: inline-block;
 }
 .volnuteer-form .volunteer-filed-row input {
     height: 44px;
@@ -2441,7 +2454,7 @@ i.drp-icn {
 }
 /* AR479-Report Problem css end */
 
-.creat-event-page .landing-page-banner, .tabbing-page-content, .event-profile-banner, .browe-event-content, .event-detail-page {
+.creat-event-page .landing-page-banner, .tabbing-page-content, .event-profile-banner, .browe-event-content {
     padding-top: 60px;
 }
 
@@ -2720,19 +2733,34 @@ i.drp-icn {
     background: #ffffff;
 }
 .cart-main-area .wpmc-tabs-list.wpmc-2-tabs .wpmc-tab-item {
-    width: 15%;
+    width: 12%;
 }
 .cart-main-area .wpmc-tabs-list .wpmc-tab-item .wpmc-tab-number {
     margin-top: -10px;
     background: #F6F6F6;
     border: none;
-    color: #D5D5D5;
+    color: #000;
     font-size: 12px;
+    font-style: italic;
 }
 .cart-main-area .wpmc-tabs-list .wpmc-tab-item.current .wpmc-tab-number {
     background: #775DFF;
     color: #ffffff;
     border-color: #775DFF;
+}
+.cart-main-area .wpmc-tabs-list .wpmc-tab-item .wpmc-tab-text {
+    color: #222222;
+}
+.cart-main-area .wpmc-tabs-list .wpmc-tab-item.current .wpmc-tab-text {
+    font-weight: 600;
+}
+.cart-main-area .wpmc-tabs-list .wpmc-tab-item:first-child:before {
+    width: 50%;
+    left: auto;
+}
+.cart-main-area .wpmc-tabs-list .wpmc-tab-item:last-child:before {
+    width: 50%;
+    right: auto;
 }
 .cart-main-area .wpmc-tabs-wrapper .wpmc-tab-item:before {
     border-width: 10px;

@@ -14,22 +14,9 @@
     .ticket-insurance .insurance-detail p {
         font-size: 15px;
     }
-    .buy-ticket .ticket-pass-buy ul li span {
+    /*.ticket-pass-section .ticket-address span, .ticket-pass-section .ticket-address p, .ticket-pass-section .ticket-address label {
         font-size: 24px;
-    }
-    .buy-ticket .ticket-pass-buy ul li label {
-        font-size: 26px;
-    }
-    .buy-ticket .buy-ticket-btn {
-        font-size: 22px;
-        height: 60px;
-    }
-    .ticket-pass-section .ticket-address span, .ticket-pass-section .ticket-address p, .ticket-pass-section .ticket-address label {
-        font-size: 24px;
-    }
-    .ticket-pass-section .ticket-address h3 {
-        font-size: 32px;
-    }
+    }*/
     .ticket-address .ticket-contact {
         margin-top: 20px;
     }
@@ -377,10 +364,10 @@
         font-size: 24px;
         margin-bottom: 10px;
     }
-    .profie-cart-box span {
+    .profie-cart-box .c-p-span {
         font-size: 20px;
     }
-    .profie-cart-box span br {
+    .profie-cart-box .c-p-span br {
         display: none;
     }
     .profie-cart-box .view-detail {
@@ -461,9 +448,6 @@
     }
     .common-table-design .table tbody tr td {
         white-space: nowrap;
-    }
-    .event-detail-page {
-        margin-top: 40px;
     }
     .event-detail-page .u-events-box .u-event-pic {
         height: auto;
@@ -580,6 +564,9 @@
     }
     .creat-event-page .create-ticket-option-btn .ticketbuttonwpr .field-tickets {
         padding: 5px 10px !important;
+    }
+    .event-detail-page .u-events-box {
+        margin-bottom: 20px;
     }
 }
 @media (min-width: 768px) and (max-width: 768px) {
@@ -794,11 +781,11 @@
         margin-bottom: 10px;
         text-align: center;
     }
-    .profie-cart-box span {
+    .profie-cart-box .c-p-span {
         font-size: 20px;
         text-align: center !important;
     }
-    .profie-cart-box span br {
+    .profie-cart-box .c-p-span br {
         display: none;
     }
     .profie-cart-box .view-detail {
@@ -1028,9 +1015,6 @@
     .common-table-design .table tbody tr td {
         white-space: nowrap;
     }
-    .event-detail-page {
-        margin-top: 40px;
-    }
     .event-detail-page .event-disc ul li {
         font-size: 14px;
     }
@@ -1239,7 +1223,7 @@
         padding-top: 0px;
     }
     .event-detail-page {
-        padding-top: 61px;
+        margin-top: 15px;
     }
     .setting-description-row .custome-select {
         margin-top: 0px;

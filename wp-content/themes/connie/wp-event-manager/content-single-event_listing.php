@@ -248,7 +248,7 @@ $themesettings =  get_fields('theme-settings');
                     <div class="date-and-time">
                         <h3 class="e-p-cart-title">Date And Time</h3>
                         <?php $newformate = 'D, M j, Y'; ?>
-                        <span><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_end_time();?></span>
+                        <span class="c-p-span"><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_end_time();?></span>
                         <!--<a href="#" class="view-detail">Add to Calendar</a>-->
                         <?php
                         if(!empty($themesettings) && (isset($themesettings['volunteer_form']) && !empty($themesettings['volunteer_form']))){
@@ -283,7 +283,7 @@ $themesettings =  get_fields('theme-settings');
                     <?php if(is_event_online($post) ):
                         echo __('Online Event','wp-event-manager');
                     else:
-                        echo '<span>' . get_event_venue_name() . '<br>'. get_event_address(). ', ' . get_event_pincode() .', '. get_event_location() . '.</span>';
+                        echo '<span class="c-p-span">' . get_event_venue_name() . '<br>'. get_event_address(). ', ' . get_event_pincode() .', '. get_event_location() . '.</span>';
                     endif;?>
                     <!--<a href="#" class="view-detail">View Map</a>-->
                 </div>
@@ -309,7 +309,7 @@ $themesettings =  get_fields('theme-settings');
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <h3 class="e-p-cart-title">Videos</h3>
-                            <!--<span>We are Quirkcon</span>-->
+                            <!--<span class="c-p-span">We are Quirkcon</span>-->
                         </div>
                     </div>
                 </div><!-- Profile Videp -->
