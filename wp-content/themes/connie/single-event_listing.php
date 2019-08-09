@@ -16,12 +16,12 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 			$tickets = get_query_var('event_action');
-	            if(isset($tickets) && $tickets == 'tickets'){
+	          	if(isset($tickets) && $tickets == 'tickets'){
 	                get_template_part( 'template-parts/content', 'single-event-cart' );
-	        }
-			else{
-			    get_template_part( 'template-parts/content', 'single' );
-	        }
+	            }
+	            else{
+	            	get_template_part( 'template-parts/content', 'single' );
+	            }
 			// End of the loop.
 			endwhile;
 			?>

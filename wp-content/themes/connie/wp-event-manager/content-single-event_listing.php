@@ -127,19 +127,19 @@ $themesettings =  get_fields('theme-settings');
                            {  ?>
                             <ul>
                                 <?php if($facebook) { ?>
-                                    <li class="facebook"><a href=" <?php echo $facebook; ?>"  class="facebook" target="_blank" itemprop="facebook" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li class="facebook"><a href=" <?php echo esc_url($facebook); ?>"  class="facebook" target="_blank" itemprop="facebook" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>
                                 <?php } ?>
                                 <?php if($twitter) { ?>
-                                    <li class="twitter"><a href=" <?php echo $twitter; ?>"  class="twitter"  target="_blank" itemprop="twitter" rel="nofollow"><i class="fab fa-twitter"></i></a></li>
+                                    <li class="twitter"><a href=" <?php echo esc_url($twitter); ?>"  class="twitter"  target="_blank" itemprop="twitter" rel="nofollow"><i class="fab fa-twitter"></i></a></li>
                                 <?php } ?>
                                 <?php if($googleplus) { ?>
-                                    <li class="g-plus"><a href=" <?php echo $googleplus; ?>"  class="g-plus"  target="_blank" itemprop="twitter" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/g-plus.png" alt=""></a></li>
+                                    <li class="g-plus"><a href=" <?php echo esc_url($googleplus); ?>"  class="g-plus"  target="_blank" itemprop="twitter" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/g-plus.png" alt=""></a></li>
                                 <?php } ?>
                                 <?php if($youtube) { ?>
-                                    <li class="youtube"><a href=" <?php echo $youtube; ?>"  class="youtube-link" target="_blank" itemprop="youtube" rel="nofollow"><i class="fab fa-youtube"></i></a></a></li>
+                                    <li class="youtube"><a href=" <?php echo esc_url($youtube); ?>"  class="youtube-link" target="_blank" itemprop="youtube" rel="nofollow"><i class="fab fa-youtube"></i></a></a></li>
                                 <?php } ?>
                                 <?php if($linkedin) { ?>
-                                    <li class="linkedin"><a href=" <?php echo $linkedin; ?>" class="linkedin-link" target="_blank" itemprop="linkedin" rel="nofollow"><i class="fab fa-linkedin-in"></i></li>
+                                    <li class="linkedin"><a href=" <?php echo esc_url($linkedin); ?>" class="linkedin-link" target="_blank" itemprop="linkedin" rel="nofollow"><i class="fab fa-linkedin-in"></i></li>
                                 <?php } ?>
                             </ul>
                             <?php } ?>
@@ -185,7 +185,9 @@ $themesettings =  get_fields('theme-settings');
                                 echo '<span>'.__( get_the_title($post_data->ID) , 'wp-event-manager-sell-tickets').'</span>';
                                 echo '<label>';
                                 if($ticket_type == 'donation'){
-                                    echo '<input type="number" name="donation_price-" id="donation_price" value="'.$price.'"  min="'.$price.'" />';
+                                    //echo '<input type="number" name="donation_price-" id="donation_price" value="'.$price.'"  min="'.$price.'" />';
+                                    _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');
+                                    _e( $price ,'wp-event-manager-sell-tickets');
                                 }
                                 else if(is_numeric($price)){
                                     _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');
@@ -301,7 +303,8 @@ $themesettings =  get_fields('theme-settings');
                     <?php if(is_event_online($post) ):
                         echo __('Online Event','wp-event-manager');
                     else:
-                        echo '<span class="c-p-span">' . get_event_venue_name() . '<br>'. get_event_address(). ', ' . get_event_pincode() .', '. get_event_location() . '.</span>';
+                        //echo '<span class="c-p-span">' . get_event_venue_name() . '<br>'. get_event_address(). ', ' . get_event_pincode() .', '. get_event_location() . '.</span>';
+                        echo '<span class="c-p-span">' . get_event_venue_name() . '<br>'. get_event_location() . '.</span>';
                     endif;?>
                     <!--<a href="#" class="view-detail">View Map</a>-->
                 </div>
