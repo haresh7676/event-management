@@ -166,6 +166,12 @@
     .browe-event-content .browe-event-filter {
         padding: 10px 0 5px 0;
     }
+    .basic-info-form .form-group.field_mideam {
+        width: 30% !important;
+    }
+    .basic-info-form .form-group.field_small {
+        width: 18% !important;
+    }
 }
 @media (min-width: 992px) and (max-width: 1023px) {
     .landing-page-banner .landing-banner-content h2 {
@@ -274,6 +280,12 @@
     }
     .browe-event-content .browe-event-filter {
         padding: 10px 0 5px 0;
+    }
+    .basic-info-form .form-group.field_mideam {
+        width: 30% !important;
+    }
+    .basic-info-form .form-group.field_small {
+        width: 18% !important;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1109,15 +1121,11 @@
         padding: 6px 10px;
     }
     .landing-page-banner {
-        padding-top: 0px;
+        margin-top: 0px;
     }
     .container.create-event-content {
         margin: 10px auto;
         padding: 0px;
-    }
-    .creat-event-page .create-event-content {
-        margin-left: 15px;
-        margin-right: 15px;
     }
     .create-event-cart {
         padding: 20px;
@@ -1326,6 +1334,9 @@
     .design-your-event .fieldset-event_banner.pullrightinner .custom-browse-file {
         width: 100% !important;
     }
+    .ticket-fields-form .ticketwprs .nav-tabs {
+        margin-top: 10px;
+    }
 }
 @media (max-width: 567px) {
     .gallery-small-photos ul li {
@@ -1411,6 +1422,9 @@
         width: 100%;
         margin: 5px 0;
     }
+    .basic-info-form .fieldset-event_publish__status .field label {
+        width: 110px !important;
+    }
 }
 @media screen and (max-width: 380px)  {
     .login-header h1 {
@@ -1468,5 +1482,21 @@
     .login-btn-box .login-btn {
         width: 120px;
         font-size: 13px;
+    }
+    .ticket-fields-form .ticketwprs .nav-tabs li {
+        border-right: 0px;
+        margin: 5px 0;
+        text-align: right;
+        width: 100%;
+    }
+    .custom-tab-design .ticket-fields-form .ticketwprs .nav-tabs {
+        flex-wrap: inherit;
+        overflow: inherit;
+        width: 100%;
+        display: block;
+    }
+    .creat-event-page .create-event-content {
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
