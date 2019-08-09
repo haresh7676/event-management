@@ -187,9 +187,7 @@
 
     // Validate registration form
     function wpmpValidateAndProcessRegisterForm() {
-        $('#wpmpRegisterForm').formValidation({
-            onkeyup: false,
-            onsubmit: false,
+        $('#wpmpRegisterForm').formValidation({            
             message: 'This value is not valid',
             /*icon: {
                 required: 'glyphicon glyphicon-asterisk',
@@ -252,7 +250,7 @@
                         },
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-                            message: 'The value is not a valid email address'
+                            message: 'Please enter valid email address'
                         }
                     }
                 },
@@ -393,7 +391,7 @@
                         },
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-                            message: 'The value is not a valid email address'
+                            message: 'Please enter valid email address'
                         }
                     }
                 },

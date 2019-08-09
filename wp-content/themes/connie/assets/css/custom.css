@@ -442,6 +442,13 @@ h4.pull-right.ticket-heading {
     margin-top: 0px;
     text-transform: capitalize;
 }
+.volnuteer-form .volunteer-filed-row span span.mandatory{
+    width: auto;
+    color: #a94442;
+}
+.volunteer-body .wpcf7-response-output.wpcf7-validation-errors{
+    display: none !important;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }

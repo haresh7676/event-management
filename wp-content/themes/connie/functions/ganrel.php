@@ -73,7 +73,7 @@ function get_sell_start_price($event_id){
         global $wpdb;
         if( empty( $event_id ) )
             return;
-        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM  {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );
+        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM  {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND meta_value != '0' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );
         if(!empty($r)){
             if($r[0] == 0 || $r[0] == ''){
                 return 'Free Ticket Available';
@@ -223,3 +223,16 @@ function get_orders_ids_by_product_id( $productids = array(),$pageNumber = 1,$pe
     $results['data'] = $resultsget;
     return $results;
 }
+
+add_action( 'wp_footer', 'mycustom_wp_footer' );
+ 
+function mycustom_wp_footer() {
+?>
+<script type="text/javascript">
+document.addEventListener( 'wpcf7submit', function( event ) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}, false );
+</script>
+<?php
+}
+

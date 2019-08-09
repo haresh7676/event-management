@@ -1618,7 +1618,7 @@ i.drp-icn {
 .custom-tab-design .tab-content .payment-settings {
     margin-top: -10px
 }
-.custom-tab-design .wpcf7-response-output {
+.custom-tab-design .wpcf7-response-output.wpcf7-validation-errors {
     display: none !important;
 }
 .payment-settings .accordion .card-header {
