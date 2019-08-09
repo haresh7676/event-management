@@ -34,10 +34,19 @@ var SellTicket= function () {
 			    jQuery('.fieldset-paid_tickets').find(':input.repeated-row').each(function()
 			    {
 			    	current_index = this.value;   	
-		            jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format});// minDate: '0' would work too
+		            jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
+                        beforeShow  : function (input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
+                        }
+		            });// minDate: '0' would work too
     				jQuery('#paid_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate : 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
 							var mindate = jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
@@ -47,10 +56,19 @@ var SellTicket= function () {
 			    jQuery('.fieldset-free_tickets').find(':input.repeated-row').each(function()
 			    {
 			    	current_index = this.value;
-    			    jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate : 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format});// minDate: '0' would work too
+    			    jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate : 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
+                        beforeShow  : function (input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
+                        }
+    			    });// minDate: '0' would work too
     				jQuery('#free_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate : 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
 							var mindate = jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
@@ -60,10 +78,19 @@ var SellTicket= function () {
 			    jQuery('.fieldset-donation_tickets').find(':input.repeated-row').each(function()
 				{
 					current_index = this.value; 
-    			    jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate : 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format});// minDate: '0' would work too
+    			    jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate : 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
+                        beforeShow  : function (input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
+                        }
+    			    });// minDate: '0' would work too
     				jQuery('#donation_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate 	: 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
 							var mindate = jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
@@ -107,10 +134,19 @@ var SellTicket= function () {
 			    //load date on sales start and end 
 			    var current_index = max_index+1;
 			    if(jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).length > 0 ){
-			    	jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format});// minDate: '0' would work too
+			    	jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
+						beforeShow  : function (input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
+                        }
+			    	});// minDate: '0' would work too
 					jQuery('#paid_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 						dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 						beforeShow: function(input, inst) {
+                            setTimeout(function(){
+                                inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                            },0);
 							var mindate = jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
@@ -121,10 +157,19 @@ var SellTicket= function () {
 			    }
 			    
 
-			    jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format});// minDate: '0' would work too
+			    jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
+                    beforeShow  : function (input, inst) {
+                        setTimeout(function(){
+                            inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                        },0);
+                    }
+			    });// minDate: '0' would work too
 				jQuery('#free_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 					beforeShow: function(input, inst) {
+                        setTimeout(function(){
+                            inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                        },0);
 				       var mindate = jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 				       return { minDate: mindate };
 				   }
@@ -133,10 +178,19 @@ var SellTicket= function () {
 				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
     			jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
 
-				jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format});// minDate: '0' would work too
+				jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
+                    beforeShow  : function (input, inst) {
+                        setTimeout(function(){
+                            inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                        },0);
+                    }
+				});// minDate: '0' would work too
 				jQuery('#donation_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 					beforeShow: function(input, inst) {
+                        setTimeout(function(){
+                            inst.dpDiv.outerWidth(jQuery(input).outerWidth());
+                        },0);
 				       var mindate = jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 				       return { minDate: mindate };
 				   }
