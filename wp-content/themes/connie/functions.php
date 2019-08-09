@@ -56,7 +56,9 @@ function projectname_scripts() {
 	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), '1.0', true );
     wp_enqueue_script( 'simple-calendar-js', get_theme_file_uri( '/assets/js/jquery.simple-calendar.js' ), array( 'jquery' ), '1.0', false );
 
-	
+    if ( is_singular()) {
+        wp_enqueue_script(  array('jquery','jquery-ui-core','jquery-ui-datepicker') );
+    }
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

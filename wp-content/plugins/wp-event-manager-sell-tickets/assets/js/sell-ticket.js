@@ -113,6 +113,8 @@ var SellTicket= function () {
 			addLink :function(event) {
 			    
 			    Common.logInfo("SellTicket.addLink...");
+			    jQuery('.event_ticket_add_link').removeClass('active');
+                jQuery(this).addClass('active');
 			    var tickettype = jQuery(this).data('type');
 				//var $wrap     = jQuery(this).closest('.field');
 				var $wrap     = jQuery(this).parent().parent().parent().find('.ticketwprs');			
