@@ -20,7 +20,7 @@ html {
 body {
 	margin:0;
 	padding: 0;
-	background: #FAFAFA;
+	background: #fff;
     font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 }
@@ -321,7 +321,7 @@ input:-moz-placeholder {
     margin: 40px auto;
 }
 .create-event-cart .form-group label {
-    font-size: 15px;
+    font-size: 14px;
     color: #4A4A4A;
     font-weight: bold;
     margin-bottom: 5px;
@@ -885,7 +885,7 @@ i.drp-icn {
     position: relative;
     max-height: 600px;
     overflow: hidden;
-    padding-top: 60px;
+    margin-top: 59px;
 }
 .landing-page-banner img {
     width: 100%;
@@ -1462,10 +1462,10 @@ i.drp-icn {
 }
 .event-profile-content .e-profile-gallery {
     background: #FAFAFA;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+    box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    -webkit-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    -moz-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
+    border-radius: 10px;
     margin-bottom: 40px;
     padding: 30px;
 }
@@ -2913,6 +2913,10 @@ i.drp-icn {
     color: #775DFF;
     text-decoration: none;
 }
+.ticket-fields-form .ticketwprs .nav-tabs li a i {
+    font-size: 20px;
+    margin-left: 10px;
+}
 .ticket-fields-form .ticketwprs .nav-tabs li a.active {
     color: #F7B0C0;
 }
@@ -3046,6 +3050,23 @@ i.drp-icn {
     outline: none;
     box-shadow: none;
     margin-left: 20px;
+}
+.event_listing_preview.single_event_listing {
+    border: none;
+}
+.event_listing_preview .event-profile-banner {
+    padding-top: 0px;
+}
+.event_listing_preview .event-profile-content {
+    background: transparent;
+}
+
+/*calendar design*/
+.ui-datepicker {
+    font-size: 16px;
+}
+.ui-timepicker-wrapper {
+    font-size: 14px;
 }
 
 /* AR479-changes after development */
