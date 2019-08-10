@@ -51,11 +51,14 @@ $bannerimg = get_field('banner_image');
         <?php
         if($banner == 1 && !empty($bannerimg)){
         ?>
+    </div>
+    <div class="row">
         <div class="landing-page-banner">
             <img src="<?php echo $bannerimg; ?>" class="img-fluid" alt="">
         </div>
-        <?php } ?>
     </div>
+    <?php } ?>
+</div>
 <?php
 //$headeroption = get_fields('header-settings');
 $headeroption = array();

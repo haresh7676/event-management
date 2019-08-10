@@ -885,7 +885,7 @@ i.drp-icn {
     position: relative;
     max-height: 600px;
     overflow: hidden;
-    margin-top: 59px;
+    margin-top: 58px;
 }
 .landing-page-banner img {
     width: 100%;
@@ -1045,6 +1045,7 @@ i.drp-icn {
 .u-event-details .date-month {
     flex: none;
     text-align: center;
+    padding: 0 5px 5px 5px !important;
 }
 .u-event-details .date-month span {
     font-size: 18px;
@@ -1059,7 +1060,7 @@ i.drp-icn {
 }
 .u-event-details .event-disc {
     flex: 1;
-    margin-left: 15px;
+    margin-left: 10px;
     padding-top: 5px;
 }
 .u-event-details .event-disc h4 {
@@ -1162,7 +1163,7 @@ i.drp-icn {
     -moz-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
     background: #FAFAFA;
     width: 100%;
-    top: 66px;
+    top: 63px;
     padding: 20px 40px 20px 80px;
     z-index: 9;
 }
@@ -1187,7 +1188,7 @@ i.drp-icn {
     margin-bottom: 10px;
 }
 /* custome radio button */
-.fancy-radio { margin: 0; margin-right: 15px; display: inline-block !important;}
+.fancy-radio { margin: 0; display: inline-block !important;}
 .fancy-radio input[type="radio"]+span { display: block; cursor: pointer; position: relative; font-size: 18px; color: #000000; }
 .fancy-radio input[type="radio"] { display: none; }
 .fancy-radio input[type="radio"]+span i { display: inline-block; vertical-align: middle; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; position: relative; bottom: 1px; content: ""; border: 2px solid #4A4A4A; width: 16px; height: 16px; margin-right: 15px; }
@@ -1214,12 +1215,15 @@ i.drp-icn {
     border: none;
     box-shadow: none;
     outline: none;
+    line-height: 40px;
 }
 .filter-apply-btn .btn.apply {
     background: #775DFF;
+    margin-right: 10px;
 }
 .filter-apply-btn .btn.cancel {
-    color: #979797;
+    color: #fff;
+    background: #979797;
 }
 /* AR479-Browe Events css end */
 

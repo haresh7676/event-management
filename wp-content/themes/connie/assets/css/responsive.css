@@ -172,6 +172,9 @@
     .basic-info-form .form-group.field_small {
         width: 18% !important;
     }
+    .browe-event-filter-content {
+        padding: 20px 40px 20px 40px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1023px) {
     .landing-page-banner .landing-banner-content h2 {
@@ -716,20 +719,18 @@
         top: 0px;
     }
     .browe-event-filter .browe-event-filter-btn {
-        margin-top: 20px;
+        margin-top: -44px;
+        position: relative;
+        z-index: 9;
     }
     .browe-event-filter-content {
-        top: 236px;
+        top: 286px;
         padding: 20px;
-        margin-top: 108px;
     }
     .filter-category {
         min-height: inherit;
-        margin-bottom: 20px;
-    }
-    .browe-event-filter-content .filter-apply-btn {
-        padding-left: 15px;
-        padding-right: 15px;
+        margin-bottom: 10px;
+        padding-top: 0px;
     }
     .filter-apply-btn .btn {
         min-width: 130px;
@@ -737,7 +738,7 @@
     }
     .browe-event-title h4 {
         font-size: 22px;
-        padding: 40px 0 20px 0;
+        padding: 35px 0 20px 0;
         line-height: normal;
     }
     .ticket-pass-section .ticket-address {
