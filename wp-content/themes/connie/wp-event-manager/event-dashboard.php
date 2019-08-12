@@ -35,13 +35,13 @@
 											$actions = array();
 											switch ( $event->post_status ) {
 												case 'publish' :
-													$actions['edit'] = array( 'label' => '<i class="far fa-edit"></i>', 'nonce' => false );
+													$actions['edit'] = array( 'label' => '<i class="far fa-edit" title="Edit"></i>', 'nonce' => false );
 													if ( is_event_cancelled( $event ) ) {
 														$actions['mark_not_cancelled'] = array( 'label' => '<i class="fas fa-external-link-square-alt"></i>', 'nonce' => true );
 													} else {
-														$actions['mark_cancelled'] = array( 'label' => '<i class="fas fa-ban"></i>', 'nonce' => true );
+														$actions['mark_cancelled'] = array( 'label' => '<i class="fas fa-ban" title="Cancel"></i>', 'nonce' => true );
 													}
-													$actions['duplicate'] = array( 'label' => '<i class="far fa-copy"></i>', 'nonce' => true );
+													$actions['duplicate'] = array( 'label' => '<i class="far fa-copy" title="Copy"></i>', 'nonce' => true );
 													break;
 												case 'expired' :
 													if ( event_manager_get_permalink( 'submit_event_form' ) ) {
@@ -55,7 +55,7 @@
 												}
 												break;
 											}
-											$actions['delete'] = array( 'label' => '<i class="far fa-trash-alt"></i>', 'nonce' => true );
+											$actions['delete'] = array( 'label' => '<i class="far fa-trash-alt" title="Delete"></i>', 'nonce' => true );
 											$actions           = apply_filters( 'event_manager_my_event_actions', $actions, $event );
 											foreach ( $actions as $action => $value ) {
 												$action_url = add_query_arg( array( 'action' => $action, 'event_id' => $event->ID ) );

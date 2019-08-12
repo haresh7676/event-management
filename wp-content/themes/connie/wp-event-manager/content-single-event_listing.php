@@ -83,7 +83,10 @@ $themesettings =  get_fields('theme-settings');
                         </span>
                         <h3><?php echo esc_attr( $post->post_title ); ?></h3>
                         <p>Hosted By  <?php echo display_organizer_name(); ?></p>
-                        <label><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png"> <?php echo get_event_location() ?></label>
+                        <label>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png">
+                            <div class="t-address-text"><?php echo get_event_location() ?></div>
+                        </label>
                         <div class="ticket-contact">
                             <?php if(!empty($themesettings) && (isset($themesettings['contact_form']) && !empty($themesettings['contact_form']))){ ?>
                                 <h4><a href="javascript:void(0)" data-toggle="modal" data-target="#contactmodule">Contact</a></h4>

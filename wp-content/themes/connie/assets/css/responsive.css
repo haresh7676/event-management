@@ -2,10 +2,6 @@
     .custom-tab-design .tab-pane .my-tickets {
         padding-right: 200px;
     }
-    .custom-tab-design .manage-events-tab {
-        margin-right: 200px;
-        border-right: 1px solid #C4C4C4;
-    }
     .my-tickets .my-ticket-edit-save-btn {
         position: absolute;
         bottom: 20px;
@@ -122,11 +118,6 @@
         margin-right: 20px;
         padding-right: 20px;
     }
-    .custom-tab-design .tab-content .tab-pane-spacing {
-        padding: 20px;
-        margin-right: 0px;
-        border-right: 0px;
-    }
     .custom-tab-design .tab-pane .sub-tab-design {
         padding: 15px 25px;
     }
@@ -242,11 +233,6 @@
     }
     .custom-tab-design .tab-pane .sub-tab-design {
         padding: 15px 20px;
-    }
-    .custom-tab-design .tab-content .tab-pane-spacing {
-        padding: 20px;
-        margin-right: 0px;
-        border-right: 0px;
     }
     .my-tickets .my-ticket-card-row {
         padding: 15px;
@@ -432,11 +418,6 @@
     }
     .manage-events-contact .m-e-contact-search input {
         padding: 0 30px 0 60px;
-    }
-    .custom-tab-design .tab-content .tab-pane-spacing {
-        padding: 20px;
-        margin-right: 0px;
-        border-right: 0px;
     }
     .payment-settings .accordion .payment-methods {
         padding: 15px 0;
@@ -827,10 +808,8 @@
         margin-top: 20px;
     }
     .gallery-small-photos ul li {
-        width: 50%;
-        height: 220px;
-        padding: 0px 10px;
-        margin: 20px 0 0 0;
+        width: calc(50% - 10px) !important;
+        margin: 20px 5px 0 5px;
     }
     .tabbing-page-title {
         padding: 15px;
@@ -953,11 +932,6 @@
     .manage-events-contact .m-e-contact-profile-desc span, .manage-events-contact .m-e-contact-profile-desc p {
         line-height: normal;
         font-size: 13px;
-    }
-    .custom-tab-design .tab-content .tab-pane-spacing {
-        padding: 20px;
-        margin-right: 0px;
-        border-right: 0px;
     }
     .textfield-row label {
         font-size: 16px;
@@ -1341,7 +1315,7 @@
 }
 @media (max-width: 567px) {
     .gallery-small-photos ul li {
-        width: 100%;
+        width: 100% !important;
         height: auto;
         padding: 0px 20px;
     }
