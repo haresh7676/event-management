@@ -70,11 +70,11 @@
                             echo '</div>';
                         }
                     } else {
-                        echo 'No record found.';
+                        echo "<span class='no-record-span'>No record found.</span>";
                     }
                     wp_reset_postdata();
                 }else{
-                    echo 'No record found.';
+                    echo "<span class='no-record-span'>No record found.</span>";
                 }
                 ?>
             </div>
@@ -104,11 +104,11 @@
                             echo '</div>';
                         }
                     } else {
-                        echo 'No record found.';
+                        echo "<span class='no-record-span'>No record found.</span>";
                     }
                     wp_reset_postdata();
                 }else{
-                    echo 'No record found.';
+                    echo "<span class='no-record-span'>No record found.</span>";
                 }
                 ?>
             </div>
@@ -143,14 +143,14 @@
                                 echo '</div>';
                             }
                         } else {
-                            echo 'No record found.';
+                            echo "<span class='no-record-span'>No record found.</span>";
                         }
                         wp_reset_postdata();
                     }else{
-                        echo 'No record found.';
+                        echo "<span class='no-record-span'>No record found.</span>";
                     }
                 }else{
-                    echo 'No record found.';
+                    echo "<span class='no-record-span'>No record found.</span>";
                 }
                 ?>
                 <!--<div class="my-ticket-edit-save-btn">

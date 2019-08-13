@@ -20,7 +20,7 @@ add_action( 'woocommerce_widget_shopping_cart_buttons', 'my_woocommerce_widget_s
 add_action( 'woocommerce_checkout_before_order_review', 'woocommerce_checkout_before_order_review_add_wpar');
 add_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_after_order_review_close_wpar');
 function woocommerce_checkout_before_order_review_add_wpar(){
-    echo '<div class="payment_main_section">';
+    echo '<div class="payment_main_section jb">';
 }
 function woocommerce_checkout_after_order_review_close_wpar(){
     echo '</div>';

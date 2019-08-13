@@ -71,7 +71,7 @@ $event_timezone   = get_event_timezone();
                       <td width="10%" class="price">
                         <?php
                           if($ticket_type == 'donation'){ 
-                              echo '<input type="number" name="donation_price-'.$count_fields.'" id="donation_price-'.$count_fields.'"value="'.$price.'"  min="'.$price.'" />';
+                              echo '<input type="number" class="input-number" name="donation_price-'.$count_fields.'" id="donation_price-'.$count_fields.'"value="'.$price.'"  min="'.$price.'" />';
                           }    
                           else if(is_numeric($price)){
                             _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');                 
@@ -200,6 +200,7 @@ $event_timezone   = get_event_timezone();
              </table>
            </div>
         </form>
+        <a href="#" class="first-step-back-btn">Back</a>
       </div>
   </div>
 </div>

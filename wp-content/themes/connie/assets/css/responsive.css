@@ -1,7 +1,4 @@
 @media (min-width: 1400px) {
-    .custom-tab-design .tab-pane .my-tickets {
-        padding-right: 200px;
-    }
     .my-tickets .my-ticket-edit-save-btn {
         position: absolute;
         bottom: 20px;
