@@ -55,7 +55,7 @@
                             display_event_banner();
                             echo '</div>';
                             echo '<div class="my-ticket-detail">';
-                            echo '<h3>' . get_the_title() . '</h3>';
+                            echo '<h3>' . get_post_by_eventid(get_the_ID()) . '</h3>';
                             echo '<ul>';
                             $newformate = 'D, M jS';
                             echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';
@@ -91,7 +91,7 @@
                             display_event_banner();
                             echo '</div>';
                             echo '<div class="my-ticket-detail">';
-                            echo '<h3>' . get_the_title() . '</h3>';
+                            echo '<h3>' . get_post_by_eventid(get_the_ID()) . '</h3>';
                             echo '<ul>';
                             $newformate = 'D, M jS';
                             echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';
@@ -129,7 +129,7 @@
                                 display_event_banner();
                                 echo '</div>';
                                 echo '<div class="my-ticket-detail">';
-                                echo '<h3>' . get_the_title() . '</h3>';
+                                echo '<h3>' . get_post_by_eventid(get_the_ID()) . '</h3>';
                                 echo '<ul>';
                                 $newformate = 'D, M jS';
                                 echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';

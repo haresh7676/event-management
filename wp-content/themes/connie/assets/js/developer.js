@@ -41,6 +41,19 @@ jQuery(document).ready(function($) {
             showRecords(3, 1, 'get_attendees_data');
         });
     }
+
+    if ($('#submit-event-form').length > 0) {
+        var delay = 0;
+        var offset = 150;
+
+        document.addEventListener('invalid', function(e){
+           $(e.target).addClass("invalid");
+           $('html, body').animate({scrollTop: $($(".invalid")[0]).offset().top - offset }, delay);
+        }, true);
+        document.addEventListener('change', function(e){
+           $(e.target).removeClass("invalid")
+        }, true);
+    }
 });
 function showRecords(perPageCount, pageNumber, action) {
     var eventid = '';

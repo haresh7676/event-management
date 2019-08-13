@@ -195,8 +195,8 @@ function get_volunteer_data() {
     $output .='<th>Phone</th>';
     $output .='<th>Email</th>';
     $output .='<th>Area of Expertise</th>';
-    $output .='<th>Days Avaliable</th>';
-    $output .='<th>Hours Avaliable</th>';
+    $output .='<th>Days Available</th>';
+    $output .='<th>Hours Available</th>';
     $output .='<th>Event</th>';
     $output .='</tr>';
     $output .='</thead>';
@@ -225,7 +225,7 @@ function get_volunteer_data() {
     $rowCount = (isset($results) && !empty($results['count']))?$results['count']:0;
     $pagesCount = ceil($rowCount / $perPageCount);
     $output.='<div class="export-list-row">';
-    $output.='<a href="#" class="export-a"><i class="fas fa-chevron-up"></i> Export List</a>';
+    //$output.='<a href="#" class="export-a"><i class="fas fa-chevron-up"></i> Export List</a>';
     $output.='<div class="custom-pagination">';
     $output.='<ul>';
     $output.='<li class="pagination-list">';

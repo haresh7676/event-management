@@ -128,7 +128,7 @@
                         <table class="table">
                             <thead class="thead-purple">
                             <tr>
-                                <th>Comfirmation #</th>
+                                <th>Confirmation #</th>
                                 <th>Date</th>
                                 <th>Ticket Buyer</th>
                                 <th>Emails</th>
