@@ -16,7 +16,7 @@ $bannerimg = get_field('banner_image');
 <div class="container-fluid">
     <div class="row">
         <div class="top-header">
-            <div class="logo-box"><a href="<?php echo site_url(); ?>"><img src="<?php //echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></div>
+            <div class="logo-box"><a href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></div>
             <div class="topnav-right pull-right">
                 <ul>
                     <li class="browser-event"><a href="<?php echo site_url(); ?>/events/">Browse Events</a></li>

@@ -1,3 +1,7 @@
+<?php
+global $woocommerce;
+$woocommerce->cart->empty_cart(); 
+?>
 <div class="container">
 	<div class="cart-main-area tickets">
 		<div class="cart-page-title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
