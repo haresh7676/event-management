@@ -1,6 +1,6 @@
 <div class="tab-pane tab-pane-spacing active show" id="helpCenter">
     <div class="help-center">
-        <h2 class="my-account-page-title">Help Center</h2>
+        <!-- <h2 class="my-account-page-title">Help Center</h2> -->
         <div class="my-account-content-wpr">
             <?php
             $myaccountsettings =  get_fields('account-settings');
