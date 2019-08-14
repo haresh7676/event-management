@@ -1029,6 +1029,7 @@ i.drp-icn {
     font-size: 40px;
     color: #fff;
     cursor: pointer;
+    text-shadow: 1px 1px 2px #000;
 }
 .u-events-box .u-event-pic i:hover, .u-events-box .u-event-pic i.active {
     color: #ea1b23;
@@ -1276,6 +1277,7 @@ i.drp-icn {
     color: #000000;
     font-size: 20px;
     margin: 10px 0 0 0;
+    width: 100%;
 }
 .ticket-pass-section .ticket-address label .t-address-text {
     width: calc(100% - 30px);
