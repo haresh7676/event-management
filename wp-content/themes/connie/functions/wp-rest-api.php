@@ -121,12 +121,16 @@ function callback_eventlist_func()
             $myvals = get_post_meta($id);
             $metadata = array();
             if(!empty($myvals)){
+                $aaraykey = array('_event_banner','_event_album');
                 foreach ($myvals as $key => $value){
                     $metavalue = $value[0];
                     if(is_serial($metavalue)){
                         $metavalue = unserialize($metavalue);
                     }
                     $metadata[$key] = $metavalue;
+                    if(in_array($key,$aaraykey) && empty($metavalue)){
+                        $metadata[$key] = array();
+                    }
                 }
             }
             $response[] = array(
@@ -224,12 +228,16 @@ function callback_event_byid_func($request)
             $myvals = get_post_meta($pid);
             $metadata = array();
             if(!empty($myvals)){
+                $aaraykey = array('_event_banner','_event_album');
                 foreach ($myvals as $key => $value){
                     $metavalue = $value[0];
                     if(is_serial($metavalue)){
                         $metavalue = unserialize($metavalue);
                     }
                     $metadata[$key] = $metavalue;
+                    if(in_array($key,$aaraykey) && empty($metavalue)){
+                        $metadata[$key] = array();
+                    }
                 }
             }
             $response1[] = array(
