@@ -307,7 +307,7 @@ $themesettings =  get_fields('theme-settings');
                         echo __('Online Event','wp-event-manager');
                     else:
                         //echo '<span class="c-p-span">' . get_event_venue_name() . '<br>'. get_event_address(). ', ' . get_event_pincode() .', '. get_event_location() . '.</span>';
-                        echo '<span class="c-p-span">' . get_event_venue_name() . '<br>'. get_event_location() . '.</span>';
+                        echo '<span class="c-p-span">' . get_event_venue_name() . '&nbsp;'. get_event_location() . '.</span>';
                     endif;?>
                     <!--<a href="#" class="view-detail">View Map</a>-->
                 </div>

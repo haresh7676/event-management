@@ -1022,13 +1022,21 @@ i.drp-icn {
     width: 100%;
     height: 100%;
 }
-.u-events-box .u-event-pic i {
+.u-events-box .u-event-pic .simplefavorite-button {
     position: absolute;
     top: 12px;
-    right: 20px;
-    font-size: 40px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+}
+.u-events-box .u-event-pic i {
+    font-size: 35px;
     color: #fff;
     cursor: pointer;
+    text-shadow: 1px 1px 2px #000;
 }
 .u-events-box .u-event-pic i:hover, .u-events-box .u-event-pic i.active {
     color: #ea1b23;
@@ -1276,6 +1284,7 @@ i.drp-icn {
     color: #000000;
     font-size: 20px;
     margin: 10px 0 0 0;
+    width: 100%;
 }
 .ticket-pass-section .ticket-address label .t-address-text {
     width: calc(100% - 30px);
