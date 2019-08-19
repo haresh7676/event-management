@@ -3249,5 +3249,8 @@ i.drp-icn {
     border-radius: 4px;
     border: 1px solid #CCCCCC;
 }
+.event-manager-error.event-manager-error {
+    font-size: 14px;
+}
 
 /* AR479-changes after development */
