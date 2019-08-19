@@ -41,3 +41,20 @@ function connie_add_checkout_content()
     echo '</div>';
     echo '</div>';
 }
+
+
+function custom_woocommerce_paypal_ap_payment_args( $args, $order ) {
+    $order_total = is_callable(array($order, 'get_total')) ? $order->get_total() : $order->order_total;
+    $order_subtotal = $order->get_subtotal();
+    $order_subtotal = number_format( $order_subtotal, 2 );
+    $adminprice = $order_total - $order_subtotal;
+    $adminprice = number_format( $adminprice, 2 );
+    $args['receiverList']['receiver'][0]['amount'] = $adminprice;
+    $args['receiverList']['receiver'][1] =
+        array(
+            'amount' => $order_subtotal,
+            'email'  => 'topscmswp-facilitator@gmail.com'
+        );
+    return $args;
+}
+add_filter( 'woocommerce_paypal_ap_payment_args', 'custom_woocommerce_paypal_ap_payment_args', 10, 2 );
