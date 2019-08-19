@@ -59,6 +59,7 @@
     .browe-event-content .browe-event-filter {
         padding: 10px 0 5px 0;
     }
+
 }
 @media (min-width: 1024px) and (max-width: 1199px) {
     .landing-page-banner .landing-banner-content h2 {
@@ -162,6 +163,9 @@
     }
     .browe-event-filter-content {
         padding: 20px 40px 20px 40px;
+    }
+    .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
+        width: 320px;
     }
 }
 @media (min-width: 992px) and (max-width: 1023px) {
@@ -272,6 +276,9 @@
     }
     .basic-info-form .form-group.field_small {
         width: 18% !important;
+    }
+    .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
+        width: 320px;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -560,6 +567,9 @@
     }
     .event-detail-page .u-events-box {
         margin-bottom: 20px;
+    }
+    .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
+        width: 240px;
     }
 }
 @media (min-width: 768px) and (max-width: 768px) {
@@ -1308,6 +1318,11 @@
     }
     .ticket-fields-form .ticketwprs .nav-tabs {
         margin-top: 10px;
+    }
+    .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
+        left: 10%;
+        width: 80%;
+        transform: inherit;
     }
 }
 @media (max-width: 567px) {
