@@ -239,3 +239,5 @@ document.addEventListener( 'wpcf7submit', function( event ) {
 function is_serial($string) {
     return (@unserialize($string) !== false);
 }
+
+
