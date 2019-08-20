@@ -46,15 +46,33 @@ function connie_add_checkout_content()
 function custom_woocommerce_paypal_ap_payment_args( $args, $order ) {
     $order_total = is_callable(array($order, 'get_total')) ? $order->get_total() : $order->order_total;
     $order_subtotal = $order->get_subtotal();
-    $order_subtotal = number_format( $order_subtotal, 2 );
-    $adminprice = $order_total - $order_subtotal;
-    $adminprice = number_format( $adminprice, 2 );
-    $args['receiverList']['receiver'][0]['amount'] = $adminprice;
-    $args['receiverList']['receiver'][1] =
-        array(
-            'amount' => $order_subtotal,
-            'email'  => 'topscmswp-facilitator@gmail.com'
-        );
+    $items = $order->get_items();
+    $product_id = '';
+    $eventid = '';
+    $post_author_id = '';
+    $reciverid = '';
+    foreach ( $items as $item ) {
+        $product_id = $item->get_product_id();
+        //$product_variation_id = $item->get_variation_id();
+    }
+    if(!empty($product_id)){
+        $eventid = get_post_meta($product_id,'_event_id',true);
+    }
+    if(!empty($product_id) && !empty($eventid)){
+        $post_author_id = get_post_field( 'post_author', $eventid );
+        $reciverid = get_user_meta($post_author_id, 'paypal_reciver_id', true);
+    }
+    if(!empty($post_author_id) && !empty($reciverid)){
+        $order_subtotal = number_format( $order_subtotal, 2 );
+        $adminprice = $order_total - $order_subtotal;
+        $adminprice = number_format( $adminprice, 2 );
+        $args['receiverList']['receiver'][0]['amount'] = $adminprice;
+        $args['receiverList']['receiver'][1] =
+            array(
+                'amount' => $order_subtotal,
+                'email'  => $reciverid
+            );
+    }
     return $args;
 }
 add_filter( 'woocommerce_paypal_ap_payment_args', 'custom_woocommerce_paypal_ap_payment_args', 10, 2 );
