@@ -95,7 +95,7 @@ function get_event_listings( $args = array() ) {
 
 	if ( ! empty( $args['search_location'] ) ) {
 
-		$location_meta_keys = array( 'geolocation_formatted_address', '_event_location', 'geolocation_state_long' );
+		$location_meta_keys = array( 'geolocation_formatted_address', '_event_location', '_event_address', '_event_pincode', 'geolocation_state_long' );
 
 		$location_search    = array( 'relation' => 'OR' );
 

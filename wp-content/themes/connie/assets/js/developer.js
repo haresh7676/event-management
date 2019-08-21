@@ -42,6 +42,26 @@ jQuery(document).ready(function($) {
         });
     }
 
+    $("#paypalconnect").submit(function(e) {
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        var form = $(this);
+        var url = $('.account-settings').data('ajax');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function(data)
+            {
+               $('.notes').html(data);
+            }
+        });
+
+
+    });
+
     if ($('#submit-event-form').length > 0) {
         var delay = 0;
         var offset = 150;

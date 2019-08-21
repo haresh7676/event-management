@@ -32,7 +32,7 @@ $bannerimg = get_field('banner_image');
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <?php $myaccount = site_url().'/my-account'; ?>
                                 <a class="dropdown-item" href="<?php echo $myaccount; ?>/edit-account/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/acc-stng-icn.png" alt=""></i>Account Settings</a>
-                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/payment-methods/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/paymnt-stng-icn.png" alt=""></i>Payment Settings</a>
+                                <a class="dropdown-item" href="<?php echo $myaccount; ?>/payment-settings/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/paymnt-stng-icn.png" alt=""></i>Payment Settings</a>
                                 <a class="dropdown-item" href="<?php echo $myaccount; ?>/my-tickets/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/my-tkt-icn.png" alt=""></i>My Tickets</a>
                                 <a class="dropdown-item" href="<?php echo $myaccount; ?>/manage-events/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mng-evnt-icn.png" alt=""></i>Manage Events</a>
                                 <a class="dropdown-item" href="<?php echo $myaccount; ?>/help-center/"><i class="drp-icn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/help-cntr-icn.png" alt=""></i>Help Center</a>

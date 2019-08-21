@@ -23,7 +23,8 @@ function connie_after_edit_account_form(){
 function connie_woo_my_account_order() {
     $myorder = array(
         'edit-account'       => __( 'Account Settings', 'woocommerce' ),
-        'payment-methods'    => __( 'Payment Settings', 'woocommerce' ),
+        'payment-settings'    => __( 'Payment Settings', 'woocommerce' ),
+        //'payment-methods'    => __( 'Payment Settings', 'woocommerce' ),
         'my-tickets'             => __( 'My Tickets', 'woocommerce' ),
         //'orders'             => __( 'My Tickets', 'woocommerce' ),
         'manage-events' => __( 'Manage Events', 'woocommerce' ),
@@ -45,6 +46,7 @@ add_filter ( 'woocommerce_account_menu_items', 'connie_woo_my_account_order' );
  */
 function connie_add_my_account_endpoint() {
 
+    add_rewrite_endpoint( 'payment-settings', EP_PAGES );
     add_rewrite_endpoint( 'my-tickets', EP_PAGES );
     add_rewrite_endpoint( 'manage-events', EP_PAGES );
     add_rewrite_endpoint( 'help-center', EP_PAGES );
@@ -56,7 +58,7 @@ function connie_add_my_account_endpoint() {
 add_action( 'init', 'connie_add_my_account_endpoint' );
 add_filter("woocommerce_get_query_vars", function ($vars) {
 
-    foreach (["my-tickets", "manage-events", "help-center", "report-problem", "about", "terms-and-policies"] as $e) {
+    foreach (["payment-settings", "my-tickets", "manage-events", "help-center", "report-problem", "about", "terms-and-policies"] as $e) {
         $vars[$e] = $e;
     }
 
@@ -69,6 +71,9 @@ function wpb_woo_endpoint_title( $title, $id ) {
         $title = "Download MP3s"; // change your entry-title
     }
     elseif ( is_wc_endpoint_url( 'my-tickets' ) && in_the_loop() ) {
+        $title = "My Tickets";
+    }
+    elseif ( is_wc_endpoint_url( 'view-order' ) && in_the_loop() ) {
         $title = "My Tickets";
     }
     elseif ( is_wc_endpoint_url( 'edit-account' ) && in_the_loop() ) {
@@ -89,7 +94,7 @@ function wpb_woo_endpoint_title( $title, $id ) {
     elseif ( is_wc_endpoint_url( 'terms-and-policies' ) && in_the_loop() ) {
         $title = "Terms and Policies";
     }
-    elseif ( is_wc_endpoint_url( 'payment-methods' ) && in_the_loop() ) {
+    elseif ( is_wc_endpoint_url( 'payment-settings' ) && in_the_loop() ) {
         $title = "Payment Settings";
     }
     return $title;
@@ -122,6 +127,10 @@ function connie_about_endpoint_content() {
 function connie_terms_and_policies_endpoint_content() {
     require_once(get_template_directory() .'/include/terms-and-policies.php');
 }
+function connie_payment_settings_endpoint_content() {
+    require_once(get_template_directory() .'/include/payment-settings.php');
+}
+add_action( 'woocommerce_account_payment-settings_endpoint', 'connie_payment_settings_endpoint_content' );
 add_action( 'woocommerce_account_my-tickets_endpoint', 'connie_my_tickets_endpoint_content' );
 add_action( 'woocommerce_account_manage-events_endpoint', 'connie_manage_events_endpoint_content' );
 add_action( 'woocommerce_account_help-center_endpoint', 'connie_help_center_endpoint_content' );
@@ -325,7 +334,7 @@ function get_team_member_data() {
 }
 
 add_action("wp_ajax_get_report_problem_contact_data", "get_report_problem_contact_data");
-add_action("wp_ajax_nopriv_get_report_problem_contact_data", "get_report_problem_contact_data");
+//add_action("wp_ajax_nopriv_get_report_problem_contact_data", "get_report_problem_contact_data");
 
 function get_report_problem_contact_data() {
     $data = $_POST;
@@ -414,7 +423,7 @@ function connic_time_elapsed_string($datetime, $full = false) {
 
 
 add_action("wp_ajax_get_attendees_data", "get_attendees_data");
-add_action("wp_ajax_nopriv_get_attendees_data", "get_attendees_data");
+//add_action("wp_ajax_nopriv_get_attendees_data", "get_attendees_data");
 
 function get_attendees_data() {
     $data = $_POST;
@@ -547,3 +556,18 @@ if(!empty($orders['data'])) {
     die();
 }
 
+
+add_action("wp_ajax_connect_paypal", "connic_connect_paypal");
+function connic_connect_paypal(){
+    $data = $_POST;
+    $paypalEmail = $data['paypalEmail'];
+    if(!empty($paypalEmail)) {
+        $current_user = wp_get_current_user();
+        $current_user_id = $current_user->ID;
+        update_user_meta($current_user_id, 'paypal_reciver_id', $paypalEmail);
+        echo 'PayPal account has set successfully.';
+    }else{
+        echo 'Something want to be wrong please try again.';
+    }
+    die();
+}
