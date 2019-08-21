@@ -102,7 +102,7 @@
                         <div class="row">
                         <?php if(!empty($subfield['label'])) : ?>
                            <div class="col-md-12">
-                                <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label>
+                                <label for="<?php esc_attr_e( $subkey ); ?>"><?php echo $subfield['label'] . ( $subfield['required'] ? '<span class="require-field">*</span>' : ' <small>' . __( '(optional)', 'wp-event-manager' ) . '</small>' ); ?></label>
                            </div>
     					   <?php endif; ?>
         					<div class="col-md-12">

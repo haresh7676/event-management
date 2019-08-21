@@ -128,7 +128,7 @@ var SellTicket= function () {
 				});				
 				var html = jQuery(this).data('row').replace( /%%repeated-row-index%%/g, max_index + 1 );
 				//jQuery(this).before( html );
-				jQuery(this).parent().parent().parent().find('.ticketwprs').append(html);
+				jQuery(this).parent().parent().parent().find('.ticketwprs').prepend(html);
 				
 				//initial hide settings details			
 			    jQuery( '.settings-details' ).hide();
@@ -154,8 +154,8 @@ var SellTicket= function () {
 						}
 					});	
 			
-					jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
-	        		jQuery('#paid_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
+					jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'disableTextInput': true});	
+	        		jQuery('#paid_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'disableTextInput': true});	
 			    }
 			    
 
@@ -177,8 +177,8 @@ var SellTicket= function () {
 				   }
 				});	
 				
-				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
-    			jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
+				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'disableTextInput': true});	
+    			jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'disableTextInput': true});	
 
 				jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker({minDate	: 0,dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
                     beforeShow  : function (input, inst) {
@@ -198,8 +198,8 @@ var SellTicket= function () {
 				   }
 				});	
 
-				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
-    			jQuery('#donation_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step});	
+				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'disableTextInput': true});	
+    			jQuery('#donation_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'disableTextInput': true});	
 				
 				event.preventDefault();
 			},		
@@ -218,6 +218,7 @@ var SellTicket= function () {
 				if(confirm(event_manager_sell_tickets_sell_ticket.i18n_confirm_delete))
 				{
 					jQuery("."+event.target.id).remove();
+					jQuery(".event_ticket_add_link").removeClass('active');
 				}
 				event.preventDefault();
 											

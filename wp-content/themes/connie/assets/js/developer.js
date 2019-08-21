@@ -74,6 +74,10 @@ jQuery(document).ready(function($) {
            $(e.target).removeClass("invalid")
         }, true);
     }
+
+    /*$('#event_start_time').on('changeTime', function() {
+        $('#event_end_time').timepicker('option',{'roundingFunction':false, 'minTime': $(this).val()});
+    });*/
 });
 function showRecords(perPageCount, pageNumber, action) {
     var eventid = '';

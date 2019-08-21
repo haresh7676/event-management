@@ -241,3 +241,11 @@ function is_serial($string) {
 }
 
 
+/*
+add_filter( 'the_editor', 'add_required_attribute_to_wp_editor', 10, 1 );
+
+function add_required_attribute_to_wp_editor( $editor ) {
+    $editor = str_replace( '<textarea', '<textarea required="required"', $editor );
+    return $editor;
+}
+*/

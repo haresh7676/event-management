@@ -58,7 +58,7 @@
         </div>
         <div class="event-disc">
             <!--<div class="event-title">-->
-                <h4><?php the_title(); ?></h4>
+                <h4 class="eventtitle-listing" title="<?php the_title(); ?>"><?php the_title(); ?></h4>
             <!--</div>-->
             <ul>
                 <?php $newformate = 'D, M jS'; ?>
