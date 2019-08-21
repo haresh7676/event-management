@@ -398,6 +398,7 @@ opacity: 1;
     position: absolute;
     overflow: hidden;
     box-sizing: border-box;
+    max-height: 205px !important;
 }
 .ui-timepicker-list {
     box-sizing: content-box;
@@ -448,6 +449,29 @@ h4.pull-right.ticket-heading {
 }
 .volunteer-body .wpcf7-response-output.wpcf7-validation-errors{
     display: none !important;
+}
+.hasDatepicker{
+    cursor: pointer;
+}
+.event-profile-content .e-profile-about ul {
+    list-style-position: outside;
+    padding-left: 20px;
+}
+.event-profile-content .e-profile-about ul li {
+    font-size: 18px;
+    color: #000000;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-family: 'sf_compact_displaythin';
+    font-weight: 600;
+}
+.u-event-details .event-disc h4{
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
