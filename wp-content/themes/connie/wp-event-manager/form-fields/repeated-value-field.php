@@ -19,9 +19,9 @@
 		<input type="hidden" class="repeated-row" data-tickettype="<?php echo esc_attr( $key ); ?>" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="<?php echo absint( $index ); ?>" />
             <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
          <ul class="nav nav-tabs">
-             <li class="pull-right"><a class="ticket-notice-info" data-toggle="popover" data-trigger="hover"   data-placement="top" data-content="<?php _e('You can\'t delete ticket once it is added.You can make it private from settings tab.','wp-event-manager');?>" > <span class="glyphicon glyphicon-info-sign"></span></a></li>
-            <li class="active"><a data-toggle="tab" href="#sell-ticket-details-<?php echo $key . '-' . $index; ?>"><?php _e('Ticket Details','wp-event-manager');?></a></li>
-            <li><a data-toggle="tab" href="#<?php echo $key . '_' . $index; ?>"><?php _e('Settings','wp-event-manager');?></a></li>
+             <li class="pull-right"><a class="ticket-notice-info1" data-toggle="popover" data-trigger="hover"   data-placement="top" data-content="<?php _e('You can\'t delete ticket once it is added.You can make it private from settings tab.','wp-event-manager');?>" > <span class="glyphicon glyphicon-info-sign"></span><?php _e( 'Remove', 'wp-event-manager' ); ?><i class="far fa-trash-alt"></i></a></li>
+            <li><a class="active" data-toggle="tab" href="#sell-ticket-details-<?php echo $key . '-' . $index; ?>"><?php _e('Ticket Details','wp-event-manager');?><i class="far fa-copy"></i></a></li>
+            <li><a data-toggle="tab" href="#<?php echo $key . '_' . $index; ?>"><?php _e('Settings','wp-event-manager');?><i class="fas fa-cog"></i></a></li>
           </ul>
             <div class="tab-content">
                 <div id="sell-ticket-details-<?php echo $key . '-' . $index; ?>" class="tab-pane fade in active">

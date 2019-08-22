@@ -41,7 +41,7 @@
                         },
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-                            message: 'The value is not a valid email address'
+                            message: 'Please enter valid email address'
                         }
                     }
                 },
@@ -131,7 +131,7 @@
                         },
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-                            message: 'The value is not a valid email address'
+                            message: 'Please enter valid email address'
                         }
                     }
                 },
