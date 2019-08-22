@@ -68,6 +68,13 @@ function property_init()
     );*/
 }
 //get_sell_start_price(12);
+function get_myfavoratelist(){
+     $userid = get_current_user_id();
+     global $wpdb;
+     $r = $wpdb->get_col($wpdb->prepare( "SELECT item_id FROM {$wpdb->prefix}gd_mylist WHERE user_id = '%s' ORDER BY insert_date DESC", $userid) );
+     
+     return $r;     
+}
 function get_sell_start_price($event_id){
     if(!empty($event_id)) {
         global $wpdb;
@@ -249,3 +256,23 @@ function add_required_attribute_to_wp_editor( $editor ) {
     return $editor;
 }
 */
+
+add_action( 'wp_footer', 'reportproblem_wp_footer' );
+ 
+function reportproblem_wp_footer() {
+    $myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
+    }
+?>
+<script type="text/javascript">
+    var formid = '<?php echo $formid ?>';
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    if ( formid == event.detail.contactFormId ) {
+        jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
+    }
+}, false );
+</script>
+<?php
+}
