@@ -68,12 +68,13 @@ jQuery(document).ready(function($) {
 
         document.addEventListener('invalid', function(e){
            $(e.target).addClass("invalid");
-           $('html, body').animate({scrollTop: $($(".invalid")[0]).offset().top - offset }, delay);
+           $('html, body, .modal').animate({scrollTop: $($(".invalid")[0]).offset().top - offset }, delay);           
         }, true);
         document.addEventListener('change', function(e){
            $(e.target).removeClass("invalid")
         }, true);
     }
+
 
     /*$('#event_start_time').on('changeTime', function() {
         $('#event_end_time').timepicker('option',{'roundingFunction':false, 'minTime': $(this).val()});

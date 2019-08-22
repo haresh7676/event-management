@@ -237,7 +237,15 @@ function mycustom_wp_footer() {
 ?>
 <script type="text/javascript">
 document.addEventListener( 'wpcf7submit', function( event ) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    //window.scrollTo({ top: 0, behavior: 'smooth' });
+     jQuery(".modal").scrollTop(0)
+     console.log(jQuery(".wpcf7-not-valid").first().offset().top);
+    jQuery(".wpcf7").on('invalid', function(e) {
+        jQuery('html, body, .modal').animate({
+            scrollTop: jQuery(".wpcf7-not-valid").first().offset().top - 150
+        }, 2000);
+    });
+     jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
 }, false );
 </script>
 <?php
