@@ -289,7 +289,9 @@ a.btn.login-btn.backtologin {
 	margin-top: -12px;
     margin-bottom: 12px;
 }
-
+.confirmation.fade:not(.show){
+    opacity: 1;
+} 
 .tab-content>.fade:not(.show).active{
 opacity: 1;
 }

@@ -44,6 +44,14 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>"  required readonly/>
 	</p>
 
+	<?php 
+	$userid = $user->ID;
+	$accesstoken = get_user_meta($userid,'google_access_token',true);
+	if(isset($accesstoken) && !empty($accesstoken)){	
+		echo '<p>You have logged in with Social media</p>';
+
+	}else { ?>
+
 	<fieldset>
 		<!--<legend><?php /*esc_html_e( 'Password change', 'woocommerce' ); */?></legend>-->
 
@@ -62,6 +70,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
 		</p>
 	</fieldset>
+	<?php } ?>
 	<div class="clear"></div>
 
 	<?php do_action( 'woocommerce_edit_account_form' ); ?>

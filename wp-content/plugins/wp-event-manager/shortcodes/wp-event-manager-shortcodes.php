@@ -44,7 +44,7 @@ class WP_Event_Manager_Shortcodes {
 
 		global $post;
 		
-		if ( is_page() && strstr( $post->post_content, '[event_dashboard' ) ) {
+		if ( (is_page() && strstr( $post->post_content, '[event_dashboard' )) || (isset($_REQUEST['action']) && isset($_REQUEST['event_id']) && isset($_REQUEST['_wpnonce']))) {
 
 			$this->event_dashboard_handler();
 		}
@@ -204,7 +204,7 @@ class WP_Event_Manager_Shortcodes {
 
 		// If doing an action, show conditional content if needed....
 
-		if ( ! empty( $_REQUEST['action'] ) ) {
+		if ( ! empty( $_REQUEST['action'] ) ) {	
 
 			$action = sanitize_title( $_REQUEST['action'] );
 
