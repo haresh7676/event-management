@@ -530,6 +530,12 @@ h4.pull-right.ticket-heading {
     width: auto;
     color: #a94442;
 }
+.cart-main-area.tickets #sell-ticket-status-message{
+    display: none;
+}
+.woocommerce-billing-fields__field-wrapper .form-row label span.optional{
+    opacity: 0.5;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }

@@ -571,3 +571,12 @@ function connic_connect_paypal(){
     }
     die();
 }
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_rename_wc_checkout_fields' );
+
+function custom_rename_wc_checkout_fields( $fields ) {
+
+    $fields['billing']['billing_address_2']['label'] = 'Apartment, suite, unit etc.';
+    return $fields;
+
+}

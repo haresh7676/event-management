@@ -239,7 +239,9 @@ var SellTicket= function () {
 				var tickets_to_add = {};
 				var total_ticket = jQuery('#total_ticket').val();
 			
-				if(  total_ticket <= 0  ){ return false;}
+				if(  total_ticket <= 0  ){ 					
+					return false;
+				}
 				
 				for ( i = 0; i <total_ticket; i++) {
 				        //if tickets quantity is 0 then it will check next ticket.
@@ -251,10 +253,21 @@ var SellTicket= function () {
 						  donation_price = jQuery('#donation_price-'+i).val(); 
 						  tickets_to_add[i] = {'product_id':product_id ,'quantity' : quantity ,'price' : donation_price };
 				}
-				if(  quantity <= 0  ){ 
+				/*if(  quantity <= 0  ){ 
 				    jQuery('#sell-ticket-status-message').html( event_manager_sell_tickets_sell_ticket.i18n_no_ticket_found );
+				    "use strict";
+					var data = {
+						'action': 'mode_theme_update_mini_cart'
+					};
+					jQuery.post(
+						woocommerce_params.ajax_url, // The AJAX URL
+						data, // Send our PHP function
+						function(response){
+							jQuery('#mode-mini-cart').html(response); // Repopulate the specific element with the new content
+						}
+					);
 				    return false;
-				    }
+				    }*/
 				
 				jQuery.ajax({
 								 type: 'POST',

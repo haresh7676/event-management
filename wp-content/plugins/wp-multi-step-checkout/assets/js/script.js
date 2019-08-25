@@ -71,12 +71,17 @@ jQuery(window).ready(function($){
             before_form.hide();
 
             // Show "next" button 
+
+            console.log(sections.length - 1);
             if ( theIndex < sections.length - 1 ) $('#wpmc-next').addClass('current'); $(".currentbtn").removeClass('hidecurrent');
+
+            if ( theIndex === 0) $('.wpmc-tab-item.wpmc-review').removeClass('previous');
 
             // Show "skip login" button
             if ( theIndex === 0 && $('.wpmc-step-login').length > 0 ) {
                 $("#wpmc-skip-login").addClass('current');
                 $("#wpmc-next").removeClass('current');
+
             }
             // Last section
             if ( theIndex === sections.length - 1) {
