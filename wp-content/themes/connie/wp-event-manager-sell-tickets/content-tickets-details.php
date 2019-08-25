@@ -81,7 +81,7 @@ $event_timezone   = get_event_timezone();
                           }
                          ?>
                      </td>
-                    <?php 
+                    <?php /*
                     if( $fee_enable== 'yes'  ){  ?>
                     <td>
                       <?php
@@ -122,7 +122,7 @@ $event_timezone   = get_event_timezone();
                     </td>            
                     <?php 
                          }
-                    } ?>
+                    } */ ?>
                     <?php if($stock_status == 'outofstock' ) : ?>
                       <td>
                         <?php   _e('Sold Out','wp-event-manager-sell-tickets'); ?>
@@ -188,7 +188,7 @@ $event_timezone   = get_event_timezone();
                  </tbody>
                   <tfoot>
                   <tr>
-                    <td colspan=<?php  if( $fee_enable== 'yes' ) echo 3; else echo 2;  ?> > <label id="sell-ticket-status-message" class=""> </label></td>
+                    <td colspan=<?php  if( $fee_enable== 'yes' ) echo 2; else echo 2;  ?> > <label id="sell-ticket-status-message" class=""> </label></td>
                     <td align="right">
                       <br>
                       <input type="hidden" name="" id="total_ticket" value="<?php echo $count_fields;?>">

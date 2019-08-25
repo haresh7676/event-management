@@ -73,6 +73,11 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				<span><?php _e( 'Subtotal', 'woocommerce' ); ?>:</span> <?php echo WC()->cart->get_cart_subtotal(); ?>
 			</p>
 		</div>
+		<div class="cart-subtotal cart-total">
+			<p class="woocommerce-mini-cart__total total">
+				<span><?php _e( 'Total', 'woocommerce' ); ?>:</span> <?php echo WC()->cart->get_cart_subtotal(); ?>
+			</p>
+		</div>
 	</div>
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
     <?php if(is_checkout()){ ?>

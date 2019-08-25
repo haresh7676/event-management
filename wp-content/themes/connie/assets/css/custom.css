@@ -499,6 +499,10 @@ h4.pull-right.ticket-heading {
 .volunteer-body .wpcf7-response-output.wpcf7-validation-errors{
     display: none !important;
 }
+.importwpr{
+    width: 100%;
+    height: 100vh;
+}
 .hasDatepicker{
     cursor: pointer;
 }
@@ -525,6 +529,12 @@ h4.pull-right.ticket-heading {
 .report-problem .contact-filed-row span span.mandatory {
     width: auto;
     color: #a94442;
+}
+.cart-main-area.tickets #sell-ticket-status-message{
+    display: none;
+}
+.woocommerce-billing-fields__field-wrapper .form-row label span.optional{
+    opacity: 0.5;
 }
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
