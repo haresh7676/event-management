@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
         removeClass = true;
     });
 
-    function setHeight() {
+    /*function setHeight() {
       windowHeight = $(window).innerHeight();
       headerHeight = $('.top-header').outerHeight(true);
       titleHeight = $('.tabbing-page-title').innerHeight();
@@ -23,9 +23,9 @@ jQuery(document).ready(function($) {
       $('.custom-tab-design').css('min-height', mainHeight);
     }
     setHeight();
-  $('body').resize(function() {
-      setHeight();
-  });
+    $('body').resize(function() {
+        setHeight();
+    });*/
 
     $('body').on('click','.ui-timepicker-input', function() {
         var outerwidth = $(this).outerWidth();

@@ -318,7 +318,7 @@ input:-moz-placeholder {
     margin-top: 0px;
 }
 .container.create-event-content {
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
 }
 .create-event-cart .form-group label {
     font-size: 14px;
@@ -2631,6 +2631,10 @@ i.drp-icn {
     border-bottom: 1px solid #C4C4C4;
     margin-top: 10px;
 }
+.min-cart-main .cart-subtotal.cart-total {
+    border-top: 0px;
+    margin-top: 0px;
+}
 .cart-subtotal .woocommerce-mini-cart__total {
     display: flex;
     align-items: center;
@@ -2642,8 +2646,9 @@ i.drp-icn {
 }
 .cart-subtotal .woocommerce-mini-cart__total .amount {
     flex: none;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
 }
 .min-cart-main .woocommerce-mini-cart__buttons {
     background: #775DFF;
@@ -2925,7 +2930,7 @@ i.drp-icn {
 }
 .cart-main-area .shop_table .order-total .woocommerce-Price-amount {
     font-size: 24px;
-    font-weight: normal;
+    font-weight: 700;
 }
 .cart-main-area .shop_table tfoot .woocommerce-shipping-totals li {
     margin-bottom: 10px;
@@ -3227,6 +3232,7 @@ i.drp-icn {
 }
 .select2-container--open .select2-dropdown {
     top: 4px;
+    border-top: 1px solid #aaa;
 }
 .select2-container .select2-dropdown .select2-results .select2-results__option {
     font-size: 14px;
@@ -3250,6 +3256,16 @@ i.drp-icn {
     border: 1px solid #CCCCCC;
 }
 .event-manager-error.event-manager-error {
+    font-size: 14px;
+}
+.connie-footer {
+    width: 100%;
+    height: 439px;
+    background: #F7B0C0;
+    margin-top: 40px;
+    float: left;
+}
+.woocommerce-EditAccountForm p {
     font-size: 14px;
 }
 
