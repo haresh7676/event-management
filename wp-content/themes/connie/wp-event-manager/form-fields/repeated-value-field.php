@@ -13,7 +13,8 @@
 ?>
 <?php if ( ! empty( $field['value'] ) && is_array( $field['value'] )) : ?>
 
-	<?php foreach ( $field['value'] as $index => $value ) : ?>
+	<?php     
+    foreach ( $field['value'] as $index => $value ) : ?>
  
 		<div class="repeated-row-<?php echo esc_attr( $key ); ?>">
 		<input type="hidden" class="repeated-row" data-tickettype="<?php echo esc_attr( $key ); ?>" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="<?php echo absint( $index ); ?>" />
@@ -26,7 +27,14 @@
             <div class="tab-content">
                 <div id="sell-ticket-details-<?php echo $key . '-' . $index; ?>" class="tab-pane fade in active">
                     <div class="ticket-inner-wpr">
-                  <?php foreach ( $field['fields'] as $subkey => $subfield ) : 
+                  <?php 
+                if(isset($field['fields']['show_remaining_tickets'])){
+                        unset($field['fields']['show_remaining_tickets']);
+                    }
+                    if(isset($field['fields']['ticket_individually'])){
+                        unset($field['fields']['ticket_individually']);   
+                    }
+                  foreach ( $field['fields'] as $subkey => $subfield ) : 
                             if ($subkey == 'ticket_description') : ?>
                 </div><!------------end ticket details tab------>
                 </div><!------ end wpr div ------>
