@@ -18,6 +18,27 @@ jQuery(document).ready(function($) {
             $( "#order_now" ).trigger("click");
         });
     }
+    /*$(document).on("click", '.favoritelisting', function(e) {        
+
+        
+            var url = $(this).data('ajax');
+            var loadtime = {action : 'get_favoritelisting_ajax'};
+            var loaderimage = $('.tableloaderfavorites').data('loader');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: loadtime,
+                cache: false,
+                beforeSend: function() {
+                    $('.tableloaderfavorites').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+                },
+                success: function(html) {
+                    $('.tableloaderfavorites-data').html(html);
+                    $('.tableloaderfavorites').html('');
+                }
+            });
+        
+    });*/
 
     if ($('.get_volunteer_data').length > 0) {
         showRecords(3, 1, 'get_volunteer_data');

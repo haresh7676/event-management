@@ -580,3 +580,44 @@ function custom_rename_wc_checkout_fields( $fields ) {
     return $fields;
 
 }
+add_action("wp_ajax_get_favoritelisting_ajax", "get_favoritelisting_ajax");
+
+function get_favoritelisting_ajax(){
+    $userid = get_current_user_id();
+    $list = get_myfavoratelist();                
+    if (!empty($userid) && !empty($list)) {                    
+        $the_query = new WP_Query( array( 'post_type' => 'event_listing', 'post__in' => $list ) );
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+                echo '<div class="my-ticket-card-row">';
+                echo '<div class="my-ticket-pic">';
+                display_event_banner();
+                echo '</div>';
+                echo '<div class="my-ticket-detail">';
+                echo '<h3>' . get_post_by_eventid(get_the_ID()) . '</h3>';
+                echo '<ul>';
+                $newformate = 'D, M jS';
+                echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';
+                echo '<li><img src="'.get_template_directory_uri().'/assets/images/map-icon.png" alt="">'.display_event_venue_name(false,false,false).'</li>';
+                echo '</ul>';
+                echo '</div>';
+                echo '<div class="ticket-status-btn align-self-center">';
+                echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
+                //echo get_favorites_button(get_the_ID(), '');                            
+                echo '<div class="mylisting-fav myfavlist">';
+                $arg = array ('echo' => true );
+                do_action('gd_mylist_btn',$arg);
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "<span class='no-record-span'>No record found.</span>";
+        }
+        wp_reset_postdata();
+    }else{
+        echo "<span class='no-record-span'>No record found.</span>";
+    }
+    die();
+}
