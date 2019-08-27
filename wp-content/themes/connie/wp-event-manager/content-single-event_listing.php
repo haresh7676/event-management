@@ -5,11 +5,14 @@ $themesettings =  get_fields('theme-settings');
 <?php if ( get_option( 'event_manager_hide_expired_content', 1 ) && 'expired' === $post->post_status ) : ?>
     <div class="event-manager-info"><?php _e( 'This listing has been expired.', 'wp-event-manager' ); ?></div>
 <?php else : ?>
-    <div class="event-profile-banner">
-        <!--<img src="assets/images/event-profile-banner.png" class="img-fluid" alt="">-->
-        <?php $event_banners = get_event_banner(); ?>
-        <?php if( is_array( $event_banners) && sizeof($event_banners ) > 1 )
-        { ?>
+        <div class="container">
+            <div class="event-profile-banner">
+                <!--<img src="assets/images/event-profile-banner.png" class="img-fluid" alt="">-->
+                <?php $event_banners = get_event_banner(); ?>
+                <?php if( is_array( $event_banners) && sizeof($event_banners ) > 1 )
+                { ?>
+            </div>
+        </div>
         <div id="single-event-slider" class="carousel slide" data-ride="carousel">
 
             <!-- Wrapper for slides -->
