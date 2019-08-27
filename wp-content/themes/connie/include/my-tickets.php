@@ -8,7 +8,7 @@
                 <a class="nav-link" data-toggle="tab" href="#pastEvents">Past Events</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#favorites">Favorites</a>
+                <a class="nav-link favoritelisting" data-toggle="tab" data-ajax="<?php echo admin_url('admin-ajax.php'); ?>" href="#favorites">Favorites</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -118,6 +118,8 @@
             </div>
             <!-- My Ticket Tab3 -->
             <div class="tab-pane fade" id="favorites">
+                <div class="tableloader tableloaderfavorites" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                <div class="tableloaderfavorites-data">
                 <?php
                 $userid = get_current_user_id();
                 $list = get_myfavoratelist();                
@@ -156,6 +158,7 @@
                     echo "<span class='no-record-span'>No record found.</span>";
                 }               
                 ?>
+                </div>
                 <!--<div class="my-ticket-edit-save-btn">
                     <button>Edit</button>
                     <button>Save</button>
