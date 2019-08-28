@@ -217,7 +217,7 @@ function get_volunteer_data() {
             $output.='<td>'.$item['form_data']['tel-phone'].'</td>';
             $output.='<td>'.$item['form_data']['your-email'].'</td>';
             $output.='<td>'.$item['form_data']['area-of-expertise'].'</td>';
-            $output.='<td>'.$item['form_data']['days-available'].'</td>';
+            $output.='<td>'.(!empty($item['form_data']['days-available']) && is_array($item['form_data']['days-available'])?implode(", ",$item['form_data']['days-available']):$item['form_data']['days-available']).'</td>';
             $output.='<td>'.$item['form_data']['hours-available'].'</td>';
             $output.='<td>'.(isset($item['form_data']['eventid']) && !empty($item['form_data']['eventid'])?get_post_by_eventid($item['form_data']['eventid']):'-').'</td>';
             $output.='</tr>';
@@ -433,7 +433,7 @@ function get_attendees_data() {
     $action = $data['action'];
 
 $my_orders_columns = apply_filters( 'woocommerce_my_account_my_orders_columns', array(
-    'order-number'  => __( 'Comfirmation #', 'woocommerce' ),
+    'order-number'  => __( 'Confirmation #', 'woocommerce' ),
     'order-date'    => __( 'Date', 'woocommerce' ),
     'order-buyer'    => __( 'Ticket Buyer', 'woocommerce' ),
     'order-email'  => __( 'Emails', 'woocommerce' ),
@@ -621,3 +621,9 @@ function get_favoritelisting_ajax(){
     }
     die();
 }
+
+/*function action_woocommerce_review_order_after_order_total() { 
+    echo '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>';
+}         
+
+add_action( 'woocommerce_review_order_after_order_total', 'action_woocommerce_review_order_after_order_total', 10 ); */
