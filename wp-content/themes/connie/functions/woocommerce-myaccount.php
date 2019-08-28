@@ -217,7 +217,7 @@ function get_volunteer_data() {
             $output.='<td>'.$item['form_data']['tel-phone'].'</td>';
             $output.='<td>'.$item['form_data']['your-email'].'</td>';
             $output.='<td>'.$item['form_data']['area-of-expertise'].'</td>';
-            $output.='<td>'.$item['form_data']['days-available'].'</td>';
+            $output.='<td>'.(!empty($item['form_data']['days-available']) && is_array($item['form_data']['days-available'])?implode(", ",$item['form_data']['days-available']):$item['form_data']['days-available']).'</td>';
             $output.='<td>'.$item['form_data']['hours-available'].'</td>';
             $output.='<td>'.(isset($item['form_data']['eventid']) && !empty($item['form_data']['eventid'])?get_post_by_eventid($item['form_data']['eventid']):'-').'</td>';
             $output.='</tr>';
