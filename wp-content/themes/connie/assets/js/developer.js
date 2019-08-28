@@ -18,6 +18,10 @@ jQuery(document).ready(function($) {
             $( "#order_now" ).trigger("click");
         });
     }
+    $(document).on("click", '.returntodetails', function(e) {  
+        var tabid = $(this).data('href');
+        $('.nav-tabs li a[href='+tabid+']').trigger('click');
+    });
     /*$(document).on("click", '.favoritelisting', function(e) {        
 
         

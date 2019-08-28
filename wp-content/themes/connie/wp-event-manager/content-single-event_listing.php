@@ -193,7 +193,11 @@ $themesettings =  get_fields('theme-settings');
                                 if($ticket_type == 'donation'){
                                     //echo '<input type="number" name="donation_price-" id="donation_price" value="'.$price.'"  min="'.$price.'" />';
                                     _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');
-                                    _e( $price ,'wp-event-manager-sell-tickets');
+                                    if(!empty($price) && $price != 'Free'){
+                                        _e( $price ,'wp-event-manager-sell-tickets');
+                                    }else{
+                                        echo '0+';
+                                    }
                                 }
                                 else if(is_numeric($price)){
                                     _e( get_woocommerce_currency_symbol(),'wp-event-manager-sell-tickets');
@@ -302,6 +306,9 @@ $themesettings =  get_fields('theme-settings');
                 </div>
             </div>
         </div> <!-- calendar Section  -->
+        <?php $eventlocation = get_event_location(); 
+            if(!empty($eventlocation)){
+        ?>
         <div class="profie-cart-box e-profile-location-video profile-location">
             <div class="row">
                 <div class="col-lg-5 col-md-5">
@@ -321,6 +328,7 @@ $themesettings =  get_fields('theme-settings');
                 </div>
             </div>
         </div> <!-- Location map -->
+        <?php  } ?>
         <?php $eventvideo = get_post_meta($post->ID,'_event_video',true);
         if(isset($eventvideo) && !empty($eventvideo)){
             $embed = getYoutubeEmbedUrl($eventvideo);

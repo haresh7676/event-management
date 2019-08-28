@@ -40,7 +40,10 @@ $registration_id = $registration->ID;
                         <td style="font-family:Arial, Helvetica, sans-serif;  font-size:12px; padding:10px; color:#000;"><strong><?php _e('Venue:', 'wp-event-manager-sell-tickets');?></strong><br><?php display_event_location( false, $event );?></td>
                      </tr>
                       <tr>
-                        <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:10px 0; color:#000;"><?php  display_event_start_date( '', '',  true, $event);?> / <?php  display_event_start_time( '', '',  true, $event);?></td>
+                        <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:10px 0; color:#000;">
+                        <?php $newformate = 'D, M j, Y'; ?>
+                        <?php echo date_i18n( $newformate, strtotime(get_event_start_date($event_id)) ); ?>, <?php display_event_start_time( '', '',  true, $event);?><?php echo (strtotime(get_event_start_date($event_id)) != strtotime(get_event_end_date($event_id))) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date($event_id)) ):','; ?>&nbsp;<?php display_event_end_time( '', '',  true, $event);?>
+                           <!-- <?php  display_event_start_date( '', '',  true, $event);?> / <?php  display_event_start_time( '', '',  true, $event);?> --></td>
                      </tr>   
                   </table>
                </td>

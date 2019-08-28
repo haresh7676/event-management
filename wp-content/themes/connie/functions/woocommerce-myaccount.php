@@ -433,7 +433,7 @@ function get_attendees_data() {
     $action = $data['action'];
 
 $my_orders_columns = apply_filters( 'woocommerce_my_account_my_orders_columns', array(
-    'order-number'  => __( 'Comfirmation #', 'woocommerce' ),
+    'order-number'  => __( 'Confirmation #', 'woocommerce' ),
     'order-date'    => __( 'Date', 'woocommerce' ),
     'order-buyer'    => __( 'Ticket Buyer', 'woocommerce' ),
     'order-email'  => __( 'Emails', 'woocommerce' ),
@@ -621,3 +621,9 @@ function get_favoritelisting_ajax(){
     }
     die();
 }
+
+/*function action_woocommerce_review_order_after_order_total() { 
+    echo '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>';
+}         
+
+add_action( 'woocommerce_review_order_after_order_total', 'action_woocommerce_review_order_after_order_total', 10 ); */

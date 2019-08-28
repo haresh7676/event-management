@@ -21,11 +21,11 @@
             <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
          <ul class="nav nav-tabs">
              <li class="pull-right"><a class="ticket-notice-info1" data-toggle="popover" data-trigger="hover"   data-placement="top" data-content="<?php _e('You can\'t delete ticket once it is added.You can make it private from settings tab.','wp-event-manager');?>" > <span class="glyphicon glyphicon-info-sign"></span><?php _e( 'Remove', 'wp-event-manager' ); ?><i class="far fa-trash-alt"></i></a></li>
-            <li><a class="active" data-toggle="tab" href="#sell-ticket-details-<?php echo $key . '-' . $index; ?>"><?php _e('Ticket Details','wp-event-manager');?><i class="far fa-copy"></i></a></li>
+            <li><a class="active" data-toggle="tab" href="#<?php echo $key ;?>-details-<?php echo $key . '-' . $index; ?>"><?php _e('Ticket Details','wp-event-manager');?><i class="far fa-copy"></i></a></li>
             <li><a data-toggle="tab" href="#<?php echo $key . '_' . $index; ?>"><?php _e('Settings','wp-event-manager');?><i class="fas fa-cog"></i></a></li>
           </ul>
             <div class="tab-content">
-                <div id="sell-ticket-details-<?php echo $key . '-' . $index; ?>" class="tab-pane fade in active">
+                <div id="<?php echo $key ;?>-details-<?php echo $key . '-' . $index; ?>" class="tab-pane fade in active">
                     <div class="ticket-inner-wpr">
                   <?php 
                 if(isset($field['fields']['show_remaining_tickets'])){
@@ -61,6 +61,11 @@
                                         $subfield['name']  = $key . '_' . $subkey . '_' . $index;
     									$subfield['id']  =$key . '_' . $subkey . '_' . $index;   
     							        $subfield['value'] = isset( $value[ $subkey ]) ? $value[ $subkey ] : '';
+                                        if($subkey == 'ticket_price' || $subkey == 'ticket_quantity'){
+                                            $subfield['min']  = 0;
+                                            $subfield['max']  = 9999999;
+                                            $subfield['maxlength']  = 7;
+                                        }
     							        get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
                                     ?>
                                 </div>
@@ -69,6 +74,9 @@
                         </fieldset>
                     <!--</div>-->
                 <?php endforeach; ?>
+                <fieldset class="fieldset-ticket_maximum settingsavebtn">
+                    <a class="defulat-custom-btn returntodetails" href="javascript:void(0);" data-href="#<?php echo $key ;?>-details-<?php echo $key . '-' . $index; ?>"><?php _e('Save','wp-event-manager');?></a>
+                </fieldset>
                 </div><!------------end settings tab------>
 		    </div>
         </div>

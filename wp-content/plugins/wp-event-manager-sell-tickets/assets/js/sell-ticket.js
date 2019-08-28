@@ -28,6 +28,10 @@ var SellTicket= function () {
 			}
 			
 			//in edit mode load data picker
+			if (jQuery('.ticketwprs > div').length > 0) {
+				var ttype = jQuery('.ticketwprs > div').first().find('.repeated-row').data('tickettype');						
+				jQuery('.event_ticket_add_link[data-type= '+ttype+']').addClass('active');						
+			}
 			if(jQuery('.repeated-row').length > 0)
 			{	
 			var current_index = 0;		    		    
