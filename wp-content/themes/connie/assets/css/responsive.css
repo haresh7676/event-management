@@ -80,7 +80,6 @@
     }
     .u-events-box .u-event-details {
         padding: 15px 10px;
-        min-height: 155px;
     }
     .u-event-details .event-disc {
         margin-left: 10px;
@@ -187,7 +186,6 @@
     }
     .u-events-box .u-event-details {
         padding: 15px 10px;
-        min-height: 155px;
     }
     .u-event-details .event-disc {
         margin-left: 10px;
@@ -1339,6 +1337,9 @@
     }
     .connie-footer {
         margin-top: 20px;
+    }
+    .u-event-details .event-disc ul li {
+        -webkit-line-clamp: inherit;
     }
 }
 @media (max-width: 567px) {

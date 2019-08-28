@@ -1017,6 +1017,7 @@ i.drp-icn {
     border-radius: 8px 8px 0 0;
     height: 210px;
     position: relative;
+    border: 1px solid #d8d8d8;
 }
 .u-events-box .u-event-pic img {
     width: 100%;
@@ -1048,7 +1049,7 @@ i.drp-icn {
     border-radius: 0px 0px 8px 8px;
     padding: 15px;
     display: flex;
-    min-height: 165px;
+    min-height: 180px;
 }
 .u-event-details .date-month {
     flex: none;
@@ -1075,6 +1076,7 @@ i.drp-icn {
     font-size: 20px;
     color: #000000;
     margin: 0 0 5px 0;
+    padding-bottom: 1px;
 }
 .u-event-details .event-disc ul {
     padding: 0px;
@@ -1089,6 +1091,11 @@ i.drp-icn {
     padding-left: 22px;
     margin-bottom: 5px;
     word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .u-event-details .event-disc ul li:last-child {
     margin-bottom: 0px;
@@ -1272,6 +1279,11 @@ i.drp-icn {
     line-height: 1;
     font-weight: 700;
     margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .ticket-pass-section .ticket-address p {
     line-height: 1;
