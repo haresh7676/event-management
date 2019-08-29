@@ -3139,20 +3139,22 @@ i.drp-icn {
 }
 .thankyou-page .woocommerce-notice--success {
     font-size: 24px;
+    line-height: 45px;
+    text-align: center;
     color: #222222;
     margin: 40px 0;
     font-family: 'sf_compact_displaymedium';
 }
 .thankyou-page .trackbtn {
     background: #775DFF;
-    width: 140px;
+    width: auto;
     height: 30px;
     border-radius: 50px;
     font-size: 12px;
     text-align: center;
     line-height: 30px;
-    padding: 0px;
-    margin-top: 40px;
+    padding: 0px 25px;
+    margin-top: 10px;
 }
 .entry-content .event_listing_preview_title {
     background: transparent;

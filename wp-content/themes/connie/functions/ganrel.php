@@ -99,6 +99,13 @@ function theme_name_custom_orderby_query_args( $query_args ) {
         'type' => 'CHAR',
         'compare' => '='
     );
+    $datetime=date('Y-m-d');
+    $query_args['meta_query'][] = array(
+        'key' => '_event_start_date',
+        'value'   => $datetime,
+        'type' => 'date',
+        'compare' => '>',
+    );
     return $query_args;
 }
 
