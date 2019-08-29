@@ -1922,6 +1922,12 @@ i.drp-icn {
     flex: none;
     width: 120px;
 }
+.my-ticket-card-row .ticket-status-btn .mylisting-fav {
+	text-align: center;
+}
+.ticket-status-btn .mylisting-fav .fa-spinner  {
+	font-size: 15px;
+}
 .my-ticket-card-row .ticket-status-btn button {
     display: block;
     width: 100%;
@@ -2978,8 +2984,12 @@ i.drp-icn {
 .m-e-table-dropdown .form-controls {
     outline: none;
     min-width: 200px;
+    max-width: 280px;
     height: 40px;
     font-size: 14px;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow:ellipsis;
 }
 .manage-events-contact .m-e-table-dropdown {
     border-bottom: 1px solid #f4f4f4;
