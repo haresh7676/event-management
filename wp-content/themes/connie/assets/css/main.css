@@ -1421,6 +1421,7 @@ i.drp-icn {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 40px;
+    font-size: 18px;
 }
 .profie-cart-box .e-p-cart-title {
     color: #000000;
@@ -2592,8 +2593,8 @@ i.drp-icn {
     margin: 0px;
 }
 .cart-details .cart-detail-left .table td select {
-    width: 60px;
-    height: 45px;
+    width: 59px;
+    height: 48px;
     border: 1px solid #C9D6DF;
     border-radius: 13px;
     margin-right: 10px;
@@ -3085,6 +3086,32 @@ i.drp-icn {
     color: #775DFF;
     font-size: 14px;
 }
+.editEvent-main-wpr .event-dashboard-actions .confirmation {
+	padding: 10px;
+}
+.editEvent-main-wpr .event-dashboard-actions .confirmation .arrow {
+	display: none;
+}
+.event-dashboard-actions .confirmation .popover-title {
+	color: #000;
+	font-size: 15px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.event-dashboard-actions .confirmation .popover-content .confirmation-buttons .btn-danger {
+	margin-right: 10px;
+	color: #ffffff;
+	font-weight: 600;
+	border-radius: 4px;
+}
+.event-dashboard-actions .confirmation .popover-content .confirmation-buttons .btn-default {
+	background: #ccc;
+	color: #000;
+	font-weight: 600;
+	border-radius: 4px;
+}
+
+
 .editEvent-main-wpr .common-table-design tr th.event_action {
     width: 150px;
 }
@@ -3273,8 +3300,9 @@ i.drp-icn {
     text-align: center;
 }
 .cart-detail-left .price .input-number {
-    padding: 0 5px;
+    padding: 0 10px;
     width: 100px;
+    height: 40px;
     outline: none;
     border-radius: 4px;
     border: 1px solid #CCCCCC;
@@ -3291,6 +3319,9 @@ i.drp-icn {
 }
 .woocommerce-EditAccountForm p {
     font-size: 14px;
+}
+.mce-btn.mce-active i {
+	color: #555d66 !important;
 }
 
 /* AR479-changes after development */

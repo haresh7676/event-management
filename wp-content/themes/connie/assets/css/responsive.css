@@ -645,8 +645,8 @@
         transform: inherit !important;
     }
     .landing-page-banner {
-        min-height: 240px;
         background: #f7b0c0;
+        margin-top: 0px;
     }
     .landing-page-banner .landing-banner-content {
         bottom: 40px;
@@ -1100,15 +1100,15 @@
     .topnav-right.pull-right ul li.active a {
         padding: 6px 10px;
     }
-    .landing-page-banner {
-        margin-top: 0px;
-    }
     .container.create-event-content {
         margin: 10px auto;
         padding: 0px;
     }
     .create-event-cart {
-        padding: 20px;
+        padding: 20px 15px;
+    }
+    .setting-description {
+        padding: 15px 15px 0 15px;
     }
     .create-event-cart h3 {
         font-size: 20px;
@@ -1340,6 +1340,9 @@
     }
     .u-event-details .event-disc ul li {
         -webkit-line-clamp: inherit;
+    }
+    .ticket-pass-section .ticket-address label {
+        width: auto;
     }
 }
 @media (max-width: 567px) {
