@@ -79,7 +79,7 @@
                     <?php $events = connice_event_listing_by_current_user('ids');
                     if(!empty($events)){
                         echo '<div class="m-e-table-dropdown">';
-                        echo '<select class="form-controls event-dropdown" name="eventid">';
+                        echo '<select class="event-dropdown selectpicker" name="eventid">';
                         echo '<option value="">Select Event</option>';
                         foreach ($events as $eventitem){
                             echo '<option value="'.$eventitem.'" title="'.get_post_by_eventid($eventitem).'">'.get_post_by_eventid($eventitem).'</option>';
@@ -100,7 +100,7 @@
                     <?php $events = connice_event_listing_by_current_user('ids');
                     if(!empty($events)){
                         echo '<div class="m-e-table-dropdown">';
-                        echo '<select class="form-controls event-dropdown" name="eventid">';
+                        echo '<select class="event-dropdown selectpicker" name="eventid">';
                         echo '<option value="">Select Event</option>';
                         foreach ($events as $eventitem){
                             echo '<option value="'.$eventitem.'" title="'.get_post_by_eventid($eventitem).'">'.get_post_by_eventid($eventitem).'</option>';
@@ -118,7 +118,7 @@
             <!-- My Ticket Tab6 -->
             <div class="tab-pane fade" id="refunds">
                 <div class="m-e-table-dropdown">
-                    <select class="form-controls">
+                    <select class="event-dropdown selectpicker">
                         <option>Refunds</option>
                         <option>Refunds</option>
                         <option>Refunds</option>
@@ -262,7 +262,7 @@
                         <?php $events = connice_event_listing_by_current_user('ids');
                         if(!empty($events)){
                             echo '<div class="m-e-table-dropdown">';
-                            echo '<select class="form-controls event-dropdown" name="eventid">';
+                            echo '<select class="event-dropdown selectpicker" name="eventid">';
                             echo '<option value="">Select Event</option>';
                             foreach ($events as $eventitem){
                                 echo '<option value="'.$eventitem.'" title="'.get_post_by_eventid($eventitem).'">'.get_post_by_eventid($eventitem).'</option>';
