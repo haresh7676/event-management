@@ -412,7 +412,7 @@
     .manage-events-contact .m-e-contact-profile-pic {
         margin-right: 30px;
     }
-    .manage-events-contact .m-e-contact-details ul li {
+    .manage-events-contact .m-e-contact-details ul.m-e-contact-list li {
         padding: 15px 20px;
     }
     .manage-events-contact .m-e-contact-search i {
@@ -920,7 +920,7 @@
     .manage-events-contact .m-e-contact-search input {
         padding: 0 0 0 40px;
     }
-    .manage-events-contact .m-e-contact-details ul li {
+    .manage-events-contact .m-e-contact-details ul.m-e-contact-list li {
         padding: 10px 0;
     }
     .manage-events-contact .m-e-contact-profile-pic {
