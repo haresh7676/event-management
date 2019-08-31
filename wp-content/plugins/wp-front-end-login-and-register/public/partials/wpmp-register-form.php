@@ -57,6 +57,30 @@
                     <input type="password" class="form-control" name="wpmp_password2" id="wpmp_password2" placeholder="Confirm Password" >
                 </div>
             </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    <select class="form-control" name="country_code" id="country_code">
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                        <option value="+66">+66</option>
+                        <option value="+86">+86</option>
+                        <option value="+81">+81</option>
+                        <option value="+82">+82</option>
+                        <option value="+52">+52</option>
+                        <option value="+27">+27</option>
+                        <option value="+55">+55</option>
+                        <option value="+53">+33</option>
+                        <option value="+34">+34</option>
+                        <option value="+49">+49</option>
+                        <option value="+7">+7</option>
+                        <option value="+84">+84</option>
+                    </select>
+                </div>
+                <div class="col-sm-9">                    
+                    <input type="text" class="form-control" name="wpmp_phone" id="wpmp_phone" placeholder="Phone">
+                </div>
+            </div>
             <div class="form-group">                
                 <input type="text" class="form-control" name="wpmp_email" id="wpmp_email" placeholder="Email">
             </div>            

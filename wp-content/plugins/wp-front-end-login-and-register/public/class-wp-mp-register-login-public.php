@@ -282,8 +282,12 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
                 exit;
             }
             // preparing user array and added required filters
+            $username = '';
+            if(!empty($_POST['country_code']) && !empty($_POST['wpmp_phone'])){
+                $username = $_POST['country_code'].$_POST['wpmp_phone'];
+            }
             $userdata = array(
-                'user_login' => apply_filters('pre_user_login', trim($_POST['wpmp_email'])),
+                'user_login' => apply_filters('pre_user_login', trim($username)),
                 'user_pass' => apply_filters('pre_user_pass', trim($_POST['wpmp_password'])),
                 'user_email' => apply_filters('pre_user_email', trim($_POST['wpmp_email'])),
                 'first_name' => apply_filters('pre_user_first_name', trim($_POST['wpmp_fname'])),
