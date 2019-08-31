@@ -18,9 +18,21 @@ jQuery(document).ready(function($) {
             $( "#order_now" ).trigger("click");
         });
     }
+    if ($('.woocommerce-message').length > 0) {
+        setTimeout(function() {
+          $('.woocommerce-message').fadeOut('slow');
+        }, 3000);        
+    }
     $(document).on("click", '.returntodetails', function(e) {  
         var tabid = $(this).data('href');
-        $('.nav-tabs li a[href='+tabid+']').trigger('click');
+        $('.nav-tabs li a[href='+tabid+']').trigger('click');               
+        var divouter = $(tabid).outerHeight();        
+        $('html, body').animate({
+            scrollTop: $(tabid).position().top-divouter-100
+        }, 2000); 
+    });
+    $('.event-dashboard-action-delete').on('click', function(){
+        $('.event-dashboard-action-delete').confirmation('hide');
     });
     /*$(document).on("click", '.favoritelisting', function(e) {        
 
