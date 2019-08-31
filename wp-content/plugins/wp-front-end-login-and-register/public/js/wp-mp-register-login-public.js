@@ -243,6 +243,22 @@
                         }
                     }
                 },*/
+                wpmp_phone: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The phone number is required'
+                        },
+                        stringLength: {
+                            min: 7,
+                            max: 10,
+                            message: 'The username must be more than 7 and less than 10 characters long'
+                        },
+                        regexp: {
+                            regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
+                            message: 'Only number are allowed.'
+                        }                    
+                    }
+                },
                 wpmp_email: {
                     validators: {
                         notEmpty: {

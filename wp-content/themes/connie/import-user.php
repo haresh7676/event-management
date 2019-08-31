@@ -25,12 +25,13 @@ if($finalres->MESSAGE == "Success"){
     $userlist = $finalres->USER_LIST;
     if(!empty($userlist)){
         foreach ($userlist as $user){
-            $username = $user->phone_number;
-            if ( username_exists( $username ) ){
+            $username = $user->country_code.$user->phone_number;
+            if ( username_exists( trim($username) ) ){
 
             }else{
+
                 $userdata = array(
-                    'user_login'  =>  !empty($user->phone_number)?$user->phone_number:'',
+                    'user_login'  =>  !empty($username)?trim($username):'',
                     'user_email'  =>  !empty($user->email_id)?$user->email_id:'',
                     'first_name'  =>  !empty($user->first_name)?$user->first_name:'',
                     'last_name'  =>  !empty($user->last_name)?$user->last_name:'',
