@@ -84,7 +84,7 @@ $themesettings =  get_fields('theme-settings');
                             <?php $newformate = 'D, M j, Y'; ?>
                             <?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>
                         </span>
-                        <h3><?php echo esc_attr( $post->post_title ); ?></h3>
+                        <h3 title="<?php echo esc_attr( $post->post_title ); ?>"><?php echo esc_attr( $post->post_title ); ?></h3>
                         <p>Hosted By  <?php echo display_organizer_name(); ?></p>
                         <label>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png">

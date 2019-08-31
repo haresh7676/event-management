@@ -82,7 +82,7 @@
                         echo '<select class="form-controls event-dropdown" name="eventid">';
                         echo '<option value="">Select Event</option>';
                         foreach ($events as $eventitem){
-                            echo '<option value="'.$eventitem.'">'.get_post_by_eventid($eventitem).'</option>';
+                            echo '<option value="'.$eventitem.'" title="'.get_post_by_eventid($eventitem).'">'.get_post_by_eventid($eventitem).'</option>';
                         }
                         echo '</select>';
                         echo '</div>';
@@ -103,7 +103,7 @@
                         echo '<select class="form-controls event-dropdown" name="eventid">';
                         echo '<option value="">Select Event</option>';
                         foreach ($events as $eventitem){
-                            echo '<option value="'.$eventitem.'">'.get_post_by_eventid($eventitem).'</option>';
+                            echo '<option value="'.$eventitem.'" title="'.get_post_by_eventid($eventitem).'">'.get_post_by_eventid($eventitem).'</option>';
                         }
                         echo '</select>';
                         echo '</div>';
@@ -265,7 +265,7 @@
                             echo '<select class="form-controls event-dropdown" name="eventid">';
                             echo '<option value="">Select Event</option>';
                             foreach ($events as $eventitem){
-                                echo '<option value="'.$eventitem.'">'.get_post_by_eventid($eventitem).'</option>';
+                                echo '<option value="'.$eventitem.'" title="'.get_post_by_eventid($eventitem).'">'.get_post_by_eventid($eventitem).'</option>';
                             }
                             echo '</select>';
                             echo '</div>';

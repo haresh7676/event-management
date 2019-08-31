@@ -577,8 +577,8 @@ class WP_Event_Manager_Form_Submit_Event extends WP_Event_Manager_Form {
 			if ( ! empty( $this->fields['event']['registration'] ) ) {
 				$allowed_registration_method = get_option( 'event_manager_allowed_registration_method', '' );
 				if ( $allowed_registration_method !== 'url' ) {
-					$current_user = wp_get_current_user();
-					$this->fields['event']['registration']['value'] = $current_user->user_email;
+					//$current_user = wp_get_current_user();
+					//$this->fields['event']['registration']['value'] = $current_user->user_email;
 				}
 			}
 			
