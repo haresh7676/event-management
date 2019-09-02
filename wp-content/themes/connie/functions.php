@@ -64,9 +64,14 @@ function projectname_scripts() {
     if ( is_singular()) {
         wp_enqueue_script(  array('jquery','jquery-ui-core','jquery-ui-datepicker') );
     }
+
+    if ( is_page('create-event') || is_page('my-account') ) {
+        wp_enqueue_script(  array('jquery-ui-sortable') );
+    }
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}    
+	}  
+
 }
 add_action( 'wp_enqueue_scripts', 'projectname_scripts' );
 

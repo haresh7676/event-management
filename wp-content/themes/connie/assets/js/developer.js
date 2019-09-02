@@ -34,6 +34,9 @@ jQuery(document).ready(function($) {
     $('.event-dashboard-action-delete').on('click', function(){
         $('.event-dashboard-action-delete').confirmation('hide');
     });
+     if ($('.fieldset-event_album').length > 0) {
+        $(".event-manager-uploaded-files" ).sortable();
+     }
     /*$(document).on("click", '.favoritelisting', function(e) {        
 
         
