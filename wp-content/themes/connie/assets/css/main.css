@@ -2896,7 +2896,7 @@ i.drp-icn {
 .cart-main-area .payment_main_section .woo_payment_section {
     width: 60%;
     float: left;
-    padding: 0 15px;
+    padding: 20px 15px;
     min-height: 450px;
     border-right: 1px solid #C4C4C4;
     position: relative;
@@ -2904,7 +2904,7 @@ i.drp-icn {
 .cart-main-area .payment_main_section .order_review_section {
     width: 40%;
     float: right;
-    padding: 0 15px;
+    padding: 20px 15px;
     position: relative;
 }
 .cart-main-area .woocommerce ul#shipping_method li label {
