@@ -44,7 +44,32 @@ $is_url_has_token ='';
 
             ?>
             <div class="form-group row">
-                <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_rp_email" id="wpmp_rp_email" type="Email" placeholder="Email"></div>                
+                <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_rp_email" id="wpmp_rp_email" type="Email" placeholder="Email"></div>
+                <div class="or-dvd-line phone-or-email"><span>or</span></div>
+                <div class="col-sm-12 row email-or-phone">
+                    <div class="col-sm-3">
+                        <select class="form-control" name="country_code" id="country_code">
+                            <option value="1">+1</option>
+                            <option value="44">+44</option>
+                            <option value="61">+61</option>
+                            <option value="66">+66</option>
+                            <option value="86">+86</option>
+                            <option value="81">+81</option>
+                            <option value="82">+82</option>
+                            <option value="52">+52</option>
+                            <option value="27">+27</option>
+                            <option value="55">+55</option>
+                            <option value="53">+33</option>
+                            <option value="34">+34</option>
+                            <option value="49">+49</option>
+                            <option value="7">+7</option>
+                            <option value="84">+84</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="wpmp_phone" id="wpmp_phone" placeholder="Phone">
+                    </div>
+                </div>
             </div>
             <input type="hidden" name="wpmp_current_url" id="wpmp_current_url" value="<?php echo get_permalink(); ?>" />
             <?php

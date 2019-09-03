@@ -108,9 +108,14 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
             }
             // preparing credentials array
             $credentials = array();
-            $username = trim($_POST['wpmp_username']);
-            $credentials['user_login'] = trim($_POST['wpmp_username']);
+            $username = $_POST['wpmp_username'];
+            if(empty($username) && !empty($_POST['country_code']) && !empty($_POST['wpmp_phone'])){
+                $username = $_POST['country_code'].$_POST['wpmp_phone'];
+                $username = $username;
+            }
+            $credentials['user_login'] = apply_filters('pre_user_login', trim($username));
             $credentials['user_password'] = trim($_POST['wpmp_password']);
+
 
             if (filter_var($username, FILTER_VALIDATE_EMAIL)) { //Invalid Email
                 $user = get_user_by('email', $username);
@@ -503,9 +508,19 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
         // checking post data
         //user do not have a token
         if (isset($_POST) && empty($_POST['wpmp_reset_password_token'])) {
+            $username = $_POST['wpmp_rp_email'];
+            if(empty($username) && !empty($_POST['country_code']) && !empty($_POST['wpmp_phone'])){
+                $username = $_POST['country_code'].$_POST['wpmp_phone'];
+                $username = $username;
+            }
 
-            //get user details from email            
-            $user = get_user_by('email', $_POST['wpmp_rp_email']);
+            //get user details from email
+            if (filter_var($username, FILTER_VALIDATE_EMAIL)) { //Invalid Email
+                $user = get_user_by('email', $username);
+            } else {
+                $user = get_user_by('login', $username);
+            }
+            //$user = get_user_by('email', $_POST['wpmp_rp_email']);
             //check user exists
             if ($user->ID > 0) {
 
