@@ -3347,7 +3347,7 @@ i.drp-icn {
 .mce-btn.mce-active i {
 	color: #555d66 !important;
 }
-.lg-rgt-box .signup-box form select.form-control {
+.lg-rgt-box .signup-box form select.form-control, .lg-rgt-box .signin-box form select.form-control {
     height: 40px;
     font-size: 16px;
     border-radius: 3px;
@@ -3360,6 +3360,9 @@ i.drp-icn {
 }
 .lg-rgt-box .signup-box form .form-group.row {
     margin-bottom: 0px;
+}
+.signin-box .phone-or-email {
+	margin-top: 13px;
 }
 
 /* AR479-changes after development */
