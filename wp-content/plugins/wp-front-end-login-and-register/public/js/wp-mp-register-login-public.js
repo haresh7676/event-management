@@ -36,12 +36,25 @@
                 wpmp_username: {
                     message: 'The username is not valid',
                     validators: {
-                        notEmpty: {
+                        /*notEmpty: {
                             message: 'The email is required.'
-                        },
+                        },*/
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
                             message: 'Please enter valid email address'
+                        }
+                    }
+                },
+                wpmp_phone: {
+                    validators: {
+                        stringLength: {
+                            min: 7,
+                            max: 10,
+                            message: 'The phone number must be more than 7 and less than 10 characters long'
+                        },
+                        regexp: {
+                            regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
+                            message: 'Only number are allowed.'
                         }
                     }
                 },
@@ -251,7 +264,7 @@
                         stringLength: {
                             min: 7,
                             max: 10,
-                            message: 'The username must be more than 7 and less than 10 characters long'
+                            message: 'The phone number must be more than 7 and less than 10 characters long'
                         },
                         regexp: {
                             regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
@@ -402,12 +415,25 @@
             fields: {
                 wpmp_rp_email: {
                     validators: {
-                        notEmpty: {
+                        /*notEmpty: {
                             message: 'Please enter your email address which you used during registration.'
-                        },
+                        },*/
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
                             message: 'Please enter valid email address'
+                        }
+                    }
+                },
+                wpmp_phone: {
+                    validators: {
+                        stringLength: {
+                            min: 7,
+                            max: 10,
+                            message: 'The phone number must be more than 7 and less than 10 characters long'
+                        },
+                        regexp: {
+                            regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
+                            message: 'Only number are allowed.'
                         }
                     }
                 },
