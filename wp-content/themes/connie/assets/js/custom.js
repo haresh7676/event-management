@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
     var removeClass = true;
     $(".browe-event-filter-btn").click(function () {
         $(".browe-event-filter-content").toggleClass('open');
+        $("body").toggleClass('ovrfHide');
         removeClass = false;
     });
     $(".browe-event-filter-content").click(function() {
@@ -11,6 +12,7 @@ jQuery(document).ready(function($) {
     $("html").click(function () {
         if (removeClass) {
             $(".browe-event-filter-content").removeClass('open');
+            $("body").removeClass('ovrfHide');
         }
         removeClass = true;
     });

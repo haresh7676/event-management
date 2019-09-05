@@ -41,6 +41,9 @@
     .browe-event-filter-content {
         top: 77px;
     }
+    .browe-event-filter-content {
+        padding: 20px 40px 20px 80px;
+    }
 }
 @media (min-width: 1200px) and (max-width: 1366px) {
     .landing-page-content .landing-page-title img {
@@ -165,6 +168,9 @@
     }
     .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
         width: 320px;
+    }
+    .browe-event-filter-content {
+        padding: 20px;
     }
 }
 @media (min-width: 992px) and (max-width: 1023px) {
@@ -1343,6 +1349,13 @@
     }
     .ticket-pass-section .ticket-address label {
         width: auto;
+    }
+    .ovrfHide {
+        overflow: inherit;
+    }
+    .filter-category {
+        max-height: inherit;
+        overflow: inherit;
     }
 }
 @media (max-width: 567px) {

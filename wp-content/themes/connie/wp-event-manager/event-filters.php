@@ -37,7 +37,7 @@
                                 }else{
                                     echo '<input type="checkbox" name="search_categories[]" value="'.$term->slug.'" id="search_categories">';
                                 }
-                                echo '<span><i></i>'.$term->name.'</span>';
+                                echo '<span title="'.$term->name.'"><i></i>'.$term->name.'</span>';
                                 echo '</label>';
                                 echo '</li>';
                                 echo '</div>';

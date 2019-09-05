@@ -150,6 +150,13 @@ input:-moz-placeholder {
     height: 39px;
     position: absolute;
 }
+.phone-icn {
+    background: url(../../assets/images/phone-icon.png) top left no-repeat;
+    background-position: 7px 8px;
+    width: 37px;
+    height: 39px;
+    position: absolute;
+}
 .custom-control-label {
     font-size: 14px;
     color: #929699;
@@ -1182,7 +1189,7 @@ i.drp-icn {
     background: #FAFAFA;
     width: 100%;
     top: 63px;
-    padding: 20px 40px 20px 80px;
+    padding: 20px 40px;
     z-index: 9;
 }
 .browe-event-filter-content.open {
@@ -1190,6 +1197,9 @@ i.drp-icn {
 }
 .filter-category {
     padding: 10px;
+    max-height: 410px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .filter-category h3 {
     font-size: 20px;
@@ -1206,13 +1216,13 @@ i.drp-icn {
     margin-bottom: 10px;
 }
 /* custome radio button */
-.fancy-radio { margin: 0; display: inline-block !important;}
+.fancy-radio { margin: 0; display: inline-block !important; width: 100%;}
 .fancy-radio input[type="radio"]+span { display: block; cursor: pointer; position: relative; font-size: 18px; color: #000000; }
 .fancy-radio input[type="radio"] { display: none; }
 .fancy-radio input[type="radio"]+span i { display: inline-block; vertical-align: middle; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; position: relative; bottom: 1px; content: ""; border: 2px solid #4A4A4A; width: 16px; height: 16px; margin-right: 15px; }
 .fancy-radio input[type="radio"]:checked+span i:after { -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; display: block; position: relative; top: -2px; left: -2px; content: ''; width: 16px; height: 16px; background-color: #fff; border: 5px solid #775DFF;}
 /* custome checkbox */
-.fancy-radio input[type="checkbox"]+span { display: block; cursor: pointer; position: relative; font-size: 18px; color: #000000; }
+.fancy-radio input[type="checkbox"]+span { display: block; cursor: pointer; position: relative; font-size: 16px; color: #000000; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .fancy-radio input[type="checkbox"] { display: none; }
 .fancy-radio input[type="checkbox"]+span i { display: inline-block; vertical-align: middle; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; position: relative; bottom: 1px; content: ""; border: 2px solid #4A4A4A; width: 16px; height: 16px; margin-right: 15px; }
 .fancy-radio input[type="checkbox"]:checked+span i:after { -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; display: block; position: relative; top: -2px; left: -2px; content: ''; width: 16px; height: 16px; background-color: #fff; border: 5px solid #775DFF;}
@@ -3347,7 +3357,7 @@ i.drp-icn {
 .mce-btn.mce-active i {
 	color: #555d66 !important;
 }
-.lg-rgt-box .signup-box form select.form-control {
+.lg-rgt-box .signup-box form select.form-control, .lg-rgt-box .signin-box form select.form-control {
     height: 40px;
     font-size: 16px;
     border-radius: 3px;
@@ -3360,6 +3370,15 @@ i.drp-icn {
 }
 .lg-rgt-box .signup-box form .form-group.row {
     margin-bottom: 0px;
+}
+.signin-box .phone-or-email {
+	margin-top: 13px;
+}
+.signin-box .buttonwpr {
+	justify-content: space-between;
+}
+.ovrfHide {
+    overflow: hidden;
 }
 
 /* AR479-changes after development */
