@@ -22,10 +22,9 @@ function callback_eventlist_func()
     global $wpdb; 
     $userid = '';
     if(!empty($login_id)){             
-        $userlist = $wpdb->get_results($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A));
-
+        $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
         if(!empty($userlist) && count($userlist) > 0){
-            $userid = $userlist[0]->user_id;
+            $userid = $userlist[0]['user_id'];
         }
     }
 
@@ -211,6 +210,14 @@ function callback_event_byid_func($request)
     $du_id  = !empty($_REQUEST['login_id']) ? $_REQUEST['login_id'] : 'null';
     $id = $request['id'];
     $login_id = $du_id;
+    global $wpdb;
+    $userid = '';
+    if(!empty($login_id)){
+        $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
+        if(!empty($userlist) && count($userlist) > 0){
+            $userid = $userlist[0]['user_id'];
+        }
+    }
     $args = array('p'=> $id, 'post_type' => 'event_listing','post_status'=>array('draft','pending','auto-draft','publish','reject','resubmission'));
     $my_posts = new WP_Query($args);
     if ( $my_posts->have_posts() ) {
@@ -277,6 +284,14 @@ function callback_event_byid_func($request)
                     }
                 }
             }
+            $isFavorited = false;
+            if(!empty($userid)){
+                $query = "SELECT * FROM wp_gd_mylist WHERE item_id = ".$pid."  AND user_id = ".$userid;
+                $existdata = $wpdb->get_results($query, OBJECT);
+                if(!empty($existdata)){
+                    $isFavorited = true;
+                }
+            }
             $response1[] = array(
                 'id'=> $pid,
                 'link'=> $link,
@@ -286,7 +301,8 @@ function callback_event_byid_func($request)
                 'categories'=>$cats,
                 'author'=> $user_arr,
                 'date'=>$date,
-                'meta_data' => $metadata
+                'meta_data' => $metadata,
+                'isFavorited' => $isFavorited
             );
         }
         echo json_encode(array('flag'=>true,'data'=>$response1));
@@ -517,10 +533,10 @@ function addremoveFvorite_func()
         $userid = '';
         global $wpdb; 
         if(!empty($login_id)){                   
-            $userlist = $wpdb->get_results($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A));
+            $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
 
             if(!empty($userlist) && count($userlist) > 0){
-                $userid = $userlist[0]->user_id;
+                $userid = $userlist[0]['user_id'];
             }
         }
          if(empty($userid)){
@@ -534,8 +550,7 @@ function addremoveFvorite_func()
                 'user' => $emptyappuserreturn
             ));
         }else{
-            $query = "SELECT * FROM wp_gd_mylist WHERE item_id = ".$_REQUEST['eventid']." 
-                    AND user_id = ".$userid;
+            $query = "SELECT * FROM wp_gd_mylist WHERE item_id = ".$_REQUEST['eventid']." AND user_id = ".$userid;
             $existdata = $wpdb->get_results($query, OBJECT);            
             if(!empty($fvorite) && $fvorite == 1){
                 if(empty($existdata)){              
@@ -605,10 +620,10 @@ function callback_favorites_func()
     global $wpdb; 
     $userid = '';
     if(!empty($login_id)){             
-        $userlist = $wpdb->get_results($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A));
+        $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
 
         if(!empty($userlist) && count($userlist) > 0){
-            $userid = $userlist[0]->user_id;
+            $userid = $userlist[0]['user_id'];
         }
     }
 
