@@ -76,3 +76,26 @@ function custom_woocommerce_paypal_ap_payment_args( $args, $order ) {
     return $args;
 }
 add_filter( 'woocommerce_paypal_ap_payment_args', 'custom_woocommerce_paypal_ap_payment_args', 10, 2 );
+
+function connic_checkout_page_add_title( $content ) {
+ if ( is_page() && is_checkout()) {
+    $custom_content = '';
+    if(!empty(WC()->cart->get_cart())){
+            foreach ( WC()->cart->get_cart() as $cart_item ) {
+                $product = $cart_item['data'];                    
+                if(!empty($product)){
+                    $product_id = $product->get_product_id();            
+                }
+            }
+            $eventid = get_post_meta($product_id,'_event_id',true);
+            if(!empty($product_id) && !empty($eventid)){
+                $eventname = get_post_by_eventid($eventid);
+                $custom_content ='<div class="cart-page-title"><a href="http://localhost/event-management/event/quirkcon/">'.$eventname.'</a></div>';
+            }
+    }    
+    $custom_content .= $content;
+    return $custom_content;
+    }
+    return $content;
+}
+add_filter( 'the_content', 'connic_checkout_page_add_title' );

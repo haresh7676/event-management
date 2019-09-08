@@ -18,6 +18,19 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$order_items= $order->get_items();
+if(!empty($order_items)) {
+    foreach ($order_items as $item_id => $item) {
+        $order_productid = $item->get_product_id();
+    }
+    $eventid = '';
+    if (!empty($order_productid)) {
+        $eventid = get_post_meta($order_productid, '_event_id', true);
+    }
+}
+if(!empty($eventid)){
+	echo '<div class="cart-page-title"><a href="http://localhost/event-management/event/quirkcon/">'.get_the_title($eventid).'</a></div>';
+}
 ?>
 
         <div class="wpmc-tabs-wrapper">
@@ -55,19 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php /*endif; */?>
 			</p>-->
 
-		<?php else : ?>
-			<?php 
-			$order_items= $order->get_items();
-			if(!empty($order_items)) {
-			    foreach ($order_items as $item_id => $item) {
-			        $order_productid = $item->get_product_id();
-			    }
-			    $eventid = '';
-			    if (!empty($order_productid)) {
-			        $eventid = get_post_meta($order_productid, '_event_id', true);
-			    }
-			}
-			?>
+		<?php else : ?>			
 			<i class="far fa-check-circle success-icon"></i>
 			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'You are going to '.get_the_title($eventid).'! <br> Check your email for your confirmation. Share this event with your friends <a href="'.get_permalink($eventid).'">'.get_the_title($eventid).'</a>', 'woocommerce' ), $order ); ?></p>			
         <a href="<?php echo site_url().'/events/'; ?>" class="defulat-custom-btn btn trackbtn">Browse similar events</a>
