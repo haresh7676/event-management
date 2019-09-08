@@ -318,6 +318,37 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
                 if(isset($_POST['wpmp_organization']) && !empty($_POST['wpmp_organization'])){
                     add_user_meta($user_id, 'organization', $_POST['wpmp_organization']);
                 }
+                add_user_meta($user_id, 'country_code', $_POST['country_code']);
+                add_user_meta($user_id, 'phone_number', $_POST['wpmp_phone']);
+
+                $curlurl = 'https://app.quirktastic.co/beta/ws/sync_user';
+                $data = array(                                        
+                    'first_name' => apply_filters('pre_user_first_name', trim($_POST['wpmp_fname'])),
+                    'last_name' => apply_filters('pre_user_last_name', trim($_POST['wpmp_lname'])),
+                    'email_id' => apply_filters('pre_user_email', trim($_POST['wpmp_email'])),
+                    'country_code' => $_POST['country_code'],
+                    'phone_number' => $_POST['wpmp_phone']
+                );
+                $method = 'POST';
+                $query_data = (!empty($data)) ? http_build_query($data) : '';
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => $curlurl,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => $method,
+                    CURLOPT_POSTFIELDS => $query_data,
+                    CURLOPT_HTTPHEADER => array(
+                        "authorization: Basic YWRtaW46MTIzNA=="
+                    ),
+                ));
+                $Apiresponse = curl_exec($curl);
+                $finalres = json_decode($Apiresponse);
+                if($finalres->MESSAGE == "Success"){
+                    update_user_meta($user_id,'app_user_id',$finalres->APP_USER_ID);                    
+                }
 
                 $response['reg_status'] = true;
                 //$response['success'] = __('Thanks for signing up. Please check your email for confirmation!', $this->plugin_name);

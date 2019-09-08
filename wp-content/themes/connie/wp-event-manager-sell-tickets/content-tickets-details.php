@@ -175,7 +175,15 @@ $event_timezone   = get_event_timezone();
                             <?php
                           }
                           else{
-                            echo ' - ';
+                            $view_date_format= 'D, M j, Y';
+                            if(!empty( $ticket_sales_start_date ) &&  $current_timestamp <  strtotime( $ticket_sales_start_date ) ) {
+                              printf(__('Sales Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)) );
+                            }elseif(!empty($ticket_sales_end_date) &&  $current_timestamp >   strtotime($ticket_sales_end_date) ){
+                              printf(__('Sales Ended %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));
+                            }else{
+                              printf(__('End : %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));
+                            }
+                            //echo ' - ';
                           }
                           ?>     
                      </td>

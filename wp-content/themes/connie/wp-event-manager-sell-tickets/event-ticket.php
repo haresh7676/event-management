@@ -76,7 +76,11 @@ $registration_id = $registration->ID;
                <td style="padding-top:5px;font-family:Arial, Helvetica, sans-serif; color:#000;font-size:12px; "><strong><?php _e('Order By:', 'wp-event-manager-sell-tickets');?></strong> <?php echo $registration->post_title;?></td>
             </tr>
             <tr>
-               <td style="padding-top:8px;font-family:Arial, Helvetica, sans-serif;color:#000;font-size:12px; "><?php  display_event_start_date( '', '',  true, $event);?> / <?php  display_event_start_time( '', '',  true, $event);?></td>
+               <td style="padding-top:8px;font-family:Arial, Helvetica, sans-serif;color:#000;font-size:12px; ">
+                  <!-- <?php  //display_event_start_date( '', '',  true, $event);?> / <?php  //display_event_start_time( '', '',  true, $event);?> -->
+                     <?php $newformate = 'D, M j, Y'; ?>
+                        <?php echo date_i18n( $newformate, strtotime(get_event_start_date($event_id)) ); ?>, <?php display_event_start_time( '', '',  true, $event);?><?php echo (strtotime(get_event_start_date($event_id)) != strtotime(get_event_end_date($event_id))) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date($event_id)) ):','; ?>&nbsp;<?php display_event_end_time( '', '',  true, $event);?>
+                  </td>
             </tr>
          </table>
       </td>
