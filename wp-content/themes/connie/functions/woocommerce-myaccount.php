@@ -74,7 +74,22 @@ function wpb_woo_endpoint_title( $title, $id ) {
         $title = "My Tickets";
     }
     elseif ( is_wc_endpoint_url( 'view-order' ) && in_the_loop() ) {
-        $title = "My Tickets";
+        global $wp;
+        $customer_order = $wp->query_vars['view-order'];
+        $order = wc_get_order($customer_order);
+        //$orderid = $order->get_order_number();
+        $order_items= $order->get_items();
+        if(!empty($order_items)) {
+            foreach ($order_items as $item_id => $item) {
+                $order_productid = $item->get_product_id();
+            }
+            $eventid = '';
+            if (!empty($order_productid)) {
+                $eventid = get_post_meta($order_productid, '_event_id', true);
+            }
+        }
+
+        $title = "My Tickets".(!empty($eventid)?' - '.get_post_by_eventid($eventid):'');
     }
     elseif ( is_wc_endpoint_url( 'edit-account' ) && in_the_loop() ) {
         $title = "Account Settings";
@@ -100,6 +115,16 @@ function wpb_woo_endpoint_title( $title, $id ) {
     return $title;
 }
 add_filter( 'the_title', 'wpb_woo_endpoint_title', 10, 2 );
+
+
+add_filter( 'woocommerce_account_menu_item_classes', 'filter_function_name_8191', 10, 2 );
+function filter_function_name_8191( $classes, $endpoint ){
+    global $wp;
+    if('my-tickets' === $endpoint && isset( $wp->query_vars['view-order'] )){
+        $classes[] = 'is-active';
+    }
+    return $classes;
+}
 
 /**
  * Manage Event content

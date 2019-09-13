@@ -40,6 +40,11 @@ function callback_eventlist_func()
         $cat = $_REQUEST['cat'];
         $query_args[ 'category' ] = array($cat);
     }*/
+    if ( ! empty( $_REQUEST['search_keywords'] ) )
+    {
+        $event_manager_keyword = sanitize_text_field( $_REQUEST['search_keywords'] ); 
+        $query_args['s'] = $event_manager_keyword;
+    }
     if ( ! empty( $_REQUEST['search_categories'][0] ) )
     {
 

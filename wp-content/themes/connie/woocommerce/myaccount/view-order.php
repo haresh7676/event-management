@@ -47,7 +47,7 @@ if(!empty($order_items)) {
                         </div>
                         <div class="u-event-details">
                             <div class="event-disc">
-                                <h4><?php echo get_the_title(); ?></h4>
+                                <h4><?php echo get_post_by_eventid($eventid); ?></h4>
                                 <?php
                                 echo '<ul>';
                                 $newformate = 'D, M jS';
@@ -66,7 +66,7 @@ if(!empty($order_items)) {
                 <div class="grab-tickets">
                     <div class="grab-tickets-title">
                         <span>Grab Your Tickets</span>
-                        <a href="#">Details</a>
+                        <a href="<?php echo get_permalink($eventid); ?>">Details</a>
                     </div>
                     <div class="grab-tickets-step">
                         <div class="grab-tickets-box" onclick=window.open('<?php echo site_url().'/my-account/my-tickets/?download_ticket=true&order_id='.$orderid; ?>')>
