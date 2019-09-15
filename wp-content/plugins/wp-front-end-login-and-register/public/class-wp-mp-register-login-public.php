@@ -626,10 +626,11 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
     {
         $wpmp_email_settings = get_option('wpmp_email_settings');
         // using content type html for emails
-        $headers = array('Content-Type: text/html; charset=UTF-8');
+        //$headers = array('Content-Type: text/html; charset=UTF-8');
+        $headers[] = 'Content-Type: text/html; charset=UTF-8';
         // configuring email options
         $to = $userdata['user_email'];
-        $headers[] = 'From:' . get_option('blogname');
+        //$headers[] = 'From:' . get_option('blogname');
 
         //placeholders
 

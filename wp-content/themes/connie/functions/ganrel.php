@@ -246,8 +246,7 @@ function mycustom_wp_footer() {
 <script type="text/javascript">
 document.addEventListener( 'wpcf7submit', function( event ) {
     //window.scrollTo({ top: 0, behavior: 'smooth' });
-     jQuery(".modal").scrollTop(0)
-     console.log(jQuery(".wpcf7-not-valid").first().offset().top);
+    jQuery(".modal").scrollTop(0);   
     jQuery(".wpcf7").on('invalid', function(e) {
         jQuery('html, body, .modal').animate({
             scrollTop: jQuery(".wpcf7-not-valid").first().offset().top - 150
@@ -278,14 +277,19 @@ add_action( 'wp_footer', 'reportproblem_wp_footer' );
 function reportproblem_wp_footer() {
     $myaccountsettings =  get_fields('account-settings');
     $formid = 1;
+    $formid2 = 1;
     if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
         $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
+    }
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid2 = isset($myaccountsettings['manage_event']['volunteer_form_id'])?$myaccountsettings['manage_event']['volunteer_form_id']:1;
     }
 ?>
 <script type="text/javascript">
     var formid = '<?php echo $formid ?>';
+    var formid2 = '<?php echo $formid2 ?>';
 document.addEventListener( 'wpcf7mailsent', function( event ) {
-    if ( formid == event.detail.contactFormId ) {
+    if ( formid == event.detail.contactFormId || formid2 = event.detail.contactFormId) {
         jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
     }
 }, false );

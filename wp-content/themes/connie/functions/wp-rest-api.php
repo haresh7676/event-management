@@ -750,3 +750,428 @@ function callback_favorites_func()
 
     exit();
 }
+
+add_action( 'rest_api_init', 'custom_endpoint');
+function custom_endpoint() {
+    register_rest_route( 'wp/v2', 'add_to_cart_product', array(
+        'methods' => array('GET','POST'),
+        'callback' => 'add_to_cart_product',
+    ) );
+    register_rest_route( 'wp/v2', 'get_cart', array(
+        'methods' => array('GET','POST'),
+        'callback' => 'get_cart_product',
+    ) );
+    register_rest_route( 'wp/v2', 'remove_productfromcart', array(
+        'methods' => array('GET','POST'),
+        'callback' => 'delete_single_product_cart',
+    ) );
+    register_rest_route( 'wp/v2', 'empty_cart', array(
+        'methods' => array('GET','POST'),
+        'callback' => 'empty_cart',
+    ) );
+}
+
+
+function get_cart_product(){
+
+    global $woocommerce,$wpdb;
+    // json data 
+    $json = file_get_contents('php://input');
+    //Decode json data
+    $someArray = json_decode($json, true);
+    // Get cart product from database
+    $array = $wpdb->get_results("select meta_value from ".$wpdb->prefix."usermeta where meta_key='_woocommerce_persistent_cart_1' and user_id = ".$someArray['user_id']);
+    //Get serialize meta value
+    $data =$array[0]->meta_value;
+    //Unserialize meta value
+    $cart_data = unserialize ($data);
+
+    if(isset($cart_data['cart']) && $cart_data['cart'] !=''){
+        $carttot=array();
+        foreach ($cart_data['cart'] as $key) {
+        $carttot[] = $key['line_total'];
+        # code...
+        }
+        $sumcart = array_sum($carttot);
+        if($someArray['coupon_code'] !==""){
+        $coupon_code = $someArray['coupon_code'];
+        $c = new WC_Coupon($coupon_code);
+        $myArray = json_decode($c, true);
+        print_r($myArray);
+        if($myArray['discount_type'] == "percent"){
+            $discountamt = $sumcart*$myArray['amount']/100;
+            $cart_data['cart']['discount'] = $discountamt;
+            $cart_data['cart']['cart_total'] = $sumcart - $discountamt;
+        }
+        if($myArray['discount_type'] == 'fixed_cart'){
+            $cart_data['cart']['discount'] = $myArray['amount'];
+            $cart_data['cart']['cart_total'] = $sumcart - $myArray['amount'];
+        }
+        }
+        else{
+            $cart_data['cart']['cart_total'] = $sumcart;
+        }
+        echo json_encode($cart_data['cart']);
+    }
+    else{
+        echo json_encode(array("Message"=>'Cart is emprty add product into cart'));
+    }
+}
+function add_to_cart_product(){
+
+    global $woocommerce,$wpdb;
+    
+    $json = file_get_contents('php://input');
+
+    $someArray = json_decode($json, true);
+
+    if(isset($someArray['product_id']) && $someArray['product_id']!='')
+    {
+        $array = $wpdb->get_results("select meta_value from ".$wpdb->prefix."usermeta where meta_key='_woocommerce_persistent_cart_1' and user_id = ".$someArray['user_id']);
+
+        $data =$array[0]->meta_value;
+        $cart_data = unserialize ($data);
+        $flag;
+
+        $pid=array();
+        $keyval=array();
+
+        foreach($cart_data['cart'] as $key => $val) {
+            $keyval[]=$key;
+            $pid[]=$val['product_id'];
+        }
+
+        $count=count($keyval);
+        if($count>0)
+        {
+            for($i=0;$i<$count;$i++)
+            {
+                $mykey=$keyval[$i];
+                //print_r($cart_data['cart'][$mykey]);
+                if ($someArray['product_id']==$pid[$i]) 
+                { 
+                    $product = wc_get_product( $someArray['product_id'] );
+                    $product_price = $product->get_price();
+                    if(isset($someArray['productquantity'])){
+                        $cart_data['cart'][$mykey]['quantity'] = 0;
+                        $cart_data['cart'][$mykey]['quantity'] = $cart_data['cart'][$mykey]['quantity']+$someArray['productquantity'];
+                    }
+                    else{
+                        $cart_data['cart'][$mykey]['quantity'] = $cart_data['cart'][$mykey]['quantity']+1;   
+                    }
+
+                    $cart_data['cart'][$mykey]['line_subtotal'] = $cart_data['cart'][$mykey]['quantity'] * $product_price;
+                    $cart_data['cart'][$mykey]['line_total'] = $cart_data['cart'][$mykey]['line_subtotal'];
+                    // echo ""<pre>"";
+                    /*print_r($cart_data);*/
+
+                    $updatedquery = update_user_meta($someArray['user_id'],'_woocommerce_persistent_cart_1',$cart_data);
+                    if($updatedquery == 1){
+                        $carttot=array();
+                        foreach ($cart_data['cart'] as $key) {
+                        $carttot[] = $key['line_total'];
+                        # code...
+                        }
+                        $sumcart = array_sum($carttot);
+                        if($someArray['coupon_code'] !==""){
+                            $coupon_code = $someArray['coupon_code'];
+                            $c = new WC_Coupon($coupon_code);
+                            $myArray = json_decode($c, true);
+                            if($myArray['id'] !== 0){
+                            if($myArray['discount_type'] == "percent"){
+                                $discountamt = $sumcart*$myArray['amount']/100;
+
+                                $cart_data['cart']['discount'] = round($discountamt,2);
+                                $cart_data['cart']['cart_total'] = $sumcart - round($discountamt,2);
+                            }
+                            if($myArray['discount_type'] == 'fixed_cart'){
+                                $cart_data['cart']['discount'] = $myArray['amount'];
+                                $cart_data['cart']['cart_total'] = $sumcart - $myArray['amount'];
+                            }
+                        }
+                            else{
+                            $notapply = "'coupons'=>'Coupon code invalid'";
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                        }
+                        else{
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                        //$cart_data['cart']['cart_total'] = $sumcart;
+                        if(isset($notapply)){
+                            echo json_encode(array('message' => 'Cart Updated coupon code invlaid', 'data'=>$cart_data,));
+                        }
+                        else{
+                         echo json_encode(array('message' => 'Cart Updated', 'data'=>$cart_data));   
+                        }
+                    }
+                    else{
+                        $carttot=array();
+                        foreach ($cart_data['cart'] as $key) {
+                        $carttot[] = $key['line_total'];
+                        # code...
+                        }
+                        $sumcart = array_sum($carttot);
+                         if($someArray['coupon_code'] !==""){
+                            $coupon_code = $someArray['coupon_code'];
+                            $c = new WC_Coupon($coupon_code);
+                            $myArray = json_decode($c, true);
+                            if($myArray['id'] !== 0){
+                            if($myArray['discount_type'] == "percent"){
+                                $discountamt = $sumcart*$myArray['amount']/100;
+
+                                $cart_data['cart']['discount'] = round($discountamt,2);
+                                $cart_data['cart']['cart_total'] = $sumcart - round($discountamt,2);
+                            }
+                            if($myArray['discount_type'] == 'fixed_cart'){
+                                $cart_data['cart']['discount'] = $myArray['amount'];
+                                $cart_data['cart']['cart_total'] = $sumcart - $myArray['amount'];
+                            }
+                        }
+                            else{
+                            $notapply = "'coupons'=>'Coupon code invalid'";
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                        }
+                        else{
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                        //$cart_data['cart']['cart_total'] = $sumcart;
+                        if(isset($notapply)){
+                            echo json_encode(array('message' => 'Cart not updated and coupon code invlaid', 'data'=>$cart_data,));
+                        }
+                        else{
+                         echo json_encode(array('message' => 'Cart updated and coupon code apply', 'data'=>$cart_data));   
+                        }
+                        //echo json_encode(array('message' => 'Error','data'=>$cart_data));
+                    }
+                } 
+            }
+            if(!in_array($someArray['product_id'], $pid))
+            {
+                $string = WC_Cart::generate_cart_id( $someArray['product_id'], 0, array());
+                $product = wc_get_product( $someArray['product_id'] );
+                if(isset($someArray['productquantity']) && $someArray['productquantity'] !=''){
+                    $qty = $someArray['productquantity'];
+                    $line_subtotal = $qty*$product->get_price();
+                    $line_total = $line_subtotal;
+                }
+                else{
+                    $qty = 1;
+                    $line_subtotal = $qty*$product->get_price();
+                    $line_total = $line_subtotal;
+                }
+                $cart_data['cart'][$string] = array(
+                    'key' => $string,
+                    'product_id' => $someArray['product_id'],
+                    'variation_id' => 0,
+                    'variation' => array(),
+                    'quantity' => $qty,
+                    'line_tax_data' => array(
+                        'subtotal' => array(),
+                        'total' => array()
+                    ),
+                    'line_subtotal' => $line_subtotal,
+                    'line_subtotal_tax' => 0,
+                    'line_total' => $line_total,
+                    'line_tax' => 0,
+                );
+                //echo ""<pre>"";
+                /*print_r($cart_data);*/
+                $updatedquery = update_user_meta($someArray['user_id'],'_woocommerce_persistent_cart_1',$cart_data);
+                if($updatedquery == 1){
+                    $carttot=array();
+                    foreach ($cart_data['cart'] as $key) {
+                    $carttot[] = $key['line_total'];
+                    # code...
+                    }
+                    $sumcart = array_sum($carttot);
+                     if($someArray['coupon_code'] !==""){
+                        $coupon_code = $someArray['coupon_code'];
+                        $c = new WC_Coupon($coupon_code);
+                        $myArray = json_decode($c, true);
+                        if($myArray['id'] !== 0){
+                        if($myArray['discount_type'] == "percent"){
+                            $discountamt = $sumcart*$myArray['amount']/100;
+                            $cart_data['cart']['discount'] = $discountamt;
+                            $cart_data['cart']['cart_total'] = $sumcart - $discountamt;
+                        }
+                        if($myArray['discount_type'] == 'fixed_cart'){
+                            $cart_data['cart']['discount'] = $myArray['amount'];
+                            $cart_data['cart']['cart_total'] = $sumcart - $myArray['amount'];
+                        }
+                        }
+                        else{
+                            $notapply = "'data'=>'Coupon code invalid'";
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                    }
+                    else{
+                        $cart_data['cart']['cart_total'] = $sumcart;
+                    }
+                    //$cart_data['cart']['cart_total'] = $sumcart;
+                    echo json_encode(array('message' => 'Product added into Cart', 'data'=>$cart_data));
+                }
+                else{
+                    echo json_encode(array('message' => 'Error'));
+                }
+            }
+        }
+
+        else
+        {
+            $string = WC_Cart::generate_cart_id( $someArray['product_id'], 0, array());
+            $product = wc_get_product($someArray['product_id'] );
+            if(isset($someArray['productquantity']) && $someArray['productquantity'] !=''){
+                $qty = $someArray['productquantity'];
+                $line_subtotal = $qty*$product->get_price();
+                $line_total = $line_subtotal;
+            }
+            else{
+                $qty = 1;
+                $line_subtotal = $qty*$product->get_price();
+                $line_total = $line_subtotal;
+            }
+            $cart_data['cart'][$string] = array(
+                'key' => $string,
+                'product_id' => $someArray['product_id'],
+                'variation_id' => 0,
+                'variation' => array(),
+                'quantity' => $qty,
+                'line_tax_data' => array(
+                    'subtotal' => array(),
+                    'total' => array()
+                ),
+                'line_subtotal' => $line_subtotal,
+                'line_subtotal_tax' => 0,
+                'line_total' => $line_total,
+                'line_tax' => 0,
+            );
+            /*print_r($cart_data);*/
+            $updatedquery = update_user_meta($someArray['user_id'],'_woocommerce_persistent_cart_1',$cart_data);
+            if($updatedquery == 1){
+                $carttot=array();
+                foreach ($cart_data['cart'] as $key) {
+                $carttot[] = $key['line_total'];
+                }
+                $sumcart = array_sum($carttot);
+                 if($someArray['coupon_code'] !==""){
+                    $coupon_code = $someArray['coupon_code'];
+                    $c = new WC_Coupon($coupon_code);
+                    $myArray = json_decode($c, true);
+                    if($myArray['discount_type'] == "percent"){
+                        $discountamt = $sumcart*$myArray['amount']/100;
+                        echo $discountamt;
+                        $cart_data['cart']['discount'] = $discountamt;
+                        $cart_data['cart']['cart_total'] = $sumcart - $discountamt;
+                    }
+                    if($myArray['discount_type'] == 'fixed_cart'){
+                        $cart_data['cart']['discount'] = $myArray['amount'];
+                        $cart_data['cart']['cart_total'] = $sumcart - $myArray['amount'];
+                    }
+                }
+                else{
+                    $cart_data['cart']['cart_total'] = $sumcart;
+                }
+                $cart_data['cart']['cart_total'] = $sumcart;
+                echo json_encode(array('message' => 'Product added into Cart', 'data'=>$cart_data));
+            }
+            else{
+                echo json_encode(array('message' => 'Product Id Invalid'));
+            }
+        }
+        /*return cart_items(); // API response whatever you want*/
+    }
+}
+function empty_cart(){
+    global $woocommerce,$wpdb;
+
+    $json = file_get_contents('php://input');
+
+    $someArray = json_decode($json, true);
+
+    $cart_data =array();
+
+    $emptycartdata = update_user_meta($someArray['user_id'],'_woocommerce_persistent_cart_1',$cart_data);
+
+    if($emptycartdata == 1){
+        echo json_encode(array('message' => 'cart empty'));
+    }
+    else{
+        echo json_encode(array('message' => 'cart is already empty'));
+    }
+}
+function delete_single_product_cart(){
+    global $woocommerce,$wpdb;
+
+    $json = file_get_contents('php://input');
+
+    $someArray = json_decode($json, true);
+
+    $array = $wpdb->get_results("select meta_value from ".$wpdb->prefix."usermeta where meta_key='_woocommerce_persistent_cart_1' and user_id = ".$someArray['user_id']);
+
+    $data =$array[0]->meta_value;
+    
+    $cart_data = unserialize ($data);
+    if(isset($cart_data['cart'])){
+
+        foreach ($cart_data['cart'] as $key => $val) {
+            if($val['product_id'] == $someArray['product_id'])
+            {
+                $dele = $val['key'];
+            }
+        }
+        if(isset($dele) && $dele!=''){
+            unset($cart_data["cart"][$dele]); 
+            $delete_product = update_user_meta($someArray['user_id'],'_woocommerce_persistent_cart_1',$cart_data);
+            if($delete_product == 1)
+            {
+                $carttot=array();
+                        foreach ($cart_data['cart'] as $key) {
+                        $carttot[] = $key['line_total'];
+                        # code...
+                        }
+                        $sumcart = array_sum($carttot);
+                        if($someArray['coupon_code'] !==""){
+                            $coupon_code = $someArray['coupon_code'];
+                            $c = new WC_Coupon($coupon_code);
+                            $myArray = json_decode($c, true);
+                            if($myArray['id'] !== 0){
+                            if($myArray['discount_type'] == "percent"){
+                                $discountamt = $sumcart*$myArray['amount']/100;
+
+                                $cart_data['cart']['discount'] = round($discountamt,2);
+                                $cart_data['cart']['cart_total'] = $sumcart - round($discountamt,2);
+                            }
+                            if($myArray['discount_type'] == 'fixed_cart'){
+                                $cart_data['cart']['discount'] = $myArray['amount'];
+                                $cart_data['cart']['cart_total'] = $sumcart - $myArray['amount'];
+                            }
+                        }
+                            else{
+                            $notapply = "'coupons'=>'Coupon code invalid'";
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                        }
+                        else{
+                            $cart_data['cart']['cart_total'] = $sumcart;
+                        }
+                        //$cart_data['cart']['cart_total'] = $sumcart;
+                        if(isset($notapply)){
+                            echo json_encode(array('message' => 'Product deleted from cart', 'data'=>$cart_data,));
+                        }
+                        else{
+                         echo json_encode(array('message' => 'Product deleted from cart', 'data'=>$cart_data));   
+                        }
+                        
+                        //echo json_encode(array('message' => 'Product deleted from cart', 'data'=>$cart_data[""cart""]));
+            }
+            else{
+                echo json_encode(array('message' => 'Error in delete Product from cart'));
+            }
+        }
+        else{
+            echo json_encode(array('message' => 'There is no product found in cart' ));
+        }
+    }
+}
