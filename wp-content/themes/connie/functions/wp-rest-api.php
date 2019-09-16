@@ -769,8 +769,23 @@ function custom_endpoint() {
         'methods' => array('GET','POST'),
         'callback' => 'empty_cart',
     ) );
+
+    register_rest_route( 'wp/v2', 'request_token', array(
+        'methods' => array('GET','POST'),
+        'callback' => 'request_token_api',
+    ) );
 }
 
+
+function request_token_api(){
+    require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
+    $gateway = new Braintree_Gateway([
+        'environment' => 'sandbox',
+        'merchantId' => 'use_your_merchant_id',
+        'publicKey' => 'use_your_public_key',
+        'privateKey' => 'use_your_private_key'
+    ]);
+}
 
 function get_cart_product(){
 
