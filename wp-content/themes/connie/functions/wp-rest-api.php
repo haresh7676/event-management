@@ -779,14 +779,22 @@ function custom_endpoint() {
 
 function request_token_api(){
     require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
-    $gateway = new Braintree_Gateway([
+    /*$gateway = new Braintree_Gateway([
+        'environment' => 'sandbox',
+        'merchantId' => '92nqyscgssgnjyms',
+        'publicKey' => '434rx46gcy3v52n3',
+        'privateKey' => '314de0dfc5697ef09738ced136867abc'
+    ]);*/
+
+    $config = new Braintree_Configuration([
         'environment' => 'sandbox',
         'merchantId' => '92nqyscgssgnjyms',
         'publicKey' => '434rx46gcy3v52n3',
         'privateKey' => '314de0dfc5697ef09738ced136867abc'
     ]);
+    $gateway = new Braintree\Gateway($config);
     $clientToken = $gateway->clientToken()->generate();
-
+    
     if(!empty($clientToken)) {
         $successreturn = array(
             'success' => 1,

@@ -17,10 +17,11 @@ namespace Braintree;
  * @package    Braintree
  * @category   Resources
  *
- * @property-read string $paymentId
- * @property-read string $payerId
+ * @property-read string $grantOwnerMerchantId
+ * @property-read string $grantRecipientMerchantId
  * @property-read string $paymentMethodNonce
- * @property-read \Braintree\Transaction $transaction
+ * @property-read string $token
+ * @property-read string $updatedFields
  */
 class LocalPaymentCompleted extends Base
 {
@@ -51,14 +52,6 @@ class LocalPaymentCompleted extends Base
     {
         // set the attributes
         $this->_attributes = $localPaymentCompletedAttribs;
-
-        if (isset($transactionAttribs['transaction'])) {
-            $this->_set('transaction',
-                new Transaction(
-                    $transactionAttribs['transaction']
-                )
-            );
-        }
     }
 
     /**

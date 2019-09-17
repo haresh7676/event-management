@@ -61,9 +61,6 @@ class Util
         case 404:
             throw new Exception\NotFound();
             break;
-        case 408;
-            throw new Exception\RequestTimeout();
-            break;
         case 426:
             throw new Exception\UpgradeRequired();
             break;
@@ -73,8 +70,8 @@ class Util
         case 500:
             throw new Exception\ServerError();
             break;
-        case 504;
-            throw new Exception\GatewayTimeout();
+        case 503:
+            throw new Exception\DownForMaintenance();
             break;
         default:
             throw new Exception\Unexpected('Unexpected HTTP_RESPONSE #' . $statusCode);
@@ -117,7 +114,7 @@ class Util
             } else if ($errorClass == "INTERNAL") {
                 throw new Exception\ServerError();
             } else if ($errorClass == "SERVICE_AVAILABILITY") {
-                throw new Exception\ServiceUnavailable();
+                throw new Exception\DownForMaintenance();
             } else {
                 throw new Exception\Unexpected('Unexpected exception ' . $message);
             }

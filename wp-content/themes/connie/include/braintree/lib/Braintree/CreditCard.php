@@ -223,6 +223,11 @@ class CreditCard extends Base
         return Configuration::gateway()->creditCard()->createNoValidate($attribs);
     }
 
+    public static function createFromTransparentRedirect($queryString)
+    {
+        return Configuration::gateway()->creditCard()->createFromTransparentRedirect($queryString);
+    }
+
     public static function createCreditCardUrl()
     {
         return Configuration::gateway()->creditCard()->createCreditCardUrl();
@@ -291,6 +296,11 @@ class CreditCard extends Base
     public static function updateCreditCardUrl()
     {
         return Configuration::gateway()->creditCard()->updateCreditCardUrl();
+    }
+
+    public static function updateFromTransparentRedirect($queryString)
+    {
+        return Configuration::gateway()->creditCard()->updateFromTransparentRedirect($queryString);
     }
 
     public static function delete($token)

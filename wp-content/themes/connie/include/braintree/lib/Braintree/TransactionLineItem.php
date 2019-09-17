@@ -31,7 +31,7 @@ use Braintree\Instance;
  */
 class TransactionLineItem extends Instance
 {
-    // TransactionLineItem Kinds
+    // LineItem Kinds
     const CREDIT = 'credit';
     const DEBIT = 'debit';
 
@@ -51,3 +51,5 @@ class TransactionLineItem extends Instance
     }
 }
 class_alias('Braintree\TransactionLineItem', 'Braintree_TransactionLineItem');
+class_alias('Braintree\TransactionLineItem', 'Braintree\Transaction\LineItem');
+class_alias('Braintree\TransactionLineItem', 'Braintree_Transaction_LineItem');

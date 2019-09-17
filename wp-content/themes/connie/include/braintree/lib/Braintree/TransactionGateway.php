@@ -60,6 +60,37 @@ class TransactionGateway
         $result = $this->create($attribs);
         return Util::returnObjectOrThrowException(__CLASS__, $result);
     }
+    /**
+     *
+     * @deprecated since version 2.3.0
+     * @access public
+     * @param array $attribs
+     * @return object
+     */
+    public function createFromTransparentRedirect($queryString)
+    {
+        trigger_error("DEPRECATED: Please use TransparentRedirectRequest::confirm", E_USER_NOTICE);
+        $params = TransparentRedirect::parseAndValidateQueryString(
+                $queryString
+        );
+        return $this->_doCreate(
+                '/transactions/all/confirm_transparent_redirect_request',
+                ['id' => $params['id']]
+        );
+    }
+    /**
+     *
+     * @deprecated since version 2.3.0
+     * @access public
+     * @param none
+     * @return string
+     */
+    public function createTransactionUrl()
+    {
+        trigger_error("DEPRECATED: Please use TransparentRedirectRequest::url", E_USER_NOTICE);
+        return $this->_config->baseUrl() . $this->_config->merchantPath() .
+                '/transactions/all/create_via_transparent_redirect_request';
+    }
 
     public static function cloneSignature()
     {
@@ -131,12 +162,7 @@ class TransactionGateway
                 [
                     'eciFlag',
                     'cavv',
-                    'xid',
-                    'threeDSecureVersion',
-                    'authenticationResponse',
-                    'directoryResponse',
-                    'cavvAlgorithm',
-                    'dsTransactionId'],
+                    'xid'],
             ],
             ['options' =>
                 [
@@ -158,6 +184,10 @@ class TransactionGateway
                     ['threeDSecure' =>
                         ['required']
                     ],
+                    # TODO: Snake case version included for backwards compatiblity. Remove in the next major version
+                    ['three_d_secure' =>
+                        ['required']
+                    ],
                     ['paypal' =>
                         [
                             'payeeId',
@@ -177,6 +207,8 @@ class TransactionGateway
                     ],
                     ['venmo' =>
                         [
+                            # TODO: Snake case version included for backwards compatiblity. Remove in the next major version
+                            'profile_id',
                             'profileId'
                         ]
                     ]
@@ -185,6 +217,9 @@ class TransactionGateway
             ['customFields' => ['_anyKey_']],
             ['descriptor' => ['name', 'phone', 'url']],
             ['paypalAccount' => ['payeeId', 'payeeEmail', 'payerId', 'paymentId']],
+            # TODO: Snake case version included for backwards compatiblity. Remove in the next major version
+            ['apple_pay_card' => ['number', 'cardholder_name', 'cryptogram', 'expiration_month', 'expiration_year', 'eci_indicator']], 
+
             ['applePayCard' => ['number', 'cardholderName', 'cryptogram', 'expirationMonth', 'expirationYear', 'eciIndicator']],
             ['industry' =>
                 ['industryType',
@@ -199,7 +234,6 @@ class TransactionGateway
                             'lodgingCheckOutDate',
                             'lodgingName',
                             'roomRate',
-                            'roomTax',
                             'passengerFirstName',
                             'passengerLastName',
                             'passengerMiddleInitial',
@@ -214,10 +248,6 @@ class TransactionGateway
                             'feeAmount',
                             'taxAmount',
                             'restrictedTicket',
-                            'noShow',
-                            'advancedDeposit',
-                            'fireSafe',
-                            'propertyPhone',
                             ['legs' =>
                                 [
                                     'conjunctionTicket',
@@ -237,12 +267,6 @@ class TransactionGateway
                                     'feeAmount',
                                     'taxAmount',
                                     'endorsementOrRestrictions'
-                                ]
-                            ],
-                            ['additionalCharges' =>
-                                [
-                                    'kind',
-                                    'amount'
                                 ]
                             ]
                         ]
@@ -366,7 +390,7 @@ class TransactionGateway
 
             return new ResourceCollection($response, $pager);
         } else {
-            throw new Exception\Timeout();
+            throw new Exception\DownForMaintenance();
         }
     }
 
@@ -386,7 +410,7 @@ class TransactionGateway
                 'transaction'
             );
         } else {
-            throw new Exception\Timeout();
+            throw new Exception\DownForMaintenance();
         }
     }
 
@@ -525,11 +549,7 @@ class TransactionGateway
                    'expected transaction id to be set'
                    );
         }
-        
-        // NEXT_MAJOR_VERSION - none of the other sdks validate the format
-        // of the ID. In the next major version, we can remove this check 
-        // and have the gateway return a 404 error instead
-        if (!preg_match('/^[0-9a-z_]+$/', $id)) {
+        if (!preg_match('/^[0-9a-z]+$/', $id)) {
             throw new InvalidArgumentException(
                     $id . ' is an invalid transaction id.'
                     );

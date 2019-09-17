@@ -24,7 +24,6 @@ namespace Braintree;
  * @property-read string $processorResponseText
  * @property-read string $processorResponseType
  * @property-read \Braintree\RiskData|null $riskData
- * @property-read \Braintree\ThreeDSecureInfo|null $threeDSecureInfo
  */
 class CreditCardVerification extends Result\CreditCardVerification
 {
