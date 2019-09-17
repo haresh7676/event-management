@@ -781,10 +781,35 @@ function request_token_api(){
     require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
     $gateway = new Braintree_Gateway([
         'environment' => 'sandbox',
-        'merchantId' => 'use_your_merchant_id',
-        'publicKey' => 'use_your_public_key',
-        'privateKey' => 'use_your_private_key'
+        'merchantId' => '92nqyscgssgnjyms',
+        'publicKey' => '434rx46gcy3v52n3',
+        'privateKey' => '314de0dfc5697ef09738ced136867abc'
     ]);
+    $clientToken = $gateway->clientToken()->generate();
+
+    if(!empty($clientToken)) {
+        $successreturn = array(
+            'success' => 1,
+            'message' => 'Token is created.',
+            'errorCode' => '000',
+            'clientToken' => $clientToken
+        );
+        echo json_encode(array(
+            'status' => 'success',
+            'user' => $successreturn
+        ));
+    }else{
+        $successreturn = array(
+            'success' => 0,
+            'message' => 'API Error.',
+            'errorCode' => '011'
+        );
+        echo json_encode(array(
+            'status' => 'failure',
+            'user' => $successreturn
+        ));
+    }
+    exit();
 }
 
 function get_cart_product(){
