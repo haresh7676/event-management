@@ -844,10 +844,13 @@ function request_nonce_api(){
     $no_of_ticket = json_decode($_REQUEST['no_of_items']);
     $nonce = $_REQUEST['payment_method_nonce'];
     $amount = $_REQUEST['amount'];
+    $clientToken = $_REQUEST['clientToken'];
 
-    if(empty($nonce) || empty($amount) || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
+    if(empty($nonce) || empty($clientToken) || empty($amount) || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
         if(empty($nonce)) {
             $message = 'Nonce required fields';
+        }elseif(empty($clientToken)) {
+            $message = 'clientToken required fields';
         }elseif( empty($amount)){
             $message = 'Amount required fields';
         }elseif(empty($eventid)){
