@@ -774,6 +774,11 @@ function custom_endpoint() {
         'methods' => array('GET','POST'),
         'callback' => 'request_token_api',
     ) );
+
+    register_rest_route( 'wp/v2', 'request_nonce', array(
+        'methods' => 'POST',
+        'callback' => 'request_nonce_api',
+    ) );
 }
 
 
@@ -817,6 +822,103 @@ function request_token_api(){
             'user' => $successreturn
         ));
     }
+    exit();
+}
+
+
+function request_nonce_api(){
+
+
+    $du_id = !empty($_REQUEST['login_id']) ? $_REQUEST['login_id'] : 'null';
+    $login_id = $du_id;
+    global $wpdb; 
+    $userid = '';
+    if(!empty($login_id)){             
+        $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
+        if(!empty($userlist) && count($userlist) > 0){
+            $userid = $userlist[0]['user_id'];
+        }
+    }
+    $eventid = $_REQUEST['event_id'];
+    $product_id = json_decode($_REQUEST['product_id']);    
+    $no_of_ticket = json_decode($_REQUEST['no_of_items']);
+    $nonce = $_REQUEST['payment_method_nonce'];
+    $amount = $_REQUEST['amount'];
+
+    if(empty($nonce) || empty($amount) || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
+        if(empty($nonce)) {
+            $message = 'Nonce required fields';
+        }elseif( empty($amount)){
+            $message = 'Amount required fields';
+        }elseif(empty($eventid)){
+            $message = 'event id required fields';
+        }elseif(empty($_REQUEST['login_id'])){
+            $message = 'login id required fields';
+        }elseif(empty($product_id)){
+            $message = 'product id required fields';
+        }elseif(empty($no_of_ticket)){
+            $message = 'No of Ticket required fields';
+        }
+        $successreturn = array(
+            'success' => 0,
+            'message' => $message,
+            'errorCode' => '011'
+        );
+        echo json_encode(array(
+            'status' => 'failure',
+            'user' => $successreturn
+        ));
+    }else{
+        $successreturn = array(
+            'success' => 1,
+            'message' => 'Nonce is Recived we will do paymen procedss now.',
+            'errorCode' => '000'            
+        );
+        echo json_encode(array(
+            'status' => 'success',
+            'user' => $successreturn
+        ));
+    }
+
+    //require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
+    /*$gateway = new Braintree_Gateway([
+        'environment' => 'sandbox',
+        'merchantId' => '92nqyscgssgnjyms',
+        'publicKey' => '434rx46gcy3v52n3',
+        'privateKey' => '314de0dfc5697ef09738ced136867abc'
+    ]);*/
+
+   /* $config = new Braintree_Configuration([
+        'environment' => 'sandbox',
+        'merchantId' => '92nqyscgssgnjyms',
+        'publicKey' => '434rx46gcy3v52n3',
+        'privateKey' => '314de0dfc5697ef09738ced136867abc'
+    ]);
+    $gateway = new Braintree\Gateway($config);
+    $clientToken = $gateway->clientToken()->generate();
+    
+    if(!empty($clientToken)) {
+        $successreturn = array(
+            'success' => 1,
+            'message' => 'Token is created.',
+            'errorCode' => '000',
+            'clientToken' => $clientToken
+        );
+        echo json_encode(array(
+            'status' => 'success',
+            'user' => $successreturn
+        ));
+    }else{
+        $successreturn = array(
+            'success' => 0,
+            'message' => 'API Error.',
+            'errorCode' => '011'
+        );
+        echo json_encode(array(
+            'status' => 'failure',
+            'user' => $successreturn
+        ));
+    }*/
     exit();
 }
 
