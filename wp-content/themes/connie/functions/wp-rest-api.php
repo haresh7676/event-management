@@ -153,6 +153,7 @@ function callback_eventlist_func()
             $metadata = array();
             if(!empty($myvals)){
                 $aaraykey = array('_event_banner','_event_album');
+                $ticketkey = array('_paid_tickets','_free_tickets','_donation_tickets');
                 foreach ($myvals as $key => $value){
                     $metavalue = $value[0];
                     if(is_serial($metavalue)){
@@ -162,7 +163,8 @@ function callback_eventlist_func()
                     if(in_array($key,$aaraykey) && empty($metavalue)){
                         $metadata[$key] = array();
                     }
-                    if($key == '_paid_tickets' && !empty($metavalue)){
+
+                    if(in_array($key,$ticketkey) && !empty($metavalue)){
                         foreach ($metavalue as $itemkey => $value) {
                             $product_id = $value['product_id'];
                             $stock = get_post_meta($product_id,'_stock',true);
@@ -285,6 +287,7 @@ function callback_event_byid_func($request)
             $metadata = array();
             if(!empty($myvals)){
                 $aaraykey = array('_event_banner','_event_album');
+                $ticketkey = array('_paid_tickets','_free_tickets','_donation_tickets');
                 foreach ($myvals as $key => $value){
                     $metavalue = $value[0];
                     if(is_serial($metavalue)){
@@ -294,7 +297,7 @@ function callback_event_byid_func($request)
                     if(in_array($key,$aaraykey) && empty($metavalue)){
                         $metadata[$key] = array();
                     }
-                    if($key == '_paid_tickets' && !empty($metavalue)){
+                    if(in_array($key,$ticketkey) && !empty($metavalue)){
                         foreach ($metavalue as $itemkey => $value) {
                             $product_id = $value['product_id'];
                             $stock = get_post_meta($product_id,'_stock',true);
@@ -868,9 +871,9 @@ function request_nonce_api(){
     $nonce = $_REQUEST['payment_method_nonce'];
     $amount = $_REQUEST['amount'];
     $clientToken = $_REQUEST['clientToken'];
-    $isfree = $_REQUEST['is_free_ticket'];    
-    if(empty($amount) || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
-        if( empty($amount)){
+    $isfree = !empty($_REQUEST['is_free_ticket'])?$_REQUEST['is_free_ticket']:0;
+    if($amount == '' || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
+        if($amount == ''){
             $message = 'Amount required fields';
         }elseif(empty($eventid)){
             $message = 'event id required fields';
@@ -926,45 +929,46 @@ function request_nonce_api(){
             if(count($product_array) > 0){
                 $data['line_items'] = $product_array;
             }
-        } 
-        if($isfree == 1){
-            $user = get_userdata($userid);
-            $bilingdata = array();
-            $shippingdata = array();
-            if(!empty($user)){
-                $bilingdata['first_name'] = $user->first_name;
-                $bilingdata['last_name'] = $user->last_name;
-                $bilingdata['company'] = '';
-                $bilingdata['address_1'] = '';
-                $bilingdata['address_2']= '';
-                $bilingdata['city'] = '';
-                $bilingdata['state'] = '';
-                $bilingdata['postcode'] = '';
-                $bilingdata['country'] = '';
-                $bilingdata['email'] = $user->user_email;
-                $bilingdata['phone'] = '';
-                $shippingdata['first_name'] = $user->first_name;
-                $shippingdata['last_name'] = $user->last_name;
-                $shippingdata['company'] = '';
-                $shippingdata['address_1'] = '';
-                $shippingdata['address_2']= '';
-                $shippingdata['city'] = '';
-                $shippingdata['state'] = '';
-                $shippingdata['postcode'] = '';
-                $shippingdata['country'] = '';
-                $shippingdata['email'] = $user->user_email;
-                $shippingdata['phone'] = '';
-                $data['billing'] = $bilingdata;
-                $data['shipping'] = $shippingdata;
-            }
+        }
+        $user = get_userdata($userid);
+        $bilingdata = array();
+        $shippingdata = array();
+        if(!empty($user)){
+            $bilingdata['first_name'] = $user->first_name;
+            $bilingdata['last_name'] = $user->last_name;
+            $bilingdata['company'] = '';
+            $bilingdata['address_1'] = '';
+            $bilingdata['address_2']= '';
+            $bilingdata['city'] = '';
+            $bilingdata['state'] = '';
+            $bilingdata['postcode'] = '';
+            $bilingdata['country'] = '';
+            $bilingdata['email'] = $user->user_email;
+            $bilingdata['phone'] = '';
+            $shippingdata['first_name'] = $user->first_name;
+            $shippingdata['last_name'] = $user->last_name;
+            $shippingdata['company'] = '';
+            $shippingdata['address_1'] = '';
+            $shippingdata['address_2']= '';
+            $shippingdata['city'] = '';
+            $shippingdata['state'] = '';
+            $shippingdata['postcode'] = '';
+            $shippingdata['country'] = '';
+            $shippingdata['email'] = $user->user_email;
+            $shippingdata['phone'] = '';
+            $data['billing'] = $bilingdata;
+            $data['shipping'] = $shippingdata;
+        }
 
+        if($isfree == 1){
             // Now we create the order
             $order = wc_create_order(array('customer_id' => $user->ID));
             
             if(!empty($product_id) && !empty($no_of_ticket)){
                 foreach ($product_id as $key => $value) {
                     $qty = isset($no_of_ticket[$key])?$no_of_ticket[$key]:0;
-                    $order->add_product(get_product($value), $qty);                    
+                    $product = new WC_Product($value);
+                    $order->add_product($product, $qty);
                 }                
             } 
             
@@ -983,27 +987,91 @@ function request_nonce_api(){
 
             // Calculate totals
             $order->calculate_totals();
-            $order->update_status( 'completed', 'Order created dynamically - ', TRUE);            
+            $order->update_status( 'completed', 'Order created dynamically - ', TRUE);
+            $newoorderid = $order->get_id();
             $successreturn = array(
                 'success' => 1,
                 'message' => 'Order is completed.',
                 'errorCode' => '000',
-                'orderid' => $order->id
+                'orderid' => $newoorderid
             );
             echo json_encode(array(
                 'status' => 'success',
                 'user' => $successreturn
             ));
         }else{
-             $successreturn = array(
-                'success' => 1,
-                'message' => 'Nonce is Recived we will do paymen procedss now.',
-                'errorCode' => '000'            
-            );
-            echo json_encode(array(
-                'status' => 'success',
-                'user' => $successreturn
-            ));
+
+            $config = new Braintree_Configuration([
+                'environment' => 'sandbox',
+                'merchantId' => '92nqyscgssgnjyms',
+                'publicKey' => '434rx46gcy3v52n3',
+                'privateKey' => '314de0dfc5697ef09738ced136867abc'
+            ]);
+            $gateway = new Braintree\Gateway($config);
+
+            $result = $gateway->transaction()->sale([
+                'amount' => '10.00',
+                'paymentMethodNonce' => $nonce,
+                'options' => [
+                    'submitForSettlement' => True
+                ]
+            ]);
+
+            // Now we create the order
+            $order = wc_create_order(array('customer_id' => $user->ID));
+
+            if(!empty($product_id) && !empty($no_of_ticket)){
+                foreach ($product_id as $key => $value) {
+                    $qty = isset($no_of_ticket[$key])?$no_of_ticket[$key]:0;
+                    $product = new WC_Product($value);
+                    $order->add_product($product, $qty);
+                }
+            }
+
+
+            // Set addresses
+            if(!empty($bilingdata)){
+                $order->set_address( $bilingdata, 'billing' );
+            }
+            if(!empty($shippingdata)){
+                $order->set_address( $shippingdata, 'shipping' );
+            }
+
+            // Set payment gateway
+            //$payment_gateways = WC()->payment_gateways->payment_gateways();
+            //$order->set_payment_method( $payment_gateways['bacs'] );
+
+            // Calculate totals
+            $order->calculate_totals();
+            $order->update_status( 'completed', 'Order created dynamically - ', TRUE);
+
+            $newoorderid = $order->get_id();
+
+            if ($result->success) {
+                $successreturn = array(
+                    'success' => 1,
+                    'message' => 'Transaction Success',
+                    'errorCode' => '000',
+                    'transactionid' => $result->transaction->id,
+                    'orderid' => $newoorderid
+                );
+                echo json_encode(array(
+                    'status' => 'success',
+                    'user' => $successreturn
+                ));
+                //print_r("Success ID: " . $result->transaction->id);
+            } else {
+                $successreturn = array(
+                    'success' => 0,
+                    'message' => $result->message,
+                    'errorCode' => '011'
+                );
+                echo json_encode(array(
+                    'status' => 'failure',
+                    'user' => $successreturn
+                ));
+                //print_r("Error Message: " . $result->message);
+            }
         }
     }
     exit();
