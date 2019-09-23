@@ -847,6 +847,7 @@ function request_token_api(){
 
 
 function request_nonce_api(){
+    require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
 
     $du_id = !empty($_REQUEST['login_id']) ? $_REQUEST['login_id'] : 'null';
     $login_id = $du_id;
