@@ -153,6 +153,7 @@ function callback_eventlist_func()
             $metadata = array();
             if(!empty($myvals)){
                 $aaraykey = array('_event_banner','_event_album');
+                $ticketkey = array('_paid_tickets','_free_tickets','_donation_tickets');
                 foreach ($myvals as $key => $value){
                     $metavalue = $value[0];
                     if(is_serial($metavalue)){
@@ -161,6 +162,14 @@ function callback_eventlist_func()
                     $metadata[$key] = $metavalue;
                     if(in_array($key,$aaraykey) && empty($metavalue)){
                         $metadata[$key] = array();
+                    }
+
+                    if(in_array($key,$ticketkey) && !empty($metavalue)){
+                        foreach ($metavalue as $itemkey => $value) {
+                            $product_id = $value['product_id'];
+                            $stock = get_post_meta($product_id,'_stock',true);
+                            $metadata[$key][$itemkey]['remaining_tickets'] = (!empty($stock))?intval($stock):0;
+                        }
                     }
                 }
             }
@@ -278,6 +287,7 @@ function callback_event_byid_func($request)
             $metadata = array();
             if(!empty($myvals)){
                 $aaraykey = array('_event_banner','_event_album');
+                $ticketkey = array('_paid_tickets','_free_tickets','_donation_tickets');
                 foreach ($myvals as $key => $value){
                     $metavalue = $value[0];
                     if(is_serial($metavalue)){
@@ -286,6 +296,13 @@ function callback_event_byid_func($request)
                     $metadata[$key] = $metavalue;
                     if(in_array($key,$aaraykey) && empty($metavalue)){
                         $metadata[$key] = array();
+                    }
+                    if(in_array($key,$ticketkey) && !empty($metavalue)){
+                        foreach ($metavalue as $itemkey => $value) {
+                            $product_id = $value['product_id'];
+                            $stock = get_post_meta($product_id,'_stock',true);
+                            $metadata[$key][$itemkey]['remaining_tickets'] = (!empty($stock))?intval($stock):0;
+                        }
                     }
                 }
             }
@@ -779,6 +796,12 @@ function custom_endpoint() {
         'methods' => 'POST',
         'callback' => 'request_nonce_api',
     ) );
+
+
+    register_rest_route( 'wp/v2', 'my_purchased_tickets', array(
+        'methods' => array('GET','POST'),
+        'callback' => 'my_purchased_tickets_api',
+    ) );
 }
 
 
@@ -827,11 +850,14 @@ function request_token_api(){
 
 
 function request_nonce_api(){
-
+    require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
 
     $du_id = !empty($_REQUEST['login_id']) ? $_REQUEST['login_id'] : 'null';
     $login_id = $du_id;
     global $wpdb; 
+    global $post, $woocommerce, $product;
+
+
     $userid = '';
     if(!empty($login_id)){             
         $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
@@ -844,11 +870,10 @@ function request_nonce_api(){
     $no_of_ticket = json_decode($_REQUEST['no_of_items']);
     $nonce = $_REQUEST['payment_method_nonce'];
     $amount = $_REQUEST['amount'];
-
-    if(empty($nonce) || empty($amount) || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
-        if(empty($nonce)) {
-            $message = 'Nonce required fields';
-        }elseif( empty($amount)){
+    $clientToken = $_REQUEST['clientToken'];
+    $isfree = !empty($_REQUEST['is_free_ticket'])?$_REQUEST['is_free_ticket']:0;
+    if($amount == '' || empty($eventid) || empty($_REQUEST['login_id']) || empty($product_id) || empty($no_of_ticket)) {
+        if($amount == ''){
             $message = 'Amount required fields';
         }elseif(empty($eventid)){
             $message = 'event id required fields';
@@ -868,57 +893,347 @@ function request_nonce_api(){
             'status' => 'failure',
             'user' => $successreturn
         ));
-    }else{
-        $successreturn = array(
-            'success' => 1,
-            'message' => 'Nonce is Recived we will do paymen procedss now.',
-            'errorCode' => '000'            
-        );
-        echo json_encode(array(
-            'status' => 'success',
-            'user' => $successreturn
-        ));
-    }
-
-    //require_once(get_template_directory() .'/include/braintree/lib/Braintree.php');
-    /*$gateway = new Braintree_Gateway([
-        'environment' => 'sandbox',
-        'merchantId' => '92nqyscgssgnjyms',
-        'publicKey' => '434rx46gcy3v52n3',
-        'privateKey' => '314de0dfc5697ef09738ced136867abc'
-    ]);*/
-
-   /* $config = new Braintree_Configuration([
-        'environment' => 'sandbox',
-        'merchantId' => '92nqyscgssgnjyms',
-        'publicKey' => '434rx46gcy3v52n3',
-        'privateKey' => '314de0dfc5697ef09738ced136867abc'
-    ]);
-    $gateway = new Braintree\Gateway($config);
-    $clientToken = $gateway->clientToken()->generate();
-    
-    if(!empty($clientToken)) {
-        $successreturn = array(
-            'success' => 1,
-            'message' => 'Token is created.',
-            'errorCode' => '000',
-            'clientToken' => $clientToken
-        );
-        echo json_encode(array(
-            'status' => 'success',
-            'user' => $successreturn
-        ));
-    }else{
-        $successreturn = array(
+    }elseif($isfree != 1 && (empty($nonce) || empty($clientToken))){
+        if(empty($nonce)) {
+            $message = 'Nonce required fields';
+        }elseif(empty($clientToken)) {
+            $message = 'clientToken required fields';
+        }
+         $successreturn = array(
             'success' => 0,
-            'message' => 'API Error.',
+            'message' => $message,
             'errorCode' => '011'
         );
         echo json_encode(array(
             'status' => 'failure',
             'user' => $successreturn
         ));
-    }*/
+
+    }else{
+        $data = array();
+        $data['payment_method'] = '';
+        $data['payment_method_title'] = '';
+        //$data['payment_method'] = 'paypal-adaptive-payments';
+        //$data['payment_method_title'] = 'PayPal';
+        $data['customer_id'] = $userid;
+        $data['billing'] = array();
+        $data['shipping'] = array();
+        $data['line_items'] = array();
+        $data['shipping_lines'] = array();
+        $product_array = array();
+        if(!empty($product_id) && !empty($no_of_ticket)){
+            foreach ($product_id as $key => $value) {
+                $product_array[$key]['product_id'] = $value;
+                $product_array[$key]['quantity'] = isset($no_of_ticket[$key])?$no_of_ticket[$key]:0;
+            }
+            if(count($product_array) > 0){
+                $data['line_items'] = $product_array;
+            }
+        }
+        $user = get_userdata($userid);
+        $bilingdata = array();
+        $shippingdata = array();
+        if(!empty($user)){
+            $bilingdata['first_name'] = $user->first_name;
+            $bilingdata['last_name'] = $user->last_name;
+            $bilingdata['company'] = '';
+            $bilingdata['address_1'] = '';
+            $bilingdata['address_2']= '';
+            $bilingdata['city'] = '';
+            $bilingdata['state'] = '';
+            $bilingdata['postcode'] = '';
+            $bilingdata['country'] = '';
+            $bilingdata['email'] = $user->user_email;
+            $bilingdata['phone'] = '';
+            $shippingdata['first_name'] = $user->first_name;
+            $shippingdata['last_name'] = $user->last_name;
+            $shippingdata['company'] = '';
+            $shippingdata['address_1'] = '';
+            $shippingdata['address_2']= '';
+            $shippingdata['city'] = '';
+            $shippingdata['state'] = '';
+            $shippingdata['postcode'] = '';
+            $shippingdata['country'] = '';
+            $shippingdata['email'] = $user->user_email;
+            $shippingdata['phone'] = '';
+            $data['billing'] = $bilingdata;
+            $data['shipping'] = $shippingdata;
+        }
+
+        if($isfree == 1){
+            // Now we create the order
+            $order = wc_create_order(array('customer_id' => $user->ID));
+            
+            if(!empty($product_id) && !empty($no_of_ticket)){
+                foreach ($product_id as $key => $value) {
+                    $qty = isset($no_of_ticket[$key])?$no_of_ticket[$key]:0;
+                    $product = new WC_Product($value);
+                    $order->add_product($product, $qty);
+                }                
+            } 
+            
+
+            // Set addresses
+            if(!empty($bilingdata)){
+                $order->set_address( $bilingdata, 'billing' );
+            }
+            if(!empty($shippingdata)){
+                $order->set_address( $shippingdata, 'shipping' );
+            }
+
+            // Set payment gateway
+            //$payment_gateways = WC()->payment_gateways->payment_gateways();
+            //$order->set_payment_method( $payment_gateways['bacs'] );
+
+            // Calculate totals
+            $order->calculate_totals();
+            $order->update_status( 'completed', 'Order created dynamically - ', TRUE);
+            $newoorderid = $order->get_id();
+            $successreturn = array(
+                'success' => 1,
+                'message' => 'Order is completed.',
+                'errorCode' => '000',
+                'orderid' => $newoorderid
+            );
+            echo json_encode(array(
+                'status' => 'success',
+                'user' => $successreturn
+            ));
+        }else{
+
+            $config = new Braintree_Configuration([
+                'environment' => 'sandbox',
+                'merchantId' => '92nqyscgssgnjyms',
+                'publicKey' => '434rx46gcy3v52n3',
+                'privateKey' => '314de0dfc5697ef09738ced136867abc'
+            ]);
+            $gateway = new Braintree\Gateway($config);
+
+            $result = $gateway->transaction()->sale([
+                'amount' => '10.00',
+                'paymentMethodNonce' => $nonce,
+                'options' => [
+                    'submitForSettlement' => True
+                ]
+            ]);
+
+            // Now we create the order
+            $order = wc_create_order(array('customer_id' => $user->ID));
+
+            if(!empty($product_id) && !empty($no_of_ticket)){
+                foreach ($product_id as $key => $value) {
+                    $qty = isset($no_of_ticket[$key])?$no_of_ticket[$key]:0;
+                    $product = new WC_Product($value);
+                    $order->add_product($product, $qty);
+                }
+            }
+
+
+            // Set addresses
+            if(!empty($bilingdata)){
+                $order->set_address( $bilingdata, 'billing' );
+            }
+            if(!empty($shippingdata)){
+                $order->set_address( $shippingdata, 'shipping' );
+            }
+
+            // Set payment gateway
+            //$payment_gateways = WC()->payment_gateways->payment_gateways();
+            //$order->set_payment_method( $payment_gateways['bacs'] );
+
+            // Calculate totals
+            $order->calculate_totals();
+            $order->update_status( 'completed', 'Order created dynamically - ', TRUE);
+
+            $newoorderid = $order->get_id();
+
+            if ($result->success) {
+                $successreturn = array(
+                    'success' => 1,
+                    'message' => 'Transaction Success',
+                    'errorCode' => '000',
+                    'transactionid' => $result->transaction->id,
+                    'orderid' => $newoorderid
+                );
+                echo json_encode(array(
+                    'status' => 'success',
+                    'user' => $successreturn
+                ));
+                //print_r("Success ID: " . $result->transaction->id);
+            } else {
+                $successreturn = array(
+                    'success' => 0,
+                    'message' => $result->message,
+                    'errorCode' => '011'
+                );
+                echo json_encode(array(
+                    'status' => 'failure',
+                    'user' => $successreturn
+                ));
+                //print_r("Error Message: " . $result->message);
+            }
+        }
+    }
+    exit();
+}
+
+function my_purchased_tickets_api(){
+    $du_id = !empty($_REQUEST['login_id']) ? $_REQUEST['login_id'] : 'null';
+    $login_id = $du_id;
+    global $post, $woocommerce, $product;
+    global $wpdb; 
+    $userid = '';
+    if(!empty($login_id)){             
+        $userlist = $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}usermeta WHERE meta_key = 'app_user_id' and meta_value=".$login_id,ARRAY_A);
+
+        if(!empty($userlist) && count($userlist) > 0){
+            $userid = $userlist[0]['user_id'];
+        }
+    }
+
+    if(!empty($userid)){
+        $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
+            'numberposts' => -1,
+            'meta_key'    => '_customer_user',
+            'meta_value'  => $userid,
+            'post_type'   => wc_get_order_types( 'view-orders' ),
+            'post_status' => array_keys( wc_get_order_statuses() ),
+        ) ) ); 
+        if ( $customer_orders ) :
+            $upcomingeveent = array();
+            $pastevent = array();
+            $myevents = array();
+            foreach ( $customer_orders as $orderkey => $customer_order ) :
+                $order      = wc_get_order( $customer_order );
+                $orderid = $order->get_order_number();
+                $order_items= $order->get_items();
+                foreach ( $order_items as $item_id => $item ) {
+                    $order_productid = $item->get_product_id();
+                }
+                $eventid = '';
+                if(!empty($order_productid)){
+                    $eventid = get_post_meta($order_productid,'_event_id',true);
+                }
+                if(!empty($eventid) && get_post_status ($eventid) == 'expired'){
+                    $pastevent[$orderid] = $eventid;
+                    $myevents[$orderid] = $eventid;
+                }else{
+                    $upcomingeveent[$orderid] = $eventid;
+                    $myevents[$orderid] = $eventid;
+                }
+            endforeach;
+        endif;
+
+
+        if(!empty($myevents)){
+            $paged = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 1;
+            $posts_per_page = 10;
+            $query_args = array(
+                'post_type' => 'event_listing',
+                'posts_per_page' => $posts_per_page,
+                'paged' => $paged,
+                'post__in' => $myevents
+            );    
+            $post = get_posts($query_args);
+            $count_posts = wp_count_posts('event_listing');
+            if (isset($cat) && !empty($cat)) {
+                $cposts = get_posts('post_type=event_listing&cat=$cat');
+                $pub_count = count($cposts);
+            } else {
+                $pub_count = $count_posts->publish;
+            }
+            $maxnos = ceil($pub_count / $posts_per_page);
+            if (!empty($post)) {
+                foreach ($post as $key => $articles) {
+                    $id = $articles->ID;
+                    $link = site_url() . "/?p=" . $id;
+                    $title = $articles->post_title;
+                    $content = $articles->post_content;
+                    $user_id = $articles->post_author;
+                    $user = get_user_by('id', $user_id);
+                    $user_arr = array('id' => $user->ID, 'name' => $user->first_name);
+                    $att_id = get_post_thumbnail_id($id);
+                    if (!empty($att_id)) {
+                        $thumb = get_the_post_thumbnail_url($id, 'feature-image');
+                        $full = get_the_post_thumbnail_url($id, 'full');
+                    } else {
+                        $thumb = "";
+                        $full = "";
+                    }
+                    $post_categories = wp_get_post_categories($id);
+                    $cats = array();
+                    foreach ($post_categories as $c) {
+                        $cat = get_category($c);
+                        $cats[] = array('id' => $cat->term_id, 'name' => $cat->name, 'slug' => $cat->slug);
+                    }
+                    $media_arr = array('id' => $att_id, 'full_url' => $full, 'thumb_url' => $thumb);
+
+                    if(!empty($login_id)){
+
+                    }
+                    $views = ($login_id == $user_id) ? $views : '';
+                    $date = get_the_date('d/m/Y', $id);
+                    $myvals = get_post_meta($id);
+                    $metadata = array();
+                    if(!empty($myvals)){
+                        $aaraykey = array('_event_banner','_event_album');
+                        foreach ($myvals as $key => $value){
+                            $metavalue = $value[0];
+                            if(is_serial($metavalue)){
+                                $metavalue = unserialize($metavalue);
+                            }
+                            $metadata[$key] = $metavalue;
+                            if(in_array($key,$aaraykey) && empty($metavalue)){
+                                $metadata[$key] = array();
+                            }
+                        }
+                    }
+                    $isFavorited = false;
+                    if(!empty($userid)){
+                        $query = "SELECT * FROM wp_gd_mylist WHERE item_id = ".$id." 
+                            AND user_id = ".$userid;
+                        $existdata = $wpdb->get_results($query, OBJECT); 
+                        if(!empty($existdata)){
+                            $isFavorited = true;
+                        }
+                    }
+
+                    $response[] = array(
+                        'id' => $id,
+                        'link' => $link,
+                        'perlink' => get_permalink($id),
+                        'title' => $title,
+                        'content' => $content,
+                        //'social_counts' => $share_count,
+                        //'post_views' => $views,
+                        'featured_media' => $media_arr,
+                        'categories' => $cats,
+                        'author' => $user_arr,
+                        'date' => $date,
+                        'meta_data' => $metadata,
+                        'isFavorited' => $isFavorited
+                    );
+                }
+                echo json_encode(array('flag' => true, 'max_num_page' => $maxnos, 'data' => $response));
+            } else {
+                echo json_encode(array(
+                    'flag' => false,
+                    'message' => 'there is no  event found'
+                ));
+            }
+        }else{
+            echo json_encode(array(
+                'flag' => false,
+                'message' => 'there is no event found'
+            ));
+        }       
+    }else{
+        echo json_encode(array(
+            'flag' => false,
+            'message' => 'User not found'
+        ));
+    }
+
     exit();
 }
 
