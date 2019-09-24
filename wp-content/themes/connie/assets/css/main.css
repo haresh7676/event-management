@@ -913,7 +913,7 @@ i.drp-icn {
     line-height: normal;
     color: #4A4A4A;
     font-weight: bold;
-    margin: 0 0 130px 0;
+    margin: 0 0 200px 0;
 }
 .landing-serach {
     display: inline-block;
@@ -1028,6 +1028,9 @@ i.drp-icn {
     position: relative;
     border: 1px solid #d8d8d8;
 }
+.u-events-box .u-event-pic .whislistwpr .btn:focus {
+    box-shadow: none;
+}
 .u-events-box .u-event-pic img {
     width: 100%;
     height: 100%;
@@ -1121,6 +1124,9 @@ i.drp-icn {
 .browe-event-content {
     width: 100%;
 }
+.browe-event-content .event_listings .event_listings .no_event_listings_found {
+    font-size: 16px;
+}
 .browe-event-title h4 {
     font-size: 30px;
     color: #000000;
@@ -1197,7 +1203,7 @@ i.drp-icn {
 }
 .filter-category {
     padding: 10px;
-    max-height: 410px;
+    max-height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -1214,6 +1220,7 @@ i.drp-icn {
 }
 .filter-category ul li {
     margin-bottom: 10px;
+    line-height: normal;
 }
 /* custome radio button */
 .fancy-radio { margin: 0; display: inline-block !important; width: 100%;}
@@ -3379,6 +3386,9 @@ i.drp-icn {
 }
 .ovrfHide {
     overflow: hidden;
+}
+.woocommerce .blockUI.blockOverlay:before {
+    background: url(../../assets/images/loader.svg);
 }
 
 /* AR479-changes after development */
