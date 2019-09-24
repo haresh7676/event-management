@@ -44,13 +44,16 @@
     .browe-event-filter-content {
         padding: 20px 40px 20px 80px;
     }
+    .landing-page-banner .landing-banner-content h2 {
+        margin-bottom: 300px;
+    }
 }
 @media (min-width: 1200px) and (max-width: 1366px) {
     .landing-page-content .landing-page-title img {
         height: 50px;
     }
     .landing-page-banner .landing-banner-content h2 {
-        margin-bottom: 120px;
+        margin-bottom: 280px;
     }
     .landing-page-content .landing-page-title h4 {
         font-size: 30px;
@@ -66,7 +69,6 @@
 }
 @media (min-width: 1024px) and (max-width: 1199px) {
     .landing-page-banner .landing-banner-content h2 {
-        margin-bottom: 100px;
         font-size: 50px;
     }
     .landing-page-banner .landing-banner-content {
@@ -175,7 +177,6 @@
 }
 @media (min-width: 992px) and (max-width: 1023px) {
     .landing-page-banner .landing-banner-content h2 {
-        margin-bottom: 80px;
         font-size: 50px;
     }
     .landing-page-banner .landing-banner-content {
@@ -221,7 +222,7 @@
         padding: 40px 0;
     }
     .browe-event-filter-content {
-        padding: 40px;
+        padding: 40px 20px;
     }
     .filter-category {
         padding: 0px;
@@ -312,7 +313,7 @@
         bottom: 60px;
     }
     .landing-page-banner .landing-banner-content h2 {
-        margin-bottom: 60px;
+        margin-bottom: 150px;
         font-size: 40px;
     }
     .landing-page-content .landing-page-title {
@@ -655,7 +656,7 @@
         margin-top: 0px;
     }
     .landing-page-banner .landing-banner-content {
-        bottom: 40px;
+        bottom: 0;
     }
     .landing-page-banner .landing-banner-content h2 {
         margin-bottom: 20px;
@@ -1522,4 +1523,16 @@
         margin-left: 15px;
         margin-right: 15px;
     }
+    .landing-page-banner {
+        min-height: 210px;
+    }
 }
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 767px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .landing-page-banner .landing-banner-content {
+        bottom: 20px;
+    }
+  }
