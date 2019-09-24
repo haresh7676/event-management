@@ -105,7 +105,7 @@ function theme_name_custom_orderby_query_args( $query_args ) {
         'key' => '_event_start_date',
         'value'   => $datetime,
         'type' => 'date',
-        'compare' => '>',
+        'compare' => '>=',
     );
     return $query_args;
 }
@@ -288,11 +288,13 @@ function reportproblem_wp_footer() {
 <script type="text/javascript">
     var formid = '<?php echo $formid ?>';
     var formid2 = '<?php echo $formid2 ?>';
-document.addEventListener( 'wpcf7mailsent', function( event ) {
-    if ( formid == event.detail.contactFormId || formid2 = event.detail.contactFormId) {
-        jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
-    }
-}, false );
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if (formid == event.detail.contactFormId) {
+
+        } else if (formid2 = event.detail.contactFormId){
+            jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
+        }
+    }, false );
 </script>
 <?php
 }

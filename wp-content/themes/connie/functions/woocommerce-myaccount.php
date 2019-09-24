@@ -512,9 +512,9 @@ if(!empty($orders['data'])) {
                 if (has_action('woocommerce_my_account_my_orders_column_' . $column_id)) :
                     do_action('woocommerce_my_account_my_orders_column_' . $column_id, $order);
                 elseif ('order-number' === $column_id) :
-                    $output .= '<a href="' . esc_url($order->get_view_order_url()) . '">';
+                    //$output .= '<a href="' . esc_url($order->get_view_order_url()) . '">';
                     $output .= '#' . $order->get_order_number();
-                    $output .= '</a>';
+                    //$output .= '</a>';
                 elseif ('order-date' === $column_id) :
                     $output .= '<time datetime="' . esc_attr($order->get_date_created()->date('c')) . '">' . esc_html(wc_format_datetime($order->get_date_created())) . '</time>';
                 elseif ('order-buyer' === $column_id) :

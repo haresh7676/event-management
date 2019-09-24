@@ -262,7 +262,7 @@ function callback_event_byid_func($request)
             //$title = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $title);
             $link = site_url()."/?p=".$pid;
             $content = get_the_content();
-            $user_id = get_the_author_id();
+            //$user_id = get_the_author_id();
             $user = get_user_by('id',$user_id);
             $user_arr = array('id'=>$user->ID,'name'=>$user->first_name);
             $att_id = get_post_thumbnail_id( $pid );
