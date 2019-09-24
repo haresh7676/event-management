@@ -85,11 +85,17 @@ $themesettings =  get_fields('theme-settings');
                             <?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>
                         </span>
                         <h3 title="<?php echo esc_attr( $post->post_title ); ?>"><?php echo esc_attr( $post->post_title ); ?></h3>
-                        <p>Hosted By  <?php echo display_organizer_name(); ?></p>
+                        <?php $organizername = display_organizer_name('','',false); 
+                        $eventlocations = get_event_location();
+                        if(!empty($organizername)){ ?>
+                            <p>Hosted By  <?php display_organizer_name(); ?></p>    
+                        <?php } 
+                        if(!empty($eventlocations)){ ?>
                         <label>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.png">
                             <div class="t-address-text"><?php echo get_event_location() ?></div>
                         </label>
+                        <?php } ?>
                         <div class="ticket-contact">
                             <?php if(!empty($themesettings) && (isset($themesettings['contact_form']) && !empty($themesettings['contact_form']))){ ?>
                                 <h4><a href="javascript:void(0)" data-toggle="modal" data-target="#contactmodule">Contact</a></h4>
@@ -132,6 +138,9 @@ $themesettings =  get_fields('theme-settings');
                                   $googleplus )
                            {  ?>
                             <ul>
+                                <?php if($websiteurl) { ?>
+                                    <li><a href=" <?php echo $websiteurl; ?>" class="website-link" target="_blank"  itemprop="url" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/domain.png" alt=""></a></li>
+                                <?php  } ?>    
                                 <?php if($facebook) { ?>
                                     <li class="facebook"><a href=" <?php echo esc_url($facebook); ?>"  class="facebook" target="_blank" itemprop="facebook" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>
                                 <?php } ?>
@@ -147,6 +156,12 @@ $themesettings =  get_fields('theme-settings');
                                 <?php if($linkedin) { ?>
                                     <li class="linkedin"><a href=" <?php echo esc_url($linkedin); ?>" class="linkedin-link" target="_blank" itemprop="linkedin" rel="nofollow"><i class="fab fa-linkedin-in"></i></li>
                                 <?php } ?>
+                                <?php if($instagram) { ?>
+                                    <li class="instagram"><a href=" <?php echo $instagram; ?>"  class="instagram-link" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <?php } ?> 
+                                 <?php if($googleplus) { ?>
+                                    <li class="g-plus"><a href=" <?php echo $googleplus; ?>"  class="gplus-link" target="_blank" itemprop="gplus" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/g-plus.png" alt=""></a></li></li>
+                                <?php } ?>  
                             </ul>
                             <?php } ?>
                         </div>
