@@ -16,11 +16,14 @@
 	<?php     
     foreach ( $field['value'] as $index => $value ) : ?>
  
-		<div class="repeated-row-<?php echo esc_attr( $key ); ?>">
+		<div class="repeated-row-<?php echo $key . '-' . $index; ?>">
 		<input type="hidden" class="repeated-row" data-tickettype="<?php echo esc_attr( $key ); ?>" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="<?php echo absint( $index ); ?>" />
             <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
          <ul class="nav nav-tabs">
              <!-- <li class="pull-right"><a class="ticket-notice-info1" data-toggle="popover" data-trigger="hover"   data-placement="top" data-content="<?php _e('You can\'t delete ticket once it is added.You can make it private from settings tab.','wp-event-manager');?>" > <span class="glyphicon glyphicon-info-sign"></span><?php _e( 'Remove', 'wp-event-manager' ); ?><i class="far fa-trash-alt"></i></a></li> -->
+             <?php if(is_page('create-event')) { ?>
+             <li class="pull-right"><a href="#remove" class="remove-row" id="repeated-row-<?php echo $key . '-' . $index; ?>" ><?php _e( 'Remove', 'wp-event-manager' ); ?><i class="far fa-trash-alt"></i></a></li>
+             <?php } ?>
             <li><a class="active" data-toggle="tab" href="#<?php echo $key ;?>-details-<?php echo $key . '-' . $index; ?>"><?php _e('Ticket Details','wp-event-manager');?><i class="far fa-copy"></i></a></li>
             <li><a data-toggle="tab" href="#<?php echo $key . '_' . $index; ?>"><?php _e('Settings','wp-event-manager');?><i class="fas fa-cog"></i></a></li>
           </ul>
