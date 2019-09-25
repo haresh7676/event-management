@@ -439,7 +439,6 @@
         flex: 0 0 100%;
         text-align: center;
         margin-bottom: 20px;
-        height: auto;
     }
     .my-tickets .my-ticket-card-row .my-ticket-detail {
         padding-left: 0px;
@@ -994,7 +993,6 @@
     }
     .my-tickets .my-ticket-card-row .my-ticket-pic {
         flex: 0 0 100%;
-        height: auto;
         margin-bottom: 20px;
     }
     .my-tickets .my-ticket-card-row .my-ticket-detail {
@@ -1525,6 +1523,17 @@
     }
     .landing-page-banner {
         min-height: 210px;
+    }
+    .my-ticket-card-row .ticket-status-btn .mylisting-fav {
+        width: 48%;
+        display: inline-block;
+        margin-bottom: 0px;
+        margin-right: 2%;
+        font-size: 14px;
+        height: 44px;
+    }
+    .my-ticket-card-row .ticket-status-btn .mylisting-fav .btn {
+        height: 100%;
     }
 }
 @media only screen 

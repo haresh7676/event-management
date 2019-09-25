@@ -9,7 +9,7 @@
         <form class="paypalconnect" name="paypalconnect" id="paypalconnect" method="post">
             <div class="textfield-row">
                 <label>PayPal Email</label><br>
-                <input type="email" class="form-controls" placeholder="Hi@yourethebest.com" name="paypalEmail" value="<?php echo $paypalreciver; ?>" required><br>
+                <input type="email" class="form-controls wdth100" placeholder="Hi@yourethebest.com" name="paypalEmail" value="<?php echo $paypalreciver; ?>" required><br>
                 <span><em>This email id used for received payment for your event</em></span>
 
             </div>
