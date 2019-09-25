@@ -3390,5 +3390,17 @@ i.drp-icn {
 .woocommerce .blockUI.blockOverlay:before {
     background: url(../../assets/images/loader.svg);
 }
+.wdth100 {
+    width: 100%;
+}
+.login-main .row:before, .login-main .row:after {
+    display: none;
+}
+.custom-tab-design .tab-pane .sub-tab-design.manage-events,
+.custom-tab-design .sub-tab-design.manage-events .tab-content,
+.custom-tab-design .manage-events .tab-content .tab-pane,
+.custom-tab-design .tab-content .manage-events-tab {
+    height: auto;
+}
 
 /* AR479-changes after development */
