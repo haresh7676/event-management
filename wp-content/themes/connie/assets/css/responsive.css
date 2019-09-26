@@ -18,7 +18,7 @@
         height: 44px;
     }
     .user-top-nav a.dropdown-item {
-        padding: 10px 30px;
+        padding: 10px 20px;
     }
     .add-new-card .enter-card-btn {
         height: 44px;
@@ -65,7 +65,6 @@
     .browe-event-content .browe-event-filter {
         padding: 10px 0 5px 0;
     }
-
 }
 @media (min-width: 1024px) and (max-width: 1199px) {
     .landing-page-banner .landing-banner-content h2 {
@@ -691,9 +690,6 @@
     .landing-page-content .landing-page-title h4 {
         font-size: 25px;
         padding-left: 10px;
-    }
-    .u-events-box .u-event-pic {
-        height: auto;
     }
     .u-events-box .u-event-details {
         min-height: inherit;
@@ -1524,6 +1520,9 @@
     .landing-page-banner {
         min-height: 210px;
     }
+    .with-banner .landing-page-banner {
+        min-height: inherit;
+    }
     .my-ticket-card-row .ticket-status-btn .mylisting-fav {
         width: 48%;
         display: inline-block;
@@ -1544,4 +1543,4 @@
     .landing-page-banner .landing-banner-content {
         bottom: 20px;
     }
-  }
+}
