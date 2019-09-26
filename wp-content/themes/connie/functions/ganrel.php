@@ -88,6 +88,8 @@ function get_sell_start_price($event_id){
             }else {
                 return 'Starts at ' . wc_price($r[0]);
             }
+        }else{
+            return 'No Ticket Available';
         }
     }
 }

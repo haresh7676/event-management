@@ -46,10 +46,7 @@
 <!-- Box Layout -->
 <a <?php event_listing_class(); ?> href="<?php display_event_permalink(); ?>">
  <div class="box-layout u-events-box">
-     <div class="event-img u-event-pic"><?php display_event_banner(); ?> <div class="whislistwpr"><?php echo do_shortcode('[show_gd_mylist_btn]'); ?></div><?php //echo (function_exists('get_favorites_button'))?get_favorites_button($post->ID, ''):''; ?><!--<i class="fas fa-heart"></i>--></div>
-      <!-- <div class="boxes-view-box-registered-code">
-                <?php /*do_action('event_already_registered_title');*/?>
-        </div>-->
+     <div class="event-img u-event-pic"><?php display_event_banner(); ?> <div class="whislistwpr"><?php echo do_shortcode('[show_gd_mylist_btn]'); ?></div><?php //echo (function_exists('get_favorites_button'))?get_favorites_button($post->ID, ''):''; ?><!--<i class="fas fa-heart"></i>--></div>      
     <div class="u-event-details">
         <div class="event-start-date date-month"><?php $date_format = WP_Event_Manager_Date_Time::get_event_manager_view_date_format();
             //echo date_i18n( $date_format, strtotime(get_event_start_date()) );?>
@@ -63,19 +60,19 @@
             <ul>
                 <?php $newformate = 'D, M jS'; ?>
                 <li title="<?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.png" alt=""><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?></li>
-                <li title="<?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else:  display_event_venue_name(false); endif; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/map-icon.png" alt=""><?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else:  display_event_venue_name(false); endif; ?></li>                
+                <?php 
+                $eventvenu = get_event_venue_name();
+                $eventlocation = get_event_location();
+                $printlocations = '';
+                if(!empty($eventvenu) || !empty($eventlocation)){
+                    $printlocations = !empty($eventvenu)?$eventvenu:$eventlocation;
+                }
+                if(!empty($printlocations)){
+                ?>
+                <li title="<?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else: echo $printlocations; endif; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/map-icon.png" alt=""><?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else: echo $printlocations; endif; ?></li>
+                <?php } ?>                
                 <li><?php echo (function_exists('get_sell_start_price')?get_sell_start_price($post->ID):''); ?> </li>
-            </ul>
-            <!--<div class="event-location">
-             <i class="glyphicon glyphicon-map-marker"></i>
-             <?php /*if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else:  display_event_location(false); endif; */?>
-            </div>
-            <div class="box-footer">
-             <?php /*if ( get_option( 'event_manager_enable_event_types' ) ) {  */?>
-              <div class=""> <?php /*display_event_type(); */?> </div>
-              <?php /*} */?>
-              <div class="event-ticket"><?php /*echo '#'.get_event_ticket_option(); */?></div>
-            </div>-->
+            </ul>           
         </div>
     </div>
  </div>

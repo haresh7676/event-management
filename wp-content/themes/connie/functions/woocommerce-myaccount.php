@@ -249,7 +249,9 @@ function get_volunteer_data() {
         }
     }else{
         $output.='<tr>';
-        $output.='<td colspan="7">No record found.</td>';
+        $output.='<td colspan="7">';
+        $output.='<p class="norecordtable">No record found.</p>';
+        $output.='</td>';
         $output.='</tr>';
     }
     $output.='</tbody>';
@@ -323,7 +325,13 @@ function get_team_member_data() {
             $output.='<td>'.$item['form_data']['position'].'</td>';
             $output.='</tr>';
         }
-    }
+    }else{
+        $output.='<tr>';
+        $output.='<td colspan="5">';
+        $output.='<p class="norecordtable">No record found.</p>';
+        $output.='</td>';
+        $output.='</tr>';
+    }    
     $output.='</tbody>';
     $output.='</table>';
     $output.='</div>';
@@ -385,6 +393,10 @@ function get_report_problem_contact_data() {
             $output.='<div class="m-e-contact-profile-time">'.connic_time_elapsed_string($item['form_date']).'</div>';
             $output.='</li>';
         }
+    }else{        
+        $output.='<li>';        
+        $output.='<p class="norecordtable">No record found.</p>';        
+        $output.='</li>';    
     }
     $output.='</ul>';
     /*pagination */
