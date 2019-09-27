@@ -40,6 +40,9 @@ $woocommerce->cart->empty_cart();
 				echo '</div>';
 				?>
 			</div>
+            <div class="order-loader">
+                <div class="lds-dual-ring"></div>
+            </div>
 		</div>
 	</div>
 </div>
