@@ -90,7 +90,7 @@ function connic_checkout_page_add_title( $content ) {
             $eventid = get_post_meta($product_id,'_event_id',true);
             if(!empty($product_id) && !empty($eventid)){
                 $eventname = get_post_by_eventid($eventid);
-                $custom_content ='<div class="cart-page-title"><a href="http://localhost/event-management/event/quirkcon/">'.$eventname.'</a></div>';
+                $custom_content ='<div class="cart-page-title"><a href="'.get_permalink($eventid).'">'.$eventname.'</a></div>';
             }
     }    
     $custom_content .= $content;

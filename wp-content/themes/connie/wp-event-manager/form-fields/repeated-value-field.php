@@ -16,7 +16,7 @@
 	<?php     
     foreach ( $field['value'] as $index => $value ) : ?>
  
-		<div class="repeated-row-<?php echo $key . '-' . $index; ?>">
+		<div class="fieldset-<?php echo $key; ?> repeated-row-<?php echo $key . '-' . $index; ?>">
 		<input type="hidden" class="repeated-row" data-tickettype="<?php echo esc_attr( $key ); ?>" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="<?php echo absint( $index ); ?>" />
             <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
          <ul class="nav nav-tabs">
@@ -39,8 +39,8 @@
                     }
                   foreach ( $field['fields'] as $subkey => $subfield ) : 
                             if ($subkey == 'ticket_description') : ?>
-                </div><!------------end ticket details tab------>
-                </div><!------ end wpr div ------>
+                </div>
+                </div>
                 <div id="<?php echo $key . '_' . $index; ?>" class="tab-pane fade setting-description">
                             <?php endif;?>        
                  <!--<div class="row">-->
@@ -68,6 +68,12 @@
                                             $subfield['min']  = 0;
                                             $subfield['max']  = 9999999;
                                             $subfield['maxlength']  = 7;
+                                        }
+                                        if($subkey == 'ticket_sales_start_date'){
+                                            $subfield['class']  = 'date start';
+                                        }
+                                        if($subkey == 'ticket_sales_end_date'){
+                                            $subfield['class']  = 'date end';
                                         }
     							        get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
                                     ?>

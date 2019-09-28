@@ -113,7 +113,7 @@ jQuery(document).ready(function($) {
         document.addEventListener('change', function(e){
            $(e.target).removeClass("invalid")
         }, true);
-    }
+    }  
 
 
     /*$('#event_start_time').on('changeTime', function() {

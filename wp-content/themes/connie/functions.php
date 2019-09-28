@@ -57,6 +57,11 @@ function projectname_scripts() {
 
         wp_enqueue_script('boot4', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js', array('jquery'), '', true);
 
+        wp_enqueue_script('moment', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js', array('jquery'), '', true);
+
+    wp_enqueue_script('datepair-min-js', get_theme_file_uri('/assets/js/datepair.js'), array('jquery'), rand(0,999), false);
+    wp_enqueue_script('jquer-datepair-min-js', get_theme_file_uri('/assets/js/jquery.datepair.js'), array('jquery'), rand(0,999), false);
+
     wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), rand(0,999), true);
 	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), rand(0,999), true );
     wp_enqueue_script( 'simple-calendar-js', get_theme_file_uri( '/assets/js/jquery.simple-calendar.js' ), array( 'jquery' ), '1.0', false );

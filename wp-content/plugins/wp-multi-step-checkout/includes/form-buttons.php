@@ -8,7 +8,23 @@
         <?php if( $options['show_back_to_cart_button'] ) : ?>
         <button data-href="<?php echo wc_get_cart_url(); ?>" id="wpmc-back-to-cart" class="button alt" type="button"><?php echo $options['t_back_to_cart']; ?></button>
         <?php endif; ?>
-        <a href="javascript:history.go(-1)" class="button button-active alt currentbtn"><?php echo $options['t_previous']; ?></a>
+        <?php 
+        $custom_linkback = 'javascript:history.go(-1)';
+        if(!empty(WC()->cart->get_cart())){
+            foreach ( WC()->cart->get_cart() as $cart_item ) {
+                $product = $cart_item['data'];                    
+                if(!empty($product)){
+                    $product_id = $product->get_product_id();            
+                }
+            }
+            $eventid = get_post_meta($product_id,'_event_id',true);
+            if(!empty($product_id) && !empty($eventid)){
+                $eventname = get_post_by_eventid($eventid);
+                $custom_linkback = get_permalink($eventid).'/tickets/';
+            }
+        }    
+        ?>
+        <a href="<?php echo $custom_linkback; ?>" class="button button-active alt currentbtn"><?php echo $options['t_previous']; ?></a>
         <button id="wpmc-prev" class="button button-inactive alt" type="button"><?php echo $options['t_previous']; ?></button>
     </div>
     <div class="wpmc-footer-right wpmc-nav-buttons">

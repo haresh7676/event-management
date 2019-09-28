@@ -52,7 +52,18 @@ if(!empty($order_items)) {
                                 echo '<ul>';
                                 $newformate = 'D, M jS';
                                 echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';
-                                echo '<li><img src="'.get_template_directory_uri().'/assets/images/map-icon.png" alt="">'.display_event_venue_name(false,false,false).'</li>';
+                                $eventvenu = get_event_venue_name();
+                                $eventlocation = get_event_location();
+                                $printlocations = '';                                
+                                if(!empty($eventvenu) || !empty($eventlocation)){
+                                    $printlocations = !empty($eventvenu)?$eventvenu:$eventlocation;
+                                    $locations = !empty($eventlocation)?$eventlocation:$eventvenu;
+                                }
+                                if(!empty($printlocations)){
+                                    echo '<li><img src="'.get_template_directory_uri().'/assets/images/map-icon.png" alt="">'.$printlocations.'</li>';
+                                    echo '<li><a class="get-link" href="http://maps.google.com/maps?q='. urlencode( $locations ) . '&zoom=14&size=512x512&maptype=roadmap&sensor=false" target="_blank">Get Directions</a></li>';
+                                }
+                                //echo '<li><img src="'.get_template_directory_uri().'/assets/images/map-icon.png" alt="">'.display_event_venue_name(false,false,false).'</li>';
                                 echo '</ul>';
                                 ?>
                             </div>

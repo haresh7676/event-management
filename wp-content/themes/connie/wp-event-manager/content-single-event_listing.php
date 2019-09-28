@@ -192,7 +192,7 @@ $themesettings =  get_fields('theme-settings');
                                        'meta_value'   => $event_id,
                                  );
 
-                        $all_tickets=get_posts($args);
+                        $all_tickets=get_posts($args);                       
 
 
                         if(!empty($all_tickets) && $all_tickets[0]->ID >= 1) {
@@ -293,7 +293,7 @@ $themesettings =  get_fields('theme-settings');
                     <div class="date-and-time">
                         <h3 class="e-p-cart-title">Date And Time</h3>
                         <?php $newformate = 'D, M j, Y'; ?>
-                        <span class="c-p-span"><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_end_time();?></span>
+                        <span class="c-p-span"><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?>, <?php display_event_start_time();?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' – D, M j, Y,', strtotime(get_event_end_date()) ):' -'; ?>&nbsp;<?php display_event_end_time();?></span>
                         <!--<a href="#" class="view-detail">Add to Calendar</a>-->
                         <?php
                         if(!empty($themesettings) && (isset($themesettings['volunteer_form']) && !empty($themesettings['volunteer_form']))){
