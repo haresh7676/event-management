@@ -59,7 +59,7 @@
             <!--</div>-->
             <ul>
                 <?php $newformate = 'D, M jS'; ?>
-                <li title="<?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.png" alt=""><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?></li>
+                <li title="<?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.png" alt=""><?php echo date_i18n( $newformate, strtotime(get_event_start_date()) ); ?><?php echo (strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','; ?>&nbsp;<?php display_event_start_time();?> - <?php display_event_end_time();?></li>
                 <?php 
                 $eventvenu = get_event_venue_name();
                 $eventlocation = get_event_location();

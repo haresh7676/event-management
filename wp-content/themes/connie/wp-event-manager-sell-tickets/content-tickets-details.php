@@ -49,7 +49,7 @@ $event_timezone   = get_event_timezone();
                       $product_id       = $post_data->ID;       
                       $show_description = get_post_meta($post_data->ID , '_ticket_show_description',true);
                       $price            = get_post_meta($post_data->ID,'_price',true);
-                      $ticket_sales_start_date = get_post_meta($post_data->ID,'_ticket_sales_start_date',true);
+                      $ticket_sales_start_date = get_post_meta($post_data->ID,'_ticket_sales_start_date',true);                      
                       $ticket_sales_end_date = get_post_meta($post_data->ID,'_ticket_sales_end_date',true);
                       $ticket_fee_pay_by = get_post_meta($product_id , '_ticket_fee_pay_by',true); //ticket_fee_pay_by : ticket_fee_pay_by_organizer or ticket_fee_pay_by_attendee 
                       $price            = $price == 0 ? __('Free', 'wp-event-manager-sell-tickets'): $price;     
@@ -81,74 +81,13 @@ $event_timezone   = get_event_timezone();
                           }
                          ?>
                      </td>
-                    <?php /*
-                    if( $fee_enable== 'yes'  ){  ?>
-                    <td>
-                      <?php
-                        if(!empty($fee_settings)){
-                           $percentage_fee_value = 0;
-                           $fixed_fee_value = 0;
-                           foreach ( $fee_settings  as $key => $value){ 
-                                if(strtoupper( $value['fee_country'] )  ==  get_event_host_country_code(get_the_ID()) || empty( $value['fee_country'] ))
-                                {           
-                                if($ticket_fee_pay_by == 'ticket_fee_pay_by_attendee' && $value['fee_value'] > 0  &&  $value['fee_mode'] == 'fee_per_ticket' )
-                                {
-                                  if($value['fee_type'] == 'fee_in_percentage' ){
-                                    $percentage_fee_value += $price * ($value['fee_value'] / 100);
-                                    if( isset($value['maximum_fee'] ) && $percentage_fee_value >= $value['maximum_fee'])  $percentage_fee_value = $value['maximum_fee']; 
-                                  }
-                                  elseif($value['fee_type'] == 'fixed_fee' ){
-                                    $fixed_fee_value += $value['fee_value'];
-                                    //if maximum fee is set 
-                                    if( isset($value['maximum_fee'] ) && $fixed_fee_value >= $value['maximum_fee'])  $fixed_fee_value = $value['maximum_fee']; 
-                                  }                       
-                                }
-                                else
-                                {
-                                  _e('','wp-event-manager-sell-tickets');
-                                }
-                                }       
-                                $total_fee = $fixed_fee_value + $percentage_fee_value;
-                            if( isset($value['maximum_fee'] ) && $total_fee >= $value['maximum_fee'])  $total_fee = $value['maximum_fee'];      
-                                
-                           } //end fee attribute loop
-                           
-                           if(! isset($total_fee)){
-                               $total_fee = $fixed_fee_value + $percentage_fee_value;
-                           }
-                            
-                           _e(get_woocommerce_currency_symbol().$total_fee,'wp-event-manager-sell-tickets');
-                      ?>
-                    </td>            
-                    <?php 
-                         }
-                    } */ ?>
+                  
                     <?php if($stock_status == 'outofstock' ) : ?>
                       <td>
                         <?php   _e('Sold Out','wp-event-manager-sell-tickets'); ?>
                       </td>
                       <?php else : ?>
-                       <?php
-
-                                  /*if(!empty( $ticket_sales_start_date ) &&  $current_timestamp <  strtotime( $ticket_sales_start_date ) ) { */?><!--
-                              <td>
-                              <?php
-      /*                            printf(__('Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)) ); */?>
-                              </td>
-                              <?php
-      /*                        }
-                              elseif(!empty($ticket_sales_end_date) &&  $current_timestamp >   strtotime($ticket_sales_end_date) ){ */?>
-                              <td>
-                              <?php
-      /*                                  printf(__('Sales Ended %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));
-                                  */?>
-                                  </td>
-
-                                  <?php
-      /*                        }
-                              else{ */?>
-                               <td> <?php /*printf(__('End : %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));*/?></td>
-                              --><?php /*}*/ ?>
+                      
                       <td width="50%">
                         <?php
                           if(!empty($ticket_sales_start_date) &&  $current_timestamp > strtotime($ticket_sales_start_date) && $current_timestamp <   strtotime($ticket_sales_end_date) ) { ?>
@@ -175,9 +114,9 @@ $event_timezone   = get_event_timezone();
                             <?php
                           }
                           else{
-                            $view_date_format= 'D, M j, Y';
+                            $view_date_format= 'D, M jS, h:s A';
                             if(!empty( $ticket_sales_start_date ) &&  $current_timestamp <  strtotime( $ticket_sales_start_date ) ) {
-                              printf(__('Sales Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)) );
+                              printf(__('Sales Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)));
                             }elseif(!empty($ticket_sales_end_date) &&  $current_timestamp >   strtotime($ticket_sales_end_date) ){
                               printf(__('Sales Ended %s','wp-event-manager-sell-tickets'),date($view_date_format,strtotime($ticket_sales_end_date)));
                             }else{
@@ -207,7 +146,7 @@ $event_timezone   = get_event_timezone();
              </table>
            </div>
         </form>
-        <a href="#" class="first-step-back-btn">Back</a>
+        <a href="<?php echo get_permalink(); ?>" class="first-step-back-btn">Back</a>
       </div>
   </div>
 </div>

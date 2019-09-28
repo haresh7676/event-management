@@ -16,7 +16,7 @@
 <a href="#" class="event_ticket_add_link" data-type="<?php echo esc_attr( $key ); ?>" data-row="<?php
 	ob_start();
 	?>
-		<div class="repeated-row-<?php echo esc_attr( $key.'_%%repeated-row-index%%' ); ?>">
+		<div class="fieldset-paid_tickets repeated-row-<?php echo esc_attr( $key.'_%%repeated-row-index%%' ); ?>">
 		
 		<input type="hidden" class="repeated-row" data-tickettype="<?php echo esc_attr( $key ); ?>" name="repeated-row-<?php echo esc_attr( $key ); ?>[]" value="%%repeated-row-index%%" />
             <h4 class="pull-right ticket-heading"><?php echo esc_attr(str_replace('_',' ',$key)); ?></h4>
@@ -70,6 +70,12 @@
                                             $subfield['min']  = 0;
                                             $subfield['max']  = 9999999;
                                             $subfield['maxlength']  = 7;
+                                        }
+                                        if($subkey == 'ticket_sales_start_date'){
+                                            $subfield['class']  = 'date start';
+                                        }
+                                        if($subkey == 'ticket_sales_end_date'){
+                                            $subfield['class']  = 'date end';
                                         }
             							get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
             						?>
