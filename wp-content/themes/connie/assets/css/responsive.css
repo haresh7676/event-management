@@ -574,6 +574,9 @@
     .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
         width: 240px;
     }
+    .memd-ttl {
+        font-size: 13px;
+    }
 }
 @media (min-width: 768px) and (max-width: 768px) {
     .user-top-nav .usr-nm {
@@ -1352,6 +1355,23 @@
         max-height: inherit;
         overflow: inherit;
     }
+    .me-md-countbox {
+        flex-wrap: wrap;
+        box-shadow: none;
+    }
+    .memd-cont {
+        border:1px solid #C4C4C4 !important;
+        flex-basis: 33.33%;
+        margin-bottom: -1px;
+        margin-left: -1px;
+        padding-top: 0px;
+    }
+    .me-md-countbox.countbox-row .memd-ttl {
+        margin-top: 0;
+    }
+    .me-md-box h4 {
+        padding-left: 0px;
+    }
 }
 @media (max-width: 567px) {
     .gallery-small-photos ul li {
@@ -1413,6 +1433,10 @@
     .export-list-row {
         display: block;
         text-align: center;
+        padding: 0 0 10px 0;
+    }
+    .custom-pagination .pagination-list a {
+        width: 22px;
     }
     .custom-pagination {
         text-align: center;
@@ -1533,6 +1557,21 @@
     }
     .my-ticket-card-row .ticket-status-btn .mylisting-fav .btn {
         height: 100%;
+    }
+    .memd-ttl {
+        min-height: 54px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    .me-md-countbox.countbox-row .memd-ttl {
+        min-height: inherit;
+    }
+    .me-md-countbox.countbox-row .memd-cont {
+        padding: 15px 20px;
+    }
+    .memd-cont h6 {
+        margin: 20px 0;
     }
 }
 @media only screen 

@@ -139,7 +139,7 @@ $themesettings =  get_fields('theme-settings');
                            {  ?>
                             <ul>
                                 <?php if($websiteurl) { ?>
-                                    <li><a href=" <?php echo $websiteurl; ?>" class="website-link" target="_blank"  itemprop="url" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/domain.png" alt=""></a></li>
+                                    <li><a href=" <?php echo $websiteurl; ?>" class="website-link" target="_blank"  itemprop="url" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/website-icon.svg" alt=""></a></li>
                                 <?php  } ?>    
                                 <?php if($facebook) { ?>
                                     <li class="facebook"><a href=" <?php echo esc_url($facebook); ?>"  class="facebook" target="_blank" itemprop="facebook" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>

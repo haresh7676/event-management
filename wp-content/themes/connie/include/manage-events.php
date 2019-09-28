@@ -37,9 +37,70 @@
             </div>
             <!-- My Ticket Tab2 -->
             <div class="tab-pane fade" id="myDashboard">
-                <h2>My Dashboard</h2>
+                <!-- <h2>My Dashboard</h2> -->
                 <div class="mydashboard-main-wpr">
-                <?php do_action('event_manager_event_dashboard_before'); ?>
+                    <!-- <?php do_action('event_manager_event_dashboard_before'); ?> -->
+                    <div class="me-md-box">
+                        <h4>Toal Resitration<span>2</span></h4>
+                        <div class="me-md-countbox">
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    New
+                                </div>
+                                <h6>2</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Confirm
+                                </div>
+                                <h6>0</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Waiting
+                                </div>
+                                <h6>0</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Cancelled
+                                </div>
+                                <h6>0</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Archived
+                                </div>
+                                <h6>0</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Total Checkin
+                                </div>
+                                <h6>0</h6>
+                            </div>
+                        </div>
+                        <div class="me-md-countbox countbox-row">
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Total Sold Tickets
+                                </div>
+                                <h6>2</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Paid Tickets
+                                </div>
+                                <h6>2</h6>
+                            </div>
+                            <div class="memd-cont">
+                                <div class="memd-ttl">
+                                    Free Tickets
+                                </div>
+                                <h6>2</h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- My Ticket Tab3 -->
