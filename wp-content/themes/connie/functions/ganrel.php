@@ -300,3 +300,11 @@ function reportproblem_wp_footer() {
 </script>
 <?php
 }
+
+add_filter('gettext', 'core_text_changes_func');
+function core_text_changes_func($translated_text){
+    if($translated_text == 'Sorry, that username already exists!'){
+        $translated_text = 'Sorry, that phone number already exists!';
+    }
+    return $translated_text;
+}
