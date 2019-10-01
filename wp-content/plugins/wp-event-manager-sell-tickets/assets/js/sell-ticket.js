@@ -395,7 +395,7 @@ var SellTicket= function () {
 				var tickets_to_add = {};
 				var total_ticket = jQuery('#total_ticket').val();
 			
-				if(  total_ticket <= 0  ){ 					
+				if(  total_ticket <= 0  ){
 					return false;
 				}
 				
@@ -435,7 +435,8 @@ var SellTicket= function () {
 								beforeSend: function(jqXHR, settings) 
 								{
 								    Common.logInfo("Before send called...");
-								     jQuery('#sell-ticket-status-message').addClass('alert-infomation');
+								    jQuery('#sell-ticket-status-message').addClass('alert-infomation');
+                                    jQuery('.order-loader').show();
 								    jQuery('#sell-ticket-status-message').html(event_manager_sell_tickets_sell_ticket.i18n_loading_message); 
 								    
 								},
@@ -454,6 +455,7 @@ var SellTicket= function () {
                                         data, // Send our PHP function
                                         function(response){
                                             jQuery('#mode-mini-cart').html(response); // Repopulate the specific element with the new content
+                                            jQuery('.order-loader').hide();
                                         }
                                     );
 								},
@@ -461,7 +463,8 @@ var SellTicket= function () {
 								{ 		           
 									jQuery('#sell-ticket-status-message').removeClass('success-green-message');
 									jQuery('#sell-ticket-status-message').addClass('error-red-message');
-								    jQuery('#sell-ticket-status-message').html(event_manager_sell_tickets_sell_ticket.i18n_error_message); 
+								    jQuery('#sell-ticket-status-message').html(event_manager_sell_tickets_sell_ticket.i18n_error_message);
+                                    jQuery('.order-loader').hide();
 								},
 								complete: function (jqXHR, textStatus) 
 								{			

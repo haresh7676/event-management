@@ -114,9 +114,7 @@ include_once(dirname(__FILE__) .'/form-tabs.php');
 
 <?php wc_print_notices(); ?>
 
-<div id="checkout_coupon" class="woocommerce_checkout_coupon" style="display: none;">
-	<?php do_action( 'wpmc-woocommerce_checkout_coupon_form', $checkout ); ?>
-</div>
+
 
 <div id="woocommerce_before_checkout_form" class="woocommerce_before_checkout_form" data-step="<?php echo apply_filters('woocommerce_before_checkout_form_step', 'step-review'); ?>" style="display: none;">
     <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
@@ -156,6 +154,10 @@ include_once(dirname(__FILE__) .'/form-tabs.php');
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+</div>
+
+<div id="checkout_coupon" class="woocommerce_checkout_coupon" style="display: none;">
+    <?php do_action( 'wpmc-woocommerce_checkout_coupon_form', $checkout ); ?>
 </div>
 
 <?php include_once(dirname(__FILE__).'/form-buttons.php'); ?>

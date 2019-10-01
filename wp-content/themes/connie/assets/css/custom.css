@@ -564,6 +564,14 @@ h4.pull-right.ticket-heading {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
     background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
+.order-loader {display: none}
+#checkout_coupon .woocommerce-form-coupon{
+    display: block !important;
+}
+.wpmc-steps-wrapper > .woocommerce-notices-wrapper, .wpmc-steps-wrapper > .woocommerce-message{display: none;}
+#checkout_coupon .woocommerce-message{
+    display: none;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }

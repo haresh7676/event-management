@@ -99,3 +99,6 @@ function connic_checkout_page_add_title( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'connic_checkout_page_add_title' );
+
+//remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form');
+//add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
