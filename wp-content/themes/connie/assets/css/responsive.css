@@ -1372,6 +1372,17 @@
     .me-md-box h4 {
         padding-left: 0px;
     }
+    .cart-main-area .woocommerce_checkout_coupon .checkout_coupon .form-row-first {
+        width: 100%;
+    }
+    .cart-main-area .woocommerce_checkout_coupon .checkout_coupon .form-row-last {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .cart-main-area .woocommerce_checkout_coupon .checkout_coupon p:first-child {
+        font-size: 14px;
+    }
 }
 @media (max-width: 567px) {
     .gallery-small-photos ul li {

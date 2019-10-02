@@ -2542,7 +2542,7 @@ i.drp-icn {
 .cart-main-area {
     background: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
-    padding: 40px 20px 20px 20px;
+    padding: 20px;
     width: 100%;
     float: left;
 }
@@ -2567,6 +2567,10 @@ i.drp-icn {
     float: left;
     padding: 0 15px;
     position: relative;
+    min-height: 320px;
+}
+.min-cart-main .woocommerce-mini-cart__empty-message {
+	font-size: 16px;
 }
 .cart-page-title {
     text-align: center;
@@ -2987,8 +2991,8 @@ i.drp-icn {
 }
  .cart-main-area .woocommerce .checkout_coupon {
     font-size: 13px;
-    margin: 1em 0;
-    padding: 10px 20px;
+    margin: 0 0 1em 0;
+    padding: 10px;
 }
 .wpcf7 span.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
     font-size: 13px !important;
@@ -3434,12 +3438,11 @@ i.drp-icn {
 .lds-dual-ring { display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .lds-dual-ring:after { content: " "; display: block; width: 50px; height: 50px; border-radius: 50%; border: 5px solid #fff; border-color: #775dff transparent #775dff transparent; animation: lds-dual-ring 1.2s linear infinite; }
 @keyframes lds-dual-ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
+.cart-main-area .woocommerce_checkout_coupon .checkout_coupon .form-row-first { width: 29%; }
+.cart-main-area .woocommerce_checkout_coupon .checkout_coupon .form-row-last  { width: 70%; }
+.cart-main-area .woocommerce_checkout_coupon .checkout_coupon p:first-child { font-size: 16px; }
 
 /* AR479-changes after development */
