@@ -640,6 +640,34 @@ function custom_rename_wc_checkout_fields( $fields ) {
 add_action("wp_ajax_get_favoritelisting_ajax", "get_favoritelisting_ajax");
 
 function get_favoritelisting_ajax(){
+    $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
+        'numberposts' => -1,
+        'meta_key'    => '_customer_user',
+        'meta_value'  => get_current_user_id(),
+        'post_type'   => wc_get_order_types( 'view-orders' ),
+        'post_status' => array_keys( wc_get_order_statuses() ),
+    ) ) );
+    if ( $customer_orders ) :
+        $upcomingeveent = array();
+        $pastevent = array();
+        foreach ( $customer_orders as $orderkey => $customer_order ) :
+            $order      = wc_get_order( $customer_order );
+            $orderid = $order->get_order_number();
+            $order_items= $order->get_items();
+            foreach ( $order_items as $item_id => $item ) {
+                $order_productid = $item->get_product_id();
+            }
+            $eventid = '';
+            if(!empty($order_productid)){
+                $eventid = get_post_meta($order_productid,'_event_id',true);
+            }
+            if(!empty($eventid) && get_post_status ($eventid) == 'expired'){
+                $pastevent[$orderid] = $eventid;
+            }else{
+                $upcomingeveent[$orderid] = $eventid;
+            }
+        endforeach;
+    endif;
     $userid = get_current_user_id();
     $list = get_myfavoratelist();                
     if (!empty($userid) && !empty($list)) {                    
@@ -660,7 +688,12 @@ function get_favoritelisting_ajax(){
                 echo '</ul>';
                 echo '</div>';
                 echo '<div class="ticket-status-btn align-self-center">';
-                echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
+                $key = array_search (get_the_ID(), $upcomingeveent);
+                if(!empty($key)){
+                    echo "<button onclick=window.open('".site_url()."/my-account/view-order/".$key."')>See Details</button>";
+                }else{
+                    echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
+                }                
                 //echo get_favorites_button(get_the_ID(), '');                            
                 echo '<div class="mylisting-fav myfavlist">';
                 //$arg = array ('echo' => true );

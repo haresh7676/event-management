@@ -155,7 +155,12 @@
                             echo '</ul>';
                             echo '</div>';
                             echo '<div class="ticket-status-btn align-self-center">';
-                            echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
+                            $key = array_search (get_the_ID(), $upcomingeveent);
+                            if(!empty($key)){
+                                echo "<button onclick=window.open('".site_url()."/my-account/view-order/".$key."')>See Details</button>";
+                            }else{
+                                echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
+                            }
                             //echo get_favorites_button(get_the_ID(), '');                            
                             echo '<div class="mylisting-fav myfavlist">';
                             //$arg = array ('echo' => true );
