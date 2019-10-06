@@ -37,9 +37,7 @@ jQuery(document).ready(function($) {
      if ($('.fieldset-event_album').length > 0) {
         $(".event-manager-uploaded-files" ).sortable();
      }
-    /*$(document).on("click", '.favoritelisting', function(e) {        
-
-        
+    $(document).on("click", '.favoritelisting', function(e) {
             var url = $(this).data('ajax');
             var loadtime = {action : 'get_favoritelisting_ajax'};
             var loaderimage = $('.tableloaderfavorites').data('loader');
@@ -56,29 +54,114 @@ jQuery(document).ready(function($) {
                     $('.tableloaderfavorites').html('');
                 }
             });
+            //fas fa-spinner fa-pulse
         
-    });*/
+    });
+    $(document).on("click", '.upcominglisting', function(e) {
+            var url = $(this).data('ajax');
+            var loadtime = {action : 'get_upcoming_ajax'};
+            var loaderimage = $('.tableloaderupcoming').data('loader');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: loadtime,
+                cache: false,
+                beforeSend: function() {
+                    $('.tableloaderupcoming').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+                },
+                success: function(html) {
+                    $('.tableloaderupcoming-data').html(html);
+                    $('.tableloaderupcoming').html('');
+                }
+            });
+            //fas fa-spinner fa-pulse
+        
+    });
+
+    $(document).on("click", '.pasteventlisting', function(e) {
+            var url = $(this).data('ajax');
+            var loadtime = {action : 'get_pastevent_ajax'};
+            var loaderimage = $('.tableloaderpast').data('loader');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: loadtime,
+                cache: false,
+                beforeSend: function() {
+                    $('.tableloaderupcoming').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+                },
+                success: function(html) {
+                    $('.tableloaderpast-data').html(html);
+                    $('.tableloaderpast').html('');
+                }
+            });
+            //fas fa-spinner fa-pulse
+        
+    });
+
+    $(document).on("click", '.addermovefav', function() {
+        var $this = $(this);
+        var url = $(this).data('ajax');
+        var postid = $(this).data('postid');
+        var userid = $(this).data('userid');
+        var dtaaction = $this.data('action');        
+        var loadtime = {action:'addremove_favoritelisting_ajax',postid:postid,userid:userid,dtaaction:dtaaction};  
+        if(userid != 0){          
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: loadtime,
+                dataType: "json",
+                cache: false,
+                beforeSend: function() {
+                    $this.children('i').removeClass('far fas fa-heart').addClass('fas fa-spinner fa-pulse');
+                },
+                success: function(html) {                    
+                    if(html.action == 'added'){
+                        $this.children('i').removeClass('fas fa-spinner fa-pulse').addClass('fas fa-heart');                                                
+                        $this.data("action", "remove");
+                        alert(html.msg);                        
+                    }else{
+                        $this.children('i').removeClass('fas fa-spinner fa-pulse').addClass('far fa-heart');                        
+                        //$this.attr("data-action", "add");
+                        $this.data("action", "add");
+                        alert(html.msg);
+                        if(html.action == 'removed'){
+                            if($this.parent().hasClass('myfavlist')){
+                                $this.parent().parent().parent('.my-ticket-card-row').remove();
+                            }
+                        }
+                    }
+                    //$('.tableloaderfavorites-data').html(html);
+                    //$('.tableloaderfavorites').html('');
+                }
+            });        
+        }else{
+            alert('Please login first.');
+        }
+    });
+
 
     if ($('.get_volunteer_data').length > 0) {
-        showRecords(3, 1, 'get_volunteer_data');
+        showRecords(10, 1, 'get_volunteer_data');
         $('.get_volunteer_data .event-dropdown').on("change", function(e) {
-            showRecords(3, 1, 'get_volunteer_data');
+            showRecords(10, 1, 'get_volunteer_data');
         });
     }
     if ($('.get_team_member_data').length > 0) {
-        showRecords(3, 1, 'get_team_member_data');
+        showRecords(10, 1, 'get_team_member_data');
     }
     if ($('.get_report_problem_contact_data').length > 0) {
-        showRecords(3, 1, 'get_report_problem_contact_data');
+        showRecords(10, 1, 'get_report_problem_contact_data');
         $('.get_report_problem_contact_data .event-dropdown').on("change", function(e) {
-            showRecords(3, 1, 'get_report_problem_contact_data');
+            showRecords(10, 1, 'get_report_problem_contact_data');
         });
     }
 
     if ($('.get_attendees_data').length > 0) {
-        showRecords(3, 1, 'get_attendees_data');
+        showRecords(10, 1, 'get_attendees_data');
         $('.get_attendees_data .event-dropdown').on("change", function(e) {
-            showRecords(3, 1, 'get_attendees_data');
+            showRecords(10, 1, 'get_attendees_data');
         });
     }
 

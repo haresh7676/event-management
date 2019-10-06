@@ -380,6 +380,13 @@ function get_report_problem_contact_data() {
         $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
     }
     $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);
+
+    //echo date("Y-m-d H:i:s"); 
+    //echo $datetime = new DateTime();
+    //echo $now = new \DateTime("now", new \DateTimeZone("Asia/Kolkata"));
+
+    //pr($results);
+    //exit;
     $output = '';
     $output .='<ul class="m-e-contact-list">';
     if(isset($results) && !empty($results['data'])){
@@ -429,8 +436,21 @@ function get_report_problem_contact_data() {
     die();
 }
 
+function getDatetimeNow() {
+    $tz_object = new DateTimeZone('Asia/Kolkata');
+    //date_default_timezone_set('Brazil/East');
+
+    $datetime = new DateTime();
+    $datetime->setTimezone($tz_object);
+    return $datetime;
+}
+
 function connic_time_elapsed_string($datetime, $full = false) {
-    $now = new DateTime;
+    date_default_timezone_set('Asia/Kolkata');
+    $now = new DateTime;    
+    //$now = getDatetimeNow();
+
+    //$now = new \DateTime("now", new \DateTimeZone("Asia/Kolkata"));
     $ago = new DateTime($datetime);
     $diff = $now->diff($ago);
 
@@ -643,9 +663,156 @@ function get_favoritelisting_ajax(){
                 echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
                 //echo get_favorites_button(get_the_ID(), '');                            
                 echo '<div class="mylisting-fav myfavlist">';
-                $arg = array ('echo' => true );
-                do_action('gd_mylist_btn',$arg);
+                //$arg = array ('echo' => true );
+                //do_action('gd_mylist_btn',$arg);
+                $postid = get_the_ID(); 
+                $userid = !empty(get_current_user_id())?get_current_user_id():'0';
+                $isFavorited = false;
+                if($userid != 0){
+                    $isFavorited = usrebygetfavrite($userid,$postid);            
+                }
+                echo '<a href="javascript:void(0)" class="btn btn-default addermovefav" id="mylists-'.$postid.'" data-postid="'.$postid.'" data-styletarget="'.$isFavorited.'" data-userid="'.$userid.'" data-action="'.(($isFavorited == 1)?'remove':'add').'" data-ajax="'.admin_url('admin-ajax.php').'"><i class="'.(($isFavorited == 1)?'fas':'far').' fa-heart"></i></a>';
                 echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "<span class='no-record-span'>No record found.</span>";
+        }
+        wp_reset_postdata();
+    }else{
+        echo "<span class='no-record-span'>No record found.</span>";
+    }
+    die();
+}
+
+add_action("wp_ajax_get_upcoming_ajax", "get_upcoming_ajax");
+
+function get_upcoming_ajax(){
+    $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
+        'numberposts' => -1,
+        'meta_key'    => '_customer_user',
+        'meta_value'  => get_current_user_id(),
+        'post_type'   => wc_get_order_types( 'view-orders' ),
+        'post_status' => array_keys( wc_get_order_statuses() ),
+    ) ) );
+    if ( $customer_orders ) :
+        $upcomingeveent = array();
+        $pastevent = array();
+        foreach ( $customer_orders as $orderkey => $customer_order ) :
+            $order      = wc_get_order( $customer_order );
+            $orderid = $order->get_order_number();
+            $order_items= $order->get_items();
+            foreach ( $order_items as $item_id => $item ) {
+                $order_productid = $item->get_product_id();
+            }
+            $eventid = '';
+            if(!empty($order_productid)){
+                $eventid = get_post_meta($order_productid,'_event_id',true);
+            }
+            if(!empty($eventid) && get_post_status ($eventid) == 'expired'){
+                $pastevent[$orderid] = $eventid;
+            }else{
+                $upcomingeveent[$orderid] = $eventid;
+            }
+        endforeach;
+    endif;
+    if(!empty($upcomingeveent)) {
+        $the_query = new WP_Query( array( 'post_type' => 'event_listing', 'post__in' => $upcomingeveent ) );
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+                echo '<div class="my-ticket-card-row">';
+                echo '<div class="my-ticket-pic">';
+                display_event_banner();
+                echo '</div>';
+                echo '<div class="my-ticket-detail">';
+                echo '<h3>' . get_post_by_eventid(get_the_ID()) . '</h3>';
+                echo '<ul>';
+                $newformate = 'D, M jS';
+                echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';
+                echo '<li><img src="'.get_template_directory_uri().'/assets/images/map-icon.png" alt="">'.display_event_venue_name(false,false,false).'</li>';
+                echo '</ul>';
+                echo '</div>';
+                echo '<div class="ticket-status-btn align-self-center">';
+                $key = array_search (get_the_ID(), $upcomingeveent);
+                echo "<button onclick=window.open('".site_url()."/my-account/view-order/".$key."')>See Details</button>";
+                //echo get_favorites_button(get_the_ID(), '');
+                echo '<div class="mylisting-fav">';
+                //$arg = array ('echo' => true );
+                //do_action('gd_mylist_btn',$arg);
+                $postid = get_the_ID(); 
+                $userid = !empty(get_current_user_id())?get_current_user_id():'0';
+                $isFavorited = false;
+                if($userid != 0){
+                    $isFavorited = usrebygetfavrite($userid,$postid);            
+                }
+                echo '<a href="javascript:void(0)" class="btn btn-default addermovefav" id="mylists-'.$postid.'" data-postid="'.$postid.'" data-styletarget="'.$isFavorited.'" data-userid="'.$userid.'" data-action="'.(($isFavorited == 1)?'remove':'add').'" data-ajax="'.admin_url('admin-ajax.php').'"><i class="'.(($isFavorited == 1)?'fas':'far').' fa-heart"></i></a>';
+
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "<span class='no-record-span'>No record found.</span>";
+        }
+        wp_reset_postdata();
+    }else{
+        echo "<span class='no-record-span'>No record found.</span>";
+    }
+    die();
+}
+
+add_action("wp_ajax_get_pastevent_ajax", "get_pastevent_ajax");
+
+function get_pastevent_ajax(){
+    $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
+        'numberposts' => -1,
+        'meta_key'    => '_customer_user',
+        'meta_value'  => get_current_user_id(),
+        'post_type'   => wc_get_order_types( 'view-orders' ),
+        'post_status' => array_keys( wc_get_order_statuses() ),
+    ) ) );
+    if ( $customer_orders ) :
+        $upcomingeveent = array();
+        $pastevent = array();
+        foreach ( $customer_orders as $orderkey => $customer_order ) :
+            $order      = wc_get_order( $customer_order );
+            $orderid = $order->get_order_number();
+            $order_items= $order->get_items();
+            foreach ( $order_items as $item_id => $item ) {
+                $order_productid = $item->get_product_id();
+            }
+            $eventid = '';
+            if(!empty($order_productid)){
+                $eventid = get_post_meta($order_productid,'_event_id',true);
+            }
+            if(!empty($eventid) && get_post_status ($eventid) == 'expired'){
+                $pastevent[$orderid] = $eventid;
+            }else{
+                $upcomingeveent[$orderid] = $eventid;
+            }
+        endforeach;
+    endif;
+    if(!empty($pastevent)) {
+        $the_query = new WP_Query( array( 'post_type' => 'event_listing', 'post__in' => $pastevent ) );
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+                echo '<div class="my-ticket-card-row past-events">';
+                echo '<div class="my-ticket-pic">';
+                display_event_banner();
+                echo '</div>';
+                echo '<div class="my-ticket-detail">';
+                echo '<h3>' . get_post_by_eventid(get_the_ID()) . '</h3>';
+                echo '<ul>';
+                $newformate = 'D, M jS';
+                echo '<li><img src="'.get_template_directory_uri().'/assets/images/clock.png" alt="">'. date_i18n( $newformate, strtotime(get_event_start_date()) ).((strtotime(get_event_start_date()) != strtotime(get_event_end_date())) ? date_i18n( ' - M jS,', strtotime(get_event_end_date()) ):','). display_event_start_time(false,false,false).'</li>';
+                echo '<li><img src="'.get_template_directory_uri().'/assets/images/map-icon.png" alt="">'.display_event_venue_name(false,false,false).'</li>';
+                echo '</ul>';
+                echo '</div>';
+                echo '<div class="ticket-status-btn align-self-center">';
+                echo "<button onclick=window.open('".get_permalink(get_the_ID())."')>See Details</button>";
                 echo '</div>';
                 echo '</div>';
             }
@@ -664,3 +831,45 @@ function get_favoritelisting_ajax(){
 }         
 
 add_action( 'woocommerce_review_order_after_order_total', 'action_woocommerce_review_order_after_order_total', 10 ); */
+
+add_action("wp_ajax_addremove_favoritelisting_ajax", "addremove_favoritelisting_ajax");
+add_action("wp_ajax_nopriv_addremove_favoritelisting_ajax", "addremove_favoritelisting_ajax");
+
+function addremove_favoritelisting_ajax(){    
+    global $wpdb; 
+    $data = $_POST;
+    $dataaction = $data['dtaaction'];
+    $postid = $data['postid'];
+    $userid = $data['userid'];
+    $return = array();
+    if($dataaction == 'add'){
+        $wpdb->insert('wp_gd_mylist',array( 'item_id' => $postid,'user_id' => $userid));
+        $return['action'] ='added';
+        $return['msg'] = get_the_title($postid).' has been added to your Favorites List.';
+    }elseif($dataaction == 'remove'){
+        $wpdb->delete('wp_gd_mylist', array( 'item_id' => $postid,'user_id' => $userid) );
+        //echo 'removed';
+        $return['action'] ='removed';
+        $return['msg'] = get_the_title($postid).' has been removed to your Favorites List.';
+    }else{
+        //echo 'error';
+        $return['action'] ='error';
+        $return['msg'] = 'Something went wrong please try after some time.';
+    }
+    echo json_encode($return);
+    die();
+}
+
+function usrebygetfavrite($userid,$postid){
+    global $wpdb; 
+    $isFavorited = false;
+    if(!empty($userid)){
+        $query = "SELECT * FROM wp_gd_mylist WHERE item_id = ".$postid." 
+            AND user_id = ".$userid;
+        $existdata = $wpdb->get_results($query, OBJECT); 
+        if(!empty($existdata)){
+            $isFavorited = true;
+        }
+    }
+    return $isFavorited;
+}

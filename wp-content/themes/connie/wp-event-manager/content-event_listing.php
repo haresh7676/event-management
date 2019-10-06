@@ -46,7 +46,16 @@
 <!-- Box Layout -->
 <a <?php event_listing_class(); ?> href="<?php display_event_permalink(); ?>">
  <div class="box-layout u-events-box">
-     <div class="event-img u-event-pic"><?php display_event_banner(); ?> <div class="whislistwpr"><?php echo do_shortcode('[show_gd_mylist_btn]'); ?></div><?php //echo (function_exists('get_favorites_button'))?get_favorites_button($post->ID, ''):''; ?><!--<i class="fas fa-heart"></i>--></div>      
+     <div class="event-img u-event-pic"><?php display_event_banner(); ?> <div class="whislistwpr">
+        <?php $postid = $post->ID; 
+        $userid = !empty(get_current_user_id())?get_current_user_id():'0';
+        $isFavorited = false;
+        if($userid != 0){
+            $isFavorited = usrebygetfavrite($userid,$postid);            
+        }        
+        echo '<a href="javascript:void(0)" class="btn btn-default addermovefav" id="mylists-'.$postid.'" data-postid="'.$postid.'" data-styletarget="'.$isFavorited.'" data-userid="'.$userid.'" data-action="'.(($isFavorited == 1)?'remove':'add').'" data-ajax="'.admin_url('admin-ajax.php').'"><i class="'.(($isFavorited == 1)?'fas':'far').' fa-heart"></i></a>';
+        ?>
+        <?php //echo do_shortcode('[show_gd_mylist_btn]'); ?></div><?php //echo (function_exists('get_favorites_button'))?get_favorites_button($post->ID, ''):''; ?><!--<i class="fas fa-heart"></i>--></div>      
     <div class="u-event-details">
         <div class="event-start-date date-month"><?php $date_format = WP_Event_Manager_Date_Time::get_event_manager_view_date_format();
             //echo date_i18n( $date_format, strtotime(get_event_start_date()) );?>

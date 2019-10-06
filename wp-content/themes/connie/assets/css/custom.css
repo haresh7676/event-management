@@ -223,7 +223,7 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     font-weight: bold;
 }
 
-.mylisting-fav div .btn, .custom-btn-design{
+.mylisting-fav .btn, .custom-btn-design{
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -242,18 +242,20 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
     color: #fff;
     outline: none;
 }
-.mylisting-fav div .btn i.far, .mylisting-fav div .btn i.fas{
+.mylisting-fav .btn i.fa-heart{
     font-family: inherit;
+}
+.mylisting-fav .btn i.far, .mylisting-fav .btn i.fas{    
     font-size: 16px;
     font-weight: 600; 
 }
-.mylisting-fav div .btn i.far.fa-heart:before{
+.mylisting-fav .btn i.far.fa-heart:before{
     content: "Favorite";
 }
-.mylisting-fav.myfavlist div .btn i.fas.fa-heart:before{
+.mylisting-fav.myfavlist .btn i.fas.fa-heart:before{
     content: "Remove";
 }
-.mylisting-fav div .btn i.fas.fa-heart:before{
+.mylisting-fav .btn i.fas.fa-heart:before{
     content: "Favorited";
 }
 

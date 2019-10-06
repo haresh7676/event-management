@@ -46,6 +46,7 @@
 												case 'expired' :
 													if ( event_manager_get_permalink( 'submit_event_form' ) ) {
 														$actions['relist'] = array( 'label' => __( '<i class="fas fa-external-link-square-alt" title="External Link"></i>', 'wp-event-manager' ), 'nonce' => true );
+														$actions['duplicate'] = array( 'label' => '<i class="far fa-copy" title="Copy"></i>', 'nonce' => true );
 													}
 													break;
 												case 'pending_payment' :
