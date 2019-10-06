@@ -88,7 +88,7 @@ $themesettings =  get_fields('theme-settings');
                         <?php $organizername = display_organizer_name('','',false); 
                         $eventlocations = get_event_location();
                         if(!empty($organizername)){ ?>
-                            <p>Hosted By  <?php display_organizer_name(); ?></p>    
+                            <p>Hosted By <a href="<?php echo site_url().'/events/?search_keywords='.$organizername.'&search_location=' ?>"><?php display_organizer_name(); ?></a></p>    
                         <?php } 
                         if(!empty($eventlocations)){ ?>
                         <label>

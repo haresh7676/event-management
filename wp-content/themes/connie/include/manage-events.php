@@ -21,7 +21,7 @@
                 <a class="nav-link" data-toggle="tab" href="#refunds">Refunds</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
+                <a class="nav-link" data-toggle="tab" href="#contact">Inbox</a>
             </li>
         </ul>
         <div class="tab-content">

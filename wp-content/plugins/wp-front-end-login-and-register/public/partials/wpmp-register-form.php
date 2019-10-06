@@ -48,15 +48,18 @@
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Organization (Optional)" name="wpmp_organization" id="wpmp_organization">
-            </div>            
-            <div class="form-group row">
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" name="wpmp_password" id="wpmp_password" placeholder="Password" >
-                </div>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" name="wpmp_password2" id="wpmp_password2" placeholder="Confirm Password" >
-                </div>
             </div>
+            <div class="form-group">                
+                <input type="text" class="form-control" name="wpmp_email" id="wpmp_email" placeholder="Email">
+            </div>            
+
+            <?php if ($wpmp_form_settings['wpmp_enable_captcha'] == '1') { ?>
+                <div class="form-group">
+                    <label class="control-label" id="captchaOperation"></label>
+                    <input type="text" placeholder="Captcha answer" class="form-control" name="wpmp_captcha" />
+                </div>
+            <?php } ?>
+            <div class="or-dvd-line phone-or-email-signup"><span>or sign in with Quirktastic</span></div>                        
             <div class="form-group row">
                 <div class="col-sm-3">
                     <select class="form-control" name="country_code" id="country_code">
@@ -80,17 +83,15 @@
                 <div class="col-sm-9">                    
                     <input type="text" class="form-control" name="wpmp_phone" id="wpmp_phone" placeholder="Phone">
                 </div>
-            </div>
-            <div class="form-group">                
-                <input type="text" class="form-control" name="wpmp_email" id="wpmp_email" placeholder="Email">
             </div>            
-
-            <?php if ($wpmp_form_settings['wpmp_enable_captcha'] == '1') { ?>
-                <div class="form-group">
-                    <label class="control-label" id="captchaOperation"></label>
-                    <input type="text" placeholder="Captcha answer" class="form-control" name="wpmp_captcha" />
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" name="wpmp_password" id="wpmp_password" placeholder="Password" >
                 </div>
-            <?php } ?>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" name="wpmp_password2" id="wpmp_password2" placeholder="Confirm Password" >
+                </div>
+            </div>
 
             <input type="hidden" name="wpmp_current_url" id="wpmp_current_url" value="<?php echo get_permalink(); ?>" />
             <input type="hidden" name="redirection_url" id="redirection_url" value="<?php echo get_permalink(); ?>" />
