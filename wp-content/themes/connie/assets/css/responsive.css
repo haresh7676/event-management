@@ -538,8 +538,10 @@
         margin: 0 8px;
     }
     .logo-box {
-        line-height: 60px;
         padding-left: 10px;
+        display: flex;
+        align-items: center;
+        height: 60px;
     }
     .logo-box img {
         max-height: 50px;
@@ -576,6 +578,12 @@
     }
     .memd-ttl {
         font-size: 13px;
+    }
+    .event_listings ul.event_listings .box-layout {
+        width: 50% !important;
+    }
+    .u-events-box .u-event-details {
+        min-height: 204px;
     }
 }
 @media (min-width: 768px) and (max-width: 768px) {
