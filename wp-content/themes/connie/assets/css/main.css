@@ -3022,6 +3022,9 @@ i.drp-icn {
 	height: 100%;
 	background: transparent;
 	border: 1px solid #d7d7d7;
+    line-height: 38px;
+    padding: 0 8px;
+    height: 40px;
 }
 .m-e-table-dropdown .filter-option .filter-option-inner-inner {
 	font-size: 14px;
