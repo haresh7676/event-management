@@ -238,7 +238,7 @@ function get_volunteer_data() {
     if(isset($results) && !empty($results['data'])){
         foreach ($results['data'] as $item){
             $output.='<tr>';
-            $output.='<td>'.$item['form_data']['first-name'].' '.$item['form_data']['last-name'].'</td>';
+            $output.="<td><a href='#' class='getvolunteerdata' data-formdata='".json_encode($item['form_data'])."'>".$item['form_data']['first-name']." ".$item['form_data']['last-name']."</a></td>";
             $output.='<td>'.$item['form_data']['tel-phone'].'</td>';
             $output.='<td>'.$item['form_data']['your-email'].'</td>';
             $output.='<td>'.$item['form_data']['area-of-expertise'].'</td>';
@@ -905,4 +905,24 @@ function usrebygetfavrite($userid,$postid){
         }
     }
     return $isFavorited;
+}
+
+add_action("wp_ajax_get_volunteer_data_ajax", "get_volunteer_data_ajax");
+function get_volunteer_data_ajax(){
+    $data = $_POST['formdata'];        
+    $html = '';
+    $html .='<p><b>First name: </b>'.(!empty($data['first-name'])?$data['first-name']:'-').'</p>';
+    $html .='<p><b>Last name: </b>'.(!empty($data['last-name'])?$data['last-name']:'-').'</p>';  
+    $html .='<p><b>Email: </b>'.(!empty($data['your-email'])?$data['your-email']:'-').'</p>';  
+    $html .='<p><b>Phone: </b>'.(!empty($data['tel-phone'])?$data['tel-phone']:'-').'</p>';  
+    $html .='<p><b>Area of Expertise: </b>'.(!empty($data['area-of-expertise'])?$data['area-of-expertise']:'-').'</p>';  
+    $html .='<p><b>Days Available: </b>'.(!empty($data['days-available']) && is_array($data['days-available'])?implode(", ",$data['days-available']):$data['days-available']).'</p>';
+    $html .='<p><b>Hours Available: </b>'.(!empty($data['hours-available'])?$data['hours-available']:'-').'</p>';
+    $html .='<p><b>Which areas are you best suited to volunteer?: </b>'.(!empty($data['best-suited-area'])?$data['best-suited-area']:'-').'</p>';
+    $html .='<p><b>Why do you think you would be a good volunteer?: </b>'.(!empty($data['why-good-volunteer'])?$data['why-good-volunteer']:'-').'</p>';
+    $html .='<p><b>Which times/shifts could you be available?: </b>'.(!empty($data['times-shofts'])?$data['times-shofts']:'-').'</p>';
+    $html .='<p><b>How did you hear about volunteering?: </b>'.(!empty($data['how-hear'])?$data['how-hear']:'-').'</p>';
+    $html .='<p><b>What other events have you volunteered at?: </b>'.(!empty($data['other-events'])?$data['other-events']:'-').'</p>';      
+    echo $html;
+    die();
 }

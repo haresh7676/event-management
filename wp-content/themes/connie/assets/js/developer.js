@@ -120,12 +120,24 @@ jQuery(document).ready(function($) {
                     if(html.action == 'added'){
                         $this.children('i').removeClass('fas fa-spinner fa-pulse').addClass('fas fa-heart');                                                
                         $this.data("action", "remove");
-                        alert(html.msg);                        
+                        swal({
+                            text: html.msg,                            
+                            type: 'success',                            
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                        //alert(html.msg);                        
                     }else{
                         $this.children('i').removeClass('fas fa-spinner fa-pulse').addClass('far fa-heart');                        
                         //$this.attr("data-action", "add");
                         $this.data("action", "add");
-                        alert(html.msg);
+                        //alert(html.msg);
+                        swal({
+                            text: html.msg,                            
+                            type: 'error',                            
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
                         if(html.action == 'removed'){
                             if($this.parent().hasClass('myfavlist')){
                                 $this.parent().parent().parent('.my-ticket-card-row').remove();
@@ -137,7 +149,18 @@ jQuery(document).ready(function($) {
                 }
             });        
         }else{
-            alert('Please login first.');
+            swal({              
+              text: 'Please login to access your favourite events',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Sign In',
+              cancelButtonText: 'No, Cancel'
+            }).then(
+                function () { 
+                    var loginlinl = $('.loginlinktop').attr('href');
+                    window.location.href = loginlinl;
+                }, 
+                function () { return false; });                        
         }
     });
 
@@ -147,6 +170,39 @@ jQuery(document).ready(function($) {
         $('#'+tid).timepicker('setTime', new Date());
         $('#'+tid).trigger('change');
     });
+
+    $(document).on("click", '.moreinfoticket', function(e) {
+        e.preventDefault();
+        var tickettitle = $(this).data('title');
+        var tickecontent = $(this).data('content');
+        swal({
+            title: tickettitle,
+            text: tickecontent,
+            showCloseButton: true,
+            showConfirmButton: false            
+        });
+    }); 
+
+    $(document).on("click", '.getvolunteerdata', function(e) {
+        e.preventDefault();
+        var formdata = $(this).data('formdata');        
+        var url = $('.sub-tab-design').data('ajax');
+        var loadtime = {action : 'get_volunteer_data_ajax', formdata : formdata};        
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: loadtime,
+            cache: false,
+            success: function(html) {
+                swal({
+                    html: html,                    
+                    showCloseButton: true,
+                    showConfirmButton: false            
+                });
+            }
+        });       
+        
+    });   
 
 
     if ($('.get_volunteer_data').length > 0) {

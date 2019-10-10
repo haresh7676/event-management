@@ -43,7 +43,7 @@ $bannerimg = get_field('banner_image');
                             </div>
                         </div>
                     <?php }else{ ?>
-                        <li><a href="<?php echo site_url(); ?>/sign-in/">Sign In</a></li>
+                        <li><a class="loginlinktop" href="<?php echo site_url(); ?>/sign-in/">Sign In</a></li>
                     <?php } ?>
                 </ul>
             </div>
