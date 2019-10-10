@@ -141,6 +141,13 @@ jQuery(document).ready(function($) {
         }
     });
 
+    $(document).on("click", '.currenttimelink', function(e) {
+        e.preventDefault();
+        var tid = $(this).data('id');
+        $('#'+tid).timepicker('setTime', new Date());
+        $('#'+tid).trigger('change');
+    });
+
 
     if ($('.get_volunteer_data').length > 0) {
         showRecords(10, 1, 'get_volunteer_data');

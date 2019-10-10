@@ -55,7 +55,7 @@ var SellTicket= function () {
                         		const remainder = 30 - (start.minute() % 30);								 
                         		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
                         		if(dateTime != ''){
-                        			jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});                            			
+                        			jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
                         		}
                         	}else{
                         		jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
@@ -226,16 +226,29 @@ var SellTicket= function () {
                         	var today = new Date();
                         	today.setHours(0);
                         	today.setMinutes(0);
-                        	today.setSeconds(0);                            	
+                        	today.setSeconds(0);
                         	if (Date.parse(today) == Date.parse(selectedDate)) {
                         		const start = moment();
-                        		const remainder = 30 - (start.minute() % 30);								 
+                        		const remainder = 30 - (start.minute() % 30);
                         		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
                         		if(dateTime != ''){
-                        			jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});                            			
+									jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
+                        			/*
+                        			var mytime = new Date();
+									var mytimec = mytime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+                        			jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM', noneOption: [
+											{
+												'label': mytimec,
+												'className': 'cuurenttimes',
+												'value': '08:00 PM'
+											}
+										]});
+                        			var curentid  = 'paid_tickets_ticket_sales_start_time_'+current_index;
+									jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).after('<a href="#" class="currenttimelink" data-id="'+curentid+'">Set current time</a>');*/
                         		}
                         	}else{
-                        		jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
+                        		jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');
+								//jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).next('.currenttimelink').remove();
                         	}
                         }
 			    	});// minDate: '0' would work too

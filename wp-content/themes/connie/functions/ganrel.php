@@ -308,3 +308,23 @@ function core_text_changes_func($translated_text){
     }
     return $translated_text;
 }
+
+add_action( 'wpcf7_before_send_mail', 'wpcf7_add_text_to_mail_body' );
+
+function wpcf7_add_text_to_mail_body($contact_form){
+    $form_id = $_POST['_wpcf7'];
+    $myaccountsettings =  get_fields('account-settings');    
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
+    }    
+     if (!empty($formid) && $form_id == $formid && !empty($_POST['organizername'])): 
+
+        $toEmail = $_POST['organizername'];
+     
+        // set the email address to recipient
+        $mailProp = $contact_form->get_properties('mail');
+        $mailProp['mail']['recipient'] = $toEmail;
+        $contact_form->set_properties(array('mail' => $mailProp['mail']));
+    endif;
+
+}
