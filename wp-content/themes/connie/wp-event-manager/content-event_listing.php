@@ -78,7 +78,7 @@
                 }
                 if(!empty($printlocations)){
                 ?>
-                <li title="<?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else: echo $printlocations; endif; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/map-icon.png" alt=""><?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else: echo $printlocations; endif; ?></li>
+                <li title="<?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else: echo $printlocations; endif; ?>"><i class="fas fa-map-marker-alt"></i><!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/map-icon.png" alt=""> --><?php if(get_event_location()=='Anywhere'): echo __('Online Event','wp-event-manager'); else: echo $printlocations; endif; ?></li>
                 <?php } ?>                
                 <li><?php echo (function_exists('get_sell_start_price')?get_sell_start_price($post->ID):''); ?> </li>
             </ul>           
