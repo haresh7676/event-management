@@ -574,6 +574,22 @@ h4.pull-right.ticket-heading {
 #checkout_coupon .woocommerce-message{
     display: none;
 }
+.contetn-tickets{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    width: 220px;
+    color: #7c828c;
+    font-size: 12px;
+    line-height: 13px;
+}
+.moreinfoticket{
+    font-size: 13px;
+}
+.swal2-content p b{
+    font-weight: bold;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
