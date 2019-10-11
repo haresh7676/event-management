@@ -1118,6 +1118,14 @@ i.drp-icn {
     top: 3px;
     left: 0px;
 }
+.u-event-details .event-disc ul li i {
+    max-width: 100%;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    font-size: 18px;
+    color: #775dff;
+}
 /* AR479-Landing page css end */
 
 /* AR479-Browe Events css start */
