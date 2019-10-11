@@ -139,7 +139,7 @@ $themesettings =  get_fields('theme-settings');
                            {  ?>
                             <ul>
                                 <?php if($websiteurl) { ?>
-                                    <li><a href=" <?php echo $websiteurl; ?>" class="website-link" target="_blank"  itemprop="url" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/website-icon.svg" alt=""></a></li>
+                                    <li><a href=" <?php echo esc_url($websiteurl); ?>" class="website-link" target="_blank"  itemprop="url" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/website-icon.svg" alt=""></a></li>
                                 <?php  } ?>    
                                 <?php if($facebook) { ?>
                                     <li class="facebook"><a href=" <?php echo esc_url($facebook); ?>"  class="facebook" target="_blank" itemprop="facebook" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>
@@ -157,10 +157,10 @@ $themesettings =  get_fields('theme-settings');
                                     <li class="linkedin"><a href=" <?php echo esc_url($linkedin); ?>" class="linkedin-link" target="_blank" itemprop="linkedin" rel="nofollow"><i class="fab fa-linkedin-in"></i></li>
                                 <?php } ?>
                                 <?php if($instagram) { ?>
-                                    <li class="instagram"><a href=" <?php echo $instagram; ?>"  class="instagram-link" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li class="instagram"><a href=" <?php echo esc_url($instagram); ?>"  class="instagram-link" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 <?php } ?> 
                                  <?php if($googleplus) { ?>
-                                    <li class="g-plus"><a href=" <?php echo $googleplus; ?>"  class="gplus-link" target="_blank" itemprop="gplus" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/g-plus.png" alt=""></a></li></li>
+                                    <li class="g-plus"><a href=" <?php echo esc_url($googleplus); ?>"  class="gplus-link" target="_blank" itemprop="gplus" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/g-plus.png" alt=""></a></li></li>
                                 <?php } ?>  
                             </ul>
                             <?php } ?>
