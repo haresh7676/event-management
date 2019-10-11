@@ -187,7 +187,7 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         var formdata = $(this).data('formdata');        
         var url = $('.sub-tab-design').data('ajax');
-        var loadtime = {action : 'get_volunteer_data_ajax', formdata : formdata};        
+        var loadtime = {action : 'get_volunteer_dataajax', formdata : formdata};
         $.ajax({
             type: "POST",
             url: url,
@@ -265,28 +265,31 @@ jQuery(document).ready(function($) {
     /*$('#event_start_time').on('changeTime', function() {
         $('#event_end_time').timepicker('option',{'roundingFunction':false, 'minTime': $(this).val()});
     });*/
-});
-function showRecords(perPageCount, pageNumber, action) {
-    var eventid = '';
-    if (jQuery('.'+action+' .event-dropdown').length > 0) {
-        eventid = jQuery('.'+action+' .event-dropdown').val();
-    }
-    var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount,eventid:eventid};
-    var loaderimage = jQuery('.'+action+' .tableloader').data('loader');
-    jQuery.ajax({
-        type: "POST",
-        url: jQuery('.sub-tab-design').data('ajax'),
-        data: loadtime,
-        cache: false,
-        beforeSend: function() {
-            jQuery('.'+action+' .tableloader').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
-        },
-        success: function(html) {
-            jQuery('.'+action+' .tabledataajax').html(html);
-            jQuery('.'+action+' .tableloader').html('');
+    function showRecords(perPageCount, pageNumber, action) {
+        var eventid = '';
+        if ($('.'+action+' .event-dropdown').length > 0) {
+            //var eventid = $('.'+action+' .event-dropdown').val();
+            var eventid = $('.'+action+' .event-dropdown').find("option:selected").val();
+            //console.log(eventid);
         }
-    });
-}
+        var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount,eventid:eventid};
+        var loaderimage = $('.'+action+' .tableloader').data('loader');
+        $.ajax({
+            type: "POST",
+            url: $('.sub-tab-design').data('ajax'),
+            data: loadtime,
+            cache: false,
+            beforeSend: function() {
+                $('.'+action+' .tableloader').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+            },
+            success: function(html) {
+                $('.'+action+' .tabledataajax').html(html);
+                $('.'+action+' .tableloader').html('');
+            }
+        });
+    }
+});
+
 ( function ( $ ) {
     "use strict";
 // Define the PHP function to call from here

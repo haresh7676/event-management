@@ -907,8 +907,8 @@ function usrebygetfavrite($userid,$postid){
     return $isFavorited;
 }
 
-add_action("wp_ajax_get_volunteer_data_ajax", "get_volunteer_data_ajax");
-function get_volunteer_data_ajax(){
+add_action("wp_ajax_get_volunteer_dataajax", "get_volunteer_dataajax");
+function get_volunteer_dataajax(){
     $data = $_POST['formdata'];        
     $html = '';
     $html .='<p><b>First name: </b>'.(!empty($data['first-name'])?$data['first-name']:'-').'</p>';
