@@ -332,7 +332,7 @@ input:-moz-placeholder {
 .create-event-cart .form-group label {
     font-size: 14px;
     color: #4A4A4A;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 5px;
     text-align: left;
 }
@@ -1371,6 +1371,7 @@ i.drp-icn {
     -webkit-transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: inherit;
+    width: 100%;
 }
 .ticket-address .ticket-contact ul li a i {
     line-height: 40px;
@@ -3146,6 +3147,9 @@ i.drp-icn {
     text-decoration: none;
     color: #775DFF;
     font-size: 14px;
+}
+.editEvent-main-wpr .event_action .event-dashboard-actions li i {
+    font-size: 16px;
 }
 .editEvent-main-wpr .event-dashboard-actions .confirmation {
 	padding: 10px;

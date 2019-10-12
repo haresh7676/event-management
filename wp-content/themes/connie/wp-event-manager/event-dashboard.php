@@ -37,7 +37,7 @@
 												case 'publish' :
 													$actions['edit'] = array( 'label' => '<i class="far fa-edit" title="Edit"></i>', 'nonce' => false );
 													if ( is_event_cancelled( $event ) ) {
-														$actions['mark_not_cancelled'] = array( 'label' => '<i class="fas fa-external-link-square-alt" title="Active"></i>', 'nonce' => true );
+														$actions['mark_not_cancelled'] = array( 'label' => '<i class="fas fa-check-square" title="Active"></i>', 'nonce' => true );
 													} else {
 														$actions['mark_cancelled'] = array( 'label' => '<i class="fas fa-ban" title="Inactive"></i>', 'nonce' => true );
 													}
@@ -45,7 +45,7 @@
 													break;
 												case 'expired' :
 													if ( event_manager_get_permalink( 'submit_event_form' ) ) {
-														$actions['relist'] = array( 'label' => __( '<i class="fas fa-external-link-square-alt" title="External Link"></i>', 'wp-event-manager' ), 'nonce' => true );
+														$actions['relist'] = array( 'label' => __( '<i class="fas fa-check-square" title="Active"></i>', 'wp-event-manager' ), 'nonce' => true );
 														$actions['duplicate'] = array( 'label' => '<i class="far fa-copy" title="Copy"></i>', 'nonce' => true );
 													}
 													break;
