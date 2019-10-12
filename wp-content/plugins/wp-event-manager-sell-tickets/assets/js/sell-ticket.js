@@ -53,15 +53,25 @@ var SellTicket= function () {
                         	if (Date.parse(today) == Date.parse(selectedDate)) {
                         		const start = moment();
                         		const remainder = 30 - (start.minute() % 30);								 
-                        		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
+                        		const dateTime = moment(start).add(remainder, "minutes").format("hh:mm A");
                         		if(dateTime != ''){
                         			jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
+                        			if(jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).val() != ''){
+                        				var start_time = jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).val();
+                        				var stt = new Date("November 13, 2013 " + start_time);
+                            			stt = stt.getTime();	                            			
+                            			var endt = new Date("November 13, 2013 " + dateTime);
+                            			endt = endt.getTime();	                            			
+                            			if(stt < endt) {	                            				
+                            				jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('setTime', dateTime).trigger('change');	                            				
+                            			}
+                        			}
                         		}
                         	}else{
                         		jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
                         	}
                         }
-		            });// minDate: '0' would work too
+		            }).keydown(false);// minDate: '0' would work too
     				jQuery('#paid_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate : 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
@@ -71,7 +81,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-    				});		
+    				}).keydown(false);		
 
     				jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true,'orientation':'lb'});	
 	        		jQuery('#paid_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true,'orientation':'lb'});	
@@ -100,15 +110,25 @@ var SellTicket= function () {
 	                    	if (Date.parse(today) == Date.parse(selectedDate)) {
 	                    		const start = moment();
 	                    		const remainder = 30 - (start.minute() % 30);								 
-	                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
+	                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mm A");
 	                    		if(dateTime != ''){
-	                    			jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});                            			
+	                    			jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
+	                    			if(jQuery('#free_tickets_ticket_sales_start_time_'+current_index).val() != ''){
+	                    				var start_time = jQuery('#free_tickets_ticket_sales_start_time_'+current_index).val();
+	                    				var stt = new Date("November 13, 2013 " + start_time);
+	                        			stt = stt.getTime();	                            			
+	                        			var endt = new Date("November 13, 2013 " + dateTime);
+	                        			endt = endt.getTime();	                            			
+	                        			if(stt < endt) {	                            				
+	                        				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('setTime', dateTime).trigger('change');	                            				
+	                        			}
+	                    			}
 	                    		}
 	                    	}else{
 	                    		jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
 	                    	}
 	                    }
-    			    });// minDate: '0' would work too
+    			    }).keydown(false);// minDate: '0' would work too
     				jQuery('#free_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate : 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
@@ -118,7 +138,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-    				});
+    				}).keydown(false);
 
     				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     				jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -147,15 +167,25 @@ var SellTicket= function () {
 	                    	if (Date.parse(today) == Date.parse(selectedDate)) {
 	                    		const start = moment();
 	                    		const remainder = 30 - (start.minute() % 30);								 
-	                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
+	                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mm A");
 	                    		if(dateTime != ''){
-	                    			jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});                            			
+	                    			jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
+	                    			if(jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).val() != ''){
+	                    				var start_time = jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).val();
+	                    				var stt = new Date("November 13, 2013 " + start_time);
+	                        			stt = stt.getTime();	                            			
+	                        			var endt = new Date("November 13, 2013 " + dateTime);
+	                        			endt = endt.getTime();	                            			
+	                        			if(stt < endt) {	                            				
+	                        				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('setTime', dateTime).trigger('change');	                            				
+	                        			}
+	                    			}
 	                    		}
 	                    	}else{
 	                    		jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
 	                    	}
 	                    }
-    			    });// minDate: '0' would work too
+    			    }).keydown(false);// minDate: '0' would work too
     				jQuery('#donation_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate 	: 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
@@ -165,7 +195,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-    				});
+    				}).keydown(false);
 
     				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     				jQuery('#donation_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -230,9 +260,19 @@ var SellTicket= function () {
                         	if (Date.parse(today) == Date.parse(selectedDate)) {
                         		const start = moment();
                         		const remainder = 30 - (start.minute() % 30);
-                        		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
+                        		const dateTime = moment(start).add(remainder, "minutes").format("hh:mm A");
                         		if(dateTime != ''){
-									jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
+									jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});									
+									if(jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).val() != ''){
+                        				var start_time = jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).val();
+                        				var stt = new Date("November 13, 2013 " + start_time);
+                            			stt = stt.getTime();	                            			
+                            			var endt = new Date("November 13, 2013 " + dateTime);
+                            			endt = endt.getTime();	                            			
+                            			if(stt < endt) {	                            				
+                            				jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('setTime', dateTime).trigger('change');	                            				
+                            			}
+                        			}
                         			/*
                         			var mytime = new Date();
 									var mytimec = mytime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
@@ -251,7 +291,7 @@ var SellTicket= function () {
 								//jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).next('.currenttimelink').remove();
                         	}
                         }
-			    	});// minDate: '0' would work too
+			    	}).keydown(false);// minDate: '0' would work too
 					jQuery('#paid_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 						dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 						beforeShow: function(input, inst) {
@@ -261,7 +301,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-					});	
+					}).keydown(false);	
 			
 					jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
 	        		jQuery('#paid_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -295,15 +335,25 @@ var SellTicket= function () {
                     	if (Date.parse(today) == Date.parse(selectedDate)) {
                     		const start = moment();
                     		const remainder = 30 - (start.minute() % 30);								 
-                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
+                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mm A");
                     		if(dateTime != ''){
                     			jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});                            			
+                    			if(jQuery('#free_tickets_ticket_sales_start_time_'+current_index).val() != ''){
+                    				var start_time = jQuery('#free_tickets_ticket_sales_start_time_'+current_index).val();
+                    				var stt = new Date("November 13, 2013 " + start_time);
+                        			stt = stt.getTime();	                            			
+                        			var endt = new Date("November 13, 2013 " + dateTime);
+                        			endt = endt.getTime();	                            			
+                        			if(stt < endt) {	                            				
+                        				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('setTime', dateTime).trigger('change');	                            				
+                        			}
+                    			}
                     		}
                     	}else{
                     		jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
                     	}
                     }
-			    });// minDate: '0' would work too
+			    }).keydown(false);// minDate: '0' would work too
 				jQuery('#free_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 					beforeShow: function(input, inst) {
@@ -313,7 +363,7 @@ var SellTicket= function () {
 				       var mindate = jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 				       return { minDate: mindate };
 				   }
-				});	
+				}).keydown(false);	
 				
 				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     			jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -338,15 +388,25 @@ var SellTicket= function () {
                     	if (Date.parse(today) == Date.parse(selectedDate)) {
                     		const start = moment();
                     		const remainder = 30 - (start.minute() % 30);								 
-                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mmA");
+                    		const dateTime = moment(start).add(remainder, "minutes").format("hh:mm A");
                     		if(dateTime != ''){
-                    			jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});                            			
+                    			jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option',{minTime: dateTime, maxTime: '11:30PM'});
+                    			if(jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).val() != ''){
+                    				var start_time = jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).val();
+                    				var stt = new Date("November 13, 2013 " + start_time);
+                        			stt = stt.getTime();	                            			
+                        			var endt = new Date("November 13, 2013 " + dateTime);
+                        			endt = endt.getTime();	                            			
+                        			if(stt < endt) {	                            				
+                        				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('setTime', dateTime).trigger('change');	                            				
+                        			}
+                    			}
                     		}
                     	}else{
                     		jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
                     	}
                     }
-				});// minDate: '0' would work too
+				}).keydown(false);// minDate: '0' would work too
 				jQuery('#donation_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 					beforeShow: function(input, inst) {
@@ -356,7 +416,7 @@ var SellTicket= function () {
 				       var mindate = jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 				       return { minDate: mindate };
 				   }
-				});	
+				}).keydown(false);	
 
 				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     			jQuery('#donation_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	

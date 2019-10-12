@@ -65,6 +65,8 @@ function projectname_scripts() {
     wp_enqueue_script('jquer-datepair-min-js', get_theme_file_uri('/assets/js/jquery.datepair.js'), array('jquery'), rand(0,999), false);
     wp_enqueue_script('sweetalert2-js', get_theme_file_uri('/assets/sweetalert2/dist/sweetalert2.min.js'), array('jquery'), rand(0,999), false);
 
+    //wp_enqueue_script('jqueryvalidate-js', get_theme_file_uri('/assets/js/jquery.validate.js'), array('jquery'), rand(0,999), false);
+
     wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), rand(0,999), true);
 	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), rand(0,999), true );
     wp_enqueue_script( 'simple-calendar-js', get_theme_file_uri( '/assets/js/jquery.simple-calendar.js' ), array( 'jquery' ), '1.0', false );
