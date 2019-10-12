@@ -71,7 +71,7 @@ var SellTicket= function () {
                         		jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
                         	}
                         }
-		            }).attr('readonly','readonly');// minDate: '0' would work too
+		            }).keydown(false);// minDate: '0' would work too
     				jQuery('#paid_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate : 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
@@ -81,7 +81,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-    				}).attr('readonly','readonly');		
+    				}).keydown(false);		
 
     				jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true,'orientation':'lb'});	
 	        		jQuery('#paid_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true,'orientation':'lb'});	
@@ -128,7 +128,7 @@ var SellTicket= function () {
 	                    		jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
 	                    	}
 	                    }
-    			    }).attr('readonly','readonly');// minDate: '0' would work too
+    			    }).keydown(false);// minDate: '0' would work too
     				jQuery('#free_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate : 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
@@ -138,7 +138,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-    				}).attr('readonly','readonly');
+    				}).keydown(false);
 
     				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     				jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -185,7 +185,7 @@ var SellTicket= function () {
 	                    		jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
 	                    	}
 	                    }
-    			    }).attr('readonly','readonly');// minDate: '0' would work too
+    			    }).keydown(false);// minDate: '0' would work too
     				jQuery('#donation_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate 	: 0,
     					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
     					beforeShow: function(input, inst) {
@@ -195,7 +195,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-    				}).attr('readonly','readonly');
+    				}).keydown(false);
 
     				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     				jQuery('#donation_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -291,7 +291,7 @@ var SellTicket= function () {
 								//jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).next('.currenttimelink').remove();
                         	}
                         }
-			    	}).attr('readonly','readonly');// minDate: '0' would work too
+			    	}).keydown(false);// minDate: '0' would work too
 					jQuery('#paid_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 						dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 						beforeShow: function(input, inst) {
@@ -301,7 +301,7 @@ var SellTicket= function () {
 							var mindate = jQuery('#paid_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 							return { minDate: mindate };
 						}
-					}).attr('readonly','readonly');	
+					}).keydown(false);	
 			
 					jQuery('#paid_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
 	        		jQuery('#paid_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -353,7 +353,7 @@ var SellTicket= function () {
                     		jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
                     	}
                     }
-			    }).attr('readonly','readonly');// minDate: '0' would work too
+			    }).keydown(false);// minDate: '0' would work too
 				jQuery('#free_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 					beforeShow: function(input, inst) {
@@ -363,7 +363,7 @@ var SellTicket= function () {
 				       var mindate = jQuery('#free_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 				       return { minDate: mindate };
 				   }
-				}).attr('readonly','readonly');	
+				}).keydown(false);	
 				
 				jQuery('#free_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     			jQuery('#free_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
@@ -406,7 +406,7 @@ var SellTicket= function () {
                     		jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker('option', 'minTime', '12:00AM');                            		
                     	}
                     }
-				}).attr('readonly','readonly');// minDate: '0' would work too
+				}).keydown(false);// minDate: '0' would work too
 				jQuery('#donation_tickets_ticket_sales_end_date_'+current_index).datepicker({minDate	: 0,
 					dateFormat 	: event_manager_sell_tickets_sell_ticket.i18n_datepicker_format,
 					beforeShow: function(input, inst) {
@@ -416,7 +416,7 @@ var SellTicket= function () {
 				       var mindate = jQuery('#donation_tickets_ticket_sales_start_date_'+current_index).datepicker('getDate');
 				       return { minDate: mindate };
 				   }
-				}).attr('readonly','readonly');	
+				}).keydown(false);	
 
 				jQuery('#donation_tickets_ticket_sales_start_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
     			jQuery('#donation_tickets_ticket_sales_end_time_'+current_index).timepicker({'timeFormat': event_manager_sell_tickets_sell_ticket.i18n_timepicker_format,'step' : event_manager_sell_tickets_sell_ticket.i18n_timepicker_step,'showOn': ['click','keyup'],'disableTextInput': true});	
