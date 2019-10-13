@@ -926,3 +926,115 @@ function get_volunteer_dataajax(){
     echo $html;
     die();
 }
+
+add_action("wp_ajax_get_discount_code_data", "get_discount_code_data");
+add_action("wp_ajax_nopriv_get_discount_code_data", "get_discount_code_data");
+
+function get_discount_code_data() {
+    $data = $_POST;
+    $pageNumber = $data['pageNumber'];
+    $perPageCount = $data['perPageCount'];
+    $action = $data['action'];
+    /*$myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['add_team_form_id'])?$myaccountsettings['manage_event']['add_team_form_id']:1;
+    }
+    $results = get_cf7_form_data($formid,$pageNumber,$perPageCount,true);*/
+    $post_author_id = get_current_user_id();
+    $posts_args = array(
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_type' => 'shop_coupon',
+        'post_status' => 'any',
+        'posts_per_page' => -1,
+        'author' => $post_author_id        
+    );            
+    $results = get_posts($posts_args);
+    $output = '';
+    $output .='<div class="table-responsive">';
+    $output .='<table class="table">';
+    $output .='<thead class="thead-purple">';
+    $output .='<tr>';
+    $output .='<th>Code</th>';
+    $output .='<th>Discount</th>';
+    $output .='<th>Type</th>';
+    $output .='<th>Quantity</th>';
+    $output .='<th>Uses</th>';
+    $output .='<th>State</th>';    
+    $output .='<th>&nbsp;</th>';
+    $output .='</tr>';
+    $output .='</thead>';
+    $output .='<tbody>';
+    if(isset($results) && !empty($results)){
+        foreach ($results as $item){
+            $couponid = $item->ID;
+            $discount_type = get_post_meta($couponid, 'discount_type', true );
+            $amount = get_post_meta($couponid, 'coupon_amount', true );
+            $usage_limit = get_post_meta($couponid, 'usage_limit', true );
+            $usage_count = get_post_meta($couponid, 'usage_count', true );            
+            $output.='<tr>';
+            $output.='<td>'.$item->post_title.'</td>';
+            $output.='<td>'.(!empty($amount)?$amount:'0').'</td>';
+            $output.='<td>'.((!empty($discount_type) && $discount_type == 'percent')?'Percent':'Fixed amount').'</td>';
+            $output.='<td>'.((!empty($usage_limit) && $usage_limit != 0)?$usage_limit:'Unlimited').'</td>';
+            $output.='<td>'.(!empty($usage_count)?$usage_count:0).'</td>';
+            $output.='<td><div class="switchwpr"><label class="switch"><input class="coupon-action-edit" data-id="'.$couponid.'" type="checkbox" '.(($item->post_status == 'publish')?'checked':'').'><span class="slider round"></span></label></div></td>';            
+            $output.='<td><a href="javascript:void(0)" data-id="'.$couponid.'" class="coupon-action-delete" data-original-title="" title="" style="cursor: pointer;"><i class="far fa-trash-alt" title="Delete"></i></a></td>';
+            $output.='</tr>';
+        }
+    }else{
+        $output.='<tr>';
+        $output.='<td colspan="7">';
+        $output.='<p class="norecordtable">No Coupon found.</p>';
+        $output.='</td>';
+        $output.='</tr>';
+    }    
+    $output.='</tbody>';
+    $output.='</table>';
+    $output.='</div>';
+    /*pagination */
+    $rowCount = (isset($results) && !empty($results))?count($results):0;
+    $pagesCount = ceil($rowCount / $perPageCount);
+    $output.='<div class="export-list-row">';
+    $output.='<button data-toggle="modal" data-target="#AddcouponModal">Add discount code</button>';
+    $output.='<a href="#" class="reloaddiscount"></a>';
+    $output.='<div class="custom-pagination">';
+    $output.='<ul>';
+    $output.='<li class="pagination-list">';
+    for ($i = 1; $i <= $pagesCount; $i ++) {
+        if ($i == $pageNumber) {
+            $output.='<a href="javascript:void(0);" class="current">'.$i.'</a>';
+        } else {
+            $output.='<a href="javascript:void(0);" class="pages" onclick="showRecords('.$perPageCount.', '.$i.',\'get_discount_code_data\')">'.$i.'</a>';
+        } // endIf
+    } // endFor
+    $output.='</li>';
+    $output.='<li class="totalofPage">';
+    //$output.='Page '.$pageNumber.' of '.$pagesCount;
+    $stating = ($pageNumber-1)*$perPageCount+1;
+    $stating = ($rowCount == 0)?0:$stating;
+    $ending = $perPageCount*$pageNumber;
+    $ending = ($rowCount < $ending)?$rowCount:$ending;
+    $output.='<span class="pagenav">'.$stating.'-'.$ending.' of '.$rowCount.'</span>';
+    $output.='</li>';
+    $output.='</ul>';
+    $output.='</div>';
+    $output.='</div>';
+    echo $output;
+    die();
+}
+
+add_action("wp_ajax_coupon_code_ajax_action", "coupon_code_ajax_action");
+function coupon_code_ajax_action(){
+    $data = $_POST;
+    if(!empty($data['couponid']) && !empty($data['status'])){
+        $my_post = array(
+            'ID'           => $data['couponid'],
+            'post_status'  => $data['status']
+        ); 
+        // Update the post into the database
+        wp_update_post( $my_post );        
+    }
+    die();
+}

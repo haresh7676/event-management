@@ -23,6 +23,9 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#contact">Inbox</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#discountcodes">Discount Codes</a>
+            </li>
         </ul>
         <div class="tab-content">
             <!-- My Ticket Tab1 -->
@@ -334,6 +337,37 @@
                         ?>
                         <div class="tabledataajax"></div>
                         <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- discount codes -->
+            <div class="tab-pane fade" id="discountcodes">
+                <div class="common-table-design get_discount_code_data">
+                    <div class="tabledataajax"></div>
+                    <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                    <div class="export-list-row">
+                        <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_discount_code_form_id']) && !empty($myaccountsettings['manage_event']['add_discount_code_form_id']))){
+                            $add_coupon_formid = $myaccountsettings['manage_event']['add_discount_code_form_id'];
+                            ?>
+                        <!-- <button data-toggle="modal" data-target="#AddteamModal">Add New Team Member</button> -->
+                        <div class="modal fade volnuteer-form" id="AddcouponModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.png" class="modal-close-icon" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5 class="modal-title">Add discount code</h5>
+                                        <div class="volunteer-body">
+                                            <?php echo do_shortcode('[contact-form-7 id="'.$add_coupon_formid.'" title="Add Coupons"]'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
