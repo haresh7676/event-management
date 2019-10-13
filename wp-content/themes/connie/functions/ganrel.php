@@ -241,7 +241,45 @@ function get_orders_ids_by_product_id( $productids = array(),$pageNumber = 1,$pe
     return $results;
 }
 
-add_action( 'wp_footer', 'mycustom_wp_footer' );
+
+add_action( 'wp_head', 'reportproblem_wp_footer' );
+ 
+function reportproblem_wp_footer() {
+    $myaccountsettings =  get_fields('account-settings');
+    $formid = 1;
+    $formid2 = 1;
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
+    }
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid2 = isset($myaccountsettings['manage_event']['volunteer_form_id'])?$myaccountsettings['manage_event']['volunteer_form_id']:1;
+    }
+    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
+        $formid3 = isset($myaccountsettings['manage_event']['add_discount_code_form_id'])?$myaccountsettings['manage_event']['add_discount_code_form_id']:1;
+    }
+?>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var formid = '<?php echo $formid ?>';
+        var formid2 = '<?php echo $formid2 ?>';
+        var formid3 = '<?php echo $formid3 ?>';        
+        document.addEventListener( 'wpcf7mailsent', function( event ) {            
+            if (formid == event.detail.contactFormId) {
+
+            } else if (formid2 == event.detail.contactFormId){                
+                jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
+            } else if (formid3 == event.detail.contactFormId){                
+                jQuery(".wpcf7").on('mailsent.wpcf7', function(e) {                  
+                    jQuery('.reloaddiscount').trigger('click');                    
+                });
+            }
+        }, false );
+    });
+</script>
+<?php
+}
+
+//add_action( 'wp_footer', 'mycustom_wp_footer' );
  
 function mycustom_wp_footer() {
 ?>
@@ -274,33 +312,6 @@ function add_required_attribute_to_wp_editor( $editor ) {
 }
 */
 
-add_action( 'wp_footer', 'reportproblem_wp_footer' );
- 
-function reportproblem_wp_footer() {
-    $myaccountsettings =  get_fields('account-settings');
-    $formid = 1;
-    $formid2 = 1;
-    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
-        $formid = isset($myaccountsettings['manage_event']['report_a_problem_form_id'])?$myaccountsettings['manage_event']['report_a_problem_form_id']:1;
-    }
-    if(!empty($myaccountsettings) && isset($myaccountsettings['manage_event'])){
-        $formid2 = isset($myaccountsettings['manage_event']['volunteer_form_id'])?$myaccountsettings['manage_event']['volunteer_form_id']:1;
-    }
-?>
-<script type="text/javascript">
-    var formid = '<?php echo $formid ?>';
-    var formid2 = '<?php echo $formid2 ?>';
-    document.addEventListener( 'wpcf7mailsent', function( event ) {
-        if (formid == event.detail.contactFormId) {
-
-        } else if (formid2 = event.detail.contactFormId){
-            jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
-        }
-    }, false );
-</script>
-<?php
-}
-
 add_filter('gettext', 'core_text_changes_func');
 function core_text_changes_func($translated_text){
     if($translated_text == 'Sorry, that username already exists!'){
@@ -327,4 +338,55 @@ function wpcf7_add_text_to_mail_body($contact_form){
         $contact_form->set_properties(array('mail' => $mailProp['mail']));
     endif;
 
+}
+
+add_filter('cf7_2_post_status_shop_coupon','filter_darft_to_publish',10,3);
+function filter_darft_to_publish($post_status, $form_id, $form_data){
+  if(isset($form_data['post_status'])){    
+    $post_status = $form_data['post_status'];
+  }
+  return $post_status;
+}
+
+
+add_filter( 'woocommerce_coupon_is_valid', 'custom_woocommerce_coupon_is_valid', 1, 2 );
+
+function custom_woocommerce_coupon_is_valid( $valid, $coupon ) {
+    global $wpdb, $woocommerce;    
+    $productids = array();
+    $couponid = $coupon->id;    
+    if(!empty($couponid)){
+        $post_author_id = get_post_field( 'post_author', $couponid );
+        wp_reset_query();
+        if(!empty($post_author_id)){
+            $posts_args = array(
+                'orderby' => 'post_date',
+                'order' => 'DESC',
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'author' => $post_author_id,
+                'fields' => 'ids'
+            );            
+            $productids = get_posts($posts_args);
+        }
+    }    
+    /*
+    $min_quantity = 12;*/
+
+    if (sizeof($productids)>0) {
+        /*pr($woocommerce->cart->get_cart());
+        exit;*/
+        $valid = false;
+        if (sizeof($woocommerce->cart->get_cart())>0) {
+            foreach ($woocommerce->cart->get_cart() as $cart_item_key => $cart_item) {
+                if (in_array($cart_item['product_id'], $productids) || in_array($cart_item['variation_id'], $productids)) {
+                    //if ( $cart_item['qty'] > $min_quantity ) $valid = true;
+                    $valid = true;
+                }
+
+            }
+        }
+    }
+    return $valid;
 }

@@ -46,6 +46,8 @@ function connie_add_checkout_content()
 function custom_woocommerce_paypal_ap_payment_args( $args, $order ) {
     $order_total = is_callable(array($order, 'get_total')) ? $order->get_total() : $order->order_total;
     $order_subtotal = $order->get_subtotal();
+    $discounramount = $order->get_discount_total();
+    $order_subtotal = $order_subtotal-$discounramount;
     $items = $order->get_items();
     $product_id = '';
     $eventid = '';

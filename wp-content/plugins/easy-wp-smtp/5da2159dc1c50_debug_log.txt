@@ -1,0 +1,1853 @@
+Easy WP SMTP debug log file
+
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 18:04:13 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic Add New Coupons
+CLIENT -> SERVER: Message-ID: <e7606e83fc30165a32f35de2faef1062@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 19:11:38 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <7dcad39f890d2d5b419751a6ddeeb259@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 19:12:53 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <6646ece4d18597c888b7307aeb369661@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 19:14:00 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <417ec3c57cd091d0522ffbaaec45bb50@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 19:19:11 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <81a0e5a02f280c983c696d556d40cfdd@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:07:42 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <d56892e370e25c045dd329e1419065a8@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:08:04 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <55eb3e5fac6f89682f52ba8338d00b94@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:08:51 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <3b8823a99c0542abad29b777ff8c317d@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:10:52 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <8146db8958ffae534174e4d7f0a9caee@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:13:24 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <0866be09d049df7960c3ac4bd915b766@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:13:57 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <a0e50cba6659188f06cebf7cb538d49f@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:18:07 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <0439f1e5682165cf44fec4b48dc6b453@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:18:59 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <d50205991848ecad9ad5b8290a0b8de3@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:20:43 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <2259e6af81f89f489e6e8097286cb143@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:22:30 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <8abeb692705f7cbe61a2d2d40743454b@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:27:54 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: New event registration for QuirkCon
+CLIENT -> SERVER: Message-ID: <29c57e372a943750ff184a4fd09cda81@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello
+CLIENT -> SERVER: 
+CLIENT -> SERVER: A attendee (tops cms) has submitted their registration for the event "QuirkCon".
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: [message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: You can contact them directly at: topscmswp@gmail.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:30:05 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Reply-To: Harry patel <harrypatel2272@gmail.com>
+CLIENT -> SERVER: Subject: [Quirktastic]: New order #1236
+CLIENT -> SERVER: Message-ID: <610e81e703ac90e6ef29fcb567ef614e@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!DOCTYPE html>
+CLIENT -> SERVER: <html lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+CLIENT -> SERVER: <title>Quirktastic</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="padding: 0;">
+CLIENT -> SERVER: 		<div id="wrapper" dir="ltr" style="background-color: #f7f7f7; margin: 0; padding: 70px 0; width: 100%; -webkit-text-size-adjust: none;">
+CLIENT -> SERVER: 			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 						<div id="template_header_image">
+CLIENT -> SERVER: 													</div>
+CLIENT -> SERVER: 						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container" style="background-color: #ffffff; border: 1px solid #dedede; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); border-radius: 3px;">
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 									<!-- Header -->
+CLIENT -> SERVER: 									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header" style='background-color: #96588a; color: #ffffff; border-bottom: 0; font-weight: bold; line-height: 100%; vertical-align: middle; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; border-radius: 3px 3px 0 0;'><tr>
+CLIENT -> SERVER: <td id="header_wrapper" style="padding: 36px 48px; display: block;">
+CLIENT -> SERVER: 												<h1 style='font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 30px; font-weight: 300; line-height: 150%; margin: 0; text-align: left; text-shadow: 0 1px 0 #ab79a1; color: #ffffff;'>New Order: #1236</h1>
+CLIENT -> SERVER: 											</td>
+CLIENT -> SERVER: 										</tr></table>
+CLIENT -> SERVER: <!-- End Header -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 							</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 									<!-- Body -->
+CLIENT -> SERVER: 									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_body"><tr>
+CLIENT -> SERVER: <td valign="top" id="body_content" style="background-color: #ffffff;">
+CLIENT -> SERVER: 												<!-- Content -->
+CLIENT -> SERVER: 												<table border="0" cellpadding="20" cellspacing="0" width="100%"><tr>
+CLIENT -> SERVER: <td valign="top" style="padding: 48px 48px 0;">
+CLIENT -> SERVER: 															<div id="body_content_inner" style='color: #636363; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 14px; line-height: 150%; text-align: left;'>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <p style="margin: 0 0 16px;">You’ve received the following order from Harry patel:</p>
+CLIENT -> SERVER: <h2 style='color: #96588a; display: block; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 130%; margin: 0 0 18px; text-align: left;'>
+CLIENT -> SERVER: 	<a class="link" href="http://localhost/event-management/wp-admin/post.php?post=1236&amp;action=edit" style="font-weight: normal; text-decoration: underline; color: #96588a;">[Order #1236]</a> (October 13, 2019)</h2>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <div style="margin-bottom: 40px;">
+CLIENT -> SERVER: 	<table class="td" cellspacing="0" cellpadding="6" border="1" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+CLIENT -> SERVER: <thead><tr>
+CLIENT -> SERVER: <th class="td" scope="col" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Product</th>
+CLIENT -> SERVER: 				<th class="td" scope="col" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Quantity</th>
+CLIENT -> SERVER: 				<th class="td" scope="col" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Price</th>
+CLIENT -> SERVER: 			</tr></thead>
+CLIENT -> SERVER: <tbody><tr class="order_item">
+CLIENT -> SERVER: <td class="td" style="color: #636363; border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word;">
+CLIENT -> SERVER: 		Sunday Pass		</td>
+CLIENT -> SERVER: 		<td class="td" style="color: #636363; border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+CLIENT -> SERVER: 			1		</td>
+CLIENT -> SERVER: 		<td class="td" style="color: #636363; border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+CLIENT -> SERVER: 			<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.00</span>		</td>
+CLIENT -> SERVER: 	</tr></tbody>
+CLIENT -> SERVER: <tfoot>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px;">Subtotal:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px;"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.00</span></td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Discount:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">-<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>10.00</span>
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Service charge:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>2.25</span></td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Payment method:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">PayPal</td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Total:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>17.25</span></td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: </tfoot>
+CLIENT -> SERVER: </table>
+CLIENT -> SERVER: </div>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <table id="addresses" cellspacing="0" cellpadding="0" border="0" style="width: 100%; vertical-align: top; margin-bottom: 40px; padding: 0;"><tr>
+CLIENT -> SERVER: <td valign="top" width="50%" style="text-align: left; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border: 0; padding: 0;">
+CLIENT -> SERVER: 			<h2 style='color: #96588a; display: block; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 130%; margin: 0 0 18px; text-align: left;'>Billing address</h2>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 			<address class="address" style="padding: 12px; color: #636363; border: 1px solid #e5e5e5;">
+CLIENT -> SERVER: 				s<br>Harry patel<br>b/502<br>Ahmedabad 380015<br>Gujarat, India									<br>09925357676													<br>harrypatel2272@gmail.com							</address>
+CLIENT -> SERVER: 		</td>
+CLIENT -> SERVER: 			</tr></table>
+CLIENT -> SERVER: </div>
+CLIENT -> SERVER: 														</td>
+CLIENT -> SERVER: 													</tr></table>
+CLIENT -> SERVER: <!-- End Content -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 										</tr></table>
+CLIENT -> SERVER: <!-- End Body -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 							</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 									<!-- Footer -->
+CLIENT -> SERVER: 									<table border="0" cellpadding="10" cellspacing="0" width="600" id="template_footer"><tr>
+CLIENT -> SERVER: <td valign="top" style="padding: 0; border-radius: 6px;">
+CLIENT -> SERVER: 												<table border="0" cellpadding="10" cellspacing="0" width="100%"><tr>
+CLIENT -> SERVER: <td colspan="2" valign="middle" id="credit" style='border-radius: 6px; border: 0; color: #c09bb9; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 12px; line-height: 125%; text-align: center; padding: 0 48px 48px 48px;'>
+CLIENT -> SERVER: 															<p>Quirktastic<br>Built with <a href="https://woocommerce.com/" style="color: #96588a; font-weight: normal; text-decoration: underline;">WooCommerce</a></p>
+CLIENT -> SERVER: 														</td>
+CLIENT -> SERVER: 													</tr></table>
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 										</tr></table>
+CLIENT -> SERVER: <!-- End Footer -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 							</tr>
+CLIENT -> SERVER: </table>
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 				</tr></table>
+CLIENT -> SERVER: </div>
+CLIENT -> SERVER: 	</body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 21:30:05 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Reply-To: Quirktastic <malav@topsinfosolutions.com>
+CLIENT -> SERVER: Subject: Your Quirktastic order has been received!
+CLIENT -> SERVER: Message-ID: <29fccf1c81dfd89185b249f6e4314608@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!DOCTYPE html>
+CLIENT -> SERVER: <html lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+CLIENT -> SERVER: <title>Quirktastic</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="padding: 0;">
+CLIENT -> SERVER: 		<div id="wrapper" dir="ltr" style="background-color: #f7f7f7; margin: 0; padding: 70px 0; width: 100%; -webkit-text-size-adjust: none;">
+CLIENT -> SERVER: 			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 						<div id="template_header_image">
+CLIENT -> SERVER: 													</div>
+CLIENT -> SERVER: 						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container" style="background-color: #ffffff; border: 1px solid #dedede; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); border-radius: 3px;">
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 									<!-- Header -->
+CLIENT -> SERVER: 									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header" style='background-color: #96588a; color: #ffffff; border-bottom: 0; font-weight: bold; line-height: 100%; vertical-align: middle; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; border-radius: 3px 3px 0 0;'><tr>
+CLIENT -> SERVER: <td id="header_wrapper" style="padding: 36px 48px; display: block;">
+CLIENT -> SERVER: 												<h1 style='font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 30px; font-weight: 300; line-height: 150%; margin: 0; text-align: left; text-shadow: 0 1px 0 #ab79a1; color: #ffffff;'>Thank you for your order</h1>
+CLIENT -> SERVER: 											</td>
+CLIENT -> SERVER: 										</tr></table>
+CLIENT -> SERVER: <!-- End Header -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 							</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 									<!-- Body -->
+CLIENT -> SERVER: 									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_body"><tr>
+CLIENT -> SERVER: <td valign="top" id="body_content" style="background-color: #ffffff;">
+CLIENT -> SERVER: 												<!-- Content -->
+CLIENT -> SERVER: 												<table border="0" cellpadding="20" cellspacing="0" width="100%"><tr>
+CLIENT -> SERVER: <td valign="top" style="padding: 48px 48px 0;">
+CLIENT -> SERVER: 															<div id="body_content_inner" style='color: #636363; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 14px; line-height: 150%; text-align: left;'>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <p style="margin: 0 0 16px;">Hi Harry,</p>
+CLIENT -> SERVER: <p style="margin: 0 0 16px;">Just to let you know — we've received your order #1236, and it is now being processed:</p>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <h2 style='color: #96588a; display: block; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 130%; margin: 0 0 18px; text-align: left;'>
+CLIENT -> SERVER: 	[Order #1236] (October 13, 2019)</h2>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <div style="margin-bottom: 40px;">
+CLIENT -> SERVER: 	<table class="td" cellspacing="0" cellpadding="6" border="1" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+CLIENT -> SERVER: <thead><tr>
+CLIENT -> SERVER: <th class="td" scope="col" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Product</th>
+CLIENT -> SERVER: 				<th class="td" scope="col" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Quantity</th>
+CLIENT -> SERVER: 				<th class="td" scope="col" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Price</th>
+CLIENT -> SERVER: 			</tr></thead>
+CLIENT -> SERVER: <tbody><tr class="order_item">
+CLIENT -> SERVER: <td class="td" style="color: #636363; border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word;">
+CLIENT -> SERVER: 		Sunday Pass		</td>
+CLIENT -> SERVER: 		<td class="td" style="color: #636363; border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+CLIENT -> SERVER: 			1		</td>
+CLIENT -> SERVER: 		<td class="td" style="color: #636363; border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+CLIENT -> SERVER: 			<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.00</span>		</td>
+CLIENT -> SERVER: 	</tr></tbody>
+CLIENT -> SERVER: <tfoot>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px;">Subtotal:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px;"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.00</span></td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Discount:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">-<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>10.00</span>
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Service charge:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>2.25</span></td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Payment method:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">PayPal</td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <th class="td" scope="row" colspan="2" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;">Total:</th>
+CLIENT -> SERVER: 						<td class="td" style="color: #636363; border: 1px solid #e5e5e5; vertical-align: middle; padding: 12px; text-align: left;"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>17.25</span></td>
+CLIENT -> SERVER: 					</tr>
+CLIENT -> SERVER: </tfoot>
+CLIENT -> SERVER: </table>
+CLIENT -> SERVER: </div>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <table id="addresses" cellspacing="0" cellpadding="0" border="0" style="width: 100%; vertical-align: top; margin-bottom: 40px; padding: 0;"><tr>
+CLIENT -> SERVER: <td valign="top" width="50%" style="text-align: left; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border: 0; padding: 0;">
+CLIENT -> SERVER: 			<h2 style='color: #96588a; display: block; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 130%; margin: 0 0 18px; text-align: left;'>Billing address</h2>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 			<address class="address" style="padding: 12px; color: #636363; border: 1px solid #e5e5e5;">
+CLIENT -> SERVER: 				s<br>Harry patel<br>b/502<br>Ahmedabad 380015<br>Gujarat, India									<br>09925357676													<br>harrypatel2272@gmail.com							</address>
+CLIENT -> SERVER: 		</td>
+CLIENT -> SERVER: 			</tr></table>
+CLIENT -> SERVER: <p style="margin: 0 0 16px;">
+CLIENT -> SERVER: Thanks!</p>
+CLIENT -> SERVER: 															</div>
+CLIENT -> SERVER: 														</td>
+CLIENT -> SERVER: 													</tr></table>
+CLIENT -> SERVER: <!-- End Content -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 										</tr></table>
+CLIENT -> SERVER: <!-- End Body -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 							</tr>
+CLIENT -> SERVER: <tr>
+CLIENT -> SERVER: <td align="center" valign="top">
+CLIENT -> SERVER: 									<!-- Footer -->
+CLIENT -> SERVER: 									<table border="0" cellpadding="10" cellspacing="0" width="600" id="template_footer"><tr>
+CLIENT -> SERVER: <td valign="top" style="padding: 0; border-radius: 6px;">
+CLIENT -> SERVER: 												<table border="0" cellpadding="10" cellspacing="0" width="100%"><tr>
+CLIENT -> SERVER: <td colspan="2" valign="middle" id="credit" style='border-radius: 6px; border: 0; color: #c09bb9; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-size: 12px; line-height: 125%; text-align: center; padding: 0 48px 48px 48px;'>
+CLIENT -> SERVER: 															<p>Quirktastic<br>Built with <a href="https://woocommerce.com/" style="color: #96588a; font-weight: normal; text-decoration: underline;">WooCommerce</a></p>
+CLIENT -> SERVER: 														</td>
+CLIENT -> SERVER: 													</tr></table>
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 										</tr></table>
+CLIENT -> SERVER: <!-- End Footer -->
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 							</tr>
+CLIENT -> SERVER: </table>
+CLIENT -> SERVER: </td>
+CLIENT -> SERVER: 				</tr></table>
+CLIENT -> SERVER: </div>
+CLIENT -> SERVER: 	</body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 22:44:35 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Reply-To: harrypatel2272@gmail.com
+CLIENT -> SERVER: Subject: Quirktastic Report a Problem "Monthly Payout/ Commision Invoice"
+CLIENT -> SERVER: Message-ID: <bb631e5a930a63a4231fc5e08bc9b322@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Harry <harrypatel2272@gmail.com>
+CLIENT -> SERVER: First Name: Harry
+CLIENT -> SERVER: Last Name: patel
+CLIENT -> SERVER: Subject: Monthly Payout/ Commision Invoice
+CLIENT -> SERVER: Event: My account
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: sdasdas
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://quirktastic.topsdemo.co.in)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 22:51:05 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <04ff21cfdb041865a4cebe49a99d9357@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 22:52:45 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <fe8a908d64c42e1479a44df8a727ab8f@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:02:09 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <a7f6138d2dd6f7f8a5e47272457ddc2c@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:02:33 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <0a0593aa6efa70c04d4b7fbb6fa40ccd@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:04:08 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <bd7709251e6fc6bb3b1430f8e3987994@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:05:15 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <30186056bd731f8ea23c39ce9da5d69c@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:06:30 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <0b9a83856b73f9d425b9929cc9b69f97@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:08:52 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <da538c0b206129b00a5ed1456db35815@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:11:44 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <eebffabc240e22d3bda44af00f8c5858@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:13:25 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <08752d2d8bff0f1ad3293cd261bda89e@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:14:32 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <91a59709910411926a2ff4beefeb8344@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sat, 12 Oct 2019 23:15:23 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <067f4ee2a537a5cbfc6bdc168765f022@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:22:01 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <6b55db212de1c1c98e9186e1ce0d1664@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:23:17 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <b30057f27d30286577ea06f8245a3693@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:25:19 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <a560872b67473af3ae951d5ac13fd5e1@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:26:23 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <597ad1a3b3aacf5ba54e8c584fae6e45@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:27:32 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <124ed735a6c27d92060cc5cb62552d42@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:32:46 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <ce12369a8656b3723280aa5c6986a302@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:33:38 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <de395a362c36b5c4a9c802da29bca30d@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:34:40 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <7e679b572257f1ab8ca811e8fe6772e9@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:36:17 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <e190fdefc24ed54f80637fc66e24becc@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:41:49 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <757e146e94a51d59f6cebf0dfac774b0@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:46:20 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <a94fa891e449ccfc3b4c30ea4abd7939@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:47:21 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <ff1a787a53faa6c3d891292067c05eda@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:48:13 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <651fe2a86fcbc5c7fc611c845f40b530@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:50:09 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <2b7a8c434ad233d38a4bc0f51a48f5b2@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:52:11 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <96c1c895569dff898b0114b601ff5601@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:53:43 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <d742cc99be32acf79ce3c23fd8f5f7ab@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:55:15 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <4ec8a1832127f73ccab259cecd7df79a@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 19:59:34 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <e8ec8f7ad8b204e85bcc7639eda1a526@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:01:03 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <13506ff8e3f88f483bfba1091d0a825c@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:03:19 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <2eac231d55b3897b3ed1e1c4eb2eb51e@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:04:51 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <056a641a42d40da2683f2c6852c58a14@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:08:59 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <18ce93e805fc74e820ea596e8d920df3@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:10:53 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <6e79d30c564dd4a1c681716464d760fa@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:15:40 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <6c0a51776bd5e1aa259573a37f8bc520@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:22:48 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <8a166c47809cf87950094e6cbed37024@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:25:02 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <76bf1c766df9c85591cd8e26beb4b70a@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<malav@topsinfosolutions.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 13 Oct 2019 20:25:27 +0000
+CLIENT -> SERVER: To: malav@topsinfosolutions.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic "[your-subject]"
+CLIENT -> SERVER: Message-ID: <ab876779076acdbf990f972836b6dbb0@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: [your-name] <[your-email]>
+CLIENT -> SERVER: Subject: [your-subject]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: [your-message]
+CLIENT -> SERVER: 
+CLIENT -> SERVER: -- 
+CLIENT -> SERVER: This e-mail was sent from a contact form on Quirktastic (http://localhost/event-management)
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT

@@ -200,9 +200,64 @@ jQuery(document).ready(function($) {
                     showConfirmButton: false            
                 });
             }
-        });       
-        
-    });   
+        });
+    });
+
+    $(document).on("click", '.coupon-action-edit', function(e) {        
+        var couponid = $(this).data('id');
+        if($(this).prop("checked") == true){
+            var status = 'publish';
+        }
+        else if($(this).prop("checked") == false){
+            var status = 'draft';
+        }        
+        var url = $('.sub-tab-design').data('ajax');
+        var loadtime = {action:'coupon_code_ajax_action',couponid:couponid, status:status};
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: loadtime,
+            cache: false,
+            success: function(html) {
+                
+            }
+        });
+    });
+
+    $(document).on("click", '.coupon-action-delete', function(e) {        
+        var couponid = $(this).data('id');
+        var status = 'trash';        
+        var url = $('.sub-tab-design').data('ajax');
+        var loadtime = {action:'coupon_code_ajax_action',couponid:couponid, status:status};
+        swal({
+            title: 'Confirm delete',
+            text: 'Are you sure you want to delete all unused global discount codes? Codes already redeemed will not have their discounts removed.',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Delete',
+            cancelButtonText: 'Cancel'
+        }).then(
+        function () { 
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: loadtime,
+                cache: false,
+                success: function(html) {
+                    showRecords(10, 1, 'get_discount_code_data');
+                }
+            });
+        },
+        function () { return false; });          
+    });      
+
+    $(document).on("click", '.reloaddiscount', function(e) {  
+        e.preventDefault();
+        setTimeout(function(){ 
+            $("#AddcouponModal").modal("hide");                    
+            showRecords(10, 1, 'get_discount_code_data');
+        },2000);
+    });
 
 
     if ($('.get_volunteer_data').length > 0) {
@@ -213,6 +268,9 @@ jQuery(document).ready(function($) {
     }
     if ($('.get_team_member_data').length > 0) {
         showRecords(10, 1, 'get_team_member_data');
+    }
+    if ($('.get_discount_code_data').length > 0) {
+        showRecords(10, 1, 'get_discount_code_data');        
     }
     if ($('.get_report_problem_contact_data').length > 0) {
         showRecords(10, 1, 'get_report_problem_contact_data');
