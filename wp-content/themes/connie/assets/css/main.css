@@ -3483,5 +3483,6 @@ i.drp-icn {
 .get_discount_code_data .switchwpr .switch { height: 30px; }
 .get_discount_code_data .switchwpr .slider:before { width: 24px; height: 24px; left: 2px; bottom: 3px; }
 .get_discount_code_data .switchwpr input:checked+.slider:before { left: 8px;}
+.swal2-container { z-index: 99999 !important;}
 
 /* AR479-changes after development */
