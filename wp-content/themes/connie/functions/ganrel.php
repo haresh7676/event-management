@@ -390,3 +390,15 @@ function custom_woocommerce_coupon_is_valid( $valid, $coupon ) {
     }
     return $valid;
 }
+
+function insert_og_image_in_head() {
+    global $post;
+    $postid = $post->ID;
+    if ( is_singular('event_listing') ) {
+        $banner = get_event_banner($post);
+        if(!empty($banner)){
+            echo '<meta property="og:image" content="' . $banner . '"/>';
+        }
+    }
+}
+add_action( 'wp_head', 'insert_og_image_in_head', 5 );
