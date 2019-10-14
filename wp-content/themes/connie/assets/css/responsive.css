@@ -636,18 +636,12 @@
     .login-btn {
         width: 130px;
     }
-    .login-options-inr .btn img {
-        width: 100px;
-    }
     .creat-text a {
         margin: 0 15px;
         line-height: 15px;
     }
     .creat-text a:after {
         right: -16px;
-    }
-    .login-options-inr .btn img {
-        width: 100px;
     }
     .or-dvd-line {
         width: 100%;
@@ -1505,16 +1499,10 @@
     .creat-text a:after {
         height: 100%;
     }
-    .login-options-inr .btn img {
-        width: 110px;
-    }
     .icon-logo {
         width: 50px;
         height: 50px;
         top: 40px;
-    }
-    .login-options-inr .btn img {
-        width: 80px;
     }
     .login-options .btn {
         padding: 0;
@@ -1595,6 +1583,17 @@
     }
     .memd-cont h6 {
         margin: 20px 0;
+    }
+    .signin-box .buttonwpr {
+        display: block;
+    }
+    .signin-box .login-btn-box {
+        display: flex;
+    }
+    .signin-box .quirk-resetbtn {
+        display: inline-block;
+        margin-bottom: 10px;
+        line-height: 36px;
     }
 }
 @media only screen 
