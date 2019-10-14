@@ -284,6 +284,9 @@ a.btn.login-btn.backtologin {
 	display: flex;
     justify-content: space-evenly;
 }
+.signin-box .buttonwpr.centerbtn{
+    justify-content: space-evenly;
+}
 
 .has-error .help-block{
 	margin-top: 0px;
@@ -649,6 +652,13 @@ h4.pull-right.ticket-heading {
 
 .switchwpr .slider.round:before {
   border-radius: 50%;
+}
+
+#wpmpQuirktasticLoginForm .alert, #wpmpLoginForm .alert, #wpmpQuirktasticResetPasswordSection .alert {
+    font-size: 14px;
+}
+.quirk-resetbtn{
+
 }
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}

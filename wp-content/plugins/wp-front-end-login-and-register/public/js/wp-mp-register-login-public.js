@@ -9,16 +9,20 @@
         window.ajaxPostUrl = ajax_object.ajax_url;
         // validating login form request
         wpmpValidateAndProcessLoginForm();
+        wpmpValidateAndProcessLoginQuirktasticForm();
         // validating registration form request
         wpmpValidateAndProcessRegisterForm();
         // validating reset password form request
         wpmpValidateAndProcessResetPasswordForm();
+        wpmpValidateAndProcessResetPasswordQuirktasticForm();
         //Show Reset password
         wpmpShowResetPasswordForm();
         // validating Profile form request
         wpmpValidateAndProcessProfileForm();
         //Return to login
         wpmpReturnToLoginForm();
+        wpmpShowQuirktasticLoginForm();
+        wpmpShowQuirktasticResetForm();
         generateCaptcha();
 
     }
@@ -36,16 +40,16 @@
                 wpmp_username: {
                     message: 'The username is not valid',
                     validators: {
-                        /*notEmpty: {
+                        notEmpty: {
                             message: 'The email is required.'
-                        },*/
+                        },
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
                             message: 'Please enter valid email address'
                         }
                     }
                 },
-                wpmp_phone: {
+                /*wpmp_phone: {
                     validators: {
                         stringLength: {
                             min: 7,
@@ -57,7 +61,7 @@
                             message: 'Only number are allowed.'
                         }
                     }
-                },
+                },*/
                 wpmp_password: {
                     validators: {
                         notEmpty: {
@@ -106,6 +110,98 @@
 
                     $('#wpmp-login-alert').show();
                     $('#wpmp-login-alert').html(data.error);
+
+                }
+            },
+            error: function(data) {
+                console.log(data);
+            }
+        });
+    }
+
+    // Validate Quirktastic login form
+    function wpmpValidateAndProcessLoginQuirktasticForm() {
+        $('#wpmpQuirktasticLoginForm').formValidation({
+            message: 'This value is not valid',
+            /*icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },*/
+            fields: {
+               /*wpmp_username: {
+                    message: 'The username is not valid',
+                    validators: {
+                        regexp: {
+                            regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
+                            message: 'Please enter valid email address'
+                        }
+                    }
+                },*/
+                wpmp_phone: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The Phone Number is required.'
+                        },
+                        stringLength: {
+                            min: 7,
+                            max: 10,
+                            message: 'The phone number must be more than 7 and less than 10 characters long'
+                        },
+                        regexp: {
+                            regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
+                            message: 'Only number are allowed.'
+                        }
+                    }
+                },
+                wpmp_password: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The password is required.'
+                        }
+                    }
+                }
+            }
+        }).on('success.form.fv', function(e) {
+            $('#wpmp-login-quirk-alert').hide();
+            // You can get the form instance
+            var $loginForm = $(e.target);
+            // and the FormValidation instance
+            var fv = $loginForm.data('formValidation');
+            var content = $loginForm.serialize();
+
+            // start processing
+            $('#wpmp-login-quirk-loader-info').show();
+            wpmpStartLoginQuirkProcess(content);
+            // Prevent form submission
+            e.preventDefault();
+        });
+    }
+
+    // Make ajax request with user credentials
+    function wpmpStartLoginQuirkProcess(content) {
+
+        var loginRequest = jQuery.ajax({
+            type: 'POST',
+            url: ajaxPostUrl,
+            data: content + '&action=wpmp_user_login',
+            dataType: 'json',
+            success: function(data) {
+                $('#wpmp-login-quirk-loader-info').hide();
+                // check login status
+                if (true == data.logged_in) {
+                    $('#wpmp-login-quirk-alert').removeClass('alert-danger');
+                    $('#wpmp-login-quirk-alert').addClass('alert-success');
+                    $('#wpmp-login-quirk-alert').show();
+                    $('#wpmp-login-quirk-alert').html(data.success);
+
+                    // redirect to redirection url provided
+                    window.location = data.redirection_url;
+
+                } else {
+
+                    $('#wpmp-login-quirk-alert').show();
+                    $('#wpmp-login-quirk-alert').html(data.error);
 
                 }
             },
@@ -384,17 +480,50 @@
     }
 
     function wpmpShowResetPasswordForm() {
-        $('#btnForgotPassword').click(function() {
+        $(document).on('click', '.btnForgotPassword', function() {
               $('#wpmpResetPasswordSection').removeClass('hidden');
-              $('#wpmpLoginForm').slideUp(500);  
-               $('#wpmpResetPasswordSection').slideDown(500);
+              $('#wpmpLoginForm').slideUp(500);
+              $('#wpmpQuirktasticLoginForm').slideUp(500);
+              $('#wpmpQuirktasticLoginForm').addClass('hidden');
+              $('#wpmpResetPasswordSection').slideDown(500);
+        });
+    }
+
+    function wpmpShowQuirktasticResetForm() {
+        $(document).on('click', '.btnQuirktasticReset', function(e) {
+            e.preventDefault();
+            $('#wpmpQuirktasticResetPasswordSection').removeClass('hidden');
+            $('#wpmpResetPasswordSection').slideUp(500);
+            $('#wpmpResetPasswordSection').addClass('hidden');
+            $('#wpmpQuirktasticResetPasswordSection').slideDown(500);
+        });
+
+        $(document).on('click', '.btnEmailReset', function(e) {
+            e.preventDefault();
+            $('#wpmpResetPasswordSection').removeClass('hidden');
+            $('#wpmpQuirktasticResetPasswordSection').slideUp(500);
+            $('#wpmpQuirktasticResetPasswordSection').addClass('hidden');
+            $('#wpmpResetPasswordSection').slideDown(500);
+        });
+    }
+
+    function wpmpShowQuirktasticLoginForm() {
+        $('.btnQuirktasticLogin').click(function(e) {
+            e.preventDefault();
+            $('#wpmpQuirktasticLoginForm').removeClass('hidden');
+            $('#wpmpLoginForm').slideUp(500);
+            $('#wpmpQuirktasticLoginForm').slideDown(500);
         });
     }
     
     function wpmpReturnToLoginForm() {
-        $('#btnReturnToLogin').click(function() {
-              $('#wpmpResetPasswordSection').slideUp(500);              
-              $('#wpmpResetPasswordSection').addClass('hidden');
+        $(document).on('click', '.btnReturnToLogin', function() {
+            $('#wpmpQuirktasticResetPasswordSection').slideUp(500);
+            $('#wpmpQuirktasticResetPasswordSection').addClass('hidden');
+            $('#wpmpResetPasswordSection').slideUp(500);
+            $('#wpmpResetPasswordSection').addClass('hidden');
+              $('#wpmpQuirktasticLoginForm').slideUp(500);
+              $('#wpmpQuirktasticLoginForm').addClass('hidden');
               $('#wpmpLoginForm').removeClass('hidden');
               $('#wpmpLoginForm').slideDown(500);               
         });
@@ -415,25 +544,12 @@
             fields: {
                 wpmp_rp_email: {
                     validators: {
-                        /*notEmpty: {
+                        notEmpty: {
                             message: 'Please enter your email address which you used during registration.'
-                        },*/
+                        },
                         regexp: {
                             regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
                             message: 'Please enter valid email address'
-                        }
-                    }
-                },
-                wpmp_phone: {
-                    validators: {
-                        stringLength: {
-                            min: 7,
-                            max: 10,
-                            message: 'The phone number must be more than 7 and less than 10 characters long'
-                        },
-                        regexp: {
-                            regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
-                            message: 'Only number are allowed.'
                         }
                     }
                 },
@@ -472,18 +588,18 @@
     // Make ajax request with email
     //Neelkanth
     function wpmpStartResetPasswordProcess(content) {
-        
+
         var resetPasswordRequest = jQuery.ajax({
             type: 'POST',
             url: ajaxPostUrl,
             data: content + '&action=wpmp_resetpassword',
             dataType: 'json',
             success: function(data) {
-                
+
                 $('#wpmp-resetpassword-loader-info').hide();
                 // check login status
                 if (data.success) {
-                    
+
                     $('#wpmp-resetpassword-alert').removeClass('alert-danger');
                     $('#wpmp-resetpassword-alert').addClass('alert-success');
                     $('#wpmp-resetpassword-alert').show();
@@ -502,6 +618,90 @@
         });
     }
 
+    /*  Quirktastic  */
+    function wpmpValidateAndProcessResetPasswordQuirktasticForm() {
+
+        $('#wpmpQuirktasticResetPasswordForm').formValidation({
+            message: 'This value is not valid',
+            fields: {
+                wpmp_phone: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please enter your Phone Number which you used during registration.'
+                        },
+                        stringLength: {
+                            min: 7,
+                            max: 10,
+                            message: 'The phone number must be more than 7 and less than 10 characters long'
+                        },
+                        regexp: {
+                            regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
+                            message: 'Only number are allowed.'
+                        }
+                    }
+                },
+                wpmp_newpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The password is required'
+                        },
+                        stringLength: {
+                            min: 6,
+                            message: 'The password must be more than 6 characters long'
+                        }
+                    }
+                }
+            }
+        }).on('success.form.fv', function(e) {
+            $('#wpmp-resetpassword-quirk-alert').hide();
+
+            $('body, html').animate({
+                scrollTop: 0
+            }, 'slow');
+            // You can get the form instance
+            var $resetPasswordForm = $(e.target);
+            // and the FormValidation instance
+            var fv = $resetPasswordForm.data('formValidation');
+            var content = $resetPasswordForm.serialize();
+
+            // start processing
+            $('#wpmp-resetpassword-quirk-loader-info').show();
+            wpmpStartQuirkResetPasswordProcess(content);
+            // Prevent form submission
+            e.preventDefault();
+        });
+    }
+
+    function wpmpStartQuirkResetPasswordProcess(content) {
+
+        var resetPasswordRequest = jQuery.ajax({
+            type: 'POST',
+            url: ajaxPostUrl,
+            data: content + '&action=wpmp_resetpassword',
+            dataType: 'json',
+            success: function(data) {
+
+                $('#wpmp-resetpassword-quirk-loader-info').hide();
+                // check login status
+                if (data.success) {
+
+                    $('#wpmp-resetpassword-quirk-alert').removeClass('alert-danger');
+                    $('#wpmp-resetpassword-quirk-alert').addClass('alert-success');
+                    $('#wpmp-resetpassword-quirk-alert').show();
+                    $('#wpmp-resetpassword-quirk-alert').html(data.success);
+
+                } else {
+
+                    $('#wpmp-resetpassword-quirk-alert').show();
+                    $('#wpmp-resetpassword-quirk-alert').html(data.error);
+
+                }
+            },
+            error: function(data) {
+                console.log(data);
+            }
+        });
+    }
 
 
 })(jQuery);

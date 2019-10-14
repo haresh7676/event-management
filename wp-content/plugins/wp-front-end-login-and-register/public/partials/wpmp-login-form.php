@@ -30,8 +30,7 @@
                 }else{ $is_url_has_token; }
                 
                 ?>
-                <form name="wpmpLoginForm" id="wpmpLoginForm" method="post" class="<?php echo empty($is_url_has_token) ? '' : 'hidden' ?>">                   
-                    
+                <form name="wpmpLoginForm" id="wpmpLoginForm" method="post" class="LoginwithEmail <?php echo empty($is_url_has_token) ? '' : 'hidden' ?>">
                     <div class="signin-title">
                         <h5><?php _e($form_heading, $this->plugin_name); ?></h5>
                     </div>
@@ -43,8 +42,61 @@
 
                      <div class="form-group row">
                         <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_username" id="wpmp_username" type="Email" placeholder="Email"></div>
-                         <div class="or-dvd-line phone-or-email"><span>or</span></div>
-                         <div class="col-sm-12 email-or-phone">
+                        <div class="col-sm-12"><span class="fm-icn psw-icn"></span><input type="password" class="form-control" name="wpmp_password" id="wpmp_password" placeholder="Password"></div>
+                    </div>
+
+                    <?php
+                    $login_redirect = (empty($wpmp_redirect_settings['wpmp_login_redirect']) || $wpmp_redirect_settings['wpmp_login_redirect'] == '-1') ? '' : $wpmp_redirect_settings['wpmp_login_redirect'];
+                    ?>
+                    <input type="hidden" name="redirection_url" id="redirection_url" value="<?php echo get_permalink($login_redirect); ?>" />
+
+                    <?php
+                    // this prevent automated script for unwanted spam
+                    if (function_exists('wp_nonce_field'))
+                        wp_nonce_field('wpmp_login_action', 'wpmp_login_nonce');
+
+                    ?>
+
+                    <div class="form-group position-relative">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="remember">
+                            <label class="custom-control-label" for="customCheck">Remember me</label>
+                        </div>
+                        <div class="pull-right login-btn-box"><input type="submit" class="btn login-btn" value="<?php _e($submit_button_text, $this->plugin_name); ?>"></div>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary"><?php //_e($submit_button_text, $this->plugin_name); ?></utton> -->
+                    <div class="creat-text">
+                        <a href="<?php echo site_url(); ?>/register">Create account</a>
+                        <?php
+                        if($wpmp_form_settings['wpmp_enable_forgot_password']){
+                        ?>
+                            <a href="#" id="btnForgotPassword" class="btnForgotPassword"><?php _e($forgotpassword_button_text, $this->plugin_name); ?></a>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="or-dvd-line"><span>or</span></div>
+                    <div class="login-options">
+                        <div class="login-options-inr">
+                            <a class="btn fb-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icn.png" alt=""></a>
+                            <a href="#" class="btn quirk-btn btnQuirktasticLogin">Quirktastic</a>
+                            <!--<a class="btn gp-btn" href="<?php /*echo site_url(); */?>/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="<?php /*echo site_url(); */?>/events/" data-provider="google" data-popupwidth="600" data-popupheight="600"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/images/google-ps-icn.png" alt=""></a>-->
+                        </div>
+                    </div>
+                </form>
+                <!-- Quirktastic login -->
+                <form name="wpmpQuirktasticLoginForm" id="wpmpQuirktasticLoginForm" method="post" class="hidden <?php echo empty($is_url_has_token) ? '' : 'hidden' ?>">
+                    <div class="signin-title">
+                        <h5><?php _e($form_heading, $this->plugin_name); ?> with Quirktastic</h5>
+                    </div>
+                    <div id="wpmp-login-quirk-loader-info" class="wpmp-loader" style="display:none;">
+                        <img src="<?php echo plugins_url('images/ajax-loader.gif', dirname(__FILE__)); ?>"/>
+                        <span><?php _e('Please wait ...', $this->plugin_name); ?></span>
+                    </div>
+                    <div id="wpmp-login-quirk-alert" class="alert alert-danger" role="alert" style="display:none;"></div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 email-or-phone">
                             <div class="row">
                                 <div class="col-sm-3">
                                     <select class="form-control" name="country_code" id="country_code">
@@ -69,8 +121,8 @@
                                     <span class="fm-icn phone-icn"></span>
                                     <input type="text" class="form-control" name="wpmp_phone" id="wpmp_phone" placeholder="Phone">
                                 </div>
-                             </div>
-                         </div>
+                            </div>
+                        </div>
                         <div class="col-sm-12"><span class="fm-icn psw-icn"></span><input type="password" class="form-control" name="wpmp_password" id="wpmp_password" placeholder="Password"></div>
                     </div>
 
@@ -85,6 +137,7 @@
                         wp_nonce_field('wpmp_login_action', 'wpmp_login_nonce');
 
                     ?>
+
                     <div class="form-group position-relative">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck" name="remember">
@@ -92,24 +145,25 @@
                         </div>
                         <div class="pull-right login-btn-box"><input type="submit" class="btn login-btn" value="<?php _e($submit_button_text, $this->plugin_name); ?>"></div>
                     </div>
-                    <!-- <button type="submit" class="btn btn-primary"><?php _e($submit_button_text, $this->plugin_name); ?></utton> -->
+                    <!-- <button type="submit" class="btn btn-primary"><?php //_e($submit_button_text, $this->plugin_name); ?></utton> -->
                     <div class="creat-text">
                         <a href="<?php echo site_url(); ?>/register">Create account</a>
-                        <?php                        
-                        if($wpmp_form_settings['wpmp_enable_forgot_password']){                            
-                        ?>
-                            <a href="#" id="btnForgotPassword" class=""><?php _e($forgotpassword_button_text, $this->plugin_name); ?></a>
                         <?php
+                        if($wpmp_form_settings['wpmp_enable_forgot_password']){
+                            ?>
+                            <a href="#" id="btnForgotPassword" class="btnForgotPassword"><?php _e($forgotpassword_button_text, $this->plugin_name); ?></a>
+                            <?php
                         }
                         ?>
-                    </div>     
+                    </div>
                     <div class="or-dvd-line"><span>or</span></div>
                     <div class="login-options">
-                    <div class="login-options-inr">
-                      <a class="btn fb-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icn.png" alt=""></a>
-                        <a class="btn gp-btn" href="<?php echo site_url(); ?>/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="<?php echo site_url(); ?>/events/" data-provider="google" data-popupwidth="600" data-popupheight="600"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/google-ps-icn.png" alt=""></a>
+                        <div class="login-options-inr">
+                            <a href="#" class="btn fb-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icn.png" alt=""></a>
+                            <button type="button" id="btnReturnToLogin" class="btn defulat-custom-btn btnReturnToLogin">Return to Login</button>
+                            <!--<a class="btn gp-btn" href="<?php /*echo site_url(); */?>/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="<?php /*echo site_url(); */?>/events/" data-provider="google" data-popupwidth="600" data-popupheight="600"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/images/google-ps-icn.png" alt=""></a>-->
+                        </div>
                     </div>
-                    </div>               
                 </form>
                 
                 <?php
