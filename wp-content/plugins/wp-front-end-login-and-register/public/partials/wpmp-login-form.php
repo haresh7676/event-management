@@ -79,7 +79,7 @@
                     <div class="login-options">
                         <div class="login-options-inr">
                             <a class="btn fb-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icn.png" alt=""></a>
-                            <a href="#" class="btn quirk-btn btnQuirktasticLogin">Quirktastic</a>
+                            <a href="#" class="btn quirk-btn btnQuirktasticLogin"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Quirktastic-btn.png" alt=""></a>
                             <!--<a class="btn gp-btn" href="<?php /*echo site_url(); */?>/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="<?php /*echo site_url(); */?>/events/" data-provider="google" data-popupwidth="600" data-popupheight="600"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/images/google-ps-icn.png" alt=""></a>-->
                         </div>
                     </div>
