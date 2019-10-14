@@ -1,0 +1,29 @@
+CLIENT -> SERVER: EHLO event.localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: bm8tcmVwbHlAdG9wc2RlbW8uY28uaW4=
+CLIENT -> SERVER: VXZDKCVBV29IXXR4
+CLIENT -> SERVER: MAIL FROM:<office.quirktastic@gmail.com>
+CLIENT -> SERVER: RCPT TO:<harrypatel2272@gmail.com>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Mon, 14 Oct 2019 09:08:08 +0000
+CLIENT -> SERVER: To: harrypatel2272@gmail.com
+CLIENT -> SERVER: From: Quirktastic <office.quirktastic@gmail.com>
+CLIENT -> SERVER: Subject: Quirktastic | Password Reset
+CLIENT -> SERVER: Message-ID: <b970f4e7571c602a5d6f20b408eb2509@event.localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Hello 19925357676,
+CLIENT -> SERVER: <br><br>
+CLIENT -> SERVER: We have received a request to change your password.
+CLIENT -> SERVER: Click on the link to change your password : 
+CLIENT -> SERVER: <br><br>
+CLIENT -> SERVER: <a target='_blank' href='http://event.localhost/sign-in/?email=harrypatel2272@gmail.com&#038;wpmp_reset_password_token=f2399b298949442925e29b2bcac3848f'>http://event.localhost/sign-in/?email=harrypatel2272@gmail.com&wpmp_reset_password_token=f2399b298949442925e29b2bcac3848f</a>
+CLIENT -> SERVER: <br><br>
+CLIENT -> SERVER: Thanks and regards,
+CLIENT -> SERVER: <br>
+CLIENT -> SERVER: The team at Quirktastic
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
