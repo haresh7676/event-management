@@ -52,7 +52,8 @@ $is_url_has_token ='';
 
             ?>
             <div class="form-group row">
-                <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_newpassword" id="wpmp_newpassword" type="password" placeholder="New Password"></div>               
+                <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_newpassword" id="wpmp_newpassword" type="password" placeholder="New Password"></div>
+                <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_confirm_newpassword" id="wpmp_confirm_newpassword" type="password" placeholder="Confirm new Password"></div>
             </div>
             <input type="hidden" name="wpmp_rp_email" id="wpmp_rp_email" value="<?php echo $_GET['email'] ?>" />
             <input type="hidden" name="wpmp_reset_password_token" id="wpmp_reset_password_token" value="<?php echo $_GET['wpmp_reset_password_token']; ?>" />
@@ -138,6 +139,7 @@ $is_url_has_token ='';
             ?>
             <div class="form-group row">
                 <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_newpassword" id="wpmp_newpassword" type="password" placeholder="New Password"></div>
+                <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_confirm_newpassword" id="wpmp_confirm_newpassword" type="password" placeholder="Confirm new Password"></div>
             </div>
             <input type="hidden" name="wpmp_rp_email" id="wpmp_rp_email" value="<?php echo $_GET['email'] ?>" />
             <input type="hidden" name="wpmp_reset_password_token" id="wpmp_reset_password_token" value="<?php echo $_GET['wpmp_reset_password_token']; ?>" />

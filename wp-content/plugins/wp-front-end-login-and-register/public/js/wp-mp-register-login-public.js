@@ -563,6 +563,17 @@
                             message: 'The password must be more than 6 characters long'
                         }
                     }
+                },
+                wpmp_confirm_newpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The confirm password is required'
+                        },
+                        identical: {
+                            field: 'wpmp_newpassword',
+                            message: 'The password and its confirm are not the same'
+                        }
+                    }
                 }
             }
         }).on('success.form.fv', function(e) {
@@ -583,6 +594,9 @@
             // Prevent form submission
             e.preventDefault();
         });
+       /* $('#wpmpResetPasswordForm').querySelector('[name="wpmp_newpassword"]').addEventListener('input', function() {
+            fv.revalidateField('wpmp_confirm_newpassword');
+        });*/
     }
 
     // Make ajax request with email
@@ -650,6 +664,17 @@
                             message: 'The password must be more than 6 characters long'
                         }
                     }
+                },
+                wpmp_confirm_newpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The confirm password is required'
+                        },
+                        identical: {
+                            field: 'wpmp_newpassword',
+                            message: 'The password and its confirm are not the same'
+                        }
+                    }
                 }
             }
         }).on('success.form.fv', function(e) {
@@ -670,6 +695,10 @@
             // Prevent form submission
             e.preventDefault();
         });
+
+       /* $('#wpmpQuirktasticResetPasswordForm').querySelector('[name="wpmp_newpassword"]').addEventListener('input', function() {
+            fv.revalidateField('wpmp_confirm_newpassword');
+        });*/
     }
 
     function wpmpStartQuirkResetPasswordProcess(content) {
