@@ -3489,118 +3489,22 @@ i.drp-icn {
 
 
 /* DATE PICKER UI */
-.e-p-date-picker  .clndr {
-    padding: 20px 20px 0 20px;
-}
-.e-p-date-picker .cal1 {
-    font-family: inherit !important;
-}
-.e-p-date-picker .cal1 .clndr .clndr-controls .month {
-    font-size: 19px;
-    font-weight: 600;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr {
-    height: 65px;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day,
-.e-p-date-picker .cal1 .clndr .clndr-table tr:last-child .day, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr:last-child .my-day,
-.e-p-date-picker .cal1 .clndr .clndr-table .header-days .header-day {
-    border:none !important;
-    vertical-align: middle;
-    text-align: center;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table .header-days {
-    background: none;
-    height: 45px;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table .header-days .header-day {
-    color: #cfcad4;
-    font-weight: bold;
-    font-size: 12px;
-    border-bottom: 2px #dcdcdc dashed !important;
-    line-height: 40px;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day .day-contents {
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .empty, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .adjacent-month, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .my-empty, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .my-adjacent-month {
-    background: none;
-    color: #d5ceda;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.adjacent-month:hover 
- {
-    background: none;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.today, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-today {
-    background: none;
-    color: #fff;
-    text-align: center;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day .day-contents {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: inline-block;
-
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.today .day-contents {
-    background: #775dff;
-    color: #fff;  
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.event, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-event {
-    background: none;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.event .day-contents {
-    background: #f7b0c0;
-    color:#fff;
-}
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.today:hover, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-today:hover,
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.event:hover, 
-.e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-event:hover {
-    background: #eee;
-}
-.e-p-date-picker .clndr-next-button,
-.e-p-date-picker .clndr-previous-button {
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border-radius: 6px;
-    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
-    font-size: 0px;
-    display: inline-block;
-    position: relative;
-}
-.e-p-date-picker .clndr-next-button:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: url(../../assets/images/next.svg) no-repeat;
-    background-size: contain;
-    width: 8px;
-    height: 13px;
-    text-align: center;
-}
-.e-p-date-picker .clndr-previous-button:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: url(../../assets/images/preview.svg) no-repeat;
-    background-size: contain;
-    width: 8px;
-    height: 13px;
-    text-align: center;
-}
+.e-p-date-picker  .clndr { padding: 20px 20px 0 20px; }
+.e-p-date-picker .cal1 { font-family: inherit !important; }
+.e-p-date-picker .cal1 .clndr .clndr-controls .month { font-size: 19px; font-weight: 600; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr { height: 65px; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day, .e-p-date-picker .cal1 .clndr .clndr-table tr:last-child .day, .e-p-date-picker .cal1 .clndr .clndr-table tr:last-child .my-day, .e-p-date-picker .cal1 .clndr .clndr-table .header-days .header-day { border: none !important; vertical-align: middle; text-align: center; }
+.e-p-date-picker .cal1 .clndr .clndr-table .header-days { background: none; height: 45px; }
+.e-p-date-picker .cal1 .clndr .clndr-table .header-days .header-day { color: #cfcad4; font-weight: bold; font-size: 12px; border-bottom: 2px #dcdcdc dashed !important; line-height: 40px; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day .day-contents { font-size: 15px; font-weight: 600; text-align: center; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .empty, .e-p-date-picker .cal1 .clndr .clndr-table tr .adjacent-month, .e-p-date-picker .cal1 .clndr .clndr-table tr .my-empty, .e-p-date-picker .cal1 .clndr .clndr-table tr .my-adjacent-month { background: none; color: #d5ceda; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day.adjacent-month:hover { background: none; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day.today, .e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-today { background: none; color: #fff; text-align: center; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day .day-contents { width: 35px; height: 35px; border-radius: 50%; display: inline-block; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day.today .day-contents { background: #775dff; color: #fff; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day.event, .e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-event { background: none; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day.event .day-contents { background: #f7b0c0; color: #fff; }
+.e-p-date-picker .cal1 .clndr .clndr-table tr .day.today:hover, .e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-today:hover, .e-p-date-picker .cal1 .clndr .clndr-table tr .day.event:hover, .e-p-date-picker .cal1 .clndr .clndr-table tr .day.my-event:hover { background: #eee; }
+.e-p-date-picker .clndr-next-button, .e-p-date-picker .clndr-previous-button { width: 40px; height: 40px; background: #fff; border-radius: 6px; box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07); font-size: 0px; display: inline-block; position: relative; }
+.e-p-date-picker .clndr-next-button:after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: url(../../assets/images/next.svg) no-repeat; background-size: contain; width: 8px; height: 13px; text-align: center; }
+.e-p-date-picker .clndr-previous-button:after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: url(../../assets/images/preview.svg) no-repeat; background-size: contain; width: 8px; height: 13px; text-align: center; }
