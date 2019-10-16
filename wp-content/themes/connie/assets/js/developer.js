@@ -39,19 +39,18 @@ jQuery(document).ready(function($) {
      }
     $(document).on("click", '.favoritelisting', function(e) {
             var url = $(this).data('ajax');
-            var loadtime = {action : 'get_favoritelisting_ajax'};
-            var loaderimage = $('.tableloaderfavorites').data('loader');
+            var loadtime = {action : 'get_favoritelisting_ajax'};            
             $.ajax({
                 type: "POST",
                 url: url,
                 data: loadtime,
                 cache: false,
-                beforeSend: function() {
-                    $('.tableloaderfavorites').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+                beforeSend: function() {                    
+                    $('.tableloaderfavorites').show();
                 },
                 success: function(html) {
                     $('.tableloaderfavorites-data').html(html);
-                    $('.tableloaderfavorites').html('');
+                    $('.tableloaderfavorites').hide();
                 }
             });
             //fas fa-spinner fa-pulse
@@ -59,19 +58,18 @@ jQuery(document).ready(function($) {
     });
     $(document).on("click", '.upcominglisting', function(e) {
             var url = $(this).data('ajax');
-            var loadtime = {action : 'get_upcoming_ajax'};
-            var loaderimage = $('.tableloaderupcoming').data('loader');
+            var loadtime = {action : 'get_upcoming_ajax'};            
             $.ajax({
                 type: "POST",
                 url: url,
                 data: loadtime,
                 cache: false,
                 beforeSend: function() {
-                    $('.tableloaderupcoming').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+                    $('.tableloaderupcoming').show();
                 },
                 success: function(html) {
                     $('.tableloaderupcoming-data').html(html);
-                    $('.tableloaderupcoming').html('');
+                    $('.tableloaderupcoming').hide();
                 }
             });
             //fas fa-spinner fa-pulse
@@ -80,19 +78,18 @@ jQuery(document).ready(function($) {
 
     $(document).on("click", '.pasteventlisting', function(e) {
             var url = $(this).data('ajax');
-            var loadtime = {action : 'get_pastevent_ajax'};
-            var loaderimage = $('.tableloaderpast').data('loader');
+            var loadtime = {action : 'get_pastevent_ajax'};            
             $.ajax({
                 type: "POST",
                 url: url,
                 data: loadtime,
                 cache: false,
                 beforeSend: function() {
-                    $('.tableloaderupcoming').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+                    $('.tableloaderupcoming').show();
                 },
                 success: function(html) {
                     $('.tableloaderpast-data').html(html);
-                    $('.tableloaderpast').html('');
+                    $('.tableloaderpast').hide();
                 }
             });
             //fas fa-spinner fa-pulse
@@ -193,7 +190,11 @@ jQuery(document).ready(function($) {
             url: url,
             data: loadtime,
             cache: false,
+            beforeSend: function() {
+                jQuery('.get_volunteer_data .tableloader').show();
+            },
             success: function(html) {
+                jQuery('.get_volunteer_data .tableloader').hide();
                 swal({
                     html: html,                    
                     showCloseButton: true,
@@ -319,34 +320,41 @@ jQuery(document).ready(function($) {
         }, true);
     }  
 
+    /*$('#contactmodule').on('shown.bs.modal', function () {
+        $('#contactmodule form.wpcf7-form')[0].reset();
+        console.log('cke');
+    });*/
 
     /*$('#event_start_time').on('changeTime', function() {
         $('#event_end_time').timepicker('option',{'roundingFunction':false, 'minTime': $(this).val()});
     });*/
-    function showRecords(perPageCount, pageNumber, action) {
-        var eventid = '';
-        if ($('.'+action+' .event-dropdown').length > 0) {
-            //var eventid = $('.'+action+' .event-dropdown').val();
-            var eventid = $('.'+action+' .event-dropdown').find("option:selected").val();
-            //console.log(eventid);
-        }
-        var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount,eventid:eventid};
-        var loaderimage = $('.'+action+' .tableloader').data('loader');
-        $.ajax({
-            type: "POST",
-            url: $('.sub-tab-design').data('ajax'),
-            data: loadtime,
-            cache: false,
-            beforeSend: function() {
-                $('.'+action+' .tableloader').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
-            },
-            success: function(html) {
-                $('.'+action+' .tabledataajax').html(html);
-                $('.'+action+' .tableloader').html('');
-            }
-        });
-    }
+    
 });
+function showRecords(perPageCount, pageNumber, action) {
+    var eventid = '';
+    if (jQuery('.'+action+' .event-dropdown').length > 0) {
+        //var eventid = $('.'+action+' .event-dropdown').val();
+        var eventid = jQuery('.'+action+' .event-dropdown').find("option:selected").val();
+        //console.log(eventid);
+    }
+    var loadtime = {action : action, pageNumber:pageNumber,perPageCount:perPageCount,eventid:eventid};
+    //var loaderimage = jQuery('.'+action+' .tableloader').data('loader');
+    jQuery.ajax({
+        type: "POST",
+        url: jQuery('.sub-tab-design').data('ajax'),
+        data: loadtime,
+        cache: false,
+        beforeSend: function() {
+            //jQuery('.'+action+' .tableloader').html('<img src="'+loaderimage+'" alt="reload" width="20" height="20" style="margin-top:10px;">');
+            jQuery('.'+action+' .tableloader').show();
+        },
+        success: function(html) {
+            jQuery('.'+action+' .tabledataajax').html(html);
+            //jQuery('.'+action+' .tableloader').html('');
+            jQuery('.'+action+' .tableloader').hide();
+        }
+    });
+}
 
 ( function ( $ ) {
     "use strict";

@@ -910,7 +910,7 @@ function usrebygetfavrite($userid,$postid){
 add_action("wp_ajax_get_volunteer_dataajax", "get_volunteer_dataajax");
 function get_volunteer_dataajax(){
     $data = $_POST['formdata'];        
-    $html = '';
+    $html = '<div class="volunteer-modal-content">';
     $html .='<p><b>First name: </b>'.(!empty($data['first-name'])?$data['first-name']:'-').'</p>';
     $html .='<p><b>Last name: </b>'.(!empty($data['last-name'])?$data['last-name']:'-').'</p>';  
     $html .='<p><b>Email: </b>'.(!empty($data['your-email'])?$data['your-email']:'-').'</p>';  
@@ -923,6 +923,7 @@ function get_volunteer_dataajax(){
     $html .='<p><b>Which times/shifts could you be available?: </b>'.(!empty($data['times-shofts'])?$data['times-shofts']:'-').'</p>';
     $html .='<p><b>How did you hear about volunteering?: </b>'.(!empty($data['how-hear'])?$data['how-hear']:'-').'</p>';
     $html .='<p><b>What other events have you volunteered at?: </b>'.(!empty($data['other-events'])?$data['other-events']:'-').'</p>';      
+    $html .='</div>';
     echo $html;
     die();
 }
@@ -950,6 +951,11 @@ function get_discount_code_data() {
         'posts_per_page' => -1,
         'author' => $post_author_id        
     );            
+    $resultstotal = get_posts($posts_args);
+    $posts_args['posts_per_page'] = $perPageCount;
+    if(!empty($pageNumber) && $pageNumber != 1){        
+        $posts_args['paged'] = $pageNumber;
+    }
     $results = get_posts($posts_args);
     $output = '';
     $output .='<div class="table-responsive">';
@@ -994,7 +1000,7 @@ function get_discount_code_data() {
     $output.='</table>';
     $output.='</div>';
     /*pagination */
-    $rowCount = (isset($results) && !empty($results))?count($results):0;
+    $rowCount = (isset($resultstotal) && !empty($resultstotal))?count($resultstotal):0;
     $pagesCount = ceil($rowCount / $perPageCount);
     $output.='<div class="export-list-row">';
     $output.='<button data-toggle="modal" data-target="#AddcouponModal">Add discount code</button>';

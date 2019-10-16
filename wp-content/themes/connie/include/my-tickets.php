@@ -44,7 +44,7 @@
             endif;
             ?>
             <div class="tab-pane fade show active" id="upcoming">
-                <div class="tableloader tableloaderupcoming" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                <div class="tableloader tableloaderupcoming order-loader"><div class="lds-dual-ring"></div></div>
                 <div class="tableloaderupcoming-data">
                 <?php
                 if(!empty($upcomingeveent)) {
@@ -95,7 +95,7 @@
             </div>
             <!-- My Ticket Tab2 -->
             <div class="tab-pane fade" id="pastEvents">
-                <div class="tableloader tableloaderpast" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                <div class="tableloader tableloaderpast order-loader"><div class="lds-dual-ring"></div></div>
                 <div class="tableloaderpast-data">
                     <?php
                     if(!empty($pastevent)) {
@@ -132,7 +132,7 @@
             </div>
             <!-- My Ticket Tab3 -->
             <div class="tab-pane fade" id="favorites">
-                <div class="tableloader tableloaderfavorites" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                <div class="tableloader tableloaderfavorites order-loader"><div class="lds-dual-ring"></div></div>
                 <div class="tableloaderfavorites-data">
                 <?php
                 $userid = get_current_user_id();

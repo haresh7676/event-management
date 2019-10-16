@@ -68,7 +68,7 @@ function projectname_scripts() {
     //wp_enqueue_script('jqueryvalidate-js', get_theme_file_uri('/assets/js/jquery.validate.js'), array('jquery'), rand(0,999), false);
 
     wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), rand(0,999), true);
-	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), rand(0,999), true );
+	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), rand(0,999), true);
 
     if ( is_singular()) {
         wp_enqueue_script(  array('jquery','jquery-ui-core','jquery-ui-datepicker') );
