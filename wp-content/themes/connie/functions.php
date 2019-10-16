@@ -44,7 +44,7 @@ function projectname_scripts() {
 
     wp_enqueue_style( 'custom-css', get_theme_file_uri( '/assets/css/custom.css' ), array(), rand(0,999) );
 
-    wp_enqueue_style( 'clndr-css', get_theme_file_uri( '/assets/css/clndr.css' ), array(), '1.0',rand(0,999));
+    wp_enqueue_style( 'clndr-css', get_theme_file_uri( '/assets/css/clndr.css' ), array(), '1.0');
 
     wp_enqueue_style( 'sweetalert2-css', get_theme_file_uri( '/assets/sweetalert2/dist/sweetalert2.css' ), array(), '1.0');
 
