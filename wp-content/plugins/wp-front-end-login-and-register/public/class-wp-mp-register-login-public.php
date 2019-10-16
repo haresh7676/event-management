@@ -136,7 +136,13 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
             $user = wp_signon($credentials, false);
             // checking for authentication error
             if (is_wp_error($user)) {
-                $response['error'] = __($wpmp_messages_settings['wpmp_login_error_message'], $this->plugin_name);
+                //$response['error'] = __($wpmp_messages_settings['wpmp_login_error_message'], $this->plugin_name);
+                if(isset($_POST['wpmp_phone']) && !empty($_POST['wpmp_phone'])) {
+                    $response['error'] = __('Phone number or password is incorrect.', $this->plugin_name);
+                }else{
+                    //$response['error'] = __($wpmp_messages_settings['wpmp_login_error_message'], $this->plugin_name);
+                    $response['error'] = __('Email or password is incorrect.', $this->plugin_name);
+                }
             } else {
                 wp_set_auth_cookie($user->data->ID);
                 // setting current logged in user
@@ -574,6 +580,8 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
                 $userdata = array();
                 $userdata['current_url'] = $_POST['wpmp_current_url'];
                 $userdata['user_email'] = $user->user_email;
+                $userdata['first_name'] = $user->first_name;
+                $userdata['last_name'] = $user->last_name;
                 $userdata['wpmp_reset_password_token'] = $wpmp_reset_password_token;
                 $userdata['user_login'] = $user->user_login;
 
@@ -635,6 +643,8 @@ class Wp_Mp_Register_Login_Public extends Wp_Mp_Register_Login_Generic_Public
         //placeholders
 
         $placeholders = array(
+            '%FIRSTNAME%' => $userdata['first_name'],
+            '%LASTNAME%' => $userdata['last_name'],
             '%USERNAME%' => $userdata['user_login'],
             '%BLOGNAME%' => get_option('blogname'),
             '%USEREMAIL%' => $userdata['user_email'],

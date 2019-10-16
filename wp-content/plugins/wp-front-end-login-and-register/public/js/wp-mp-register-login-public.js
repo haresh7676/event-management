@@ -29,6 +29,21 @@
 
     // Validate login form
     function wpmpValidateAndProcessLoginForm() {
+        if ($('#wpmp-login-alert').length > 0) {
+            if ($('#wpmp-login-alert').hasClass('reg-success')){
+                setTimeout(function(){
+                    $('#wpmp-login-alert').removeClass('alert-success reg-success');
+                    $('#wpmp-login-alert').addClass('alert-danger');
+                    $('#wpmp-login-alert').hide();
+                    $('#wpmp-login-alert').html('');
+                    var uri = window.location.toString();
+                    if (uri.indexOf("?success") > 0) {
+                        var clean_uri = uri.substring(0, uri.indexOf("?success"));
+                        window.history.replaceState({}, document.title, clean_uri);
+                    }
+                }, 4000);
+            }
+        }
         $('#wpmpLoginForm').formValidation({
             message: 'This value is not valid',
             /*icon: {
@@ -150,7 +165,7 @@
                         },
                         regexp: {
                             regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
-                            message: 'Only number are allowed.'
+                            message: 'Please enter valid phone number.'
                         }
                     }
                 },
@@ -284,8 +299,6 @@
 
 
     // Validate registration form
-
-
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
@@ -364,7 +377,7 @@
                         },
                         regexp: {
                             regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
-                            message: 'Only number are allowed.'
+                            message: 'Please enter valid phone number.'
                         }                    
                     }
                 },
@@ -461,10 +474,15 @@
                 }
                 // check login status
                 if (true == data.reg_status) {
-                    $('#wpmp-register-alert').removeClass('alert-danger');
-                    $('#wpmp-register-alert').addClass('alert-success');
-                    $('#wpmp-register-alert').show();
-                    $('#wpmp-register-alert').html(data.success);
+                    //$('#wpmp-register-alert').removeClass('alert-danger');
+                    //$('#wpmp-register-alert').addClass('alert-success');
+                    //$('#wpmp-register-alert').show();
+                    //$('#wpmp-register-alert').html(data.success);
+                    window.location = data.redirection_url;
+                    $('#wpmp-login-alert').removeClass('alert-danger');
+                    $('#wpmp-login-alert').addClass('alert-success');
+                    $('#wpmp-login-alert').show();
+                    $('#wpmp-login-alert').html(data.success);
 
                 } else {
                     $('#wpmp-register-alert').addClass('alert-danger');
@@ -480,7 +498,8 @@
     }
 
     function wpmpShowResetPasswordForm() {
-        $(document).on('click', '.btnForgotPassword', function() {
+        $(document).on('click', '.btnForgotPassword', function(e) {
+                e.preventDefault();
               $('#wpmpResetPasswordSection').removeClass('hidden');
               $('#wpmpLoginForm').slideUp(500);
               $('#wpmpQuirktasticLoginForm').slideUp(500);
@@ -563,6 +582,17 @@
                             message: 'The password must be more than 6 characters long'
                         }
                     }
+                },
+                wpmp_confirm_newpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The confirm password is required'
+                        },
+                        identical: {
+                            field: 'wpmp_newpassword',
+                            message: 'The password and its confirm are not the same'
+                        }
+                    }
                 }
             }
         }).on('success.form.fv', function(e) {
@@ -583,6 +613,9 @@
             // Prevent form submission
             e.preventDefault();
         });
+       /* $('#wpmpResetPasswordForm').querySelector('[name="wpmp_newpassword"]').addEventListener('input', function() {
+            fv.revalidateField('wpmp_confirm_newpassword');
+        });*/
     }
 
     // Make ajax request with email
@@ -604,6 +637,14 @@
                     $('#wpmp-resetpassword-alert').addClass('alert-success');
                     $('#wpmp-resetpassword-alert').show();
                     $('#wpmp-resetpassword-alert').html(data.success);
+
+                    setTimeout(function(){
+                        $('#wpmp-login-alert').removeClass('alert-success');
+                        $('#wpmp-login-alert').addClass('alert-danger');
+                        $('#wpmp-login-alert').hide();
+                        $('#wpmp-login-alert').html('');
+                        $('.btnReturnToLogin').trigger('click');
+                    }, 4000);
 
                 } else {
 
@@ -636,7 +677,7 @@
                         },
                         regexp: {
                             regexp: /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/,
-                            message: 'Only number are allowed.'
+                            message: 'Please enter valid phone number.'
                         }
                     }
                 },
@@ -648,6 +689,17 @@
                         stringLength: {
                             min: 6,
                             message: 'The password must be more than 6 characters long'
+                        }
+                    }
+                },
+                wpmp_confirm_newpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The confirm password is required'
+                        },
+                        identical: {
+                            field: 'wpmp_newpassword',
+                            message: 'The password and its confirm are not the same'
                         }
                     }
                 }
@@ -670,6 +722,10 @@
             // Prevent form submission
             e.preventDefault();
         });
+
+       /* $('#wpmpQuirktasticResetPasswordForm').querySelector('[name="wpmp_newpassword"]').addEventListener('input', function() {
+            fv.revalidateField('wpmp_confirm_newpassword');
+        });*/
     }
 
     function wpmpStartQuirkResetPasswordProcess(content) {
@@ -689,6 +745,14 @@
                     $('#wpmp-resetpassword-quirk-alert').addClass('alert-success');
                     $('#wpmp-resetpassword-quirk-alert').show();
                     $('#wpmp-resetpassword-quirk-alert').html(data.success);
+
+                    setTimeout(function(){
+                        $('#wpmp-resetpassword-quirk-alert').removeClass('alert-success');
+                        $('#wpmp-resetpassword-quirk-alert').addClass('alert-danger');
+                        $('#wpmp-resetpassword-quirk-alert').hide();
+                        $('#wpmp-resetpassword-quirk-alert').html('');
+                        $('.btnReturnToLogin').trigger('click');
+                    }, 4000);
 
                 } else {
 
