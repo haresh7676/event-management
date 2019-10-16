@@ -98,7 +98,7 @@ $themesettings =  get_fields('theme-settings');
                         <?php } ?>
                         <div class="ticket-contact">
                             <?php if(!empty($themesettings) && (isset($themesettings['contact_form']) && !empty($themesettings['contact_form']))){ ?>
-                                <h4><a href="javascript:void(0)" data-toggle="modal" data-target="#contactmodule">Contact</a></h4>
+                                <h4><a href="javascript:void(0)" data-toggle="modal" data-target="#contactmodule" data-keyboard="false" data-backdrop="static">Contact Us</a></h4>
                                 <div class="modal fade volnuteer-form" id="contactmodule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">

@@ -110,7 +110,7 @@
             <div class="tab-pane fade" id="team">
                 <div class="common-table-design get_team_member_data">
                     <div class="tabledataajax"></div>
-                    <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                    <div class="tableloader order-loader"><div class="lds-dual-ring"></div></div>
                     <div class="export-list-row">
                         <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_team_form_id']) && !empty($myaccountsettings['manage_event']['add_team_form_id']))){
                             $add_team_formid = $myaccountsettings['manage_event']['add_team_form_id'];
@@ -154,7 +154,7 @@
                     ?>
                     <div class="common-table-design">
                         <div class="tabledataajax"></div>
-                        <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                        <div class="tableloader order-loader"><div class="lds-dual-ring"></div></div>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
                     ?>
                     <div class="common-table-design">
                         <div class="tabledataajax"></div>
-                        <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                        <div class="tableloader order-loader"><div class="lds-dual-ring"></div></div>
                     </div>
                 </div>
             </div>
@@ -336,7 +336,7 @@
                         }
                         ?>
                         <div class="tabledataajax"></div>
-                        <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                        <div class="tableloader order-loader"><div class="lds-dual-ring"></div></div>
                     </div>
                 </div>
             </div>
@@ -344,7 +344,7 @@
             <div class="tab-pane fade" id="discountcodes">
                 <div class="common-table-design get_discount_code_data">
                     <div class="tabledataajax"></div>
-                    <div class="tableloader" data-loader="<?php echo get_template_directory_uri().'/assets/images/loader-table.gif'; ?>"></div>
+                    <div class="tableloader order-loader"><div class="lds-dual-ring"></div></div>
                     <div class="export-list-row">
                         <?php if(!empty($myaccountsettings) && (isset($myaccountsettings['manage_event']['add_discount_code_form_id']) && !empty($myaccountsettings['manage_event']['add_discount_code_form_id']))){
                             $add_coupon_formid = $myaccountsettings['manage_event']['add_discount_code_form_id'];

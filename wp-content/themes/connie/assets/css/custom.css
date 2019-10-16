@@ -660,6 +660,9 @@ h4.pull-right.ticket-heading {
 .quirk-resetbtn{
 
 }
+.tableloader {
+    z-index: 1;
+}
 @media only screen and (min-width: 1px) and (max-width: 959px) {
     div.event_listings ul.event_listings .box-layout{width: 50%;}
 }
