@@ -44,7 +44,7 @@ function projectname_scripts() {
 
     wp_enqueue_style( 'custom-css', get_theme_file_uri( '/assets/css/custom.css' ), array(), rand(0,999) );
 
-    wp_enqueue_style( 'simple-calendar-css', get_theme_file_uri( '/assets/css/simple-calendar.css' ), array(), '1.0');
+    wp_enqueue_style( 'clndr-css', get_theme_file_uri( '/assets/css/clndr.css' ), array(), '1.0',);
 
     wp_enqueue_style( 'sweetalert2-css', get_theme_file_uri( '/assets/sweetalert2/dist/sweetalert2.css' ), array(), '1.0');
 
@@ -69,11 +69,15 @@ function projectname_scripts() {
 
     wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), rand(0,999), true);
 	wp_enqueue_script( 'developer-js', get_theme_file_uri( '/assets/js/developer.js' ), array( 'jquery' ), rand(0,999), true );
-    wp_enqueue_script( 'simple-calendar-js', get_theme_file_uri( '/assets/js/jquery.simple-calendar.js' ), array( 'jquery' ), '1.0', false );
 
     if ( is_singular()) {
         wp_enqueue_script(  array('jquery','jquery-ui-core','jquery-ui-datepicker') );
+        wp_enqueue_script('underscore', 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js', array('jquery'), '', true);
+        wp_enqueue_script( 'clndrsingle-js', get_theme_file_uri( '/assets/js/clndr-single.js' ), array( 'jquery' ), rand(0,999), true );
+        wp_enqueue_script( 'clndr-js', get_theme_file_uri( '/assets/js/clndr.js' ), array( 'jquery' ), '1.0', true );
     }
+
+
 
     if ( is_page('create-event') || is_page('my-account') ) {
         wp_enqueue_script(  array('jquery-ui-sortable') );

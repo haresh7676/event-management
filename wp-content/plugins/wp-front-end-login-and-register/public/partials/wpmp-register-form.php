@@ -94,7 +94,7 @@
             </div>
 
             <input type="hidden" name="wpmp_current_url" id="wpmp_current_url" value="<?php echo get_permalink(); ?>" />
-            <input type="hidden" name="redirection_url" id="redirection_url" value="<?php echo get_permalink(); ?>" />
+            <input type="hidden" name="redirection_url" id="redirection_url" value="<?php echo site_url(); ?>/sign-in/?success=registration" />
 
             <?php
             // this prevent automated script for unwanted spam

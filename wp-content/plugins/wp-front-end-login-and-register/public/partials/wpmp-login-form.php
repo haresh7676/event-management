@@ -38,7 +38,15 @@
                         <img src="<?php echo plugins_url('images/ajax-loader.gif', dirname(__FILE__)); ?>"/>
                         <span><?php _e('Please wait ...', $this->plugin_name); ?></span>
                     </div>
-                    <div id="wpmp-login-alert" class="alert alert-danger" role="alert" style="display:none;"></div>
+                    <?php
+                    $messages = "";
+                    $atletclass= "alert-danger";
+                    if($_REQUEST['success'] == 'registration'){
+                        $messages = "You are successfully registered.";
+                        $atletclass= "alert-success reg-success";
+                    }
+                    ?>
+                    <div id="wpmp-login-alert" class="alert <?php echo $atletclass; ?>" role="alert" <?php echo (empty($messages))?'style="display:none;"':''; ?>><?php echo $messages; ?></div>
 
                      <div class="form-group row">
                         <div class="col-sm-12"><span class="fm-icn eml-icn"></span><input class="form-control" name="wpmp_username" id="wpmp_username" type="Email" placeholder="Email"></div>
