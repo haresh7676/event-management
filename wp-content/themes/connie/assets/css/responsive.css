@@ -1389,6 +1389,9 @@
     .cart-main-area .woocommerce_checkout_coupon .checkout_coupon p:first-child {
         font-size: 14px;
     }
+    .e-p-date-picker .cal1 .clndr .clndr-table tr {
+        height: 50px;
+    }
 }
 @media (max-width: 567px) {
     .gallery-small-photos ul li {

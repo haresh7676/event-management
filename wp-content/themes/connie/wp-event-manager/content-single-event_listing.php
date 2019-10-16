@@ -260,7 +260,7 @@ $themesettings =  get_fields('theme-settings');
                         }
                         ?>
 
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.png" class="img-fluid" alt="">
+                        <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.png" class="img-fluid" alt=""> -->
                         <?php
                         $startdate = date_i18n( 'Y-m-d', strtotime(get_event_start_date()));
                         $enddate = date_i18n( 'Y-m-d', strtotime(get_event_end_date()) );
