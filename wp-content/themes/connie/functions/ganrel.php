@@ -402,3 +402,10 @@ function insert_og_image_in_head() {
     }
 }
 add_action( 'wp_head', 'insert_og_image_in_head', 5 );
+
+function remove_core_updates(){
+    global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+add_filter('pre_site_transient_update_core','remove_core_updates');
+add_filter('pre_site_transient_update_plugins','remove_core_updates');
+add_filter('pre_site_transient_update_themes','remove_core_updates');
