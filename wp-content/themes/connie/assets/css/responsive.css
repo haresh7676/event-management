@@ -88,12 +88,10 @@
     }
     .u-events-box .u-event-details {
         padding: 15px 10px;
+        min-height: 188px;
     }
     .u-event-details .event-disc {
         margin-left: 10px;
-    }
-    .u-event-details .event-disc ul li {
-        font-size: 14px;
     }
     .u-event-details .date-month span {
         font-size: 15px;
@@ -196,12 +194,10 @@
     }
     .u-events-box .u-event-details {
         padding: 15px 10px;
+        min-height: 188px;
     }
     .u-event-details .event-disc {
         margin-left: 10px;
-    }
-    .u-event-details .event-disc ul li {
-        font-size: 14px;
     }
     .u-event-details .date-month span {
         font-size: 15px;
@@ -328,9 +324,6 @@
     .landing-page-content .landing-page-title h4 {
         font-size: 30px;
         padding-left: 15px;
-    }
-    .u-event-details .event-disc ul li {
-        font-size: 14px;
     }
     .browe-event-filter .landing-serach input.event-search {
         width: 220px;
@@ -585,9 +578,6 @@
     }
     .event_listings ul.event_listings .box-layout {
         width: 50% !important;
-    }
-    .u-events-box .u-event-details {
-        min-height: 204px;
     }
 }
 @media (min-width: 768px) and (max-width: 768px) {
