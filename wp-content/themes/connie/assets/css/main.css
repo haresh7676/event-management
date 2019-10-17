@@ -1508,6 +1508,9 @@ i.drp-icn {
     font-family: 'sf_compact_displaythin';
     font-weight: 600;
 }
+.event-profile-content .e-profile-about p strong {
+    font-family: 'sf_compact_displaymedium';
+}
 .e-profile-calendar .e-p-date-picker {
     background: #FFFFFF;
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
@@ -3062,19 +3065,18 @@ i.drp-icn {
 }
 .m-e-table-dropdown .dropdown-menu {
 	width: 100%;
+    min-width: 100% !important;
 }
 .m-e-table-dropdown .dropdown-menu .dropdown-menu li a {
 	font-size: 14px;
 	white-space: normal;
+    word-break: break-word;
 }
 .m-e-table-dropdown .btn-light:not(:disabled):not(.disabled).active:focus,
 .m-e-table-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
 .m-e-table-dropdown .show>.btn-light.dropdown-toggle:focus {
 	background: transparent;
 }
-
-
-
 .manage-events-contact .m-e-table-dropdown {
     border-bottom: 1px solid #f4f4f4;
     padding-bottom: 10px;
