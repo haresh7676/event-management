@@ -47,6 +47,7 @@ function projectname_scripts() {
     wp_enqueue_style( 'clndr-css', get_theme_file_uri( '/assets/css/clndr.css' ), array(), '1.0');
 
     wp_enqueue_style( 'sweetalert2-css', get_theme_file_uri( '/assets/sweetalert2/dist/sweetalert2.css' ), array(), '1.0');
+    wp_enqueue_style( 'datetimepicker-css', get_theme_file_uri( '/assets/css/bootstrap-datetimepicker.css' ), array(), '1.0');
 
     //wp_enqueue_script( 'sell-tickets-wp', get_theme_file_uri( '/assets/js/sell-ticket.js' ), array( 'jquery' ), '1.0', true );
 
@@ -64,6 +65,8 @@ function projectname_scripts() {
     wp_enqueue_script('datepair-min-js', get_theme_file_uri('/assets/js/datepair.js'), array('jquery'), rand(0,999), false);
     wp_enqueue_script('jquer-datepair-min-js', get_theme_file_uri('/assets/js/jquery.datepair.js'), array('jquery'), rand(0,999), false);
     wp_enqueue_script('sweetalert2-js', get_theme_file_uri('/assets/sweetalert2/dist/sweetalert2.min.js'), array('jquery'), rand(0,999), false);
+
+    wp_enqueue_script('datetimepicker-min-js', get_theme_file_uri('/assets/js/bootstrap-datetimepicker.min.js'), array('jquery'), rand(0,999), false);
 
     //wp_enqueue_script('jqueryvalidate-js', get_theme_file_uri('/assets/js/jquery.validate.js'), array('jquery'), rand(0,999), false);
 

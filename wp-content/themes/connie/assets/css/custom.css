@@ -77,7 +77,18 @@ input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focu
 .basic-info-form .form-group.field_small{
     width: 13%;    
 }
+.basic-info-form .form-group.field_half{
+    width: 48%;    
+}
+.basic-info-form .form-group.calendericon .input-text{
+    background: url(../../assets/images/calender-icn.png) center left no-repeat;
+    padding-left: 45px;
+    /*position: absolute;
+    border-right: 1px solid #ccc;*/
+    background-position: 11px 8px;
+}
 .basic-info-form .form-group .input-text.hasDatepicker{
+
 
 }
 .basic-info-form .form-group .input-text.hasDatepicker{
