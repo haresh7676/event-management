@@ -9,6 +9,7 @@
 <?php 
     $datedfields = array();
     $datedfields['datefields'] = array('ticket_sales_start_date','ticket_sales_end_date');
+    $datedfields['datetimefields'] = array('ticket_sales_startdate','ticket_sales_enddate');
     $datedfields['timefields'] = array('ticket_sales_start_time','ticket_sales_end_time');
 ?>
 
@@ -48,11 +49,14 @@
                     if(in_array($subkey, $datedfields['datefields'])){ 
                         $customclass =' form-group field_mideam calicon'; 
                     }
+                    if(in_array($subkey, $datedfields['datetimefields'])){
+                        $customclass =' form-group field_half calendericon';
+                    }
                     if(in_array($subkey, $datedfields['timefields'])){
                         $customclass =' form-group field_small';
                     }
                     ?>
-                
+                    <?php if($subfield['type'] != 'hidden'){ ?>
                     <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
                         <div class="row">
                         <?php if(!empty($subfield['label'])) : ?>
@@ -62,10 +66,10 @@
     					   <?php endif; ?>
         					<div class="col-md-12">
             					<div class="field">
-            					 <div>
-            						<?php							
-            							$subfield['name']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
-            							$subfield['id']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
+                                    <div>
+                                        <?php
+                                        $subfield['name']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
+                                        $subfield['id']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
                                         if($subkey == 'ticket_price' || $subkey == 'ticket_quantity'){
                                             $subfield['min']  = 0;
                                             $subfield['max']  = 9999999;
@@ -77,13 +81,35 @@
                                         if($subkey == 'ticket_sales_end_date'){
                                             $subfield['class']  = 'date end';
                                         }
-            							get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
-            						?>
-            						</div>
+                                        get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
+                                        ?>
+                                    </div>
             					</div>
         					</div>
                         </div>
-    				</fieldset>   
+    				</fieldset>
+    				<?php } else { ?>
+                        <div class="field">
+                            <div>
+                                <?php
+                                $subfield['name']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
+                                $subfield['id']  = $key . '_' . $subkey . '_%%repeated-row-index%%';
+                                if($subkey == 'ticket_price' || $subkey == 'ticket_quantity'){
+                                    $subfield['min']  = 0;
+                                    $subfield['max']  = 9999999;
+                                    $subfield['maxlength']  = 7;
+                                }
+                                if($subkey == 'ticket_sales_start_date'){
+                                    $subfield['class']  = 'date start';
+                                }
+                                if($subkey == 'ticket_sales_end_date'){
+                                    $subfield['class']  = 'date end';
+                                }
+                                get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
+                                ?>
+                            </div>
+                        </div>
+    				<?php } ?>
     		<?php endforeach; ?>
             <fieldset class="fieldset-ticket_maximum settingsavebtn">
                 <a class="defulat-custom-btn returntodetails" href="javascript:void(0);" data-href="#<?php echo $key ;?>-details_%%repeated-row-index%%"><?php _e('Save','wp-event-manager');?></a>
