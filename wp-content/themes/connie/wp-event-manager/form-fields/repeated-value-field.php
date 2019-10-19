@@ -37,7 +37,7 @@
                     }
                     if(isset($field['fields']['ticket_individually'])){
                         unset($field['fields']['ticket_individually']);   
-                    }
+                    }                    
                   foreach ( $field['fields'] as $subkey => $subfield ) : 
                             if ($subkey == 'ticket_description') : ?>
                 </div>
@@ -80,6 +80,19 @@
                                         if($subkey == 'ticket_sales_end_date'){
                                             $subfield['class']  = 'date end';
                                         }
+                                        if($subkey == 'ticket_sales_startdate' && empty($value['ticket_sales_startdate']) && isset($_REQUEST['event_id']) && !empty($_REQUEST['event_id'])){
+                                            $product_id = $value['product_id'];
+                                            $subfield['value'] = get_post_meta($product_id,'_ticket_sales_start_date',true);
+                                        }
+                                        if($subkey == 'ticket_sales_enddate' && empty($value['ticket_sales_enddate']) && isset($_REQUEST['event_id']) && !empty($_REQUEST['event_id'])){
+                                            $product_id = $value['product_id'];
+                                            $subfield['value'] = get_post_meta($product_id,'_ticket_sales_end_date',true);
+                                        }
+                                        if(in_array($subkey, $datedfields['datetimefields'])){
+                                            if(!empty($subfield['value'])){
+                                                $subfield['class'] = 'prefill';
+                                            }
+                                        }
     							        get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
                                     ?>
                                 </div>
@@ -87,6 +100,7 @@
                             </div>
                         </fieldset>
                         <?php } else { ?>
+                        <fieldset class="hiddenfields fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
                             <div class="col-md-12">
                                 <div class="field">
                                     <?php
@@ -108,6 +122,7 @@
                                     ?>
                                 </div>
                             </div>
+                        </fieldset>
                         <?php } ?>
                     <!--</div>-->
                 <?php endforeach; ?>

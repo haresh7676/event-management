@@ -118,7 +118,7 @@ $event_timezone   = get_event_timezone();
                             <?php
                           }
                           else{
-                            $view_date_format= 'D, M jS, h:s A';
+                            $view_date_format= 'D, M jS, h:i A';
                             if(!empty( $ticket_sales_start_date ) &&  $current_timestamp <  strtotime( $ticket_sales_start_date ) ) {
                               printf(__('Sales Start :%s'),date($view_date_format, strtotime($ticket_sales_start_date)));
                             }elseif(!empty($ticket_sales_end_date) &&  $current_timestamp >   strtotime($ticket_sales_end_date) ){

@@ -89,6 +89,7 @@
                         </div>
     				</fieldset>
     				<?php } else { ?>
+                    <fieldset class="hiddenfields fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
                         <div class="field">
                             <div>
                                 <?php
@@ -109,6 +110,7 @@
                                 ?>
                             </div>
                         </div>
+                    </fieldset>
     				<?php } ?>
     		<?php endforeach; ?>
             <fieldset class="fieldset-ticket_maximum settingsavebtn">

@@ -44,7 +44,7 @@
                 <div class="mydashboard-main-wpr">
                     <!-- <?php do_action('event_manager_event_dashboard_before'); ?> -->
                     <div class="me-md-box">
-                        <h4>Toal Resitration<span>2</span></h4>
+                        <h4>Total Registration<span>2</span></h4>
                         <div class="me-md-countbox">
                             <div class="memd-cont">
                                 <div class="memd-ttl">
