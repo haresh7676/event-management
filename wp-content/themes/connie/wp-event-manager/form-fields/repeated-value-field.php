@@ -9,6 +9,7 @@
 <?php 
     $datedfields = array();
     $datedfields['datefields'] = array('ticket_sales_start_date','ticket_sales_end_date');
+    $datedfields['datetimefields'] = array('ticket_sales_startdate','ticket_sales_enddate');
     $datedfields['timefields'] = array('ticket_sales_start_time','ticket_sales_end_time');
 ?>
 <?php if ( ! empty( $field['value'] ) && is_array( $field['value'] )) : ?>
@@ -36,7 +37,7 @@
                     }
                     if(isset($field['fields']['ticket_individually'])){
                         unset($field['fields']['ticket_individually']);   
-                    }
+                    }                    
                   foreach ( $field['fields'] as $subkey => $subfield ) : 
                             if ($subkey == 'ticket_description') : ?>
                 </div>
@@ -49,10 +50,14 @@
                     if(in_array($subkey, $datedfields['datefields'])){ 
                         $customclass =' form-group field_mideam calicon'; 
                     }
+                    if(in_array($subkey, $datedfields['datetimefields'])){
+                        $customclass =' form-group field_half calendericon';
+                    }
                     if(in_array($subkey, $datedfields['timefields'])){
                         $customclass =' form-group field_small';
                     }
                     ?>
+                    <?php if($subfield['type'] != 'hidden'){ ?>
                         <fieldset class="fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
                             <div class="row">
     					   <?php if(!empty($subfield['label'])) : ?>
@@ -75,12 +80,50 @@
                                         if($subkey == 'ticket_sales_end_date'){
                                             $subfield['class']  = 'date end';
                                         }
+                                        if($subkey == 'ticket_sales_startdate' && empty($value['ticket_sales_startdate']) && isset($_REQUEST['event_id']) && !empty($_REQUEST['event_id'])){
+                                            $product_id = $value['product_id'];
+                                            $subfield['value'] = get_post_meta($product_id,'_ticket_sales_start_date',true);
+                                        }
+                                        if($subkey == 'ticket_sales_enddate' && empty($value['ticket_sales_enddate']) && isset($_REQUEST['event_id']) && !empty($_REQUEST['event_id'])){
+                                            $product_id = $value['product_id'];
+                                            $subfield['value'] = get_post_meta($product_id,'_ticket_sales_end_date',true);
+                                        }
+                                        if(in_array($subkey, $datedfields['datetimefields'])){
+                                            if(!empty($subfield['value'])){
+                                                $subfield['class'] = 'prefill';
+                                            }
+                                        }
     							        get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
                                     ?>
                                 </div>
                             </div>
                             </div>
                         </fieldset>
+                        <?php } else { ?>
+                        <fieldset class="hiddenfields fieldset-<?php esc_attr_e( $subkey ); ?><?php esc_attr_e( $customclass ); ?>">
+                            <div class="col-md-12">
+                                <div class="field">
+                                    <?php
+                                    $subfield['name']  = $key . '_' . $subkey . '_' . $index;
+                                    $subfield['id']  =$key . '_' . $subkey . '_' . $index;
+                                    $subfield['value'] = isset( $value[ $subkey ]) ? $value[ $subkey ] : '';
+                                    if($subkey == 'ticket_price' || $subkey == 'ticket_quantity'){
+                                        $subfield['min']  = 0;
+                                        $subfield['max']  = 9999999;
+                                        $subfield['maxlength']  = 7;
+                                    }
+                                    if($subkey == 'ticket_sales_start_date'){
+                                        $subfield['class']  = 'date start';
+                                    }
+                                    if($subkey == 'ticket_sales_end_date'){
+                                        $subfield['class']  = 'date end';
+                                    }
+                                    get_event_manager_template( 'form-fields/' . $subfield['type'] . '-field.php', array( 'key' => $subkey, 'field' => $subfield ) );
+                                    ?>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <?php } ?>
                     <!--</div>-->
                 <?php endforeach; ?>
                 <fieldset class="fieldset-ticket_maximum settingsavebtn">

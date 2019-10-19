@@ -60,10 +60,26 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 							'required'    => true,
 							'placeholder' => __('Ticket price','wp-event-manager-sell-tickets' ),
 							'priority'    => 3
-						),	
+						),
+                        'ticket_sales_startdate' => array(
+                            'label'       => __( 'Sales Start', 'wp-event-manager-sell-tickets' ),
+                            'type'        => 'text',
+                            'required'    => true,
+                            'placeholder' => __('Tickets sales start','wp-event-manager-sell-tickets' ),
+                            'attribute'       => '',
+                            'priority'    => 4
+                        ),
+                        'ticket_sales_enddate' => array(
+                            'label'       => __( 'Sales End', 'wp-event-manager-sell-tickets' ),
+                            'type'        => 'text',
+                            'required'    => true,
+                            'placeholder' => __('Tickets sales End','wp-event-manager-sell-tickets' ),
+                            'attribute'       => '',
+                            'priority'    => 4
+                        ),
 						'ticket_sales_start_date' => array(
 							'label'       => __( 'Sales Start Date', 'wp-event-manager-sell-tickets' ),
-							'type'        => 'text',
+							'type'        => 'hidden',
 							'required'    => true,
 							'placeholder' => __('Tickets sales start date','wp-event-manager-sell-tickets' ),
 							'attribute'       => '',
@@ -71,7 +87,7 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 						),
 						'ticket_sales_start_time' => array(
 								'label'       => __( 'Sales Start Time', 'wp-event-manager-sell-tickets' ),
-								'type'        => 'time',
+								'type'        => 'hidden',
 								'required'    => true,
 								'placeholder' => __('Tickets sales start time','wp-event-manager-sell-tickets' ),
 								'attribute'       => '',
@@ -79,14 +95,14 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 						),
 						'ticket_sales_end_date' => array(
 							'label'       => __( 'Sales End Date', 'wp-event-manager-sell-tickets' ),
-							'type'        => 'text',
+							'type'        => 'hidden',
 							'required'    => true,
 							'placeholder' => __('Tickets sales end date','wp-event-manager-sell-tickets' ),
 							'priority'    => 5
 						),
 						'ticket_sales_end_time' => array(
 								'label'       => __( 'Sales End Time', 'wp-event-manager-sell-tickets' ),
-								'type'        => 'time',
+								'type'        => 'hidden',
 								'required'    => true,
 								'placeholder' => __('Tickets sales end time','wp-event-manager-sell-tickets' ),
 								'priority'    => 6
@@ -197,16 +213,32 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 							'placeholder' => __('Enter number of tickets','wp-event-manager-sell-tickets' ),
 							'priority'    => 3
 						),
+                        'ticket_sales_startdate' => array(
+                            'label'       => __( 'Sales Start', 'wp-event-manager-sell-tickets' ),
+                            'type'        => 'text',
+                            'required'    => true,
+                            'placeholder' => __('Tickets sales start','wp-event-manager-sell-tickets' ),
+                            'attribute'       => '',
+                            'priority'    => 4
+                        ),
+                        'ticket_sales_enddate' => array(
+                            'label'       => __( 'Sales End', 'wp-event-manager-sell-tickets' ),
+                            'type'        => 'text',
+                            'required'    => true,
+                            'placeholder' => __('Tickets sales End','wp-event-manager-sell-tickets' ),
+                            'attribute'       => '',
+                            'priority'    => 4
+                        ),
 						'ticket_sales_start_date' => array(
 							'label'       => __( 'Sales Start Date', 'wp-event-manager-sell-tickets' ),
-							'type'        => 'text',
+							'type'        => 'hidden',
 							'required'    => true,
 							'placeholder' => __('Tickets sales start date','wp-event-manager-sell-tickets' ),
 							'priority'    => 4
 						),
 						'ticket_sales_start_time' => array(
 								'label'       => __( 'Sales Start Time', 'wp-event-manager-sell-tickets' ),
-								'type'        => 'time',
+								'type'        => 'hidden',
 								'required'    => true,
 								'placeholder' => __('Tickets sales start time','wp-event-manager-sell-tickets' ),
 								'attribute'       => '',
@@ -214,19 +246,18 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 						),
 						'ticket_sales_end_date' => array(
 							'label'       => __( 'Sales End Date', 'wp-event-manager-sell-tickets' ),
-							'type'        => 'text',
+							'type'        => 'hidden',
 							'required'    => true,
 							'placeholder' => __('Tickets sales end date','wp-event-manager-sell-tickets' ),
 							'priority'    => 5
 						),
 						'ticket_sales_end_time' => array(
 								'label'       => __( 'Sales End Time', 'wp-event-manager-sell-tickets' ),
-								'type'        => 'time',
+								'type'        => 'hidden',
 								'required'    => true,
 								'placeholder' => __('Tickets sales end time','wp-event-manager-sell-tickets' ),
 								'priority'    => 6
 						),
-						
 						'ticket_description' => array(
 							'label'       => __( 'Ticket Description', 'wp-event-manager-sell-tickets' ),
 							'type'        => 'textarea',
@@ -257,7 +288,7 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 						                     'private'  => __( 'Private', 'wp-event-manager-sell-tickets' )
 						                    )
 						),
-						
+
 						'ticket_minimum' => array(
 							'label'       => __( 'Minimum Tickets', 'wp-event-manager-sell-tickets' ),
 							'type'        => 'number',
@@ -326,9 +357,25 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 		 						'placeholder' => __('Ticket price','wp-event-manager-sell-tickets' ),
 		 						'priority'    => 3
 		 				),
+                        'ticket_sales_startdate' => array(
+                            'label'       => __( 'Sales Start', 'wp-event-manager-sell-tickets' ),
+                            'type'        => 'text',
+                            'required'    => true,
+                            'placeholder' => __('Tickets sales start','wp-event-manager-sell-tickets' ),
+                            'attribute'       => '',
+                            'priority'    => 4
+                        ),
+                        'ticket_sales_enddate' => array(
+                            'label'       => __( 'Sales End', 'wp-event-manager-sell-tickets' ),
+                            'type'        => 'text',
+                            'required'    => true,
+                            'placeholder' => __('Tickets sales End','wp-event-manager-sell-tickets' ),
+                            'attribute'       => '',
+                            'priority'    => 4
+                        ),
 		 				'ticket_sales_start_date' => array(
 		 						'label'       => __( 'Sales Start Date', 'wp-event-manager-sell-tickets' ),
-		 						'type'        => 'text',
+		 						'type'        => 'hidden',
 		 						'required'    => true,
 		 						'placeholder' => __('Tickets sales start date','wp-event-manager-sell-tickets' ),
 		 						'attribute'       => '',
@@ -336,7 +383,7 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 		 				),
 		 				'ticket_sales_start_time' => array(
 		 						'label'       => __( 'Sales Start Time', 'wp-event-manager-sell-tickets' ),
-		 						'type'        => 'time',
+		 						'type'        => 'hidden',
 		 						'required'    => true,
 		 						'placeholder' => __('Tickets sales start time','wp-event-manager-sell-tickets' ),
 		 						'attribute'       => '',
@@ -344,14 +391,14 @@ class WP_Event_Manager_Sell_Tickets_Submit_Event_Form {
 		 				),
 		 				'ticket_sales_end_date' => array(
 		 						'label'       => __( 'Sales End Date', 'wp-event-manager-sell-tickets' ),
-		 						'type'        => 'text',
+		 						'type'        => 'hidden',
 		 						'required'    => true,
 		 						'placeholder' => __('Tickets sales end date','wp-event-manager-sell-tickets' ),
 		 						'priority'    => 5
 		 				),
 		 				'ticket_sales_end_time' => array(
 		 						'label'       => __( 'Sales End Time', 'wp-event-manager-sell-tickets' ),
-		 						'type'        => 'time',
+		 						'type'        => 'hidden',
 		 						'required'    => true,
 		 						'placeholder' => __('Tickets sales end time','wp-event-manager-sell-tickets' ),
 		 						'priority'    => 6

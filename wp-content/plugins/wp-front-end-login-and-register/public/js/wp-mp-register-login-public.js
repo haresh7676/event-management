@@ -586,11 +586,11 @@
                 wpmp_confirm_newpassword: {
                     validators: {
                         notEmpty: {
-                            message: 'The confirm password is required'
+                            message: ' '
                         },
                         identical: {
                             field: 'wpmp_newpassword',
-                            message: 'The password and its confirm are not the same'
+                            message: 'New password and confirm new password must be same.'
                         }
                     }
                 }
