@@ -305,7 +305,7 @@ $themesettings =  get_fields('theme-settings');
                         $volunteerenable = get_post_meta($post->ID,'_do_you_want_to_volunteers?',true);
                         if(isset($volunteerenable) && $volunteerenable == 'yes' && !empty($themesettings) && (isset($themesettings['volunteer_form']) && !empty($themesettings['volunteer_form']))){
                         ?>
-                        <button type="button" class="btn volnuteer-form-btn" data-toggle="modal" data-target="#exampleModal">Volunteer</button>
+                        <button type="button" class="btn volnuteer-form-btn" data-toggle="modal" data-target="#exampleModal" data-keyboard="false" data-backdrop="static">Volunteer</button>
                         <div class="modal fade volnuteer-form" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">

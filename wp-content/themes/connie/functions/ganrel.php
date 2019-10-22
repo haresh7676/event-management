@@ -81,7 +81,7 @@ function get_sell_start_price($event_id){
         if( empty( $event_id ) )
             return;
         /*$r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM  {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND meta_value != '0' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );*/
-        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM  {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );
+        $r = $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM  {$wpdb->postmeta} WHERE meta_key LIKE '_price' AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE '_event_id' AND meta_value LIKE '%s') ORDER BY meta_value ASC LIMIT 1", $event_id) );        
         if(!empty($r)){
             if($r[0] == 0 || $r[0] == ''){
                 return 'Free Ticket Available';
@@ -265,8 +265,20 @@ function reportproblem_wp_footer() {
         var formid3 = '<?php echo $formid3 ?>';        
         document.addEventListener( 'wpcf7mailsent', function( event ) {            
             if (formid == event.detail.contactFormId) {
-
+                jQuery(".modal").scrollTop(0);   
+                jQuery(".wpcf7").on('invalid', function(e) {
+                    jQuery('html, body, .modal').animate({
+                        scrollTop: jQuery(".wpcf7-not-valid").first().offset().top - 150
+                    }, 2000);
+                });
+                jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
             } else if (formid2 == event.detail.contactFormId){                
+                jQuery(".modal").scrollTop(0);   
+                jQuery(".wpcf7").on('invalid', function(e) {
+                    jQuery('html, body, .modal').animate({
+                        scrollTop: jQuery(".wpcf7-not-valid").first().offset().top - 150
+                    }, 2000);
+                });
                 jQuery('.wpcf7-mail-sent-ok').ajaxComplete(function(){jQuery(this).delay(2000).fadeOut('slow');});
             } else if (formid3 == event.detail.contactFormId){                
                 jQuery(".wpcf7").on('mailsent.wpcf7', function(e) {                  
