@@ -107,6 +107,8 @@
     <td>
         
         <textarea name="wpmp_password_reset_email_message" class="wide" style="width:100%; height:250px;"><?php echo (!empty($wpmp_settings['wpmp_password_reset_email_message'])) ? $wpmp_settings['wpmp_password_reset_email_message'] : ''; ?></textarea>
+        <em><?php _e("<code>%FIRSTNAME%</code> will be replaced with a user's first name.", $this->plugin_name); ?></em><br />
+        <em><?php _e("<code>%LASTNAME%</code> will be replaced with a user's lastname.", $this->plugin_name); ?></em><br />
         <em><?php _e("<code>%USERNAME%</code> will be replaced with the username.", $this->plugin_name); ?></em><br />
         <em><?php _e("<code>%RECOVERYLINK%</code> will be replaced with the password recovery link.", $this->plugin_name); ?></em><br/>
         <em><?php _e("<code>%BLOGNAME%</code> will be replaced with the name of your blog.", $this->plugin_name); ?></em>

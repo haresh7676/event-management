@@ -320,10 +320,12 @@ jQuery(document).ready(function($) {
         }, true);
     }  
 
-    /*$('#contactmodule').on('shown.bs.modal', function () {
-        $('#contactmodule form.wpcf7-form')[0].reset();
-        console.log('cke');
-    });*/
+    $('#contactmodule').on('hidden.bs.modal', function () {
+        wpcf7.clearResponse( '#contactmodule form.wpcf7-form' );        
+    });
+    $('#exampleModal').on('hidden.bs.modal', function () {
+        wpcf7.clearResponse( '#exampleModal form.wpcf7-form' );        
+    });
 
     /*$('#event_start_time').on('changeTime', function() {
         $('#event_end_time').timepicker('option',{'roundingFunction':false, 'minTime': $(this).val()});

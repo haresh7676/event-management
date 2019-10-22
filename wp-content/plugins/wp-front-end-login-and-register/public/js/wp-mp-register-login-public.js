@@ -639,10 +639,11 @@
                     $('#wpmp-resetpassword-alert').html(data.success);
 
                     setTimeout(function(){
-                        $('#wpmp-login-alert').removeClass('alert-success');
-                        $('#wpmp-login-alert').addClass('alert-danger');
-                        $('#wpmp-login-alert').hide();
-                        $('#wpmp-login-alert').html('');
+                        $('#wpmp-resetpassword-alert').removeClass('alert-success');
+                        $('#wpmp-resetpassword-alert').addClass('alert-danger');
+                        $('#wpmp-resetpassword-alert').hide();
+                        $('#wpmp-resetpassword-alert').html('');                        
+                        $('#wpmpResetPasswordForm')[0].reset();
                         $('.btnReturnToLogin').trigger('click');
                     }, 4000);
 
@@ -751,6 +752,7 @@
                         $('#wpmp-resetpassword-quirk-alert').addClass('alert-danger');
                         $('#wpmp-resetpassword-quirk-alert').hide();
                         $('#wpmp-resetpassword-quirk-alert').html('');
+                        $('#wpmpQuirktasticResetPasswordForm')[0].reset();
                         $('.btnReturnToLogin').trigger('click');
                     }, 4000);
 
