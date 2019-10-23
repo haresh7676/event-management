@@ -341,12 +341,16 @@ input:-moz-placeholder {
 .container.create-event-content {
     margin: 40px auto 0 auto;
 }
+.create-event-content .basic-info-form .form-group .fieldlabelinfo {
+    margin-bottom: 0px;
+}
 .create-event-cart .form-group label {
     font-size: 14px;
     color: #4A4A4A;
     font-weight: 600;
     margin-bottom: 5px;
     text-align: left;
+    line-height: normal;
 }
 .create-event-cart .form-group label span {
     color: #D0021B;
@@ -1524,7 +1528,6 @@ i.drp-icn {
 }
 .e-profile-calendar .date-and-time {
     text-align: right;
-    padding-top: 20px;
 }
 .profile-location .map-video-box {
     border: 2px solid #000000;
@@ -1547,7 +1550,7 @@ i.drp-icn {
     -moz-box-shadow: 0px 4px 21px rgba(97, 97, 97, 0.233752);
     border-radius: 10px;
     margin-bottom: 40px;
-    padding: 30px;
+    padding: 20px;
 }
 .e-profile-gallery .e-p-gallery-title {
     width: 100%;
@@ -2577,6 +2580,7 @@ i.drp-icn {
     padding: 20px;
     width: 100%;
     float: left;
+    margin-bottom: 40px;
 }
 .cart-main-area.tickets {
     margin-top: 100px;
@@ -3082,7 +3086,7 @@ i.drp-icn {
     padding-bottom: 10px;
 }
 .creat-event-page .create-event-cart .form-group {
-    margin-bottom: 0px;
+    padding-bottom: 0px !important;
 }
 .chosen-container-multi .chosen-choices li.search-field input[type=text] {
     font-size: 14px;
@@ -3496,7 +3500,7 @@ i.drp-icn {
 
 /* DATE PICKER UI */
 .e-p-date-picker  .clndr { padding: 20px 20px 0 20px; }
-.e-p-date-picker .cal1 { font-family: inherit !important; }
+.e-p-date-picker .cal1 { font-family: inherit !important; margin: 0 auto;}
 .e-p-date-picker .cal1 .clndr .clndr-controls .month { font-size: 19px; font-weight: 600; }
 .e-p-date-picker .cal1 .clndr .clndr-table tr { height: 65px; }
 .e-p-date-picker .cal1 .clndr .clndr-table tr .day, .e-p-date-picker .cal1 .clndr .clndr-table tr:last-child .day, .e-p-date-picker .cal1 .clndr .clndr-table tr:last-child .my-day, .e-p-date-picker .cal1 .clndr .clndr-table .header-days .header-day { border: none !important; vertical-align: middle; text-align: center; }
