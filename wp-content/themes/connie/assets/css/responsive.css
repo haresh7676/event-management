@@ -678,7 +678,7 @@
         border-radius: 100px !important;
         margin-bottom: 10px;
         background-size: 20px !important;
-        text-align: left;
+        text-align: left !important;
     }
     .landing-serach:after {
         display: none;
