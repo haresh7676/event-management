@@ -435,6 +435,10 @@
         flex: 0 0 100%;
         text-align: center;
         margin-bottom: 20px;
+        height: auto;
+    }
+    .my-tickets .my-ticket-card-row .my-ticket-pic img {
+        height: auto;
     }
     .my-tickets .my-ticket-card-row .my-ticket-detail {
         padding-left: 0px;
@@ -579,6 +583,10 @@
     .event_listings ul.event_listings .box-layout {
         width: 50% !important;
     }
+    .custom-tab-design .tab-pane .sub-tab-design .my-ticket-detail ul {
+        flex-wrap: inherit;
+        overflow: inherit;
+    }
 }
 @media (min-width: 768px) and (max-width: 768px) {
     .user-top-nav .usr-nm {
@@ -670,7 +678,7 @@
         border-radius: 100px !important;
         margin-bottom: 10px;
         background-size: 20px !important;
-        text-align: left;
+        text-align: left !important;
     }
     .landing-serach:after {
         display: none;
@@ -797,6 +805,7 @@
     .profile-location .map-video-box {
         height: 250px;
         border-width: 1px;
+        margin-top: 20px;
     }
     .profile-video .map-video-box {
         margin-bottom: 10px;
@@ -818,10 +827,11 @@
         margin: 20px 5px 0 5px;
     }
     .tabbing-page-title {
-        padding: 15px;
+        padding: 18px;
         text-align: center;
         font-size: 14px;
         width: 100%;
+        font-weight: 700;
     }
     .custom-tab-design {
         min-height: inherit !important;
@@ -989,6 +999,10 @@
     .my-tickets .my-ticket-card-row .my-ticket-pic {
         flex: 0 0 100%;
         margin-bottom: 20px;
+        height: auto;
+    }
+    .my-tickets .my-ticket-card-row .my-ticket-pic img {
+        height: auto;
     }
     .my-tickets .my-ticket-card-row .my-ticket-detail {
         padding-left: 0px;
@@ -1321,9 +1335,6 @@
     .design-your-event .fieldset-event_banner.pullrightinner .custom-browse-file {
         width: 100% !important;
     }
-    .ticket-fields-form .ticketwprs .nav-tabs {
-        margin-top: 10px;
-    }
     .cart-main-area .wpmc-tabs-list.wpmc-2-tabs:before {
         left: 10%;
         width: 80%;
@@ -1334,9 +1345,6 @@
     }
     .custom-tab-design .tab-content .tab-pane-spacing {
         padding: 20px;
-    }
-    .connie-footer {
-        margin-top: 20px;
     }
     .u-event-details .event-disc ul li {
         -webkit-line-clamp: inherit;
@@ -1381,6 +1389,17 @@
     }
     .e-p-date-picker .cal1 .clndr .clndr-table tr {
         height: 50px;
+    }
+    .cart-main-area .cart-page-title a {
+        font-size: 20px;
+        line-height: normal;
+    }
+    .creat-event-page {
+        margin-bottom: 0px;
+    }
+    .custom-tab-design .tab-pane .sub-tab-design .my-ticket-detail ul {
+        flex-wrap: inherit;
+        overflow: inherit;
     }
 }
 @media (max-width: 567px) {
@@ -1433,6 +1452,7 @@
     }
     .my-ticket-card-row .my-ticket-detail ul li {
         font-size: 14px;
+        min-height: 21px;
     }
     .my-tickets .my-ticket-edit-save-btn button {
         width: 48%;
