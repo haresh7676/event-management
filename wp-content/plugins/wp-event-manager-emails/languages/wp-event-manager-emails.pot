@@ -1,0 +1,205 @@
+# Copyright (C) 2017 WP Event Manager
+# This file is distributed under the same license as the WP Event Manager package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Event Manager 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/GAM-Event-Manager\n"
+"POT-Creation-Date: 2017-12-21 16:24:46+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: autoupdater
+#: autoupdater/templates/
+#: autoupdater/templates/key-input.php:4
+msgid "Licence"
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:2
+msgid "Hide notice"
+msgstr ""
+
+#: autoupdater
+#: autoupdater/templates
+#: autoupdater/templates/activated-key.php:2
+msgid "Your licence for <strong>%s</strong> has been activated. Thanks!"
+msgstr ""
+
+#: autoupdater/templates/deactivated-key.php:2
+msgid "Your licence for <strong>%s</strong> has been deactivated."
+msgstr ""
+
+#: autoupdater/templates/key-input.php:7
+msgid "Enter your licence key and email and hit return. A valid key is required for automatic updates."
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:3
+msgid "<a href="%s">Please enter your licence key</a> in the plugin list below to get updates for "%s"."
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:4
+msgid "Lost your key? <a href="%s">Retrieve it here</a>.', esc_url( 'http://www.gamthemes.com/lost-license-key/')"
+msgstr ""
+
+#: autoupdater/templates/ms-update.php:6
+msgid "There is a new version of %1$s available. <a target=\"_blank\" class=""\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s""\">update now</a>."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:18
+msgid "Email Notifications"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:26
+msgid "Notification Settings"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:27
+#: admin/wp-event-manager-emails-notifications.php:86
+msgid "New Event Notification"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:28
+#: admin/wp-event-manager-emails-notifications.php:87
+msgid "Published Event Notification"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:29
+#: admin/wp-event-manager-emails-notifications.php:89
+msgid "Expired Event Notification"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:88
+msgid "Save Changes"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:109
+msgid "Settings successfully saved."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:121
+#: admin/wp-event-manager-emails-notifications.php:171
+#: admin/wp-event-manager-emails-notifications.php:220
+msgid "The email was successfully reset."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:130
+msgid "Below you will find the email that is sent to an Organizer when event status is pendding for approval."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:132
+#: admin/wp-event-manager-emails-notifications.php:182
+#: admin/wp-event-manager-emails-notifications.php:231
+msgid "Subject"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:137
+#: admin/wp-event-manager-emails-notifications.php:187
+#: admin/wp-event-manager-emails-notifications.php:236
+msgid "Reset to defaults"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:138
+#: admin/wp-event-manager-emails-notifications.php:188
+#: admin/wp-event-manager-emails-notifications.php:237
+msgid "Save Changes"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:159
+#: admin/wp-event-manager-emails-notifications.php:208
+#: admin/wp-event-manager-emails-notifications.php:257
+msgid "The email was successfully saved."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:180
+msgid "Below you will find the email that is sent to an Organizer after event is published."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:180
+msgid "Below you will find the email that is sent to an Organizer after event is published."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:229
+msgid "Below you will find the email that is sent to an Organizer after event is expired."
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:268
+msgid "The following tags can be used to add content dynamically:"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:268
+msgid "The following tags can be used to add content dynamically:"
+msgstr ""
+
+#: admin/wp-event-manager-emails-notifications.php:274
+msgid "All tags can be passed a prefix and a suffix which is only output when the value is set e.g. <code>[event_title prefix="Event Title: " suffix="."]</code>"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:33
+msgid "A new user has been created"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:34
+msgid "Email:"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:35
+msgid "New User Created"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:35
+msgid "New User Created"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:87
+msgid "New Event \"[event_title]\" Submited Successfully"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:133
+msgid "Event \"[event_title]\" Published Successfully"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:178
+msgid "Event \"[event_title]\" Expired"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:195
+msgid "Organizer Email"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:196
+msgid "Name of the organizer which submitted the event listing"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:197
+msgid "Event Type"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:198
+msgid "Organizer ID"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:199
+msgid "Event ID"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:200
+msgid "Event Title"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:201
+msgid "Event Description"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:202
+msgid "Some meta data from the event. e.g. <code>[event_post_meta key="_event_location"]</code>"
+msgstr ""
+
+#: wp-event-manager-emails-functions.php:39
+msgid "WP Event Manager is require to use WP Event Manager Emails"
+msgstr ""
+
+
+

@@ -1,0 +1,46 @@
+*** WooCommerce PayPal Adaptive Payments ***
+
+2019-08-08 - version 1.1.11
+* Tweak - WC tested up to 3.7
+
+2019-04-16 - version 1.1.10
+* Tweak - WC tested up to 3.6
+
+2018-10-08 - version 1.1.9
+* Update - WC tested up to 3.5
+
+2018-05-23 - version 1.1.8
+* Update - WC tested up to 3.4
+* Add - GDPR privacy
+
+2017-01-31 - version 1.1.7
+* Fix - payments not going through due to wrong action type.
+* Fix - WC 3.0 compatibility.
+
+2016-10-28 - version 1.1.6
+* Tweak - Add settings, docs, and support links under plugin action links.
+
+2016-02-09 - version 1.1.5
+ * Fix - Request responded with 400 because of unspecified HTTP 1.1
+
+2015-07-30 - version 1.1.4
+ * Fixed PHP strict standards
+
+2015-06-30 - version 1.1.3
+ * Added SSL verification to remote requests
+
+2015-06-25 - version 1.1.2
+ * Added message when Order ID is duplicated on PayPal
+ * Added method to save PayPal errors as order notes
+
+2015-04-13 - version 1.1.1
+ * Fixed the methods descriptions
+
+2014-08-04 - version 1.1.0
+ * Added new PayPal icon
+ * Added Header Logo option
+ * Improved the API integration
+ * Fixed the return and cancel URLs
+
+2014-07-03 - version 1.0.0
+ * First Release

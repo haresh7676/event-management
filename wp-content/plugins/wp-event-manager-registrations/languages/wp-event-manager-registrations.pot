@@ -1,0 +1,863 @@
+# Copyright (C) 2017 WP Event Manager - Registrations
+# This file is distributed under the same license as the WP Event Manager - Registrations package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Event Manager - Registrations 1.0.0\n"
+"Report-Msgid-Bugs-To: http://www.gamthemes.com/forums/forum/wordpress-plugins/wp-event-manager-add-ons/-"
+"POT-Creation-Date: 2017-01-06 17:38:39+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: autoupdater
+#: autoupdater/templates/
+#: autoupdater/templates/key-input.php:4
+msgid "Licence"
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:2
+msgid "Hide notice"
+msgstr ""
+
+#: autoupdater
+#: autoupdater/templates
+#: autoupdater/templates/activated-key.php:2
+msgid "Your licence for <strong>%s</strong> has been activated. Thanks!"
+msgstr ""
+
+#: autoupdater/templates/deactivated-key.php:2
+msgid "Your licence for <strong>%s</strong> has been deactivated."
+msgstr ""
+
+#: autoupdater/templates/key-input.php:7
+msgid "Enter your licence key and email and hit return. A valid key is required for automatic updates."
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:3
+msgid "<a href="%s">Please enter your licence key</a> in the plugin list below to get updates for "%s"."
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:4
+msgid "Lost your key? <a href="%s">Retrieve it here</a>.', esc_url( 'http://www.wp-eventmanager.com/lost-license-key/')"
+msgstr ""
+
+#: autoupdater/templates/ms-update.php:6
+msgid "There is a new version of %1$s available. <a target=\"_blank\" class=""\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s""\">update now</a>."
+msgstr ""
+
+#: wp-event-manager-registrations.php:42
+msgid "WP Event Manager is require to use WP Event Manager - Registrations"
+msgstr ""
+
+#: wp-event-manager-registrations.php:110
+msgid "Unfortunately, WP Event Manager Registrations can not run on PHP versions older than 5.3. Read more information about <a href="https://github.com/WPupdatePHP/wp-update-php">how you can update</a>"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:47
+msgid "Settings"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:73
+#: core/wp-event-manager-registrations-dashboard.php:271
+msgid "Registrations"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:118
+msgid "Attendee name"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:133
+#: admin/wp-event-manager-registrations-admin.php:136
+msgid "Event registration updated."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:134
+msgid "Custom field updated."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:135
+msgid "Custom field deleted."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:138
+msgid "Event registration published."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:139
+msgid "Event registration saved."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:140
+msgid "Event registration submitted."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:142
+msgid "Event registration draft updated."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:162
+#: templates/past-registrations.php:5
+msgid "Status"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:163
+msgid "Attendee"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:164
+#: core/wp-event-manager-registrations-dashboard.php:213
+msgid "Event registered for"
+msgstr ""
+
+
+#: admin/wp-event-manager-registrations-admin.php:165
+#: core/wp-event-manager-registrations-dashboard.php:66
+#: templates/event-registration-footer.php:10
+msgid "Notes"
+msgstr ""
+
+
+#: admin/wp-event-manager-registrations-admin.php:166
+msgid "Posted"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:168
+msgid "Actions"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:188
+msgid "Registration ID: %d"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:208
+msgid "%d note"
+msgid_plural "%d notes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/wp-event-manager-registrations-admin.php:211
+msgid "M j, Y"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:212
+msgid "by a guest"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:212
+#: wp-event-manager-registrations-template.php:86
+msgid "by %s"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:236
+msgid "View"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:241
+#: templates/event-registration-edit.php:15
+msgid "Delete"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-admin.php:271
+msgid "Registrations for all events"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:35
+#: core/wp-event-manager-registrations-register.php:216
+msgid "\"%s\" is a required field"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:124
+msgid "Choose an option"
+msgstr ""
+
+
+#: core/wp-event-manager-registrations-register.php:190
+msgid "Invalid event"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:194
+msgid "You have already registered for this event."
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:226
+msgid "Please provide a valid email address"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:231
+msgid "Please enter a number"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:293
+msgid "Yes"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:293
+msgid "No"
+msgstr ""
+
+#: core/wp-event-manager-registrations-register.php:309
+msgid "Could not create event registration"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:46
+#: core/wp-event-manager-registrations-post-types.php:36
+msgid "Event Registrations"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:64
+#: admin/wp-event-manager-registrations-writepanels.php:235
+msgid "Are you sure you want to delete this? There is no undo."
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:65
+#: templates/event-registration-footer.php:16
+msgid "Details"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:67
+msgid "Hide"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:203
+msgid "registrations"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:209
+msgid "Registration date"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:210
+#: templates/event-registration-edit.php:4
+msgid "Registration status"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:211
+msgid "Attendee name"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:212
+msgid "Attendee email"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:228
+msgid "Attachment"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:214
+msgid "Attendee message"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:300
+msgid "You do not have permission to view this event."
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:345
+msgid "Name"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:346
+#: admin/wp-event-manager-registrations-form-editor.php:96
+#: templates/event-registration-footer.php:13
+msgid "Email"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:347
+msgid "Date Received"
+msgstr ""
+
+#: core/wp-event-manager-registrations-dashboard.php:391
+#: includes/wp-event-manager-registrations-template.php:87
+msgid "Delete note"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:20
+msgid "Registration Form"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:30
+msgid "Are you sure you want to delete this row?"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:31
+msgid "Are you sure you want to reset your changes? This cannot be undone."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:41
+msgid "Form Fields"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:85
+msgid "The fields were successfully reset."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:123
+msgid "Validation"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:95
+msgid "Required"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:97
+msgid "Numeric"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:99
+msgid "Data Handling"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:100
+msgid "From Name"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:101
+msgid "From Email"
+msgstr ""
+
+
+#: admin/wp-event-manager-registrations-form-editor.php:105
+msgid "Text"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:106
+msgid "Textarea"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:107
+msgid "Select"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:108
+msgid "Multiselect"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:109
+msgid "Checkbox"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:110
+msgid "Output content"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:119
+msgid "Field Label"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:120
+msgid "Type"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:121
+msgid "Description"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:122
+msgid "Placeholder / Options"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:123
+msgid "Validation / Rules"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:130
+msgid "Add field"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:133
+#: admin/wp-event-manager-registrations-form-editor.php:258
+#: admin/wp-event-manager-registrations-form-editor.php:324
+msgid "Reset to defaults"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:134
+#: admin/wp-event-manager-registrations-form-editor.php:259
+#: admin/wp-event-manager-registrations-form-editor.php:325
+msgid "Save Changes"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:194
+msgid "The fields were successfully saved."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:221
+#: admin/wp-event-manager-registrations-form-editor.php:285
+msgid "The email was successfully reset."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:233
+msgid "Below you will find the email that is sent to an Organizer after a attendee submits an registration."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:236
+#: admin/wp-event-manager-registrations-form-editor.php:300
+msgid "Subject"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:247
+#: admin/wp-event-manager-registrations-form-editor.php:313
+msgid "The following tags can be used to add content dynamically:"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:253
+#: admin/wp-event-manager-registrations-form-editor.php:319
+msgid "All tags can be passed a prefix and a suffix which is only output when the "
+"value is set e.g. <code>[event_title prefix=\"Event Title: \" suffix=\".\"]</"
+"code>"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:274
+#: admin/wp-event-manager-registrations-form-editor.php:340
+msgid "The email was successfully saved."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:296
+msgid ""
+"Below you will find the email that is sent to a attendee after submitting an registration. Leave blank to disable."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-form-editor.php:304
+msgid "N/A"
+msgstr ""
+
+#: core/wp-event-manager-registrations-integration.php:47
+#: core/wp-event-manager-registrations-integration.php:126
+msgid "Title"
+msgstr ""
+
+#: core/wp-event-manager-registrations-integration.php:51
+#: core/wp-event-manager-registrations-integration.php:99
+#: core/wp-event-manager-registrations-integration.php:130
+msgid "Location"
+msgstr ""
+
+#: core/wp-event-manager-registrations-integration.php:52
+#: core/wp-event-manager-registrations-integration.php:100
+#: core/wp-event-manager-registrations-integration.php:131
+msgid "Full Profile"
+msgstr ""
+
+#: core/wp-event-manager-registrations-integration.php:78
+msgid "Skills"
+msgstr ""
+
+#: core/wp-event-manager-registrations-integration.php:81
+msgid "Unknown location"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:24
+msgid "Registered"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:37
+msgid "Registration"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:45
+msgid "All %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:46
+msgid "Add New"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:47
+msgid "Add %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:48
+#: templates/event-registration-footer.php:9
+msgid "Edit"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:49
+msgid "Edit %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:50
+msgid "New %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:51
+#: core/wp-event-manager-registrations-post-types.php:52
+msgid "View %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:53
+msgid "Search %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:54
+msgid "No %s found"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:55
+msgid "No %s found in trash"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:56
+msgid "Parent %s"
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:58
+msgid "This is where you can edit and view registrations."
+msgstr ""
+
+#: core/wp-event-manager-registrations-post-types.php:175
+msgid "Registration status changed from \"%s\" to \"%s\""
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:30
+msgid "Registration Forms"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:35
+msgid "Email Registration Method"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:36
+#: admin/wp-event-manager-registrations-settings.php:44
+msgid "Use registration form"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:37
+msgid ""
+"Show registration form for events with an email registration method. Disable to use the default registration functionality, or another form plugin."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:43
+msgid "Website URL Registration Method"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:45
+msgid ""
+"Show registration form for events with a website url registration method. Disable to use the default registration functionality, or another form plugin."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:51
+msgid "User Restriction"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:52
+msgid "Only allow registered users to register"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:53
+msgid ""
+"If enabled, only logged in users can register. Non-logged in users will see the contents of the <code>registration-form-login.php</code> file instead of a form."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:59
+msgid "Multiple Registrations"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:60
+msgid "Prevent users from registering to the same event multiple times"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:61
+msgid "If enabled, the register form will be hidden after registering."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:67
+msgid "Management"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:72
+msgid "Delete with Events"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:73
+msgid "Delete registrations when a event is deleted"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:74
+msgid ""
+"If enabled, event registrations will be deleted when the parent event listing is deleted. Otherwise they will be kept on file and visible in the backend."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:80
+msgid "Do not purge data"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:81
+msgid "Purge Registrations"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-settings.php:82
+msgid "Purge registration data and files after X days. Leave blank to disable."
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:32
+msgid "Contact Email"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:33
+msgid "you@yourdomain.com"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:37
+msgid "Posted by"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:42
+msgid "Event Listing ID"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:57
+msgid "Save Registration"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:58
+msgid "Event Registration Data"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:59
+msgid "Registration Notes"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:88
+msgid "Move to Trash"
+msgstr ""
+
+#: admin/wp-event-manager-registrations-writepanels.php:92
+msgid "Save"
+msgstr ""
+
+
+#: wp-event-manager-registrations-functions.php:226
+msgctxt "event_registration"
+msgid "New"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:227
+msgctxt "event_registration"
+msgid "Confirmed"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:228
+msgctxt "event_registration"
+msgid "Waiting"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:229
+msgctxt "event_registration"
+msgid "Cancelled"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:230
+msgctxt "event_registration"
+msgid "Archived"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:242
+msgid "Full name"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:250
+msgid "Email address"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:311
+msgid "New event registration for [event_title]"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:335
+msgid "Your event registration for [event_title]"
+msgstr ""
+
+#:wp-event-manager-registrations-functions.php:352
+msgid "Attendee name"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:353
+msgid "attendee Email"
+msgstr ""
+
+
+#: wp-event-manager-registrations-functions.php:354
+msgid "All custom form fields in list format"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:355
+msgid "Registration ID"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:356
+msgid "User ID of attendee"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:357
+msgid "Event ID"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:358
+msgid "Event Title"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:359
+msgid "URL to the frontend event dashboard page"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:360
+msgid "Name of the company which submitted the event listing"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:361
+msgid ""
+"Some meta data from the event. e.g. <code>[event_post_meta key=\"_event_location"
+"\"]</code>"
+msgstr ""
+
+#: wp-event-manager-registrations-functions.php:371
+msgid "Custom field named \"%s\""
+msgstr ""
+
+#: wp-event-manager-registrations-template.php:88
+msgid "added %s ago"
+msgstr ""
+
+#: wp-event-manager-registrations-template.php:99
+msgid "Private note regarding this registration"
+msgstr ""
+
+#: wp-event-manager-registrations-template.php:100
+msgid "Add note"
+msgstr ""
+
+#: wp-event-manager-registrations-template.php:185
+msgid "Edit Event"
+msgstr ""
+
+#: templates/registration-form-login.php:1
+msgid "You must <a href=\"%s\">sign in</a> to register for this event."
+msgstr ""
+
+#: templates/registration-form.php:13
+msgid "(optional)"
+msgstr ""
+
+#: templates/registration-form.php:24
+msgid "Send registration"
+msgstr ""
+
+#: templates/registration-submitted.php:2
+msgid "Your event registration has been submitted successfully"
+msgstr ""
+
+#: templates/registered-notice.php:2
+msgid "You have already registered for this event."
+msgstr ""
+#: templates/event-registration-edit.php:16
+msgid "Save changes"
+msgstr ""
+
+#: templates/event-registration-footer.php:13
+msgid "Your event registration for %s"
+msgstr ""
+
+#: templates/event-registration-footer.php:13
+msgid "Hello %s"
+msgstr ""
+
+#: templates/event-registrations.php:2
+msgid "Download CSV"
+msgstr ""
+
+#: templates/event-registrations.php:3
+msgid "The event registrations for \"%s\" are listed below."
+msgstr ""
+
+#: templates/event-registrations.php:11
+msgid "Filter by status"
+msgstr ""
+
+#: templates/event-registrations.php:19
+msgid "Newest first"
+msgstr ""
+
+#: templates/event-registrations.php:20
+msgid "Sort by name"
+msgstr ""
+
+
+#: templates/past-registrations-none.php:1
+msgid "You haven\'t made any registrations yet!"
+msgstr ""
+
+#: templates/past-registrations.php:3
+msgid "Event"
+msgstr ""
+
+#: templates/past-registrations.php:4
+msgid "Date Registered"
+msgstr ""
+
+
+#: templates/admin-registration-status-overview-detail.php:15
+msgid "Start Date :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:17
+msgid "Start Time :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:26
+msgid "End Date :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:28
+msgid "End Time :"
+msgstr ""
+
+
+#: templates/admin-registration-status-overview-detail.php:37
+msgid "Event Venue :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:45
+msgid "Total Registration : "
+msgstr ""
+
+
+#: templates/admin-registration-status-overview-detail.php:52
+#: templates/registration-status-overview-detail.php:14
+msgid "New :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:59
+#: templates/registration-status-overview-detail.php:21
+msgid "Confirm :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:66
+#: templates/registration-status-overview-detail.php:28
+msgid "Waiting : "
+msgstr ""
+
+
+#: templates/admin-registration-status-overview-detail.php:73
+#: templates/registration-status-overview-detail.php:35
+msgid "Cancelled :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:80
+#: templates/registration-status-overview-detail.php:42
+msgid "Archived :"
+msgstr ""
+
+#: templates/admin-registration-status-overview-detail.php:88
+msgid "Total Checkin : "
+msgstr ""
+
+#: templates/registration-status-overview-detail.php:7
+msgid "Total Registration :"
+msgstr ""
+
+#: templates/registration-status-overview-detail.php:42
+msgid "Total Checkin : "
+msgstr ""
+
+

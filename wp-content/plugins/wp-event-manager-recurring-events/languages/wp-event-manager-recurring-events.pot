@@ -1,0 +1,256 @@
+# Copyright (C) 2019 WP Event Manager - Recurring Events
+# This file is distributed under the same license as the WP Event Manager - Recurring Events package.
+msgid ""
+msgstr ""
+"Project-Id-Version:Gam Event Manager - Recurring Events 1.4.0\n"
+"Report-Msgid-Bugs-To: https://www.wp-eventmanager.com/get-support/"
+"POT-Creation-Date: 2019-05-23 16:24:46+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/wp-event-manager-recurring-writepanels.php:27
+#: forms/wp-event-manager-recurring-form-submit.php:31
+msgid "day(s)"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:28
+#: forms/wp-event-manager-recurring-form-submit.php:32
+msgid "week(s) on"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:29
+#: forms/wp-event-manager-recurring-form-submit.php:33
+msgid "month(s) on"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:30
+#: forms/wp-event-manager-recurring-form-submit.php:34
+msgid "of the month(s)"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:31
+#: forms/wp-event-manager-recurring-form-submit.php:35
+msgid "year(s) on"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:48
+#: forms/wp-event-manager-recurring-form-submit.php:52
+msgid "Event Recurrence"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:54
+msgid "Dont't repeat"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:55
+#: forms/wp-event-manager-recurring-form-submit.php:57
+msgid "Daily"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:56
+#: forms/wp-event-manager-recurring-form-submit.php:58
+msgid "Weekly"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:57
+#: forms/wp-event-manager-recurring-form-submit.php:59
+msgid "Monthly"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:58
+#: forms/wp-event-manager-recurring-form-submit.php:60
+msgid "Yearly"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:63
+#: forms/wp-event-manager-recurring-form-submit.php:67
+msgid "Repeat Every"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:72
+#: forms/wp-event-manager-recurring-form-submit.php:76
+msgid "on the"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:77
+#: forms/wp-event-manager-recurring-form-submit.php:81
+msgid "same day"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:78
+#: forms/wp-event-manager-recurring-form-submit.php:82
+msgid "specific day"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:83
+#: forms/wp-event-manager-recurring-form-submit.php:87
+msgid "Day Number"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:88
+#: forms/wp-event-manager-recurring-form-submit.php:92
+msgid "First"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:89
+#: forms/wp-event-manager-recurring-form-submit.php:93
+msgid "Second"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:90
+#: forms/wp-event-manager-recurring-form-submit.php:94
+msgid "Third"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:91
+#: forms/wp-event-manager-recurring-form-submit.php:95
+msgid "Fourth"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:92
+#: forms/wp-event-manager-recurring-form-submit.php:96
+msgid "Last"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:97
+#: forms/wp-event-manager-recurring-form-submit.php:101
+msgid "Day Name"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:102
+#: forms/wp-event-manager-recurring-form-submit.php:106
+msgid "Sunday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:103
+#: forms/wp-event-manager-recurring-form-submit.php:107
+msgid "Monday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:104
+#: forms/wp-event-manager-recurring-form-submit.php:108
+msgid "Tuesday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:105
+#: forms/wp-event-manager-recurring-form-submit.php:109
+msgid "Wednesday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:106
+#: forms/wp-event-manager-recurring-form-submit.php:110
+msgid "Thursday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:107
+#: forms/wp-event-manager-recurring-form-submit.php:111
+msgid "Friday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:108
+#: forms/wp-event-manager-recurring-form-submit.php:112
+msgid "Saturday"
+msgstr ""
+
+#: admin/wp-event-manager-recurring-writepanels.php:116
+#: forms/wp-event-manager-recurring-form-submit.php:120
+msgid "Repeat untill"
+msgstr ""
+
+#: autoupdater/gam-plugin-updater.php:408
+#, php-format
+msgid ""
+"A licence key for %1$s could not be found. Maybe you forgot to enter a "
+"licence key when setting up %2$s."
+msgstr ""
+
+#: autoupdater/templates/activated-key.php:2
+#, php-format
+msgid "Your licence for <strong>%s</strong> has been activated. Thanks!"
+msgstr ""
+
+#: autoupdater/templates/deactivated-key.php:2
+#, php-format
+msgid "Your licence for <strong>%s</strong> has been deactivated."
+msgstr ""
+
+#: autoupdater/templates/key-input.php:4
+msgid "Licence"
+msgstr ""
+
+#: autoupdater/templates/key-input.php:7
+msgid ""
+"Enter your licence key and email and hit return. A valid key is required for "
+"automatic updates."
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:2
+msgid "Hide notice"
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:3
+#, php-format
+msgid ""
+"<a href=\"%1$s\">Please enter your licence key</a> in the plugin list below "
+"to get updates for \"%2$s\"."
+msgstr ""
+
+#: autoupdater/templates/key-notice.php:4
+#, php-format
+msgid "Lost your key? <a href=\"%s\">Retrieve it here</a>."
+msgstr ""
+
+#: autoupdater/templates/ms-update.php:6
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+
+#: forms/wp-event-manager-recurring-form-submit.php:56
+msgid "Don't repeat"
+msgstr ""
+
+#: wp-event-manager-recurring-events.php:37
+msgid "WP Event Manager is require to use Wp Event Manager - Event Recurring"
+msgstr ""
+
+#: wp-event-manager-recurring-events.php:160
+msgid "Once Weekly"
+msgstr ""
+
+#: wp-event-manager-recurring-events.php:164
+msgid "Once a month"
+msgstr ""
+
+#: wp-event-manager-recurring-events.php:168
+msgid "Once Yearly"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Event Manager - Event Recurring"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.wp-eventmanager.com/product-category/plugins/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Repeated events after specific time like daily, weekly, monthly or yearly."
+"Automatically relist event.Your event will be republished after a specific "
+"time."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP Event Manager"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.wp-eventmanager.com/"
+msgstr ""
